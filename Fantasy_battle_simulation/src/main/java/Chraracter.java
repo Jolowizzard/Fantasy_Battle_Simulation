@@ -71,7 +71,7 @@ abstract class Chraracter {
     public boolean checkIfIsAlive(){
         return IsAlive;
     }
-    public void takeDamage(double damage){
+    public void takeDamage(float damage){
         CurrentHp = CurrentHp-damage;
     }
     public void kill(){
