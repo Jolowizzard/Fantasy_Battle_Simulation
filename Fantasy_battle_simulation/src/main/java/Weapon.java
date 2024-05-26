@@ -13,5 +13,26 @@ public abstract class Weapon {
         this.Accuracy=Accuracy;
         this.Hands=Hands;
     }
-    public abstract void attack();
+
+    public int getMagicDamage() {
+        return MagicDamage;
+    }
+
+    public int getPhisicalDamage() {
+        return PhisicalDamage;
+    }
+
+    public int getRange() {
+        return Range;
+    }
+
+    public String getName() {
+        return Name;
+    }
+
+    public int getAccuracy() {
+        return Accuracy;
+    }
+
+    public abstract void attack(Character attacker,Character defender);
 }

@@ -1,11 +1,9 @@
-import java.util.ArrayList;
-
-abstract class Chraracter {
+abstract class Character {
     private int Id;
     private String Name;
     private String Race;
-    private float MaxHp;
-    private float CurrentHp;
+    private int MaxHp;
+    private int CurrentHp;
     private int Strength;
     private int Dexterity;
     private int Intelignece;
@@ -14,7 +12,8 @@ abstract class Chraracter {
     private Inventory inventory;
     private InteligenceType IntType;
     private boolean IsAlive;
-    Chraracter(int Id,String Name,String Race,float MaxHp,float CurrentHp,int Strength,int Dexterity,int Inteligence, int Movement, float DodgeChance,Inventory inventory, InteligenceType IntType,boolean IsAlive){
+    private Tile Position;  // holds an information on which tile character is currently staying on.
+    Character(int Id,String Name,String Race,int MaxHp,int CurrentHp,int Strength,int Dexterity,int Inteligence, int Movement, float DodgeChance,Inventory inventory, InteligenceType IntType,boolean IsAlive,Tile Position){
         this.Id=Id;
         this.Name=Name;
         this.Race=Race;
@@ -28,6 +27,7 @@ abstract class Chraracter {
         this.inventory=inventory;
         this.IntType=IntType;
         this.IsAlive=IsAlive;
+        this.Position=Position;
     }
     public int getId(){
         return Id;
@@ -38,10 +38,10 @@ abstract class Chraracter {
     public String getRace(){
         return Race;
     }
-    public double getMaxHp(){
+    public int getMaxHp(){
         return MaxHp;
     }
-    public double getCurrentHp(){
+    public int getCurrentHp(){
         return CurrentHp;
     }
     public int getStrength(){
@@ -68,10 +68,12 @@ abstract class Chraracter {
     public InteligenceType getIntType() {
         return IntType;
     }
+    public Tile getPosition(){return  Position;}
+    public void setPosition(Tile NewPosition){Position = NewPosition;}
     public boolean checkIfIsAlive(){
         return IsAlive;
     }
-    abstract public void takeDamage();
+    public void takeDamage(int Damage){this.CurrentHp=this.CurrentHp-Damage;}
     public void kill(){
         IsAlive = false;
     }

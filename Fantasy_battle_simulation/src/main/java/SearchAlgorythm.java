@@ -11,7 +11,7 @@ public class SearchAlgorythm {
     Tile startTile, destinationTile, currentTile;
     boolean goalReached = false;
 
-    Tile[][] tiles = new Tile[maxCol][maxRow];;
+    Tile[][] tiles = new Tile[maxCol][maxRow];
     ArrayList<Tile> checked = new ArrayList<>();
     ArrayList<Tile> open = new ArrayList<>();
 
@@ -28,15 +28,17 @@ public class SearchAlgorythm {
                 tiles[i][j] = new Tile(map[i][j].col,map[i][j].row);
                 if(map[i][j].solid)
                     tiles[i][j].SetAsSolid();
+                if(map[i][j].occupied)
+                    tiles[i][j].SetAsOccupied();
             }
         }
     }
-    public void PlaceNodes(){
+/*    public void PlaceNodes(){
         for(int col=0;col<maxCol;col++){
             for(int row=0;row<maxRow;row++)
                 tiles[col][row] = new Tile(col,row);
         }
-    }
+    }*/
     private void SetStartTile(int col, int row){
         tiles[col][row].SetAsStart();
         startTile = tiles[col][row];
@@ -47,9 +49,9 @@ public class SearchAlgorythm {
         tiles[col][row].SetAsDestination();
         destinationTile = tiles[col][row];
     }
-    private void SetSolidNode(int col, int row){
+    /*private void SetSolidNode(int col, int row){
         tiles[col][row].SetAsSolid();
-    }
+    }*/
     private void SetCostOnTiles(){
         for(int col = 0;col<maxCol;col++){
             for(int row = 0;row<maxRow;row++)
@@ -63,13 +65,14 @@ public class SearchAlgorythm {
         xDis = Math.abs(tile.col - destinationTile.col);
         yDis = Math.abs(tile.row - destinationTile.col);
         tile.hCost = xDis + yDis;
+        tile.fCost = tile.gCost + tile.hCost;
     }
     //Method searches for the shortest path to a destination and returns ArrayList of tiles from this path
-    public ArrayList<Tile> search(Tile start, Tile destination){
+    public ArrayList<Tile> search(){
         int steps=0;
         ArrayList<Tile> finalPath = new ArrayList<>();
-        SetStartTile(start.col,start.row);
-        SetDestinationTile(destination.col,destination.row);
+        SetStartTile(startTile.col,startTile.row);
+        SetDestinationTile(destinationTile.col,destinationTile.row);
         SetCostOnTiles();
         while(goalReached == false && steps<300){
             steps++;
@@ -97,27 +100,49 @@ public class SearchAlgorythm {
                     bestTilefCost = open.get(i).fCost;
                 }
                 else if(open.get(i).fCost == bestTilefCost){
-                    if(open.get(i).fCost < open.get(bestTileIndex).gCost){
+                    if(open.get(i).fCost < open.get(bestTileIndex).fCost){
                         bestTilefCost = i;
                     }
                 }
             }
-
+            //hier is an error occuring on map_4 when finish is set on 15,1
+            if(open.size() == 0)
+                break;
+            if(open.get(bestTileIndex).stop)
+            {
+                goalReached = true;
+                finalPath = trackThePath();
+                ResetParents();
+                return finalPath;
+            }
             currentTile = open.get(bestTileIndex);
-
             if(currentTile == destinationTile){
                 goalReached = true;
                 finalPath = trackThePath();
+                ResetParents();
                 return finalPath;
             }
         }
         return finalPath;
     }
     private void openTile(Tile tile){
-        if(tile.open == false && tile.checked == false && tile.solid == false){
+        if(tile.destination == true && tile.occupied == true){
+            tile.SetAsOpen();
+            tile.SetAsStop();
+            tile.parent = currentTile;
+            open.add(tile);
+        }
+        if(tile.open == false && tile.checked == false && tile.solid == false && tile.occupied == false){
             tile.SetAsOpen();
             tile.parent = currentTile;
             open.add(tile);
+        }
+    }
+    private void ResetParents(){
+        for(int i=0;i<maxCol;i++){
+            for(int j=0; j<maxRow;j++){
+                tiles[i][j].parent=null;
+            }
         }
     }
     //funtion returns array list as a path from a start to destination without destination Tile and starting tile
@@ -135,6 +160,7 @@ public class SearchAlgorythm {
         for(int i = path.size()-1 ; i >= 0 ; i--){
             revesredPath.add(path.get(i));
         }
+        path.remove(destinationTile);
         return revesredPath;
     }
 }
