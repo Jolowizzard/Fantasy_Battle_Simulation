@@ -4,7 +4,14 @@ public class Combat {
         if(CurrentLocation(char1))
     }*/
     public void DealDamage(Character char1,int Damage){
-        char1.takeDamage(Damage);
+        if(Damage>char1.getCurrentHp())
+        {
+            char1.takeDamage(char1.getCurrentHp());
+            char1.kill();
+        }
+        else {
+            char1.takeDamage(Damage);
+        }
     }
     //public void PerformAttack()
     /*public float CalculateDamage(Character char1){

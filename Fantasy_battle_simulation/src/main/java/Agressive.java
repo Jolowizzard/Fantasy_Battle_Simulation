@@ -29,12 +29,12 @@ public class Agressive extends InteligenceType{
                 if(checkIfEnemyIsInRange())
                 {
                     target.getIntType().setInCombat();
-                    //character.getInventory().getCurrentWeapon().attack(character,target);
+                    character.getInventory().getCurrentWeapon().attack(character,target);
                     System.out.println("Enemy in range, ready to attack");
                 }
             }else{
                 target.getIntType().setInCombat();
-                //character.getInventory().getCurrentWeapon().attack(character,target);
+                character.getInventory().getCurrentWeapon().attack(character,target);
                 System.out.println("Enemy in range, ready to attack");
             }
         }

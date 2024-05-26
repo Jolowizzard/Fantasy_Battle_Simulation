@@ -69,12 +69,6 @@ public class Simulation {
                             printed=true;
                         }
                     }
-/*                    for(int j=0;j<teamB.team.size();j++){
-                        if(MAPtable.Map[col][row]==teamB.team.get(j).getPosition()) {
-                            System.out.print("C ");
-                            printed=true;
-                        }
-                    }*/
                     if(!printed) {
                         if (MAPtable.Map[col][row].solid)
                             System.out.print("1 ");
@@ -86,6 +80,9 @@ public class Simulation {
                 System.out.println();
 
             }
+            System.out.println("Test object 1 :"+testobject1.getCurrentHp());
+            System.out.println("Test object 2 :"+testobject2.getCurrentHp());
+            System.out.println("Test object 3 :"+testobject3.getCurrentHp());
 /*            for(int r =0;r<16;r++){
                 for(int k=0;k<16;k++){
                     if(MAPtable.Map[r][k].occupied==true){

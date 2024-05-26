@@ -76,5 +76,6 @@ abstract class Character {
     public void takeDamage(int Damage){this.CurrentHp=this.CurrentHp-Damage;}
     public void kill(){
         IsAlive = false;
+        Position.occupied=false;
     }
 }
