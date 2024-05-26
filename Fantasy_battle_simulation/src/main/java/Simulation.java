@@ -86,13 +86,14 @@ public class Simulation {
                 System.out.println();
 
             }
-            for(int r =0;r<16;r++){
+/*            for(int r =0;r<16;r++){
                 for(int k=0;k<16;k++){
                     if(MAPtable.Map[r][k].occupied==true){
                         System.out.print(MAPtable.Map[r][k]+" ");
                     }
                 }
-            }
+            }*/
+            System.out.println();
         }
 
     }

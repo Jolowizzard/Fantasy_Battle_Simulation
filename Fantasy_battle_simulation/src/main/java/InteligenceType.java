@@ -1,6 +1,7 @@
 public abstract class InteligenceType{
     protected Character target;
     protected Character character;
+    protected boolean inCombat=false;
     protected Team enemies;
     public InteligenceType(){
     }
@@ -9,6 +10,9 @@ public abstract class InteligenceType{
     public void setTarget(Character character){target = character;}
     public void setEnemies(Team enemies){
         this.enemies=enemies;
+    }
+    public void setInCombat(){
+        inCombat = true;
     }
     protected boolean checkIfEnemyIsInRange(){
         double distance;
