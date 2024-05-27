@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.IOException;
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Map;
 
@@ -59,22 +60,30 @@ public class Simulation {
                     printed = false;
                     for(int j=0;j<teamA.team.size();j++) {
                         if (MAPtable.Map[col][row] == teamA.team.get(j).getPosition()) {
+                            System.out.print("\u001B[41m");
                             System.out.print("A ");
                             printed=true;
                         }
                     }
                     for(int j=0;j<teamB.team.size();j++){
                         if(MAPtable.Map[col][row]==teamB.team.get(j).getPosition()) {
+                            System.out.print("\u001B[44m");
                             System.out.print("B ");
                             printed=true;
                         }
                     }
                     if(!printed) {
-                        if (MAPtable.Map[col][row].solid)
+                        if (MAPtable.Map[col][row].solid) {
+                            System.out.print("\u001B[47m");
                             System.out.print("1 ");
-                        else
+                        }
+                        else {
+                            System.out.print("\u001B[40m");
                             System.out.print("0 ");
+                        }
                     }
+                    System.out.print(" \u001B[0m");
+
                 }
 
                 System.out.println();

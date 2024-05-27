@@ -92,7 +92,7 @@ public class SearchAlgorythm {
                 openTile(tiles[col+1][row]);
 
             int bestTileIndex = 0;
-            int bestTilefCost = 999;
+            int bestTilefCost = Integer.MAX_VALUE;
 
             for(int i=0; i < open.size();i++){
                 if(open.get(i).fCost < bestTilefCost){
