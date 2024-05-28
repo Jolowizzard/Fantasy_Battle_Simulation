@@ -1,3 +1,5 @@
+import java.awt.image.BufferedImage;
+
 public class Tile {
     Tile parent;
     int col;
@@ -12,6 +14,9 @@ public class Tile {
     boolean checked;
     boolean occupied;
     boolean stop;
+
+    public BufferedImage image;
+
     public  Tile(int col, int row){
         this.col = col;
         this.row = row;
