@@ -11,16 +11,19 @@ public class GamePanel extends JPanel implements Runnable{
     final int originalTileSize = 16;
     final int scale = 3;
 
-    final int tileSize = originalTileSize * scale;
-    final int maxScreenCol = 16;
-    final int maxScreenRow = 16;
-    final int ScreenWidth = tileSize * maxScreenCol;
-    final int ScreenHeight = tileSize * maxScreenRow;
+    public final int tileSize = originalTileSize * scale;
+    public final int maxScreenCol = 16;
+    public final int maxScreenRow = 16;
+    public final int ScreenWidth = tileSize * maxScreenCol;
+    public final int ScreenHeight = tileSize * maxScreenRow;
 
     //FPS
     int FPS = 30;
 
+
+    TileManager tileM = new TileManager(this);
     Thread gameThread;
+
 
 
     public GamePanel() {
@@ -79,9 +82,9 @@ public class GamePanel extends JPanel implements Runnable{
 
         Graphics2D g2 = (Graphics2D)g;
 
-        g2.setColor(Color.WHITE);
-
-        g2.fillRect(100, 100, tileSize, tileSize);
+        tileM.draw(g2);
+        //g2.setColor(Color.WHITE);
+        //g2.fillRect(100, 100, tileSize, tileSize);
         
         g2.dispose();
     }
