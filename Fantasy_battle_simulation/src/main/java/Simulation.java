@@ -7,7 +7,7 @@ import java.util.Map;
 public class Simulation {
     public static void main(String [] args ){
 
-        MAPtable.InitializeMap("Mapa_1.txt");
+        MAPtable.InitializeMap("C:\\Users\\aleks\\Java_projects\\Fantasy_battle_simulator\\Fantasy_Battle_Simulation\\Fantasy_battle_simulation\\src\\main\\resources\\map_1.txt");
         Weapon ssword = new Sword("Sword",10,0,1,100,false);
         ArrayList<Weapon> Weapons = new ArrayList<>();
         Weapons.add(ssword);
@@ -15,7 +15,9 @@ public class Simulation {
         InteligenceType inteligenceType1 = new Agressive(true);
         InteligenceType inteligenceType2 = new Agressive(true);
         InteligenceType inteligenceType3 = new Agressive(true);
-        Tile start = new Tile(0,0);
+        InteligenceType inteligenceType4 = new Agressive(true);
+        Tile start = new Tile(0,4);
+        Tile testobject4Tile = new Tile (0,3);
         Tile finish = new Tile(15,15);
         Tile testobject1Tile = new Tile (15,14);
         Tile g1 = new Tile(7,7);
@@ -26,20 +28,24 @@ public class Simulation {
         Character testobject1 = new Knight(2, "Test_1", "Human", 100, 100, 1, 1, 1, 3, (float) 5.00, inventory, inteligenceType1, true, 0, 0,MAPtable.Map[start.col][start.row]);
         Character testobject2 = new Knight(3, "Test_2", "Human", 100, 100, 1, 1, 1, 3, (float) 5.00, inventory, inteligenceType2, true, 0, 0,MAPtable.Map[finish.col][finish.row]);
         Character testobject3 = new Knight(4, "Test_3", "Human", 100, 100, 1, 1, 1, 3, (float) 5.00, inventory, inteligenceType3, true, 0, 0,MAPtable.Map[testobject1Tile.col][testobject1Tile.row]);
+        Character testobject4 = new Knight(5, "Test_4", "Human", 100, 100, 1, 1, 1, 3, (float) 5.00, inventory, inteligenceType4, true, 0, 0,MAPtable.Map[testobject4Tile.col][testobject4Tile.row]);
         //inteligenceType.setTarget(testobject2);
         MAPtable.placeCharacterOnMap(start);
         MAPtable.placeCharacterOnMap(finish);
         MAPtable.placeCharacterOnMap(testobject1Tile);
-        MAPtable.placeCharacterOnMap(g1);
+        MAPtable.placeCharacterOnMap(testobject4Tile);
+/*        MAPtable.placeCharacterOnMap(g1);
         MAPtable.placeCharacterOnMap(g2);
         MAPtable.placeCharacterOnMap(g3);
         MAPtable.placeCharacterOnMap(g4);
-        MAPtable.placeCharacterOnMap(g5);
+        MAPtable.placeCharacterOnMap(g5);*/
         inteligenceType1.setCharacter(testobject1);
         inteligenceType2.setCharacter(testobject2);
         inteligenceType3.setCharacter(testobject3);
+        inteligenceType4.setCharacter(testobject4);
         ArrayList<Character> team = new ArrayList<>();
         team.add(testobject1);
+        team.add(testobject4);
         Team teamA = new Team(team);
         team.clear();
         team.add(testobject2);
@@ -50,11 +56,9 @@ public class Simulation {
         testobject2.getIntType().setEnemies(teamA);
         testobject3.getIntType().setEnemies(teamA);
         testobject1.getIntType().setEnemies(teamB);
+        testobject4.getIntType().setEnemies(teamB);
         boolean printed = false;
         for(int i = 0;i<11;i++){
-            testobject1.getIntType().PerformTurn();
-            testobject2.getIntType().PerformTurn();
-            testobject3.getIntType().PerformTurn();
             for(int col =0;col<16;col++){
                 for(int row=0;row<16;row++){
                     printed = false;
@@ -92,6 +96,8 @@ public class Simulation {
             System.out.println("Test object 1 :"+testobject1.getCurrentHp());
             System.out.println("Test object 2 :"+testobject2.getCurrentHp());
             System.out.println("Test object 3 :"+testobject3.getCurrentHp());
+            System.out.println("Test object 4 :"+testobject4.getCurrentHp());
+
 /*            for(int r =0;r<16;r++){
                 for(int k=0;k<16;k++){
                     if(MAPtable.Map[r][k].occupied==true){
@@ -100,6 +106,10 @@ public class Simulation {
                 }
             }*/
             System.out.println();
+            testobject1.getIntType().PerformTurn();
+            testobject2.getIntType().PerformTurn();
+            testobject3.getIntType().PerformTurn();
+            testobject4.getIntType().PerformTurn();
         }
 
     }

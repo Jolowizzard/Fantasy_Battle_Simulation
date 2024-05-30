@@ -13,12 +13,10 @@ public class Agressive extends InteligenceType{
     }
     @Override
     public void PerformTurn(){
-        if(character.getInventory().getCurrentWeapon()==null){
+        if(character.getInventory().getCurrentWeapon()==null) {
             character.getInventory().setCurrentWeapon(character.getInventory().getWeapons().get(0));
         }
-        if(target == null){
             target = lookForTarget();
-        }
         if(inCombat)
         {
             target = lookForTarget();

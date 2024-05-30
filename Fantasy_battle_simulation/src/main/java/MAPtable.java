@@ -55,7 +55,7 @@ public class MAPtable implements Cloneable {
                 line = scanner.nextLine();
                 line = line.replaceAll("\\s","");
                 for(int i =0;i<line.length();i++){
-                    Map[x][i]= new Tile(x,i);
+                    Map[x][i] = new Tile(x,i);
                     if(line.charAt(i)=='1')
                         Map[x][i].SetAsSolid();
                 }

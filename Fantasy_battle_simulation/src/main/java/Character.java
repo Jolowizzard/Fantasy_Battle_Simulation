@@ -29,6 +29,22 @@ abstract class Character {
         this.IsAlive=IsAlive;
         this.Position=Position;
     }
+    Character(int Id,String Name, InteligenceType inteligenceType, Tile Position,Inventory inventory){
+        this.Id = Id;
+        this.Position=Position;
+        this.Name = Name;
+        this.IntType = inteligenceType;
+        Race = "Human";
+        MaxHp = 100;
+        CurrentHp = MaxHp;
+        Strength = 10;
+        Dexterity = 10;
+        Intelignece = 10;
+        Movement = 3;
+        DodgeChance = 5;
+        this.inventory = inventory;
+        IsAlive = true;
+    }
     public int getId(){
         return Id;
     }

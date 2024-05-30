@@ -6,6 +6,11 @@ public abstract class Warrior extends Character{
         this.BlockChance=BlockChance;
         this.BlockValue=BlockValue;
     }
+    Warrior(int Id,String Name, InteligenceType inteligenceType, Tile Position,Inventory inventory){
+        super(Id,Name,inteligenceType,Position,inventory);
+        BlockChance = 0;
+        BlockValue = 0;
+    }
 
     public int getBlockChance(){
         return BlockChance;

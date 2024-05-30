@@ -14,7 +14,7 @@ public class SearchAlgorythm {
     Tile[][] tiles = new Tile[maxCol][maxRow];
     ArrayList<Tile> checked = new ArrayList<>();
     ArrayList<Tile> open = new ArrayList<>();
-
+    // Constructor needs start tile, destination Tile, map used in simulation, size of the map, numbers of columns and rows
     public SearchAlgorythm(Tile startTile,Tile destinationTile,Tile [][] map,int maxCol,int maxRow){
         Clone(map);
         this.startTile = startTile;
