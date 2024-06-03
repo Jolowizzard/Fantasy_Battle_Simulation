@@ -9,9 +9,13 @@ public class Simulation {
 
         MAPtable.InitializeMap("C:\\Users\\aleks\\Java_projects\\Fantasy_battle_simulator\\Fantasy_Battle_Simulation\\Fantasy_battle_simulation\\src\\main\\resources\\map_1.txt");
         Weapon ssword = new Sword("Sword",10,0,1,100,false);
+        Weapon bbow = new Bow("Bow",10,0,6,100,true);
         ArrayList<Weapon> Weapons = new ArrayList<>();
         Weapons.add(ssword);
+        ArrayList<Weapon> Weapons2 = new ArrayList<>();
+        Weapons2.add(bbow);
         Inventory inventory = new Inventory(Weapons);
+        Inventory inventory2 = new Inventory(Weapons2);
         InteligenceType inteligenceType1 = new Agressive(true);
         InteligenceType inteligenceType2 = new Agressive(true);
         InteligenceType inteligenceType3 = new Agressive(true);
@@ -27,8 +31,8 @@ public class Simulation {
         Tile g5 = new Tile(8,7);
         Character testobject1 = new Knight(2, "Test_1", "Human", 100, 100, 1, 1, 1, 3, (float) 5.00, inventory, inteligenceType1, true, 0, 0,MAPtable.Map[start.col][start.row]);
         Character testobject2 = new Knight(3, "Test_2", "Human", 100, 100, 1, 1, 1, 3, (float) 5.00, inventory, inteligenceType2, true, 0, 0,MAPtable.Map[finish.col][finish.row]);
-        Character testobject3 = new Knight(4, "Test_3", "Human", 100, 100, 1, 1, 1, 3, (float) 5.00, inventory, inteligenceType3, true, 0, 0,MAPtable.Map[testobject1Tile.col][testobject1Tile.row]);
-        Character testobject4 = new Knight(5, "Test_4", "Human", 100, 100, 1, 1, 1, 3, (float) 5.00, inventory, inteligenceType4, true, 0, 0,MAPtable.Map[testobject4Tile.col][testobject4Tile.row]);
+        Character testobject3 = new Knight(4, "Test_3", "Human", 100, 100, 1, 1, 1, 3, (float) 5.00, inventory2, inteligenceType3, true, 0, 0,MAPtable.Map[testobject1Tile.col][testobject1Tile.row]);
+        Character testobject4 = new Knight(5, "Test_4", "Human", 100, 100, 1, 1, 1, 3, (float) 5.00, inventory2, inteligenceType4, true, 0, 0,MAPtable.Map[testobject4Tile.col][testobject4Tile.row]);
         //inteligenceType.setTarget(testobject2);
         MAPtable.placeCharacterOnMap(start);
         MAPtable.placeCharacterOnMap(finish);

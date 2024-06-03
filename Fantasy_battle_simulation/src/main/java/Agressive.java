@@ -13,10 +13,11 @@ public class Agressive extends InteligenceType{
     }
     @Override
     public void PerformTurn(){
+        System.out.println(character.getName() + " : performe turn");
         if(character.getInventory().getCurrentWeapon()==null) {
             character.getInventory().setCurrentWeapon(character.getInventory().getWeapons().get(0));
         }
-            target = lookForTarget();
+        target = lookForTarget();
         if(inCombat)
         {
             target = lookForTarget();
@@ -28,15 +29,15 @@ public class Agressive extends InteligenceType{
                 {
                     target.getIntType().setInCombat();
                     character.getInventory().getCurrentWeapon().attack(character,target);
-                    System.out.println("Enemy in range, ready to attack");
+                    System.out.println(character.getName() + ": Enemy in range, ready to attack");
                 }
             }else{
                 target.getIntType().setInCombat();
                 character.getInventory().getCurrentWeapon().attack(character,target);
-                System.out.println("Enemy in range, ready to attack");
+                System.out.println(character.getName()+ ": Enemy in range, ready to attack");
             }
         }
-
+        System.out.println(target.getName());
     }
     private void MoveTowardsOpponent(Character character){
         SearchAlgorythm searchAlgorythm = new SearchAlgorythm(character.getPosition(),target.getPosition(),MAPtable.Map,MAPtable.colSize,MAPtable.rowSize);
