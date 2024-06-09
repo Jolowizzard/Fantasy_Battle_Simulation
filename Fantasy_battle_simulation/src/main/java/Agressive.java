@@ -13,6 +13,8 @@ public class Agressive extends InteligenceType{
     }
     @Override
     public void PerformTurn(){
+        if(!character.checkIfIsAlive())
+            return;
         System.out.println(character.getName() + " : performe turn");
         if(character.getInventory().getCurrentWeapon()==null) {
             character.getInventory().setCurrentWeapon(character.getInventory().getWeapons().get(0));
@@ -23,9 +25,25 @@ public class Agressive extends InteligenceType{
             target = lookForTarget();
         }
         if(readyToFight){
-            if(!checkIfEnemyIsInRange()) {
+            if(!checkIfEnemyIsInRange()){
                 MoveTowardsOpponent(character);
-                if(checkIfEnemyIsInRange())
+                if(checkIfEnemyIsInRange()){
+                    if (character.getInventory().getCurrentWeapon().canAttack(character, target)) {
+                        character.getInventory().getCurrentWeapon().attack(character, target);
+                        System.out.println(character.getName() + ": Enemy in range, ready to attack");
+                        target.getIntType().setInCombat();
+                    }
+                }
+            }
+            else {
+                if (character.getInventory().getCurrentWeapon().canAttack(character,target)){
+                    character.getInventory().getCurrentWeapon().attack(character,target);
+                    System.out.println(character.getName() + ": Enemy in range, ready to attack");
+                    target.getIntType().setInCombat();
+                }
+
+            }
+/*                if(checkIfEnemyIsInRange())
                 {
                     target.getIntType().setInCombat();
                     character.getInventory().getCurrentWeapon().attack(character,target);
@@ -34,8 +52,8 @@ public class Agressive extends InteligenceType{
             }else{
                 target.getIntType().setInCombat();
                 character.getInventory().getCurrentWeapon().attack(character,target);
-                System.out.println(character.getName()+ ": Enemy in range, ready to attack");
-            }
+                System.out.println(character.getName()+ ": Enemy in range, ready to attack");*/
+
         }
         System.out.println(target.getName());
     }

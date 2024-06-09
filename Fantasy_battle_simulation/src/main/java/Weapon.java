@@ -35,4 +35,6 @@ public abstract class Weapon {
     }
 
     public abstract void attack(Character attacker,Character defender);
+    public abstract boolean canAttack(Character character,Character target);
+
 }

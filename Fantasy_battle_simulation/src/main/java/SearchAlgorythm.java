@@ -43,7 +43,6 @@ public class SearchAlgorythm {
         tiles[col][row].SetAsStart();
         startTile = tiles[col][row];
         currentTile = startTile;
-
     }
     private void SetDestinationTile(int col, int row){
         tiles[col][row].SetAsDestination();

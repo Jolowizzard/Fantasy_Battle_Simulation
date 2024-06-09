@@ -8,6 +8,7 @@ public class Combat {
         {
             char1.takeDamage(char1.getCurrentHp());
             char1.kill();
+
         }
         else {
             char1.takeDamage(Damage);

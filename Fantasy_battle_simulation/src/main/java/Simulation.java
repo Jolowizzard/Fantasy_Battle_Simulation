@@ -62,7 +62,7 @@ public class Simulation {
         testobject1.getIntType().setEnemies(teamB);
         testobject4.getIntType().setEnemies(teamB);
         boolean printed = false;
-        for(int i = 0;i<11;i++){
+        for(int i = 0;i<20;i++){
             for(int col =0;col<16;col++){
                 for(int row=0;row<16;row++){
                     printed = false;
@@ -114,7 +114,16 @@ public class Simulation {
             testobject2.getIntType().PerformTurn();
             testobject3.getIntType().PerformTurn();
             testobject4.getIntType().PerformTurn();
+            if(!teamB.CheckIfTeamIsTeamAlive())
+            {
+                System.out.printf("A team won");
+                return;
+            }
+            if(!teamA.CheckIfTeamIsTeamAlive())
+            {
+                System.out.printf("B team won");
+                return;
+            }
         }
-
     }
     }
