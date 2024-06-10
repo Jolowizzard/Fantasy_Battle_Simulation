@@ -1,15 +1,22 @@
-import java.io.File;
-import java.io.IOException;
-import java.sql.SQLOutput;
+import characters.warriors.Knight;
+import gamestructure.Team;
+import inteligence.Agressive;
+import inteligence.InteligenceType;
+import inventory.Inventory;
+import map.MAPtable;
+import map.Tile;
+import weapons.Bow;
+import weapons.Sword;
+import weapons.Weapon;
+
 import java.util.ArrayList;
-import java.util.Map;
 
 public class Simulation {
     public static void main(String [] args ){
 
         MAPtable.InitializeMap("C:\\Users\\aleks\\Java_projects\\Fantasy_battle_simulator\\Fantasy_Battle_Simulation\\Fantasy_battle_simulation\\src\\main\\resources\\map_1.txt");
-        Weapon ssword = new Sword("Sword",10,0,1,100,false);
-        Weapon bbow = new Bow("Bow",10,0,6,100,true);
+        Weapon ssword = new Sword("weapons.Sword",10,0,1,100,false);
+        Weapon bbow = new Bow("weapons.Bow",10,0,6,100,true);
         ArrayList<Weapon> Weapons = new ArrayList<>();
         Weapons.add(ssword);
         ArrayList<Weapon> Weapons2 = new ArrayList<>();
@@ -29,25 +36,25 @@ public class Simulation {
         Tile g3 = new Tile(7,6);
         Tile g4 = new Tile(7,8);
         Tile g5 = new Tile(8,7);
-        Character testobject1 = new Knight(2, "Test_1", "Human", 100, 100, 1, 1, 1, 3, (float) 5.00, inventory, inteligenceType1, true, 0, 0,MAPtable.Map[start.col][start.row]);
-        Character testobject2 = new Knight(3, "Test_2", "Human", 100, 100, 1, 1, 1, 3, (float) 5.00, inventory, inteligenceType2, true, 0, 0,MAPtable.Map[finish.col][finish.row]);
-        Character testobject3 = new Knight(4, "Test_3", "Human", 100, 100, 1, 1, 1, 3, (float) 5.00, inventory2, inteligenceType3, true, 0, 0,MAPtable.Map[testobject1Tile.col][testobject1Tile.row]);
-        Character testobject4 = new Knight(5, "Test_4", "Human", 100, 100, 1, 1, 1, 3, (float) 5.00, inventory2, inteligenceType4, true, 0, 0,MAPtable.Map[testobject4Tile.col][testobject4Tile.row]);
+        characters.Character testobject1 = new Knight(2, "Test_1", "Human", 100, 100, 1, 1, 1, 3, (float) 5.00, inventory, inteligenceType1, true, 0, 0,MAPtable.Map[start.col][start.row]);
+        characters.Character testobject2 = new Knight(3, "Test_2", "Human", 100, 100, 1, 1, 1, 3, (float) 5.00, inventory, inteligenceType2, true, 0, 0,MAPtable.Map[finish.col][finish.row]);
+        characters.Character testobject3 = new Knight(4, "Test_3", "Human", 100, 100, 1, 1, 1, 3, (float) 5.00, inventory2, inteligenceType3, true, 0, 0,MAPtable.Map[testobject1Tile.col][testobject1Tile.row]);
+        characters.Character testobject4 = new Knight(5, "Test_4", "Human", 100, 100, 1, 1, 1, 3, (float) 5.00, inventory2, inteligenceType4, true, 0, 0,MAPtable.Map[testobject4Tile.col][testobject4Tile.row]);
         //inteligenceType.setTarget(testobject2);
         MAPtable.placeCharacterOnMap(start);
         MAPtable.placeCharacterOnMap(finish);
         MAPtable.placeCharacterOnMap(testobject1Tile);
         MAPtable.placeCharacterOnMap(testobject4Tile);
-/*        MAPtable.placeCharacterOnMap(g1);
-        MAPtable.placeCharacterOnMap(g2);
-        MAPtable.placeCharacterOnMap(g3);
-        MAPtable.placeCharacterOnMap(g4);
-        MAPtable.placeCharacterOnMap(g5);*/
+/*        map.MAPtable.placeCharacterOnMap(g1);
+        map.MAPtable.placeCharacterOnMap(g2);
+        map.MAPtable.placeCharacterOnMap(g3);
+        map.MAPtable.placeCharacterOnMap(g4);
+        map.MAPtable.placeCharacterOnMap(g5);*/
         inteligenceType1.setCharacter(testobject1);
         inteligenceType2.setCharacter(testobject2);
         inteligenceType3.setCharacter(testobject3);
         inteligenceType4.setCharacter(testobject4);
-        ArrayList<Character> team = new ArrayList<>();
+        ArrayList<characters.Character> team = new ArrayList<>();
         team.add(testobject1);
         team.add(testobject4);
         Team teamA = new Team(team);
@@ -104,8 +111,8 @@ public class Simulation {
 
 /*            for(int r =0;r<16;r++){
                 for(int k=0;k<16;k++){
-                    if(MAPtable.Map[r][k].occupied==true){
-                        System.out.print(MAPtable.Map[r][k]+" ");
+                    if(map.MAPtable.Map[r][k].occupied==true){
+                        System.out.print(map.MAPtable.Map[r][k]+" ");
                     }
                 }
             }*/
