@@ -19,6 +19,8 @@ public abstract class InteligenceType{
     protected boolean checkIfEnemyIsInRange(){
         double distance;
         //calculating euclidean distance between to characters
+        if(target == null)
+            return false;
         distance = Math.sqrt(Math.pow(character.getPosition().col-target.getPosition().col,2)+Math.pow(character.getPosition().row-target.getPosition().row,2));
         if(distance<=character.getInventory().getCurrentWeapon().getRange())
             return true;

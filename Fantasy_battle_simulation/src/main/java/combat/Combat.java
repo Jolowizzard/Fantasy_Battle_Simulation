@@ -1,4 +1,9 @@
 package combat;
+
+import characters.Character;
+import characters.shooter.Shooter;
+import characters.warriors.Warrior;
+import java.sql.DatabaseMetaData;
 import java.lang.Math;
 import characters.Character;
 public class Combat {
@@ -6,22 +11,52 @@ public class Combat {
 /*    public boolean CheckIfHitConnects(characters.Character char1,characters.Character char2){
         if(CurrentLocation(char1))
     }*/
-    public void DealDamage(characters.Character char1, int Damage){
-        if(Damage>char1.getCurrentHp())
-        {
-            char1.takeDamage(char1.getCurrentHp());
-            char1.kill();
-
-        }
-        else {
-            char1.takeDamage(Damage);
-        }
-
-
-
-
-
+    private Character attacker;
+    private Character defender;
+    public Combat (Character attacker, Character defender){
+        this.attacker=attacker;
+        this.defender=defender;
     }
+    public void BeginCombat(){
+        //checking dodge
+        if(CheckDodge(defender))
+            return;
+        int Damage = defender.getInventory().getCurrentWeapon().attack();
+        int tempArmour = resolveArmour();
+
+        Damage += AplayBuffsOnAttack();
+        Damage -= tempArmour;
+        DealDamageToDefender(Damage);
+        //cleaning after combat
+        defender.setTemporalArmour(0);
+    }
+    public void DealDamageToDefender(int Damage){
+        if(Damage>0) {
+            if (Damage >= defender.getCurrentHp()) {
+                defender.takeDamage(defender.getCurrentHp());
+                defender.kill();
+            } else {
+                defender.takeDamage(Damage);
+            }
+        }
+    }
+    private int resolveArmour(){
+        int tempArmour = 0;
+        //setting temporal armour on every character that is warrior type and takes damage in this combat
+        if(defender.getMainClass().equals("Warrior")){
+            Warrior warrior = (Warrior) defender;
+            tempArmour = warrior.passiveBlock();
+        }
+        return tempArmour;
+    }
+    private int AplayBuffsOnAttack(){
+        if(attacker.getMainClass().equals("Shooter")){
+            Shooter shooter = (Shooter) attacker;
+            return shooter.passiveCrit();
+        }
+        return 0;
+    }
+
     //public void PerformAttack()
     /*public float CalculateDamage(characters.Character char1){
         inventory.Inventory inventory = new inventory.Inventory();

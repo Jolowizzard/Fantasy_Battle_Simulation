@@ -37,7 +37,7 @@ public abstract class Weapon {
         return Accuracy;
     }
 
-    public abstract void attack(Character attacker, Character defender);
+    public abstract int attack();
     public abstract boolean canAttack(Character character, Character target);
 
 }

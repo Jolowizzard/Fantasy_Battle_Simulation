@@ -1,6 +1,7 @@
 package inteligence;
 
 import characters.Character;
+import combat.Combat;
 import map.Tile;
 import searchalgorythm.SearchAlgorythm;
 import movement.MovesAndPaths;
@@ -28,28 +29,33 @@ public class Agressive extends InteligenceType {
         {
             target = lookForTarget();
         }
+        if(checkIfYouWon())
+            return;
         if(readyToFight){
             if(!checkIfEnemyIsInRange()){
                 MoveTowardsOpponent(character);
                 if(checkIfEnemyIsInRange()){
                     if (character.getInventory().getCurrentWeapon().canAttack(character, target)) {
-                        character.getInventory().getCurrentWeapon().attack(character, target);
-                        System.out.println(character.getName() + ": Enemy in range, ready to attack");
                         target.getIntType().setInCombat();
+                        Combat combat = new Combat(character,target);
+                        System.out.println(character.getName() + ": Enemy in range, ready to attack");
+                        combat.BeginCombat();
                     }
                 }
             }
             else {
                 if (character.getInventory().getCurrentWeapon().canAttack(character, target)) {
-                    character.getInventory().getCurrentWeapon().attack(character, target);
-                    System.out.println(character.getName() + ": Enemy in range, ready to attack");
                     target.getIntType().setInCombat();
+                    Combat combat = new Combat(character,target);
+                    System.out.println(character.getName() + ": Enemy in range, ready to attack");
+                    combat.BeginCombat();
                 } else {
                     MoveTowardsOpponent(character);
                     if (character.getInventory().getCurrentWeapon().canAttack(character, target)) {
-                        character.getInventory().getCurrentWeapon().attack(character, target);
-                        System.out.println(character.getName() + ": Enemy in range, ready to attack");
                         target.getIntType().setInCombat();
+                        Combat combat = new Combat(character,target);
+                        System.out.println(character.getName() + ": Enemy in range, ready to attack");
+                        combat.BeginCombat();
                     }
                 }
             }
@@ -91,5 +97,10 @@ public class Agressive extends InteligenceType {
             }
         }
         return OptimalTarget;
+    }
+    public boolean checkIfYouWon(){
+        if(target == null)
+            return true;
+        return false;
     }
 }

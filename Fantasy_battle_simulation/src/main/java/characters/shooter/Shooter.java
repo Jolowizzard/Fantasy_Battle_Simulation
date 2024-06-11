@@ -3,19 +3,27 @@ package characters.shooter;
 import inteligence.InteligenceType;
 import inventory.Inventory;
 import map.Tile;
+import utils.RandomNumber;
 
 public abstract class Shooter extends characters.Character {
-    private int CritChance;
-    private int CritValue;
+    protected int CritChance;
+    protected int CritValue;
     Shooter(int Id, String Name, String Race, int MaxHp, int CurrentHp, int Strength, int Dexterity, int Inteligence, int Movement, float DodgeChance, Inventory inventory, InteligenceType IntType, boolean IsAlive, int CritChance, int CritValue, Tile Position){
         super(Id,Name,Race,MaxHp,CurrentHp,Strength,Dexterity,Inteligence,Movement,DodgeChance,inventory,IntType,IsAlive,Position);
         this.CritChance=CritChance;
         this.CritValue=CritValue;
+        mainClass = "Shooter";
     }
     Shooter(int Id, String Name, InteligenceType inteligenceType, Tile Position, Inventory inventory){
         super(Id,Name,inteligenceType,Position,inventory);
         CritChance = 0;
         CritValue = 0;
+        mainClass = "Shooter";
+    }
+
+    public Shooter(int id, String name, InteligenceType inteligenceType, Inventory inventory) {
+        super(id,name,inteligenceType,inventory);
+        mainClass = "Shooter";
     }
 
     public int getCritChance(){
@@ -24,8 +32,10 @@ public abstract class Shooter extends characters.Character {
     public int getCritValue(){
         return CritValue;
     }
-
-    /*public int passiveCrit()
-        return hier will be method checking if passiveCrit worked;
-    }*/
+    public int passiveCrit(){
+        RandomNumber rand = new RandomNumber();
+        if(rand.generateRandomNumber()<=CritChance)
+            return CritValue;
+        return 0;
+    }
 }
