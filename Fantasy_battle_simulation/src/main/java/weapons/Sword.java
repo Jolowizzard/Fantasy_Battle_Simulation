@@ -12,9 +12,8 @@ public class Sword extends Weapon {
 
     }
     @Override
-    public void attack(Character attacker, Character defender){
-            Combat combat = new Combat();
-            combat.DealDamage(defender, getPhisicalDamage() * attacker.getStrength());
+    public int attack(){
+            return getPhisicalDamage();
     }
     @Override
     public boolean canAttack(Character character, Character target){

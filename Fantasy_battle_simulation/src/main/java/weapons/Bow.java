@@ -12,9 +12,8 @@ public class Bow extends Weapon {
         super(Name,PhisicalDamage,MagicDamage,Range,Accuracy,Hands);
     }
     @Override
-    public void attack(Character attacker, Character defender) {
-            Combat combat = new Combat();
-            combat.DealDamage(defender, getPhisicalDamage() * attacker.getStrength());
+    public int attack() {
+        return getPhisicalDamage();
     }
     public boolean canAttack(Character character, Character target){
         Tile startTile = character.getPosition();

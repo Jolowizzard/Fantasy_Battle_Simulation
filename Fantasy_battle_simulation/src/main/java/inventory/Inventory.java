@@ -10,11 +10,11 @@ public class Inventory {
     private Armour CurrentArmour;
     private ArrayList<Weapon> Weapons;
     private ArrayList<Armour> Armours;
-    Inventory(){
+    public Inventory(){
         Weapons = new ArrayList<>();
         Armours = new ArrayList<>();
     }
-    Inventory(ArrayList<Weapon> Weapons,ArrayList<Armour> Armours){
+    public Inventory(ArrayList<Weapon> Weapons,ArrayList<Armour> Armours){
        this.Weapons=Weapons;
        this.Armours=Armours;
     }
@@ -39,5 +39,11 @@ public class Inventory {
     }
     public void setCurrentArmour(Armour currentArmour){
         this.CurrentArmour = currentArmour;
+    }
+    public void addWeapon(Weapon weapon){
+        Weapons.add(weapon);
+    }
+    public void addArmour(Armour armour){
+        Armours.add(armour);
     }
 }

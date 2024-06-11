@@ -12,4 +12,18 @@ public class Paladin extends Warrior {
     public Paladin(int Id, String Name, InteligenceType inteligenceType, Tile Position, Inventory inventory){
         super(Id,Name,inteligenceType,Position,inventory);
     }
+    public Paladin(int Id, String Name, InteligenceType inteligenceType, Inventory inventory){
+        super(Id,Name,inteligenceType,inventory);
+        Race = "Human";
+        MaxHp = 150;
+        CurrentHp = MaxHp;
+        Strength = 10;
+        Dexterity = 10;
+        Intelignece = 10;
+        Movement = 3;
+        DodgeChance = 5;
+        BlockChance = 20;
+        BlockValue = 15;
+        subClass = "Paladin";
+    }
 }

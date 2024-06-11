@@ -4,20 +4,23 @@ import inteligence.*;
 import map.Tile;
 
 abstract public class Character {
-    private int Id;
-    private String Name;
-    private String Race;
-    private int MaxHp;
-    private int CurrentHp;
-    private int Strength;
-    private int Dexterity;
-    private int Intelignece;
-    private int Movement;
-    private float DodgeChance;
-    private Inventory inventory;
-    private InteligenceType IntType;
-    private boolean IsAlive;
-    private Tile Position;  // holds an information on which tile character is currently staying on.
+    protected int Id;
+    protected String Name;
+    protected String Race;
+    protected int MaxHp;
+    protected int CurrentHp;
+    protected int Strength;
+    protected int Dexterity;
+    protected int Intelignece;
+    protected int Movement;
+    protected float DodgeChance;
+    protected Inventory inventory;
+    protected InteligenceType IntType;
+    protected boolean IsAlive;
+    protected String mainClass;//stores information about character's main class warrior shooter, etc
+    protected String subClass;//stores information about character's sub class Knight, Paladin etc.
+    protected int temporalArmour;
+    protected Tile Position;  // holds an information on which tile character is currently staying on.
     protected Character(int Id, String Name, String Race, int MaxHp, int CurrentHp, int Strength, int Dexterity, int Inteligence, int Movement, float DodgeChance, Inventory inventory, InteligenceType IntType, boolean IsAlive, Tile Position){
         this.Id=Id;
         this.Name=Name;
@@ -50,6 +53,12 @@ abstract public class Character {
         this.inventory = inventory;
         IsAlive = true;
     }
+    protected Character(int Id, String Name, InteligenceType inteligenceType, Inventory inventory){
+        this.Id = Id;
+        this.Name = Name;
+        this.IntType = inteligenceType;
+        this.inventory = inventory;
+    }
     public int getId(){
         return Id;
     }
@@ -77,6 +86,7 @@ abstract public class Character {
     public int getMovement(){
         return Movement;
     }
+    public int getTemporalArmour(){return temporalArmour;};
 
     public double getDodgeChance() {
         return DodgeChance;
@@ -90,7 +100,15 @@ abstract public class Character {
         return IntType;
     }
     public Tile getPosition(){return  Position;}
+    public String getMainClass(){
+        return mainClass;
+    }
+    public String getSubClass(){
+        return subClass;
+    }
+
     public void setPosition(Tile NewPosition){Position = NewPosition;}
+    public void setTemporalArmour(int temporalArmour){this.temporalArmour = temporalArmour;}
     public boolean checkIfIsAlive(){
         return IsAlive;
     }
@@ -99,4 +117,7 @@ abstract public class Character {
         IsAlive = false;
         Position.occupied=false;
     }
+    public void useClassAbility(Character character){
+    }
+
 }
