@@ -37,7 +37,7 @@ public class Hero extends Entity{
         }
     }
     public void update(){
-        
+        //tu x i y zmieniać
 
     }
     public void draw(Graphics2D g2){

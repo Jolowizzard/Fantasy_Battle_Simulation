@@ -20,10 +20,20 @@ public class GamePanel extends JPanel implements Runnable{
     //FPS
     int FPS = 30;
 
-
+    //System
+    KeyHandler kayH = new KeyHandler(this);
     TileManager tileM = new TileManager(this);
+    public UI ui = new UI(this);
     Thread gameThread;
+    
+    //Entity
     Hero hero = new Hero(this);
+
+    //Game State
+    public int gameState;
+    public final int titleState = 0;
+    public final int playState = 1;
+    public final int pauseState = 2;
 
 
     public GamePanel() {
@@ -32,6 +42,11 @@ public class GamePanel extends JPanel implements Runnable{
         this.setDoubleBuffered(true);
     }
 
+    public void setupGame(){
+
+        gameState = titleState;
+
+    }
     public void startGameThread() {
 
         gameThread = new Thread(this);
@@ -75,18 +90,35 @@ public class GamePanel extends JPanel implements Runnable{
     }
     public void update(){
 
-        hero.update();
+        if(gameState == playState){
+            hero.update();
+        }
+        if(gameState == pauseState){
+            //nothing
+        }
 
     }
     public void paintComponent(Graphics g) {
 
         super.paintComponent(g);
-
         Graphics2D g2 = (Graphics2D)g;
 
-        tileM.draw(g2);
+        //Title Screen
+        if(gameState == titleState){
+            ui.draw(g2);
+        }
+        else{
+
+            //Tile
+            tileM.draw(g2);
         
-        hero.draw(g2);
+            //Heroes
+            hero.draw(g2);
+
+            //UI
+            ui.draw(g2);
+
+        }
         
         g2.dispose();
     }
