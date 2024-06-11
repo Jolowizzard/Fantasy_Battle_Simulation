@@ -21,7 +21,6 @@ public class UI {
 
         g2.setFont(arial_40);
         g2.setColor(Color.white);
-        
 
         //Title State
         if(gp.gameState == gp.titleState){

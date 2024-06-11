@@ -36,10 +36,10 @@ public class Simulation {
         Tile g3 = new Tile(7, 6);
         Tile g4 = new Tile(7, 8);
         Tile g5 = new Tile(8, 7);
-        characters.Character testobject1 = new Knight(2, "Test_1", "Human", 100, 100, 1, 1, 1, 3, (float) 5.00, inventory, inteligenceType1, true, 0, 0, MAPtable.Map[start.col][start.row]);
-        characters.Character testobject2 = new Knight(3, "Test_2", "Human", 100, 100, 1, 1, 1, 3, (float) 5.00, inventory, inteligenceType2, true, 0, 0, MAPtable.Map[finish.col][finish.row]);
-        characters.Character testobject3 = new Knight(4, "Test_3", "Human", 100, 100, 1, 1, 1, 3, (float) 5.00, inventory2, inteligenceType3, true, 0, 0, MAPtable.Map[testobject1Tile.col][testobject1Tile.row]);
-        characters.Character testobject4 = new Knight(5, "Test_4", "Human", 100, 100, 1, 1, 1, 3, (float) 5.00, inventory2, inteligenceType4, true, 0, 0, MAPtable.Map[testobject4Tile.col][testobject4Tile.row]);
+        characters.Character testobject1 = new Knight(2, "Test_1", "Human", 100, 100, 1, 1, 1, 3, (float) 5.00, inventory, inteligenceType1, true, 20, 5, MAPtable.Map[start.col][start.row]);
+        characters.Character testobject2 = new Knight(3, "Test_2", "Human", 100, 100, 1, 1, 1, 3, (float) 5.00, inventory, inteligenceType2, true, 50, 5, MAPtable.Map[finish.col][finish.row]);
+        characters.Character testobject3 = new Knight(4, "Test_3", "Human", 100, 100, 1, 1, 1, 3, (float) 5.00, inventory2, inteligenceType3, true, 20, 5, MAPtable.Map[testobject1Tile.col][testobject1Tile.row]);
+        characters.Character testobject4 = new Knight(5, "Test_4", "Human", 100, 100, 1, 1, 1, 3, (float) 5.00, inventory2, inteligenceType4, true, 20, 5, MAPtable.Map[testobject4Tile.col][testobject4Tile.row]);
         //inteligenceType.setTarget(testobject2);
         MAPtable.placeCharacterOnMap(start);
         MAPtable.placeCharacterOnMap(finish);
