@@ -1,6 +1,4 @@
 
-import com.sun.tools.javac.Main;
-
 import map.Tile2;
 
 import java.awt.Graphics2D;
@@ -97,7 +95,7 @@ public class TileManager {
                     //generowanie losowych kafelków 0 (33% szans że 0, 8% szans na każdy z zakresu 2-9)- - - - -- - -- - -- - - - -- - - - -- - - - -- -- -- 
                     if(num == 0){
                         Random rand = new Random();
-                        num = rand.nextInt(16) + 1;
+                        num = rand.nextInt(12) + 1;
                         if(num == 1 || num > 9)
                             num = 0;
                     }

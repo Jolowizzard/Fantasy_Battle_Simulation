@@ -8,6 +8,7 @@ public class UI {
     Graphics2D g2;
     Font arial_40;
     public int commandNum = 0;
+    public int titleScreenState = 0; // 0 : Main Menu, 1 : the second screen
 
     public UI(GamePanel gp){
         this.gp = gp;
@@ -45,9 +46,10 @@ public class UI {
         String text = "PAUSED";
         int x = getXforCenteredText(text);
         int y = gp.ScreenHeight/2;
+        g2.drawString(text,x,y);
 
     }
-    public int  getXforCenteredText(String text){
+    public int getXforCenteredText(String text){
         int lenght = (int)g2.getFontMetrics().getStringBounds(text, g2).getWidth();
         int x = gp.ScreenWidth/2 - lenght/2;
         return x;
@@ -58,7 +60,7 @@ public class UI {
         g2.fillRect(0, 0, gp.ScreenWidth, gp.ScreenHeight);
 
         //Title Name
-        g2.setFont(g2.getFont().deriveFont(Font.BOLD,55F));
+        g2.setFont(g2.getFont().deriveFont(Font.BOLD,40F));
         String text = "Fantasy Battle Simulator";
         int x = getXforCenteredText(text);
         int y = gp.tileSize*4;
