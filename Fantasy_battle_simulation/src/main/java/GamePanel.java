@@ -9,7 +9,7 @@ public class GamePanel extends JPanel implements Runnable{
     
     // Ustawienia kranu
     final int originalTileSize = 16;
-    final int scale = 4;
+    final int scale = 3;
 
     public final int tileSize = originalTileSize * scale;
     public final int maxScreenCol = 16;
@@ -40,6 +40,7 @@ public class GamePanel extends JPanel implements Runnable{
         this.setPreferredSize(new Dimension(ScreenWidth, ScreenHeight));
         this.setBackground(Color.BLACK);;
         this.setDoubleBuffered(true);
+        this.addKeyListener(kayH);
     }
 
     public void setupGame(){

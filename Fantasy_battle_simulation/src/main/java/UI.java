@@ -12,7 +12,7 @@ public class UI {
     public UI(GamePanel gp){
         this.gp = gp;
 
-        arial_40 = new Font("Arial", Font.PLAIN, 40);
+        arial_40 = new Font("Castellar", Font.PLAIN, 40);
     }
 
     public void draw(Graphics2D g2){
@@ -57,7 +57,7 @@ public class UI {
         g2.fillRect(0, 0, gp.ScreenWidth, gp.ScreenHeight);
 
         //Title Name
-        g2.setFont(g2.getFont().deriveFont(Font.BOLD,80F));
+        g2.setFont(g2.getFont().deriveFont(Font.BOLD,55F));
         String text = "Fantasy Battle Simulator";
         int x = getXforCenteredText(text);
         int y = gp.tileSize*4;
