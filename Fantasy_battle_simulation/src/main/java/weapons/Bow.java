@@ -15,6 +15,7 @@ public class Bow extends Weapon {
     public int attack() {
         return getPhisicalDamage();
     }
+    @Override
     public boolean canAttack(Character character, Character target){
         Tile startTile = character.getPosition();
         Tile finish = target.getPosition();

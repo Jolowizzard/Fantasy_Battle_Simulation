@@ -1,5 +1,4 @@
 package weapons;
-
 import combat.Combat;
 import map.Tile;
 import weapons.Weapon;
@@ -12,8 +11,8 @@ public class Sword extends Weapon {
 
     }
     @Override
-    public int attack(){
-            return getPhisicalDamage();
+    public int attack() {
+        return getPhisicalDamage();
     }
     @Override
     public boolean canAttack(Character character, Character target){
