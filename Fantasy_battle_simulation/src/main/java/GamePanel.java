@@ -23,7 +23,7 @@ public class GamePanel extends JPanel implements Runnable{
 
     TileManager tileM = new TileManager(this);
     Thread gameThread;
-
+    Hero hero = new Hero(this);
 
 
     public GamePanel() {
@@ -75,6 +75,8 @@ public class GamePanel extends JPanel implements Runnable{
     }
     public void update(){
 
+        hero.update();
+
     }
     public void paintComponent(Graphics g) {
 
@@ -83,8 +85,8 @@ public class GamePanel extends JPanel implements Runnable{
         Graphics2D g2 = (Graphics2D)g;
 
         tileM.draw(g2);
-        //g2.setColor(Color.WHITE);
-        //g2.fillRect(100, 100, tileSize, tileSize);
+        
+        hero.draw(g2);
         
         g2.dispose();
     }
