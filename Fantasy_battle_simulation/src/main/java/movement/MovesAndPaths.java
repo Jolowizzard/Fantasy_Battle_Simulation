@@ -1,9 +1,12 @@
+package movement;
+
+import map.MAPtable;
+import map.Tile;
+
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Map;
 
 public class MovesAndPaths {
- static void Move(Character character,ArrayList<Tile> locations){
+ public static void Move(characters.Character character, ArrayList<Tile> locations){
         int movement = character.getMovement();
         if(movement<=0)
             return;
@@ -25,15 +28,15 @@ public class MovesAndPaths {
         }
     }*/
   /*  static boolean CheckForObstacles(int position){
-        if(MAPtable.Map[MAPtable.xLocationOf(position)][MAPtable.xLocationOf(position)]==1)
+        if(map.MAPtable.Map[map.MAPtable.xLocationOf(position)][map.MAPtable.xLocationOf(position)]==1)
             return true;
         return false;
     }*/
 /*    static double CalculateDistanse(int a,int b){
-        int xa = MAPtable.xLocationOf(a);
-        int ya = MAPtable.yLocationOf(a);
-        int xb = MAPtable.xLocationOf(b);
-        int yb = MAPtable.yLocationOf(b);
+        int xa = map.MAPtable.xLocationOf(a);
+        int ya = map.MAPtable.yLocationOf(a);
+        int xb = map.MAPtable.xLocationOf(b);
+        int yb = map.MAPtable.yLocationOf(b);
         return Math.sqrt((xa+xb)*(xa+xb)+(ya+yb)*(ya+yb));
     }*/
 }

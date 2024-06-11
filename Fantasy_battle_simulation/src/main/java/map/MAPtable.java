@@ -1,14 +1,13 @@
+package map;
+
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Map;
 import java.util.Scanner;
 
 public class MAPtable implements Cloneable {
-    static Tile [][] Map = new Tile[16][16];
-    static int colSize = 16;
-    static int rowSize = 16;
+    public static Tile [][] Map = new Tile[16][16];
+    public static int colSize = 16;
+    public static int rowSize = 16;
     //static int ToNumberMap[][] = new int [16][16];
     //adds field numbering
     static void NumberMap(int ToNumberMap[][])
@@ -23,7 +22,7 @@ public class MAPtable implements Cloneable {
             }
         }
     }
-    static void placeCharacterOnMap(Tile location){
+    public static void placeCharacterOnMap(Tile location){
         int row = location.row;
         int col = location.col;
         Map[col][row].SetAsOccupied();
@@ -36,7 +35,7 @@ public class MAPtable implements Cloneable {
             System.out.println();
         }
     }
-    static void changeLocation(Character character, Tile location){
+    public static void changeLocation(characters.Character character, Tile location){
         Tile previousLocation = character.getPosition();
         Map[previousLocation.col][previousLocation.row].SetAsUnoccupied();
         int row = location.row;
@@ -45,7 +44,7 @@ public class MAPtable implements Cloneable {
         Map[col][row].SetAsOccupied();
     }
     //Function initializes the map from a .txt file
-    static void InitializeMap(String fileName){
+    public static void InitializeMap(String fileName){
         try{
             File file = new File(fileName);
             Scanner scanner = new Scanner(file);
@@ -55,7 +54,7 @@ public class MAPtable implements Cloneable {
                 line = scanner.nextLine();
                 line = line.replaceAll("\\s","");
                 for(int i =0;i<line.length();i++){
-                    Map[x][i]= new Tile(x,i);
+                    Map[x][i] = new Tile(x,i);
                     if(line.charAt(i)=='1')
                         Map[x][i].SetAsSolid();
                 }
@@ -83,7 +82,7 @@ public class MAPtable implements Cloneable {
         return 420;
     }*/
     //Fuction changes values on files, that corresponds character present location and past location
-    /*static void changeLocation(Character character,int location){
+    /*static void changeLocation(characters.Character character,int location){
         int x = xLocationOf(location);
         int y = yLocationOf(location);
         Map[x][y] = character.getId();

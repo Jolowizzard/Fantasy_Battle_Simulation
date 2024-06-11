@@ -1,19 +1,21 @@
+package map;
+
 import java.awt.image.BufferedImage;
 
 public class Tile {
-    Tile parent;
-    int col;
-    int row;
-    int gCost;
-    int hCost;
-    int fCost;
-    boolean start;
-    boolean destination;
-    boolean solid;
-    boolean open;
-    boolean checked;
-    boolean occupied;
-    boolean stop;
+    public Tile parent;
+    public int col;
+    public int row;
+    public int gCost;
+    public int hCost;
+    public int fCost;
+    public boolean start;
+    public boolean destination;
+    public boolean solid;
+    public boolean open;
+    public boolean checked;
+    public boolean occupied;
+    public boolean stop;
 
     public BufferedImage image;
 

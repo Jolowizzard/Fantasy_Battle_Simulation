@@ -1,7 +1,12 @@
+package main;
+
+import map.MAPtable;
+import map.Tile;
+
 import java.util.ArrayList;
 
 public class FunctionForTests {
-    static void PrintMap(Tile start,Tile finish,ArrayList<Tile> path){
+    static void PrintMap(Tile start, Tile finish, ArrayList<Tile> path){
         boolean printed=false;
         for(int i =0;i<16;i++){
             for(int j=0;j<16;j++){

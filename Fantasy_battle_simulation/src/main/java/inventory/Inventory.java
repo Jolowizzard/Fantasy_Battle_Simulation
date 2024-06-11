@@ -1,3 +1,8 @@
+package inventory;
+
+import armours.Armour;
+import weapons.Weapon;
+
 import java.util.ArrayList;
 
 public class Inventory {
@@ -13,7 +18,7 @@ public class Inventory {
        this.Weapons=Weapons;
        this.Armours=Armours;
     }
-    Inventory(ArrayList<Weapon> Weapons){
+    public Inventory(ArrayList<Weapon> Weapons){
         this.Weapons=Weapons;
         Armours = new ArrayList<>();
     }

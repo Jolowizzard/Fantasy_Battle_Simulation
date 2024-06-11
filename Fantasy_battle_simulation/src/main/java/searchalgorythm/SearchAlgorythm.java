@@ -1,3 +1,6 @@
+package searchalgorythm;
+
+import map.Tile;
 import org.w3c.dom.Node;
 
 import java.util.ArrayList;
@@ -14,15 +17,15 @@ public class SearchAlgorythm {
     Tile[][] tiles = new Tile[maxCol][maxRow];
     ArrayList<Tile> checked = new ArrayList<>();
     ArrayList<Tile> open = new ArrayList<>();
-
-    public SearchAlgorythm(Tile startTile,Tile destinationTile,Tile [][] map,int maxCol,int maxRow){
+    // Constructor needs start tile, destination map.Tile, map used in simulation, size of the map, numbers of columns and rows
+    public SearchAlgorythm(Tile startTile, Tile destinationTile, Tile[][] map, int maxCol, int maxRow){
         Clone(map);
         this.startTile = startTile;
         this.destinationTile = destinationTile;
         this.maxCol = maxCol;
         this.maxRow = maxRow;
     }
-    private void Clone(Tile [][] map){
+    private void Clone(Tile[][] map){
         for(int i = 0;i<maxCol;i++){
             for(int j =0 ;j<maxRow;j++){
                 tiles[i][j] = new Tile(map[i][j].col,map[i][j].row);
@@ -36,14 +39,13 @@ public class SearchAlgorythm {
 /*    public void PlaceNodes(){
         for(int col=0;col<maxCol;col++){
             for(int row=0;row<maxRow;row++)
-                tiles[col][row] = new Tile(col,row);
+                tiles[col][row] = new map.Tile(col,row);
         }
     }*/
     private void SetStartTile(int col, int row){
         tiles[col][row].SetAsStart();
         startTile = tiles[col][row];
         currentTile = startTile;
-
     }
     private void SetDestinationTile(int col, int row){
         tiles[col][row].SetAsDestination();
@@ -92,7 +94,7 @@ public class SearchAlgorythm {
                 openTile(tiles[col+1][row]);
 
             int bestTileIndex = 0;
-            int bestTilefCost = 999;
+            int bestTilefCost = Integer.MAX_VALUE;
 
             for(int i=0; i < open.size();i++){
                 if(open.get(i).fCost < bestTilefCost){
@@ -145,7 +147,7 @@ public class SearchAlgorythm {
             }
         }
     }
-    //funtion returns array list as a path from a start to destination without destination Tile and starting tile
+    //funtion returns array list as a path from a start to destination without destination map.Tile and starting tile
     private ArrayList<Tile> trackThePath(){
         Tile current = destinationTile;
         ArrayList<Tile> path = new ArrayList<>();

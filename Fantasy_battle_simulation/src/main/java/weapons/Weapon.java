@@ -1,3 +1,6 @@
+package weapons;
+import map.Tile;
+import characters.Character;
 public abstract class Weapon {
     private String Name;
     private int PhisicalDamage;
@@ -34,5 +37,7 @@ public abstract class Weapon {
         return Accuracy;
     }
 
-    public abstract void attack(Character attacker,Character defender);
+    public abstract void attack(Character attacker, Character defender);
+    public abstract boolean canAttack(Character character, Character target);
+
 }

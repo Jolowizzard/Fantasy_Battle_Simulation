@@ -1,3 +1,5 @@
+package armours;
+
 public abstract class Armour {
     private int NameId;
     private int PhisicalProtection;

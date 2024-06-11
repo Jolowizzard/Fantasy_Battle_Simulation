@@ -1,13 +1,15 @@
+package inteligence;
+import gamestructure.*;
 public abstract class InteligenceType{
-    protected Character target;
-    protected Character character;
+    protected characters.Character target;
+    protected characters.Character character;
     protected boolean inCombat=false;
     protected Team enemies;
     public InteligenceType(){
     }
-    public Character GetTarget(){return target;}
-    public void setCharacter(Character character){this.character = character;}
-    public void setTarget(Character character){target = character;}
+    public characters.Character GetTarget(){return target;}
+    public void setCharacter(characters.Character character){this.character = character;}
+    public void setTarget(characters.Character character){target = character;}
     public void setEnemies(Team enemies){
         this.enemies=enemies;
     }

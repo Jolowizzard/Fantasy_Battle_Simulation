@@ -1,9 +1,13 @@
+import com.sun.tools.javac.Main;
+import map.Tile2;
+
 import java.awt.Graphics2D;
 import java.io.BufferedReader;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.Objects;
 
 public class TileManager {
     
@@ -25,10 +29,12 @@ public class TileManager {
     public void getTileImage(){
         try{
             tile[0] = new Tile2();
-            tile[0].image = ImageIO.read(getClass().getResourceAsStream("Tile_0.png"));
+            tile[0].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("Tile_0.png")));
+            //tile[0].image = ImageIO.read(Objects.requireNonNull(Main.class.getResourceAsStream("Tile_0.png")));
 
             tile[1] = new Tile2();
-            tile[1].image = ImageIO.read(getClass().getResourceAsStream("Tile_1.png"));
+            tile[1].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("Tile_1.png")));
+            //tile[1].image = ImageIO.read(Objects.requireNonNull(Main.class.getResourceAsStream("Tile_1.png")));
 
         } catch(IOException e){
             e.printStackTrace();
@@ -37,7 +43,11 @@ public class TileManager {
     public void lodaMap(){
         try{
             //Wybór mapy - - - - - - - - - - -- - - -- - -- - - --  -- - -- - -- - - -- - - -- - -- - - - 
+<<<<<<< HEAD
             InputStream is = getClass().getResourceAsStream("map_1.txt");
+=======
+            InputStream is = getClass().getResourceAsStream("map_3.txt");
+>>>>>>> 07310c73ed164e7ac07ddd0e0d9dac919d47d279
             BufferedReader br = new BufferedReader(new InputStreamReader(is));
 
             int col = 0;

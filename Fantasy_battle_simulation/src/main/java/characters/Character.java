@@ -1,4 +1,9 @@
-abstract class Character {
+package characters;
+import inventory.Inventory;
+import inteligence.*;
+import map.Tile;
+
+abstract public class Character {
     private int Id;
     private String Name;
     private String Race;
@@ -13,7 +18,7 @@ abstract class Character {
     private InteligenceType IntType;
     private boolean IsAlive;
     private Tile Position;  // holds an information on which tile character is currently staying on.
-    Character(int Id,String Name,String Race,int MaxHp,int CurrentHp,int Strength,int Dexterity,int Inteligence, int Movement, float DodgeChance,Inventory inventory, InteligenceType IntType,boolean IsAlive,Tile Position){
+    protected Character(int Id, String Name, String Race, int MaxHp, int CurrentHp, int Strength, int Dexterity, int Inteligence, int Movement, float DodgeChance, Inventory inventory, InteligenceType IntType, boolean IsAlive, Tile Position){
         this.Id=Id;
         this.Name=Name;
         this.Race=Race;
@@ -28,6 +33,22 @@ abstract class Character {
         this.IntType=IntType;
         this.IsAlive=IsAlive;
         this.Position=Position;
+    }
+    protected Character(int Id, String Name, InteligenceType inteligenceType, Tile Position, Inventory inventory){
+        this.Id = Id;
+        this.Position=Position;
+        this.Name = Name;
+        this.IntType = inteligenceType;
+        Race = "Human";
+        MaxHp = 100;
+        CurrentHp = MaxHp;
+        Strength = 10;
+        Dexterity = 10;
+        Intelignece = 10;
+        Movement = 3;
+        DodgeChance = 5;
+        this.inventory = inventory;
+        IsAlive = true;
     }
     public int getId(){
         return Id;
