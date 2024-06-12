@@ -8,6 +8,7 @@ public class UI {
     Graphics2D g2;
     Font arial_40;
     public int commandNum = 0;
+    public int titleScreenState = 0; // 0 : Main Menu, 1 : the second screen
 
     public UI(GamePanel gp){
         this.gp = gp;
@@ -44,9 +45,10 @@ public class UI {
         String text = "PAUSED";
         int x = getXforCenteredText(text);
         int y = gp.ScreenHeight/2;
+        g2.drawString(text,x,y);
 
     }
-    public int  getXforCenteredText(String text){
+    public int getXforCenteredText(String text){
         int lenght = (int)g2.getFontMetrics().getStringBounds(text, g2).getWidth();
         int x = gp.ScreenWidth/2 - lenght/2;
         return x;

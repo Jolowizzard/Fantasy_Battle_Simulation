@@ -21,13 +21,15 @@ public class GamePanel extends JPanel implements Runnable{
     int FPS = 30;
 
     //System
-    KeyHandler kayH = new KeyHandler(this);
+    KeyHandler keyH = new KeyHandler(this);
     TileManager tileM = new TileManager(this);
     public UI ui = new UI(this);
+    //Sound music = new Sound(); // Created 2 different objects for Sound Effect and Music. If you use 1 object SE or Music stops sometimes.
+    //Sound se = new Sound();
     Thread gameThread;
     
     //Entity
-    Hero hero = new Hero(this);
+    Hero hero = new Hero(this, keyH);
 
     //Game State
     public int gameState;
@@ -40,11 +42,14 @@ public class GamePanel extends JPanel implements Runnable{
         this.setPreferredSize(new Dimension(ScreenWidth, ScreenHeight));
         this.setBackground(Color.BLACK);;
         this.setDoubleBuffered(true);
-        this.addKeyListener(kayH);
+        this.addKeyListener(keyH);
+        this.setFocusable(true);
     }
 
     public void setupGame(){
 
+        /*playMusic(0);   // 0 = BlueBoyAdventure.wav
+        stopMusic();*/
         gameState = titleState;
 
     }
@@ -81,12 +86,12 @@ public class GamePanel extends JPanel implements Runnable{
                 delta--;
                 drawCount++;
             }
-
+            /*FPS 
             if(timer >= 1000000000){
                 System.out.println("FPS: " + drawCount);
                 drawCount = 0;
                 timer = 0;
-            }
+            }*/
         }
     }
     public void update(){
@@ -119,8 +124,7 @@ public class GamePanel extends JPanel implements Runnable{
             //UI
             ui.draw(g2);
 
+            g2.dispose();
         }
-        
-        g2.dispose();
     }
 }
