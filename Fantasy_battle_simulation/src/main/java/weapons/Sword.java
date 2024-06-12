@@ -4,15 +4,15 @@ import map.Tile;
 import weapons.Weapon;
 import characters.Character;
 public class Sword extends Weapon {
-    public Sword(String Name, int PhisicalDamage, int MagicDamage, int Range, int Accuracy, boolean Hands){
-        super(Name,PhisicalDamage,MagicDamage,Range,Accuracy,Hands);
+    public Sword(String Name, int PhisicalDamage, int MagicDamage, int Range, int Accuracy, boolean Hands,boolean magickDamage){
+        super(Name,PhisicalDamage,MagicDamage,Range,Accuracy,Hands,magickDamage);
     }
     public void SetValues() {
 
     }
     @Override
-    public int attack() {
-        return getPhisicalDamage();
+    public int attack(Character user) {
+        return getPhisicalDamage() + (int) user.getStrength()/10;
     }
     @Override
     public boolean canAttack(Character character, Character target){

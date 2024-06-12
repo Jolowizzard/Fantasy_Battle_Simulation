@@ -21,7 +21,7 @@ public class Combat {
         //checking dodge
         if(CheckDodge(defender))
             return;
-        int Damage = defender.getInventory().getCurrentWeapon().attack();
+        int Damage = defender.getInventory().getCurrentWeapon().attack(attacker);
         int tempArmour = resolveArmour();
 
         Damage += AplayBuffsOnAttack();

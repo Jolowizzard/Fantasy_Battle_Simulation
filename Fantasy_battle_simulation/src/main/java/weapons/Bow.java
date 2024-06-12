@@ -8,12 +8,20 @@ import combat.Combat;
 import java.util.ArrayList;
 import characters.*;
 public class Bow extends Weapon {
-    public Bow(String Name, int PhisicalDamage, int MagicDamage, int Range, int Accuracy, boolean Hands){
-        super(Name,PhisicalDamage,MagicDamage,Range,Accuracy,Hands);
+    public Bow(String Name, int PhisicalDamage, int MagicDamage, int Range, int Accuracy, boolean Hands,boolean magickWeapon){
+        super(Name,PhisicalDamage,MagicDamage,Range,Accuracy,Hands,magickWeapon);
+    }
+    public Bow(){
+        setHands(true);
+        setAccuracy(70);
+        setRange(4);
+        setMagicDamage(0);
+        setMagickWeapon(false);
+        setPhisicalDamage(10);
     }
     @Override
-    public int attack() {
-        return getPhisicalDamage();
+    public int attack(Character user) {
+        return getPhisicalDamage() + user.getDexterity();
     }
     @Override
     public boolean canAttack(Character character, Character target){

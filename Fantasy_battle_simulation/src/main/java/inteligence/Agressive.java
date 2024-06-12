@@ -1,6 +1,8 @@
 package inteligence;
 
 import characters.Character;
+import characters.rogue.Rogue;
+import characters.warriors.Warrior;
 import combat.Combat;
 import map.Tile;
 import searchalgorythm.SearchAlgorythm;
@@ -33,7 +35,16 @@ public class Agressive extends InteligenceType {
             return;
         if(readyToFight){
             if(!checkIfEnemyIsInRange()){
-                MoveTowardsOpponent(character);
+                MoveTowardsOpponent(character,target);
+                if(character.getMainClass().equals("Rogue") && !checkIfEnemyIsInRange()){
+                    Rogue rogue = (Rogue) character;
+                    boolean acitveSecondMove = rogue.getSecondMove();
+                    if(acitveSecondMove) {
+                        rogue.performSecondMove(true);
+                        rogue.setSecondMove(false);
+                    }
+
+                }
                 if(checkIfEnemyIsInRange()){
                     if (character.getInventory().getCurrentWeapon().canAttack(character, target)) {
                         target.getIntType().setInCombat();
@@ -50,7 +61,7 @@ public class Agressive extends InteligenceType {
                     System.out.println(character.getName() + ": Enemy in range, ready to attack");
                     combat.BeginCombat();
                 } else {
-                    MoveTowardsOpponent(character);
+                    MoveTowardsOpponent(character,target);
                     if (character.getInventory().getCurrentWeapon().canAttack(character, target)) {
                         target.getIntType().setInCombat();
                         Combat combat = new Combat(character,target);
@@ -59,45 +70,19 @@ public class Agressive extends InteligenceType {
                     }
                 }
             }
-/*                if(checkIfEnemyIsInRange())
-                {
-                    target.getIntType().setInCombat();
-                    character.getInventory().getCurrentWeapon().attack(character,target);
-                    System.out.println(character.getName() + ": Enemy in range, ready to attack");
-                }
-            }else{
-                target.getIntType().setInCombat();
-                character.getInventory().getCurrentWeapon().attack(character,target);
-                System.out.println(character.getName()+ ": Enemy in range, ready to attack");*/
-
+            if(character.getMainClass().equals("Rogue")){
+                Rogue rogue = (Rogue) character;
+                boolean acitveSecondMove = rogue.getSecondMove();
+                if(acitveSecondMove)
+                    rogue.performSecondMove(false);
+                rogue.setSecondMove(true);
+            }
         }
         System.out.println(target.getName());
     }
-    private void MoveTowardsOpponent(characters.Character character){
-        SearchAlgorythm searchAlgorythm = new SearchAlgorythm(character.getPosition(),target.getPosition(), MAPtable.Map, MAPtable.colSize, MAPtable.rowSize);
-        ArrayList<Tile> path = new ArrayList<>();
-        path = searchAlgorythm.search();
-        MovesAndPaths.Move(character,path);
-    }
     private void setTarget(){
     }
-    private Character lookForTarget(){
-        int bestDistanse=999;
-        Character OptimalTarget=null;
-        for(int i = 0;i<enemies.team.size();i++){
-            if(enemies.team.get(i).checkIfIsAlive())
-            {
-                SearchAlgorythm searchAlgorythm = new SearchAlgorythm(character.getPosition(),enemies.team.get(i).getPosition(), MAPtable.Map, MAPtable.colSize, MAPtable.rowSize);
-                ArrayList<Tile> path = new ArrayList<>();
-                path = searchAlgorythm.search();
-                if(path.size()<bestDistanse) {
-                    bestDistanse = path.size();
-                    OptimalTarget=enemies.team.get(i);
-                }
-            }
-        }
-        return OptimalTarget;
-    }
+
     public boolean checkIfYouWon(){
         if(target == null)
             return true;

@@ -57,7 +57,7 @@ public class UI {
         g2.fillRect(0, 0, gp.ScreenWidth, gp.ScreenHeight);
 
         //Title Name
-        g2.setFont(g2.getFont().deriveFont(Font.BOLD,55F));
+        g2.setFont(g2.getFont().deriveFont(Font.BOLD,40F));
         String text = "Fantasy Battle Simulator";
         int x = getXforCenteredText(text);
         int y = gp.tileSize*4;

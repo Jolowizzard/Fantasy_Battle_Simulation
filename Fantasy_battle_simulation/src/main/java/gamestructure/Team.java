@@ -18,10 +18,14 @@ public class Team{
         }
     }
     public boolean CheckIfTeamIsTeamAlive(){
-        if(team.isEmpty())
-            return false;
-        else{
-            return true;
+        int aliveCharacters=0;
+
+        for(int i =0; i<team.size();i++){
+            if(team.get(i).checkIfIsAlive())
+                aliveCharacters++;
         }
+            if(aliveCharacters==0)
+                return false;
+            return true;
     }
 }

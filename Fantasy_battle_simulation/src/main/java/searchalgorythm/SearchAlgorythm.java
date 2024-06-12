@@ -127,6 +127,7 @@ public class SearchAlgorythm {
         }
         return finalPath;
     }
+
     private void openTile(Tile tile){
         if(tile.destination == true && tile.occupied == true){
             tile.SetAsOpen();

@@ -1,3 +1,5 @@
+import characters.rogue.Thief;
+import characters.shooter.Marksman;
 import characters.warriors.Knight;
 import gamestructure.Team;
 import inteligence.Agressive;
@@ -15,8 +17,8 @@ public class Simulation {
     public static void main(String [] args ) {
 
         MAPtable.InitializeMap("C:\\Users\\aleks\\Java_projects\\Fantasy_battle_simulator\\Fantasy_Battle_Simulation\\Fantasy_battle_simulation\\src\\main\\resources\\map_1.txt");
-        Weapon ssword = new Sword("weapons.Sword", 10, 0, 1, 100, false);
-        Weapon bbow = new Bow("weapons.Bow", 10, 0, 6, 100, true);
+        Weapon ssword = new Sword("weapons.Sword", 10, 0, 1, 100, false,false);
+        Weapon bbow = new Bow("weapons.Bow", 10, 0, 6, 100, true,false);
         ArrayList<Weapon> Weapons = new ArrayList<>();
         Weapons.add(ssword);
         ArrayList<Weapon> Weapons2 = new ArrayList<>();
@@ -27,8 +29,8 @@ public class Simulation {
         InteligenceType inteligenceType2 = new Agressive(true);
         InteligenceType inteligenceType3 = new Agressive(true);
         InteligenceType inteligenceType4 = new Agressive(true);
-        Tile start = new Tile(0, 4);
-        Tile testobject4Tile = new Tile(0, 3);
+        Tile start = new Tile(0, 0);
+        Tile testobject4Tile = new Tile(0, 1);
         Tile finish = new Tile(15, 15);
         Tile testobject1Tile = new Tile(15, 14);
         Tile g1 = new Tile(7, 7);
@@ -37,9 +39,9 @@ public class Simulation {
         Tile g4 = new Tile(7, 8);
         Tile g5 = new Tile(8, 7);
         characters.Character testobject1 = new Knight(2, "Test_1", "Human", 100, 100, 1, 1, 1, 3, (float) 5.00, inventory, inteligenceType1, true, 20, 5, MAPtable.Map[start.col][start.row]);
-        characters.Character testobject2 = new Knight(3, "Test_2", "Human", 100, 100, 1, 1, 1, 3, (float) 5.00, inventory, inteligenceType2, true, 50, 5, MAPtable.Map[finish.col][finish.row]);
+        characters.Character testobject2 = new Thief(3, "Test_2", "Human", 100, 100, 50, 1, 1, 3, (float) 50.00, inventory, inteligenceType2, true, true,MAPtable.Map[finish.col][finish.row]);
         characters.Character testobject3 = new Knight(4, "Test_3", "Human", 100, 100, 1, 1, 1, 3, (float) 5.00, inventory2, inteligenceType3, true, 20, 5, MAPtable.Map[testobject1Tile.col][testobject1Tile.row]);
-        characters.Character testobject4 = new Knight(5, "Test_4", "Human", 100, 100, 1, 1, 1, 3, (float) 5.00, inventory2, inteligenceType4, true, 20, 5, MAPtable.Map[testobject4Tile.col][testobject4Tile.row]);
+        characters.Character testobject4 = new Marksman(4,"Tobi",inteligenceType4,MAPtable.Map[testobject4Tile.col][testobject4Tile.row],inventory2);
         //inteligenceType.setTarget(testobject2);
         MAPtable.placeCharacterOnMap(start);
         MAPtable.placeCharacterOnMap(finish);
@@ -68,16 +70,13 @@ public class Simulation {
         testobject3.getIntType().setEnemies(teamA);
         testobject1.getIntType().setEnemies(teamB);
         testobject4.getIntType().setEnemies(teamB);
+
+        testobject2.getIntType().setAllays(teamB);
+        testobject3.getIntType().setAllays(teamB);
+        testobject1.getIntType().setAllays(teamA);
+        testobject4.getIntType().setAllays(teamA);
         boolean printed = false;
         for (int i = 0; i < 23; i++) {
-            if (!teamB.CheckIfTeamIsTeamAlive()) {
-                System.out.printf("A team won");
-                return;
-            }
-            if (!teamA.CheckIfTeamIsTeamAlive()) {
-                System.out.printf("B team won");
-                return;
-            }
             for (int col = 0; col < 16; col++) {
                 for (int row = 0; row < 16; row++) {
                     printed = false;
@@ -110,6 +109,14 @@ public class Simulation {
 
                 System.out.println();
 
+            }
+            if (!teamB.CheckIfTeamIsTeamAlive()) {
+                System.out.printf("Team A won");
+                return;
+            }
+            if (!teamA.CheckIfTeamIsTeamAlive()) {
+                System.out.printf("Team B won");
+                return;
             }
             System.out.println("Test object 1 :" + testobject1.getCurrentHp());
             System.out.println("Test object 2 :" + testobject2.getCurrentHp());
