@@ -12,20 +12,18 @@ public abstract class Shooter extends characters.Character {
         super(Id,Name,Race,MaxHp,CurrentHp,Strength,Dexterity,Inteligence,Movement,DodgeChance,inventory,IntType,IsAlive,Position);
         this.CritChance=CritChance;
         this.CritValue=CritValue;
-        mainClass = "Shooter";
+        setMainClass("Shooter");
     }
     Shooter(int Id, String Name, InteligenceType inteligenceType, Tile Position, Inventory inventory){
         super(Id,Name,inteligenceType,Position,inventory);
         CritChance = 0;
         CritValue = 0;
-        mainClass = "Shooter";
+        setMainClass("Shooter");
     }
-
     public Shooter(int id, String name, InteligenceType inteligenceType, Inventory inventory) {
         super(id,name,inteligenceType,inventory);
-        mainClass = "Shooter";
+        setMainClass("Shooter");
     }
-
     public int getCritChance(){
         return CritChance;
     }
@@ -37,5 +35,13 @@ public abstract class Shooter extends characters.Character {
         if(rand.generateRandomNumber()<=CritChance)
             return CritValue;
         return 0;
+    }
+
+    public void setCritChance(int critChance) {
+        CritChance = critChance;
+    }
+
+    public void setCritValue(int critValue) {
+        CritValue = critValue;
     }
 }

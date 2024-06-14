@@ -3,6 +3,7 @@ package characters.mage;
 import inteligence.InteligenceType;
 import inventory.Inventory;
 import map.Tile;
+import utils.RandomNumber;
 
 public abstract class Mage extends characters.Character {
     private int MagicCritChance;
@@ -11,11 +12,13 @@ public abstract class Mage extends characters.Character {
         super(Id,Name,Race,MaxHp,CurrentHp,Strength,Dexterity,Inteligence,Movement,DodgeChance,inventory,IntType,IsAlive,Position);
         this.MagicCritChance=MagicCritChance;
         this.MagicCritValue=MagicCritValue;
+        setMainClass("Mage");
     }
     Mage(int Id, String Name, InteligenceType inteligenceType, Tile Position, Inventory inventory){
         super(Id,Name,inteligenceType,Position,inventory);
         MagicCritChance = 0;
         MagicCritValue = 0;
+        setMainClass("Mage");
     }
 
     public int getMagicCritChance(){
@@ -25,8 +28,11 @@ public abstract class Mage extends characters.Character {
         return MagicCritValue;
     }
 
-    /*public int passiveMagicCrit()
-        return hier will be method checking if MagicCrit worked or not
-    }*/
+    public int passiveMagicCrit(){
+    RandomNumber rand = new RandomNumber();
+        if(rand.generateRandomNumber()<=MagicCritChance)
+            return MagicCritValue;
+        return 0;
+    }
 }
 

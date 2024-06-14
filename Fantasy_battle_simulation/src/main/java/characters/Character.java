@@ -4,24 +4,25 @@ import inteligence.*;
 import map.Tile;
 
 abstract public class Character {
-    protected int Id;
-    protected String Name;
-    protected String Race;
-    protected int MaxHp;
-    protected int CurrentHp;
-    protected int Strength;
-    protected int Dexterity;
-    protected int Intelignece;
-    protected int Movement;
-    protected float DodgeChance;
-    protected Inventory inventory;
-    protected InteligenceType IntType;
-    protected boolean IsAlive;
-    protected String mainClass;//stores information about character's main class warrior shooter, etc
-    protected String subClass;//stores information about character's sub class Knight, Paladin etc.
-    protected int temporalArmour;
-    protected Tile Position;  // holds an information on which tile character is currently staying on.
-    protected Character(int Id, String Name, String Race, int MaxHp, int CurrentHp, int Strength, int Dexterity, int Inteligence, int Movement, float DodgeChance, Inventory inventory, InteligenceType IntType, boolean IsAlive, Tile Position){
+    private int Id;
+    private String Name;
+    private String Race;
+    private int MaxHp;
+    private int CurrentHp;
+    private int Strength;
+    private int Dexterity;
+    private int Intelignece;
+    private int Movement;
+    private float DodgeChance;
+    private Inventory inventory;
+    private InteligenceType IntType;
+    private boolean IsAlive;
+    private String mainClass;//stores information about character's main class warrior shooter, etc
+    private String subClass;//stores information about character's sub class Knight, Paladin etc.
+    private int temporalArmour;
+    private Tile Position;  // holds an information on which tile character is currently staying on.
+    private int [] statusEffects = new int [1]; // There a status effects such as bleed, stun etc.
+    public Character(int Id, String Name, String Race, int MaxHp, int CurrentHp, int Strength, int Dexterity, int Inteligence, int Movement, float DodgeChance, Inventory inventory, InteligenceType IntType, boolean IsAlive, Tile Position){
         this.Id=Id;
         this.Name=Name;
         this.Race=Race;
@@ -107,6 +108,71 @@ abstract public class Character {
         return subClass;
     }
 
+    public void setAlive(boolean alive) {
+        IsAlive = alive;
+    }
+
+    public void setCurrentHp(int currentHp) {
+        CurrentHp = currentHp;
+    }
+
+    public void setDexterity(int dexterity) {
+        Dexterity = dexterity;
+    }
+
+    public void setDodgeChance(float dodgeChance) {
+        DodgeChance = dodgeChance;
+    }
+
+    public void setId(int id) {
+        Id = id;
+    }
+
+    public void setIntelignece(int intelignece) {
+        Intelignece = intelignece;
+    }
+
+    public void setIntType(InteligenceType intType) {
+        IntType = intType;
+    }
+
+    public void setInventory(Inventory inventory) {
+        this.inventory = inventory;
+    }
+
+    public void setMainClass(String mainClass) {
+        this.mainClass = mainClass;
+    }
+
+    public void setMaxHp(int maxHp) {
+        MaxHp = maxHp;
+    }
+
+    public void setMovement(int movement) {
+        Movement = movement;
+    }
+
+    public void setName(String name) {
+        Name = name;
+    }
+
+    public void setRace(String race) {
+        Race = race;
+    }
+
+    public void setStrength(int strength) {
+        Strength = strength;
+    }
+
+    public void setStatusEffects(int[] statusEffects) {
+        this.statusEffects = statusEffects;
+    }
+    public void setSubClass(String subClass) {
+        this.subClass = subClass;
+    }
+    public int[] getStatusEffects() {
+        return statusEffects;
+    }
     public void setPosition(Tile NewPosition){Position = NewPosition;}
     public void setTemporalArmour(int temporalArmour){this.temporalArmour = temporalArmour;}
     public boolean checkIfIsAlive(){

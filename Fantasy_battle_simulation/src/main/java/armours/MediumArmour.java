@@ -2,10 +2,13 @@ package armours;
 
 import armours.Armour;
 
+import java.util.ArrayList;
+
 public class MediumArmour extends Armour {
-    MediumArmour(int NameId,int PhisicalProtection,int MagickaProtection,int MSReduction){
-        super(NameId,PhisicalProtection,MagickaProtection,MSReduction);
+    MediumArmour(int NameId,int physicalProtection,int magicalProtection,int MSReduction){
+        super(NameId,physicalProtection,magicalProtection,MSReduction);
     }
-    @Override
-    public void BlockDamage(){};
+    MediumArmour(int NameId){
+        super(NameId,6,3,1);
+    }
 }

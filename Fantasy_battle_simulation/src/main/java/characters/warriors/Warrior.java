@@ -6,8 +6,8 @@ import map.Tile;
 import utils.RandomNumber;
 
 public abstract class Warrior extends characters.Character {
-    protected int BlockChance;
-    protected int BlockValue;
+    private int BlockChance;
+    private int BlockValue;
     Warrior(int Id, String Name, String Race, int MaxHp, int CurrentHp, int Strength, int Dexterity, int Inteligence, int Movement, float DodgeChance, Inventory inventory, InteligenceType IntType, boolean IsAlive, int BlockChance, int BlockValue, Tile Position){
         super(Id,Name,Race,MaxHp,CurrentHp,Strength,Dexterity,Inteligence,Movement,DodgeChance,inventory,IntType,IsAlive,Position);
         this.BlockChance=BlockChance;
@@ -36,5 +36,13 @@ public abstract class Warrior extends characters.Character {
         if(rand.generateRandomNumber()<=BlockChance)
             return BlockValue;
         return 0;
+    }
+
+    public void setBlockChance(int blockChance) {
+        BlockChance = blockChance;
+    }
+
+    public void setBlockValue(int blockValue) {
+        BlockValue = blockValue;
     }
 }

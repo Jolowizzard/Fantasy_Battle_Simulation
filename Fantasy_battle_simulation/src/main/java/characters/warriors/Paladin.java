@@ -14,16 +14,16 @@ public class Paladin extends Warrior {
     }
     public Paladin(int Id, String Name, InteligenceType inteligenceType, Inventory inventory){
         super(Id,Name,inteligenceType,inventory);
-        Race = "Human";
-        MaxHp = 150;
-        CurrentHp = MaxHp;
-        Strength = 10;
-        Dexterity = 10;
-        Intelignece = 10;
-        Movement = 3;
-        DodgeChance = 5;
-        BlockChance = 20;
-        BlockValue = 15;
-        subClass = "Paladin";
+        setRace("Human");
+        setMaxHp(150);
+        setCurrentHp(150);
+        setStrength(10);
+        setDexterity(10);
+        setIntelignece(10);
+        setMovement(3);
+        setDodgeChance(5);
+        setBlockChance(20);
+        setBlockValue(15);
+        setSubClass("Paladin");
     }
 }

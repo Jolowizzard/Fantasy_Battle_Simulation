@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class MovesAndPaths {
  public static void Move(characters.Character character, ArrayList<Tile> locations){
-        int movement = character.getMovement();
+        int movement = character.getMovement()-character.getInventory().getCurrentArmour().getMSReduction();
         if(movement<=0)
             return;
         Tile location = null;

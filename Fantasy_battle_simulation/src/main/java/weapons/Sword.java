@@ -3,6 +3,9 @@ import combat.Combat;
 import map.Tile;
 import weapons.Weapon;
 import characters.Character;
+
+import java.util.ArrayList;
+
 public class Sword extends Weapon {
     public Sword(String Name, int PhisicalDamage, int MagicDamage, int Range, int Accuracy, boolean Hands,boolean magickDamage){
         super(Name,PhisicalDamage,MagicDamage,Range,Accuracy,Hands,magickDamage);
@@ -11,8 +14,13 @@ public class Sword extends Weapon {
 
     }
     @Override
-    public int attack(Character user) {
-        return getPhisicalDamage() + (int) user.getStrength()/10;
+    public ArrayList<Integer> attack(Character user) {
+        ArrayList<Integer> damageTypes = new ArrayList<>();
+        //Now we use only two damage types - magical and physical
+        damageTypes.add(getPhisicalDamage() + user.getStrength()/10);
+        if(getMagickWeapon())
+            damageTypes.add(getMagicDamage() + user.getIntelignece());
+        return damageTypes;
     }
     @Override
     public boolean canAttack(Character character, Character target){

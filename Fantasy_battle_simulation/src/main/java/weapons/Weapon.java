@@ -1,13 +1,16 @@
 package weapons;
 import map.Tile;
 import characters.Character;
+
+import java.util.ArrayList;
+
 public abstract class Weapon {
     private String Name;
     private int PhisicalDamage;
     private int MagicDamage;
     private int Range;
     private int Accuracy;
-    private boolean MagickWeapon; // 1 - weapon is magical and deals magic damage ; 0 - weapon isnt magical and deals physical damage
+    private boolean MagicWeapon; // 1 - weapon is magical and deals magic damage ; 0 - weapon isnt magical and deals physical damage
     private boolean Hands;// 0 equals 1 handed weapon and 1 equals 2 handed weapon
     Weapon(String Name,int PhisicalDamage,int MagicDamage,int Range,int Accuracy,boolean Hands,boolean MagickWeapon){
         this.Name=Name;
@@ -16,7 +19,7 @@ public abstract class Weapon {
         this.Range=Range;
         this.Accuracy=Accuracy;
         this.Hands=Hands;
-        this.MagickWeapon=MagickWeapon;
+        this.MagicWeapon=MagickWeapon;
     }
     Weapon(){}
     public void setName(String name){this.Name = name;}
@@ -26,7 +29,7 @@ public abstract class Weapon {
     }
 
     public void setMagickWeapon(boolean magickWeapon) {
-        MagickWeapon = magickWeapon;
+        MagicWeapon = magickWeapon;
     }
 
     public void setPhisicalDamage(int phisicalDamage) {
@@ -64,8 +67,10 @@ public abstract class Weapon {
     public int getAccuracy() {
         return Accuracy;
     }
-
-    public abstract int attack(Character user);
+    public boolean getMagickWeapon(){return MagicWeapon;}
+    //There come a structure of this method
+    //There damage type and damage;
+    public abstract ArrayList<Integer> attack(Character user);
     public abstract boolean canAttack(Character character, Character target);
 
 }

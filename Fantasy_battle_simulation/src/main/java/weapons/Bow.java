@@ -20,8 +20,13 @@ public class Bow extends Weapon {
         setPhisicalDamage(10);
     }
     @Override
-    public int attack(Character user) {
-        return getPhisicalDamage() + user.getDexterity();
+    public ArrayList<Integer> attack(Character user) {
+        ArrayList<Integer> damageTypes = new ArrayList<>();
+        //Now we use only two damage types - magical and physical
+        damageTypes.add(getPhisicalDamage() + user.getStrength()/10);
+        if(getMagickWeapon())
+            damageTypes.add(getMagicDamage() + user.getIntelignece());
+        return damageTypes;
     }
     @Override
     public boolean canAttack(Character character, Character target){

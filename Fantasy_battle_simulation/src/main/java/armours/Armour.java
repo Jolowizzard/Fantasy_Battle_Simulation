@@ -1,17 +1,64 @@
 package armours;
 
+import java.util.ArrayList;
+
 public abstract class Armour {
-    private int NameId;
-    private int PhisicalProtection;
-    private int MagickProtection;
+    private int NameId  ;
+    private int physicalProtection;
+    private int magicalProtection;
     private int MSReduction;//Amount of MS reducted by wearing an armour
 
-    Armour(int NameId,int PhisicalProtection,int MagickaProtection,int MSReduction){
+    Armour(int NameId,int physicalProtection,int magicalProtection,int MSReduction){
         this.NameId=NameId;
-        this.PhisicalProtection=PhisicalProtection;
-        this.MagickProtection=MagickaProtection;
+        this.physicalProtection=physicalProtection;
+        this.physicalProtection=magicalProtection;
         this.MSReduction=MSReduction;
     }
-    public abstract void BlockDamage();
+    Armour(int NameId){
+        this.NameId = NameId;
+    }
+    public int getMagicalProtection() {
+        return magicalProtection;
+    }
+
+    public int getMSReduction() {
+        return MSReduction;
+    }
+
+    public int getNameId() {
+        return NameId;
+    }
+
+    public int getPhysicalProtection() {
+        return physicalProtection;
+    }
+
+    public void setMagicalProtection(int magicalProtection) {
+        this.magicalProtection = magicalProtection;
+    }
+
+    public void setMSReduction(int MSReduction) {
+        this.MSReduction = MSReduction;
+    }
+
+    public void setNameId(int nameId) {
+        NameId = nameId;
+    }
+
+    public void setPhysicalProtection(int physicalProtection) {
+        this.physicalProtection = physicalProtection;
+    }
+    //this method returns type and amount of damage dealt by this type
+    // 0 - physical
+    // 1 - magical
+    // To be continued . . .
+    public ArrayList<Integer> blockDamage(){
+        ArrayList<Integer> blockTypes = new ArrayList<>();
+        blockTypes.add(0);
+        blockTypes.add(getPhysicalProtection());
+        blockTypes.add(1);
+        blockTypes.add(getMagicalProtection());
+        return blockTypes;
+    }
 
 }

@@ -11,28 +11,30 @@ public class Marksman extends Shooter {
     }
     public Marksman(int Id, String Name, InteligenceType inteligenceType, Tile Position, Inventory inventory){
         super(Id,Name,inteligenceType,Position,inventory);
-        Race = "Human";
-        MaxHp = 80;
-        CurrentHp = MaxHp;
-        Strength = 10;
-        Dexterity = 30;
-        Intelignece = 10;
-        Movement = 4;
-        DodgeChance = 10;
-        CritChance = 5;
-        CritValue = 50;
+        setSubClass("Marksman");
+        setRace("Human");
+        setMaxHp(80);
+        setCurrentHp(80);
+        setStrength(10);
+        setDexterity(30);
+        setIntelignece(10);
+        setMovement(4);
+        setDodgeChance(10);
+        setCritChance(5);
+        setCritValue(50);
     }
     public Marksman(int Id, String Name, InteligenceType inteligenceType, Inventory inventory){
         super(Id,Name,inteligenceType,inventory);
-        Race = "Human";
-        MaxHp = 80;
-        CurrentHp = MaxHp;
-        Strength = 10;
-        Dexterity = 30;
-        Intelignece = 10;
-        Movement = 4;
-        DodgeChance = 10;
-        CritChance = 5;
-        CritValue = 50;
+        setSubClass("Marksman");
+        setRace("Human");
+        setMaxHp(80);
+        setCurrentHp(80);
+        setStrength(10);
+        setDexterity(30);
+        setIntelignece(10);
+        setMovement(4);
+        setDodgeChance(10);
+        setCritChance(5);
+        setCritValue(50);
     }
 }
