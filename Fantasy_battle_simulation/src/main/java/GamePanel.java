@@ -20,18 +20,39 @@ public class GamePanel extends JPanel implements Runnable{
     //FPS
     int FPS = 30;
 
-
+    //System
+    KeyHandler keyH = new KeyHandler(this);
     TileManager tileM = new TileManager(this);
+    public UI ui = new UI(this);
+    //Sound music = new Sound(); // Created 2 different objects for Sound Effect and Music. If you use 1 object SE or Music stops sometimes.
+    //Sound se = new Sound();
     Thread gameThread;
+    
+    //Entity
+    Hero hero = new Hero(this, keyH);
 
+    //Game State
+    public int gameState;
+    public final int titleState = 0;
+    public final int playState = 1;
+    public final int pauseState = 2;
 
 
     public GamePanel() {
         this.setPreferredSize(new Dimension(ScreenWidth, ScreenHeight));
         this.setBackground(Color.BLACK);;
         this.setDoubleBuffered(true);
+        this.addKeyListener(keyH);
+        this.setFocusable(true);
     }
 
+    public void setupGame(){
+
+        /*playMusic(0);   // 0 = BlueBoyAdventure.wav
+        stopMusic();*/
+        gameState = titleState;
+
+    }
     public void startGameThread() {
 
         gameThread = new Thread(this);
@@ -65,27 +86,45 @@ public class GamePanel extends JPanel implements Runnable{
                 delta--;
                 drawCount++;
             }
-
+            /*FPS 
             if(timer >= 1000000000){
                 System.out.println("FPS: " + drawCount);
                 drawCount = 0;
                 timer = 0;
-            }
+            }*/
         }
     }
     public void update(){
+
+        if(gameState == playState){
+            hero.update();
+        }
+        if(gameState == pauseState){
+            //nothing
+        }
 
     }
     public void paintComponent(Graphics g) {
 
         super.paintComponent(g);
-
         Graphics2D g2 = (Graphics2D)g;
 
-        tileM.draw(g2);
-        //g2.setColor(Color.WHITE);
-        //g2.fillRect(100, 100, tileSize, tileSize);
+        //Title Screen
+        if(gameState == titleState){
+            ui.draw(g2);
+        }
+        else{
+
+            //Tile
+            tileM.draw(g2);
         
-        g2.dispose();
+            //Heroes
+            hero.draw(g2);
+
+            //UI
+            ui.draw(g2);
+
+            g2.dispose();
+        }
     }
 }
