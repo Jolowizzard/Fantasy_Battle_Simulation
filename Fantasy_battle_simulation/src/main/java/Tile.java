@@ -4,9 +4,9 @@ public class Tile {
     Tile parent;
     int col;
     int row;
-    int gCost;
-    int hCost;
-    int fCost;
+    double gCost;
+    double hCost;
+    double fCost;
     boolean start;
     boolean destination;
     boolean solid;

@@ -7,7 +7,7 @@ import java.util.Map;
 public class Simulation {
     public static void main(String [] args ){
 
-        MAPtable.InitializeMap("C:\\Users\\aleks\\Java_projects\\Fantasy_battle_simulator\\Fantasy_Battle_Simulation\\Fantasy_battle_simulation\\src\\main\\resources\\map_1.txt");
+        MAPtable.InitializeMap("D:\\Fantasy_Battle_Simulation\\Fantasy_battle_simulation\\src\\main\\resources\\map_1.txt");
         Weapon ssword = new Sword("Sword",10,0,1,100,false);
         ArrayList<Weapon> Weapons = new ArrayList<>();
         Weapons.add(ssword);
@@ -34,7 +34,7 @@ public class Simulation {
         MAPtable.placeCharacterOnMap(finish);
         MAPtable.placeCharacterOnMap(testobject1Tile);
         MAPtable.placeCharacterOnMap(testobject4Tile);
-/*        MAPtable.placeCharacterOnMap(g1);
+/*      MAPtable.placeCharacterOnMap(g1);
         MAPtable.placeCharacterOnMap(g2);
         MAPtable.placeCharacterOnMap(g3);
         MAPtable.placeCharacterOnMap(g4);

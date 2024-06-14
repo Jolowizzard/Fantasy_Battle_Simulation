@@ -13,6 +13,11 @@ public class Combat {
             char1.takeDamage(Damage);
         }
     }
+    public void CheckForColision(Character attacker,Character defender){
+        Tile start = attacker.getPosition();
+        Tile end = defender.getPosition();
+
+    }
     //public void PerformAttack()
     /*public float CalculateDamage(Character char1){
         Inventory inventory = new Inventory();

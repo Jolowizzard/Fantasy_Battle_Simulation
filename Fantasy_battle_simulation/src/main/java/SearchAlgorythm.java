@@ -59,11 +59,20 @@ public class SearchAlgorythm {
         }
     }
     private void GetCost(Tile tile){
-        int xDis = Math.abs(tile.col - startTile.col);
-        int yDis = Math.abs(tile.row - startTile.col);
+        double xDis = Math.abs(tile.col - startTile.col);
+        double yDis = Math.abs(tile.row - startTile.row);
         tile.gCost = xDis + yDis;
         xDis = Math.abs(tile.col - destinationTile.col);
-        yDis = Math.abs(tile.row - destinationTile.col);
+        yDis = Math.abs(tile.row - destinationTile.row);
+        tile.hCost = xDis + yDis;
+        tile.fCost = tile.gCost + tile.hCost;
+    }
+    private void GetCostEuclidean(Tile tile){
+        double xDis = Math.pow(tile.col - startTile.col,2);
+        double yDis = Math.pow(tile.col - startTile.row,2);
+        tile.gCost = Math.sqrt(xDis+yDis);
+        xDis = Math.pow(tile.col - destinationTile.col,2);
+        yDis = Math.pow(tile.col - destinationTile.col,2);
         tile.hCost = xDis + yDis;
         tile.fCost = tile.gCost + tile.hCost;
     }
@@ -92,7 +101,7 @@ public class SearchAlgorythm {
                 openTile(tiles[col+1][row]);
 
             int bestTileIndex = 0;
-            int bestTilefCost = Integer.MAX_VALUE;
+            double bestTilefCost = 999.0;
 
             for(int i=0; i < open.size();i++){
                 if(open.get(i).fCost < bestTilefCost){
@@ -125,6 +134,63 @@ public class SearchAlgorythm {
         }
         return finalPath;
     }
+    //method checks if there are no solid objects in on a line of shot
+    //returns true
+    public boolean searchForColision(){
+        int steps=0;
+        SetStartTile(startTile.col,startTile.row);
+        SetDestinationTile(destinationTile.col,destinationTile.row);
+        while(goalReached == false && steps<300){
+            steps++;
+            int col = currentTile.col;
+            int row = currentTile.row;
+
+            currentTile.SetAsChecked();
+            checked.add(currentTile);
+            open.remove(currentTile);
+            if(row-1 >= 0) {
+                GetCostEuclidean(tiles[col][row - 1]);
+                openTileColision(tiles[col][row - 1]);
+            }
+            if(row+1 < maxRow) {
+                GetCostEuclidean(tiles[col][row + 1]);
+                openTileColision(tiles[col][row + 1]);
+            }
+            if(col-1 >= 0) {
+                GetCostEuclidean(tiles[col - 1][row]);
+                openTileColision(tiles[col - 1][row]);
+            }
+            if(col+1 < maxCol) {
+                GetCostEuclidean(tiles[col + 1][row]);
+                openTileColision(tiles[col + 1][row]);
+            }
+
+            int bestTileIndex = 0;
+            double bestTilefCost = 999.0;
+
+            for(int i=0; i < open.size();i++){
+                if(open.get(i).fCost < bestTilefCost){
+                    bestTileIndex = i;
+                    bestTilefCost = open.get(i).fCost;
+                }
+                else if(open.get(i).fCost == bestTilefCost){
+                    if(open.get(i).fCost < open.get(bestTileIndex).fCost){
+                        bestTilefCost = i;
+                    }
+                }
+            }
+            //hier is an error occuring on map_4 when finish is set on 15,1
+            if(open.size() == 0)
+                break;
+            currentTile = open.get(bestTileIndex);
+            if(currentTile.solid == true)
+                return true;
+            if(currentTile == destinationTile){
+                return false;
+            }
+        }
+        return false;
+    }
     private void openTile(Tile tile){
         if(tile.destination == true && tile.occupied == true){
             tile.SetAsOpen();
@@ -137,6 +203,11 @@ public class SearchAlgorythm {
             tile.parent = currentTile;
             open.add(tile);
         }
+    }
+    private void openTileColision(Tile tile){
+        if(tile.open == false && tile.checked == false)
+            tile.SetAsOpen();
+            open.add(tile);
     }
     private void ResetParents(){
         for(int i=0;i<maxCol;i++){
