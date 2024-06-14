@@ -163,16 +163,19 @@ abstract public class Character {
     public void setStrength(int strength) {
         Strength = strength;
     }
+    public void receiveBleedDamage(int bleed){setCurrentHp(getCurrentHp()-bleed);}
 
     public void setStatusEffects(int[] statusEffects) {
         this.statusEffects = statusEffects;
     }
+    public void setSpecificStatusEffect(int statusEffect, int newValue) {this.statusEffects[statusEffect] = newValue;}
     public void setSubClass(String subClass) {
         this.subClass = subClass;
     }
     public int[] getStatusEffects() {
         return statusEffects;
     }
+    public int getSpecificStatusEffectValue(int statusEffect) {return statusEffects[statusEffect];}
     public void setPosition(Tile NewPosition){Position = NewPosition;}
     public void setTemporalArmour(int temporalArmour){this.temporalArmour = temporalArmour;}
     public boolean checkIfIsAlive(){

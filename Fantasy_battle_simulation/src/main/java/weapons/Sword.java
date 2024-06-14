@@ -17,9 +17,12 @@ public class Sword extends Weapon {
     public ArrayList<Integer> attack(Character user) {
         ArrayList<Integer> damageTypes = new ArrayList<>();
         //Now we use only two damage types - magical and physical
+        damageTypes.add(0);
         damageTypes.add(getPhisicalDamage() + user.getStrength()/10);
-        if(getMagickWeapon())
+        if(getMagickWeapon()) {
+            damageTypes.add(1);
             damageTypes.add(getMagicDamage() + user.getIntelignece());
+        }
         return damageTypes;
     }
     @Override

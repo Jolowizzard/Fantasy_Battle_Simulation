@@ -5,13 +5,13 @@ import armours.Armour;
 import java.util.ArrayList;
 
 public class MediumArmour extends Armour {
-    MediumArmour(int NameId,int physicalProtection,int magicalProtection,int MSReduction){
+    public MediumArmour(int NameId,int physicalProtection,int magicalProtection,int MSReduction){
         super(NameId,physicalProtection,magicalProtection,MSReduction);
     }
-    MediumArmour(int NameId){
+    public MediumArmour(int NameId){
         super(NameId,6,3,1);
     }
-    MediumArmour(){
+    public MediumArmour(){
         setPhysicalProtection(6);
         setMagicalProtection(3);
         setMSReduction(1);

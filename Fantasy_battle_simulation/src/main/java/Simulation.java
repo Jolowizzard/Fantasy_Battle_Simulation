@@ -1,4 +1,5 @@
 import armours.Armour;
+import armours.LightArmour;
 import characters.rogue.Thief;
 import characters.shooter.Marksman;
 import characters.warriors.Knight;
@@ -9,6 +10,7 @@ import inventory.Inventory;
 import map.MAPtable;
 import map.Tile;
 import weapons.Bow;
+import weapons.Dagger;
 import weapons.Sword;
 import weapons.Weapon;
 
@@ -20,14 +22,16 @@ public class Simulation {
         MAPtable.InitializeMap("D:\\Fantasy_Battle_Simulation\\Fantasy_battle_simulation\\src\\main\\resources\\map_3.txt");
         Weapon ssword = new Sword("weapons.Sword", 10, 0, 1, 100, false,false);
         Weapon bbow = new Bow("weapons.Bow", 10, 0, 6, 100, true,false);
+        Weapon dagger = new Dagger();
+        Armour lightArmour = new LightArmour();
         ArrayList<Weapon> Weapons = new ArrayList<>();
-        Weapons.add(ssword);
+        Weapons.add(dagger);
         ArrayList<Weapon> Weapons2 = new ArrayList<>();
         Weapons2.add(bbow);
         ArrayList<Armour> armours = new ArrayList<>();
-
-        Inventory inventory = new Inventory(Weapons);
-        Inventory inventory2 = new Inventory(Weapons2);
+        armours.add(lightArmour);
+        Inventory inventory = new Inventory(Weapons,armours);
+        Inventory inventory2 = new Inventory(Weapons2,armours);
         InteligenceType inteligenceType1 = new Agressive(true);
         InteligenceType inteligenceType2 = new Agressive(true);
         InteligenceType inteligenceType3 = new Agressive(true);
@@ -78,6 +82,11 @@ public class Simulation {
         testobject3.getIntType().setAllays(teamB);
         testobject1.getIntType().setAllays(teamA);
         testobject4.getIntType().setAllays(teamA);
+
+        testobject1.getIntType().inventorySetup();
+        testobject2.getIntType().inventorySetup();
+        testobject3.getIntType().inventorySetup();
+        testobject4.getIntType().inventorySetup();
         boolean printed = false;
         for (int i = 0; i < 23; i++) {
             for (int col = 0; col < 16; col++) {

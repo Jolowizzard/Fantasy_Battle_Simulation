@@ -8,16 +8,16 @@ public abstract class Armour {
     private int magicalProtection;
     private int MSReduction;//Amount of MS reducted by wearing an armour
 
-    Armour(int NameId,int physicalProtection,int magicalProtection,int MSReduction){
+    public Armour(int NameId,int physicalProtection,int magicalProtection,int MSReduction){
         this.NameId=NameId;
         this.physicalProtection=physicalProtection;
         this.physicalProtection=magicalProtection;
         this.MSReduction=MSReduction;
     }
-    Armour(int NameId){
+    public Armour(int NameId){
         this.NameId = NameId;
     }
-    Armour(){}
+    public Armour(){}
     public int getMagicalProtection() {
         return magicalProtection;
     }

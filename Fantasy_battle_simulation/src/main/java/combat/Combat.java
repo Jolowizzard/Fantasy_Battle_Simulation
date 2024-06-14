@@ -38,10 +38,13 @@ public class Combat {
                     break;
                 case 2:
                     if(damageTypes.get(i+1)>0){
-
+                        defender.setSpecificStatusEffect(0,damageTypes.get(i+1)); // setting new value for bleeding status effect
                     }
             }
-            damageTypes.set(i,damageTypes.get(i)-armourTypes.get(i)+additionalDamage);
+            if(i>armourTypes.size())
+                damageTypes.set(i+1,damageTypes.get(i+1)-armourTypes.get(i+1)+additionalDamage);
+            else
+                damageTypes.set(i+1,damageTypes.get(i+1)+additionalDamage);
         }
         // here damage Types goes to class, that prints logs to txt or csv file
 

@@ -1,10 +1,12 @@
 package inteligence;
+import armours.Armour;
 import characters.Character;
 import gamestructure.*;
 import map.MAPtable;
 import map.Tile;
 import movement.MovesAndPaths;
 import searchalgorythm.SearchAlgorythm;
+import weapons.Weapon;
 
 import java.util.ArrayList;
 
@@ -78,4 +80,49 @@ public abstract class InteligenceType{
     }
     public abstract void PerformTurn();
     public Character getCharacter(){return character;}
+    public void inventorySetup(){
+        //setting optimal weapon - this with highest damage output
+        ArrayList<Weapon> weapons = character.getInventory().getWeapons();
+        int expectedDamageOutput;
+        int optimalWeaponIndex = -1;
+        int tmp = 0;
+        for(int i =0;i<weapons.size();i++){
+            expectedDamageOutput = 0;
+            ArrayList<Integer> damageString =  weapons.get(i).attack(character);
+            for(int j=1;j<damageString.size();j+=2)
+                expectedDamageOutput += damageString.get(j);
+
+            if(expectedDamageOutput>tmp) {
+                optimalWeaponIndex = i;
+                tmp = expectedDamageOutput;
+            }
+        }
+        //setting optimal armour - this with highest damage reduction
+        ArrayList<Armour> armours = character.getInventory().getArmours();
+        int expectedDamageReduction = 0;
+        int optimalArmourIndex = -1;
+        tmp = 0;
+        for(int i =0;i<armours.size();i++){
+            expectedDamageReduction = 0;
+            ArrayList<Integer> reductionString = armours.get(i).blockDamage();
+            for(int j=1;j<reductionString.size();j+=2)
+                expectedDamageReduction += reductionString.get(j);
+            if(expectedDamageReduction>tmp) {
+                optimalArmourIndex = i;
+                tmp = expectedDamageReduction;
+            }
+        }
+        if(optimalWeaponIndex!=-1)
+            character.getInventory().setCurrentWeapon(weapons.get(optimalWeaponIndex));
+        if(optimalArmourIndex!=-1)
+            character.getInventory().setCurrentArmour(armours.get(optimalArmourIndex));
+    }
+    public void resolveStatusEffects(){
+        int bleed = character.getSpecificStatusEffectValue(0);
+        System.out.println("Character " + character.getName() + " Bleed: "+bleed);
+        character.receiveBleedDamage(bleed);
+        character.setSpecificStatusEffect(0,0);
+        if(character.getCurrentHp()<=0)
+            character.kill();
+    }
 }

@@ -6,8 +6,26 @@ import utils.RandomNumber;
 import java.util.ArrayList;
 
 public class Dagger extends Weapon{
-    int bleedDamage;
-    int bleedChance;
+    private int  bleedDamage;
+    private int bleedChance;
+    public Dagger () {
+        setName("Dagger");
+        setHands(false);
+        setAccuracy(100);
+        setMagicDamage(0);
+        setMagickWeapon(false);
+        setPhisicalDamage(10);
+        setRange(1);
+        setBleedChance(70);
+        setBleedDamage(10);
+    }
+    public int getBleedChance() {
+        return bleedChance;
+    }
+    public void setBleedChance(int bleedChance) {this.bleedChance = bleedChance;}
+    public int getBleedDamage() {return bleedDamage;}
+    public void setBleedDamage(int bleedDamage) {this.bleedDamage = bleedDamage;}
+
     @Override
     public ArrayList<Integer> attack(Character user) {
         //Dagger sets a bleed status effect, which is another type of damage
@@ -16,7 +34,7 @@ public class Dagger extends Weapon{
             damageTypes.add(0);
             damageTypes.add(getPhisicalDamage() + user.getStrength()/20 + user.getDexterity());
 
-            damageTypes.add(0);
+            damageTypes.add(1);
             if(getMagickWeapon())
                 damageTypes.add(getMagicDamage() + user.getIntelignece());
             else

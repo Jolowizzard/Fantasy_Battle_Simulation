@@ -20,6 +20,7 @@ public class Agressive extends InteligenceType {
     }
     @Override
     public void PerformTurn(){
+        resolveStatusEffects();
         if(!character.checkIfIsAlive())
             return;
         System.out.println(character.getName() + " : performe turn");
