@@ -19,9 +19,14 @@ import weapons.Weapon;
 import java.util.ArrayList;
 
 public class Simulation {
+    private Team teamYellow;
+    private Team teamPurple;
+    public Simulation(String mapName,Team teamYellow,Team teamPurple){
+
+    }
     public static void main(String [] args ) {
 
-        MAPtable.InitializeMap("D:\\Fantasy_Battle_Simulation\\Fantasy_battle_simulation\\src\\main\\resources\\map_3.txt");
+        MAPtable.InitializeMap("map_3.txt");
         Weapon ssword = new Sword("weapons.Sword", 10, 0, 1, 100, false,false);
         Weapon bbow = new Bow("weapons.Bow", 10, 0, 6, 100, true,false);
         Weapon dagger = new Dagger();
@@ -81,8 +86,8 @@ public class Simulation {
         team.add(testobject2);
         team.add(testobject3);
         Team teamB = new Team(team);
-        System.out.println(teamA.team);
-        System.out.println(teamB.team);
+        System.out.println(teamA.getTeam());
+        System.out.println(teamB.getTeam());
         testobject2.getIntType().setEnemies(teamA);
         testobject3.getIntType().setEnemies(teamA);
         testobject1.getIntType().setEnemies(teamB);
@@ -102,15 +107,15 @@ public class Simulation {
             for (int col = 0; col < 16; col++) {
                 for (int row = 0; row < 16; row++) {
                     printed = false;
-                    for (int j = 0; j < teamA.team.size(); j++) {
-                        if (MAPtable.Map[col][row] == teamA.team.get(j).getPosition()) {
+                    for (int j = 0; j < teamA.getTeam().size(); j++) {
+                        if (MAPtable.Map[col][row] == teamA.getTeam().get(j).getPosition()) {
                             System.out.print("\u001B[41m");
                             System.out.print("A ");
                             printed = true;
                         }
                     }
-                    for (int j = 0; j < teamB.team.size(); j++) {
-                        if (MAPtable.Map[col][row] == teamB.team.get(j).getPosition()) {
+                    for (int j = 0; j < teamB.getTeam().size(); j++) {
+                        if (MAPtable.Map[col][row] == teamB.getTeam().get(j).getPosition()) {
                             System.out.print("\u001B[44m");
                             System.out.print("B ");
                             printed = true;

@@ -14,5 +14,5 @@ public abstract class Item {
     public String getName() {return name;}
     public void setName(String name) {this.name = name;}
 
-    public abstract void use(Character character);
+    public abstract boolean use(Character character);
 }

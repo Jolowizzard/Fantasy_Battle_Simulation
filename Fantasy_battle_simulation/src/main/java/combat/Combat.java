@@ -21,6 +21,10 @@ public class Combat {
         //checking dodge
         if(CheckDodge(defender))
             return;
+        if(defender.getInventory().getCurrentItem()!=null){
+            if(defender.getInventory().getCurrentItem().use(defender))//if shield worked end combat
+                return;
+        }
         ArrayList<Integer> damageTypes = attacker.getInventory().getCurrentWeapon().attack(attacker);
         ArrayList<Integer> armourTypes = resolveArmour();
         int currentDamage;
