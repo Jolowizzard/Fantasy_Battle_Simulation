@@ -23,10 +23,12 @@ public class HealPotion extends Item{
     public void setFull(boolean full) {this.full = full;}
 
     @Override
-    public void use(Character character){
+    public boolean use(Character character){
         if(isFull()) {
             System.out.println("used healing potion and healed for : "+ (int)((float)character.getMaxHp() *( (float)healthPercentageValue / 100.0)));
             character.setCurrentHp(character.getCurrentHp() + (int)((float)character.getMaxHp() *( (float)healthPercentageValue / 100.0)));//Adding percentage value of hp to characters current hp
+            return true;
         }
+        return false;
     }
 }

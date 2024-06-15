@@ -1,7 +1,6 @@
 package map;
 
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.util.Scanner;
 
 public class MAPtable implements Cloneable {
@@ -45,23 +44,22 @@ public class MAPtable implements Cloneable {
     }
     //Function initializes the map from a .txt file
     public static void InitializeMap(String fileName){
-        try{
-            File file = new File(fileName);
-            Scanner scanner = new Scanner(file);
-            int x=0;
-            while(scanner.hasNextLine()){
-                var line = new String();
-                line = scanner.nextLine();
-                line = line.replaceAll("\\s","");
-                for(int i =0;i<line.length();i++){
-                    Map[x][i] = new Tile(x,i);
-                    if(line.charAt(i)=='1')
+        try {
+            InputStream is = MAPtable.class.getResourceAsStream("/" + fileName);// Reading a file from resources
+            BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+            String line;
+            int x = 0;
+            while ((line = reader.readLine()) != null) {
+                line = line.replaceAll("\\s", "");
+                for (int i = 0; i < line.length(); i++) {
+                    Map[x][i] = new Tile(x, i);
+                    if (line.charAt(i) == '1')
                         Map[x][i].SetAsSolid();
                 }
                 x++;
             }
         }
-        catch (FileNotFoundException e){
+        catch (IOException e){
             System.out.println("An error occurred");
             e.printStackTrace();
         }

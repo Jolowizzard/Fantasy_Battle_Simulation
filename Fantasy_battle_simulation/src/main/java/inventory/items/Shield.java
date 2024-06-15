@@ -1,6 +1,9 @@
 package inventory.items;
 
 import characters.Character;
+import utils.RandomNumber;
+
+import java.util.Random;
 
 public class Shield extends Item {
     private int blockChance;
@@ -27,7 +30,8 @@ public class Shield extends Item {
     }
 
     @Override
-    public void use(Character character) {
-
+    public boolean use(Character character) {
+        RandomNumber d100 = new RandomNumber();
+        return blockChance <= d100.generateRandomNumber();
     }
 }

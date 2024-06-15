@@ -2,6 +2,7 @@ package inteligence;
 import armours.Armour;
 import characters.Character;
 import gamestructure.*;
+import inventory.items.Item;
 import map.MAPtable;
 import map.Tile;
 import movement.MovesAndPaths;
@@ -42,15 +43,15 @@ public abstract class InteligenceType{
     public Character lookForTarget(){
         int bestDistanse=999;
         Character OptimalTarget=null;
-        for(int i = 0;i<enemies.team.size();i++){
-            if(enemies.team.get(i).checkIfIsAlive())
+        for(int i = 0;i<enemies.getTeam().size();i++){
+            if(enemies.getTeam().get(i).checkIfIsAlive())
             {
-                SearchAlgorythm searchAlgorythm = new SearchAlgorythm(character.getPosition(),enemies.team.get(i).getPosition(), MAPtable.Map, MAPtable.colSize, MAPtable.rowSize);
+                SearchAlgorythm searchAlgorythm = new SearchAlgorythm(character.getPosition(),enemies.getTeam().get(i).getPosition(), MAPtable.Map, MAPtable.colSize, MAPtable.rowSize);
                 ArrayList<Tile> path = new ArrayList<>();
                 path = searchAlgorythm.search();
                 if(path.size()<bestDistanse) {
                     bestDistanse = path.size();
-                    OptimalTarget=enemies.team.get(i);
+                    OptimalTarget=enemies.getTeam().get(i);
                 }
             }
         }
@@ -59,15 +60,15 @@ public abstract class InteligenceType{
     public Character lookForTeammate(){
         int bestDistanse=999;
         Character OptimalTarget=null;
-        for(int i = 0;i<allays.team.size();i++){
-            if(allays.team.get(i).checkIfIsAlive() && allays.team.get(i) != character)
+        for(int i = 0;i<allays.getTeam().size();i++){
+            if(allays.getTeam().get(i).checkIfIsAlive() && allays.getTeam().get(i) != character)
             {
-                SearchAlgorythm searchAlgorythm = new SearchAlgorythm(character.getPosition(),allays.team.get(i).getPosition(), MAPtable.Map, MAPtable.colSize, MAPtable.rowSize);
+                SearchAlgorythm searchAlgorythm = new SearchAlgorythm(character.getPosition(),allays.getTeam().get(i).getPosition(), MAPtable.Map, MAPtable.colSize, MAPtable.rowSize);
                 ArrayList<Tile> path = new ArrayList<>();
                 path = searchAlgorythm.search();
                 if(path.size()<bestDistanse) {
                     bestDistanse = path.size();
-                    OptimalTarget=allays.team.get(i);
+                    OptimalTarget=allays.getTeam().get(i);
                 }
             }
         }
@@ -80,7 +81,9 @@ public abstract class InteligenceType{
         MovesAndPaths.Move(character,path);
     }
     public abstract void PerformTurn();
+
     public Character getCharacter(){return character;}
+
     public void inventorySetup(){
         //setting optimal weapon - this with highest damage output
         ArrayList<Weapon> weapons = character.getInventory().getWeapons();
@@ -117,6 +120,16 @@ public abstract class InteligenceType{
             character.getInventory().setCurrentWeapon(weapons.get(optimalWeaponIndex));
         if(optimalArmourIndex!=-1)
             character.getInventory().setCurrentArmour(armours.get(optimalArmourIndex));
+        ArrayList<Item> items = character.getInventory().getItems();
+        //Looking for shield
+
+        for(int i = 0 ;i < items.size();i++){
+            if(items.get(i).getName().equals("Shield")){
+                character.getInventory().setCurrentItem(items.get(i));
+                break;
+            }
+        }
+
     }
     public void resolveStatusEffects(){
         int bleed = character.getSpecificStatusEffectValue(0);
