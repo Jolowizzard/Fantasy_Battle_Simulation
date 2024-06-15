@@ -188,41 +188,59 @@ public class CharacterCreator {
         }
         return null;
     }
-    public void CharacterCreation(Tile ChoosenTile, String ChoosenName )
+    public Character CharacterCreation(Tile ChoosenTile, String ChoosenName )
     {
+        Character error = new Knight();
         if(getKnight()==true)
         {
-            createKnight(CounterId,ChoosenTile, ChoosenName);
+            Character character=createKnight(CounterId,ChoosenTile, ChoosenName);
+            CounterId = CounterId - 1;
+            return character;
         }
         if(getPaladin()==true) {
-            createPaladin(CounterId, ChoosenTile, ChoosenName);
+            Character character=createPaladin(CounterId, ChoosenTile, ChoosenName);
+            CounterId = CounterId - 1;
+            return character;
         }
             if(getWizard()==true)
             {
-                createWizard(CounterId,ChoosenTile, ChoosenName);
+                Character character=createWizard(CounterId,ChoosenTile, ChoosenName);
+                CounterId = CounterId - 1;
+                return character;
             }
             if(getDruid()==true)
             {
-                createDruid(CounterId,ChoosenTile, ChoosenName);
+                Character character=createDruid(CounterId,ChoosenTile, ChoosenName);
+                CounterId = CounterId - 1;
+                return character;
             }
             if(getMarksman()==true)
             {
-                createMarksman(CounterId,ChoosenTile, ChoosenName);
+                Character character=createMarksman(CounterId,ChoosenTile, ChoosenName);
+                CounterId = CounterId - 1;
+                return character;
             }
             if(getRanger()==true)
             {
-                createRanger(CounterId,ChoosenTile, ChoosenName);
+                Character character=createRanger(CounterId,ChoosenTile, ChoosenName);
+                CounterId = CounterId - 1;
+                return character;
             }
             if(getAssassin()==true)
             {
-                createAssassin(CounterId,ChoosenTile, ChoosenName);
+                Character character=createAssassin(CounterId,ChoosenTile, ChoosenName);
+                CounterId = CounterId - 1;
+                return character;
             }
             if(getThief()==true)
             {
-                createThief(CounterId,ChoosenTile, ChoosenName);
+                Character character = createThief(CounterId,ChoosenTile, ChoosenName);
+                CounterId = CounterId - 1;
+                return character;
 
             }
             CounterId = CounterId - 1;
+      return error;
     }
 
 public void SetCharacterBooleansToFalse()
@@ -236,59 +254,59 @@ public void SetCharacterBooleansToFalse()
     setDruid(false);
     setWizard(false);
 }
-    public void createKnight(int id, Tile position, String Name) {
-        ArrayList<Weapon> Weapons = new ArrayList<>();
-        Inventory inventory = new Inventory();
+    public Character createKnight(int id, Tile position, String Name) {
+        InventoryCreator inventory = new InventoryCreator();
         InteligenceType intelligence = new Agressive(true);
-        characters.Character newKnight = new Knight(id, Name, intelligence, position, inventory);
+        characters.Character newKnight = new Knight(id, Name, intelligence, position, inventory.CreateInventory());
+        return newKnight;
     }
 
-    public void createPaladin(int id, Tile position, String Name) {
-        ArrayList<Weapon> Weapons = new ArrayList<>();
-        Inventory inventory = new Inventory();
+    public Character createPaladin(int id, Tile position, String Name) {
+        InventoryCreator inventory = new InventoryCreator();
         InteligenceType intelligence = new Agressive(true);
-        characters.Character newPaladin = new Paladin(id, Name, intelligence, position, inventory);
+        characters.Character newPaladin = new Paladin(id, Name, intelligence, position, inventory.CreateInventory());
+        return newPaladin;
     }
 
-    public void createRanger(int id, Tile position, String Name) {
-        ArrayList<Weapon> Weapons = new ArrayList<>();
-        Inventory inventory = new Inventory();
+    public Character createRanger(int id, Tile position, String Name) {
+        InventoryCreator inventory = new InventoryCreator();
         InteligenceType intelligence = new Agressive(true);
-        characters.Character newRanger = new Ranger(id, Name, intelligence, position, inventory);
+        characters.Character newRanger = new Ranger(id, Name, intelligence, position, inventory.CreateInventory());
+        return newRanger;
     }
 
-    public void createMarksman(int id, Tile position, String Name) {
-        ArrayList<Weapon> Weapons = new ArrayList<>();
-        Inventory inventory = new Inventory();
+    public Character createMarksman(int id, Tile position, String Name) {
+        InventoryCreator inventory = new InventoryCreator();
         InteligenceType intelligence = new Agressive(true);
-        characters.Character newMarksman = new Marksman(id, Name, intelligence, position, inventory);
+        characters.Character newMarksman = new Marksman(id, Name, intelligence, position, inventory.CreateInventory());
+        return newMarksman;
     }
 
-    public void createDruid(int id, Tile position, String Name) {
-        ArrayList<Weapon> Weapons = new ArrayList<>();
-        Inventory inventory = new Inventory();
+    public Character createDruid(int id, Tile position, String Name) {
+        InventoryCreator inventory = new InventoryCreator();
         InteligenceType intelligence = new Agressive(true);
-        characters.Character newDruid = new Druid(id, Name, intelligence, position, inventory);
+        characters.Character newDruid = new Druid(id, Name, intelligence, position, inventory.CreateInventory());
+        return newDruid;
     }
 
-    public void createWizard(int id, Tile position, String Name) {
-        ArrayList<Weapon> Weapons = new ArrayList<>();
-        Inventory inventory = new Inventory();
+    public Character createWizard(int id, Tile position, String Name) {
+        InventoryCreator inventory = new InventoryCreator();
         InteligenceType intelligence = new Agressive(true);
-        characters.Character newWizard = new Wizard(id, Name, intelligence, position, inventory);
+        characters.Character newWizard = new Wizard(id, Name, intelligence, position, inventory.CreateInventory());
+        return newWizard;
     }
 
-    public void createAssassin(int id, Tile position, String Name) {
-        ArrayList<Weapon> Weapons = new ArrayList<>();
-        Inventory inventory = new Inventory();
+    public Character createAssassin(int id, Tile position, String Name) {
+        InventoryCreator inventory = new InventoryCreator();
         InteligenceType intelligence = new Agressive(true);
-        characters.Character newAssasin = new Assassin(id, Name, intelligence, position, inventory);
+        characters.Character newAssasin = new Assassin(id, Name, intelligence, position, inventory.CreateInventory());
+        return newAssasin;
     }
 
-    public void createThief(int id, Tile position, String Name) {
-        ArrayList<Weapon> Weapons = new ArrayList<>();
-        Inventory inventory = new Inventory();
+    public Character createThief(int id, Tile position, String Name) {
+        InventoryCreator inventory = new InventoryCreator();
         InteligenceType intelligence = new Agressive(true);
-        characters.Character newThief = new Thief(id, Name, intelligence, position, inventory);
+        characters.Character newThief = new Thief(id, Name, intelligence, position, inventory.CreateInventory());
+        return newThief;
     }
 }

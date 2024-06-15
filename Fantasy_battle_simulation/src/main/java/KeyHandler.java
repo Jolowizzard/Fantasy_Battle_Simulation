@@ -1,10 +1,12 @@
 import simulationsetup.CharacterCreator;
+import simulationsetup.InventoryCreator;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 public class KeyHandler implements KeyListener{
 CharacterCreator characterCreator = new CharacterCreator();
+InventoryCreator inventoryCreator = new InventoryCreator();
     GamePanel gp;
 
     public KeyHandler(GamePanel gp){
@@ -229,65 +231,65 @@ CharacterCreator characterCreator = new CharacterCreator();
 
                 //Fists
                 if(gp.ui.commandCol == 1 && gp.ui.commandRow == 0){
-                    //usuń poprzedni wybór jeśli był
-                    //zapisz że fists
+                    inventoryCreator.setWeaponsToFalse();
+                    inventoryCreator.setfists(true);
                     //zaznacz
                     //odznacz pozostałe
                 }
                 //Sword
                 else if(gp.ui.commandCol == 1 && gp.ui.commandRow == 1){
-                    //usuń poprzedni wybór jeśli był
-                    //zapisz że sword
+                    inventoryCreator.setWeaponsToFalse();
+                    inventoryCreator.setsword(true);
                     //zaznacz
                     //odznacz pozostałe
                 }
                 //Sword+Shield
                 else if(gp.ui.commandCol == 1 && gp.ui.commandRow == 2){
-                    //usuń poprzedni wybór jeśli był
-                    //zapisz że sword+shield
+                    inventoryCreator.setWeaponsToFalse();
+                    inventoryCreator.setswordshield(true);
                     //zaznacz
                     //odznacz pozostałe
                 }
                 //Bow
                 else if(gp.ui.commandCol == 1 && gp.ui.commandRow == 3){
-                    //usuń poprzedni wybór jeśli był
-                    //zapisz że bow
+                    inventoryCreator.setWeaponsToFalse();
+                    inventoryCreator.setbow(true);
                     //zaznacz
                     //odznacz pozostałe
                 }
                 //Staff
                 else if(gp.ui.commandCol == 1 && gp.ui.commandRow == 4){
-                    //usuń poprzedni wybór jeśli był
-                    //zapisz że staff
+                    inventoryCreator.setWeaponsToFalse();
+                    inventoryCreator.setstaff(true);
                     //zaznacz
                     //odznacz pozostałe
                 }
                 //Daggers
                 else if(gp.ui.commandCol == 1 && gp.ui.commandRow == 5){
-                    //usuń poprzedni wybór jeśli był
-                    //zapisz że daggers
+                    inventoryCreator.setWeaponsToFalse();
+                    inventoryCreator.setdaggers(true);
                     //zaznacz
                     //odznacz pozostałe
                 }
 
                 //Light Armor
                 if(gp.ui.commandCol == 2 && gp.ui.commandRow == 0){
-                    //usuń poprzedni wybór jeśli był
-                    //zapisz że light
+                    inventoryCreator.setArmorToFalse();
+                    inventoryCreator.setlight(true);
                     //zaznacz
                     //odznacz pozostałe
                 }
                 //Medium armor
                 else if(gp.ui.commandCol == 2 && gp.ui.commandRow == 1){
-                    //usuń poprzedni wybór jeśli był
-                    //zapisz że medium
+                    inventoryCreator.setArmorToFalse();
+                    inventoryCreator.setmedium(true);
                     //zaznacz
                     //odznacz pozostałe
                 }
                 //Heavy armor
                 else if(gp.ui.commandCol == 2 && gp.ui.commandRow == 2){
-                    //usuń poprzedni wybór jeśli był
-                    //zapisz że heavy
+                    inventoryCreator.setArmorToFalse();
+                    inventoryCreator.setheavy(true);
                     //zaznacz
                     //odznacz pozostałe
                 }
