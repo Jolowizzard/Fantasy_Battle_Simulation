@@ -1,6 +1,9 @@
 import java.awt.Graphics2D;
 import java.awt.Font;
 import java.awt.Color;
+import java.awt.image.BufferedImage;
+import javax.imageio.ImageIO;
+import java.io.IOException;
 
 public class UI {
     
@@ -8,12 +11,24 @@ public class UI {
     Graphics2D g2;
     Font arial_40;
     public int commandNum = 0;
-    public int titleScreenState = 0; // 0 : Main Menu, 1 : the second screen
+    public int commandRow = 0;
+    public int commandCount = 0;
+    public int commandCol = 0;
+    public int titleScreenState = 0; // 0 : Main Menu, 1 : the second screen, 2 : character screen
+    BufferedImage cs, sel, selected;
 
     public UI(GamePanel gp){
         this.gp = gp;
 
         arial_40 = new Font("Castellar", Font.PLAIN, 40);
+
+        try{
+            cs = ImageIO.read(getClass().getResourceAsStream("Character screen.png"));
+            sel = ImageIO.read(getClass().getResourceAsStream("Select.png"));
+        }catch(IOException e){
+            e.printStackTrace();
+        }
+
     }
 
     public void draw(Graphics2D g2){
@@ -25,7 +40,14 @@ public class UI {
 
         //Title State
         if(gp.gameState == gp.titleState){
-            drawTitleScreen();
+            if(titleScreenState == 2){
+                drawCharacterScreen();
+            }
+            else if(titleScreenState == 1){
+                drawStartScreen();
+            }
+            else
+                drawTitleScreen();
         }
 
         //Play State
@@ -66,7 +88,7 @@ public class UI {
 
         //Shadow
         g2.setColor(new Color(107, 0, 0));
-        g2.drawString(text, x+5, y+5);
+        g2.drawString(text, x+4, y+4);
         //Main Text
         g2.setColor(new Color(254, 32, 32));
         g2.drawString(text, x, y);
@@ -92,5 +114,193 @@ public class UI {
         if(commandNum == 1){
             g2.drawString(">", x-gp.tileSize, y);
         }
+    }
+    public void drawStartScreen(){
+        
+        g2.setColor(Color.black);
+        g2.fillRect(0, 0, gp.ScreenWidth, gp.ScreenHeight);
+
+        //Title Name
+        g2.setFont(g2.getFont().deriveFont(Font.BOLD,40F));
+        String text = "Choose Type Of Simulation";
+        int x = getXforCenteredText(text);
+        int y = gp.tileSize*4;
+
+        //Shadow
+        g2.setColor(new Color(107, 0, 0));
+        g2.drawString(text, x+4, y+4);
+        //Main Text
+        g2.setColor(new Color(254, 32, 32));
+        g2.drawString(text, x, y);
+        //Menu
+        g2.setFont(g2.getFont().deriveFont(Font.BOLD,40F));
+
+        text = "BUILD YOUR TEAM";
+        x = getXforCenteredText(text);
+        y += gp.tileSize*6;
+        g2.drawString(text, x, y);
+        if(commandNum == 0){
+            g2.drawString(">", x-gp.tileSize, y);
+        }
+
+        text = "READ TEAM FROM FILE";
+        x = getXforCenteredText(text);
+        y += gp.tileSize;
+        g2.drawString(text, x, y);
+        if(commandNum == 1){
+            g2.drawString(">", x-gp.tileSize, y);
+        }
+
+        text = "BACK";
+        x = getXforCenteredText(text);
+        y += gp.tileSize;
+        g2.drawString(text, x, y);
+        if(commandNum == 2){
+            g2.drawString(">", x-gp.tileSize, y);
+        }
+    }
+    public void drawCharacterScreen(){
+        
+        g2.setColor(Color.black);
+        g2.fillRect(0, 0, gp.ScreenWidth, gp.ScreenHeight);
+
+        g2.drawImage(cs, 0, 0, gp.tileSize*16, gp.tileSize*16, null);
+
+        //Title Name
+        g2.setFont(g2.getFont().deriveFont(Font.BOLD,35F));
+        String text;
+        if(commandNum == 0){
+            text = "Purple Team Hero " + Integer.toString(commandCount+1);
+        }
+        else{
+            text = "Yellow Team Hero " + Integer.toString(commandCount+1);
+        }
+        int x = gp.tileSize*13/2;
+        int y = gp.tileSize*1;
+
+        //Shadow
+        if(commandNum == 0){
+            g2.setColor(new Color(119, 0, 200));
+        }
+        else{
+            g2.setColor(new Color(255, 255, 0));
+        }
+        g2.drawString(text, x+3, y+3);
+        //Main Text
+        if(commandNum == 0){
+            g2.setColor(new Color(174, 55, 255));
+        }
+        else{
+            g2.setColor(new Color(255, 174, 66));
+        }
+        g2.drawString(text, x, y);
+        
+        //Menu
+
+        //COLUMN 1
+        //knight
+        if(gp.ui.commandCol == 0 && gp.ui.commandRow == 0){
+            drawSelect(gp.ui.commandCol, gp.ui.commandRow);
+            g2.drawString("X", gp.ui.commandCol, gp.ui.commandRow);
+        }
+        //paladin
+        if(gp.ui.commandCol == 0 && gp.ui.commandRow == 1){
+            drawSelect(gp.ui.commandCol, gp.ui.commandRow);
+            g2.drawString("X", gp.ui.commandCol, gp.ui.commandRow);
+        }
+        //archer
+        if(gp.ui.commandCol == 0 && gp.ui.commandRow == 2){
+            drawSelect(gp.ui.commandCol, gp.ui.commandRow);
+            g2.drawString("X", gp.ui.commandCol, gp.ui.commandRow);
+        }
+        //marskman
+        if(gp.ui.commandCol == 0 && gp.ui.commandRow == 3){
+            drawSelect(gp.ui.commandCol, gp.ui.commandRow);
+            g2.drawString("X", gp.ui.commandCol, gp.ui.commandRow);
+        }
+        //archmage
+        if(gp.ui.commandCol == 0 && gp.ui.commandRow == 4){
+            drawSelect(gp.ui.commandCol, gp.ui.commandRow);
+            g2.drawString("X", gp.ui.commandCol, gp.ui.commandRow);
+        }
+        //druid
+        if(gp.ui.commandCol == 0 && gp.ui.commandRow == 5){
+            drawSelect(gp.ui.commandCol, gp.ui.commandRow);
+            g2.drawString("X", gp.ui.commandCol, gp.ui.commandRow);
+        }
+        //assasin
+        if(gp.ui.commandCol == 0 && gp.ui.commandRow == 6){
+            drawSelect(gp.ui.commandCol, gp.ui.commandRow);
+            g2.drawString("X", gp.ui.commandCol, gp.ui.commandRow);
+        }
+        //thief
+        if(gp.ui.commandCol == 0 && gp.ui.commandRow == 7){
+            drawSelect(gp.ui.commandCol, gp.ui.commandRow);
+            g2.drawString("X", gp.ui.commandCol, gp.ui.commandRow);
+        }
+
+        //COLUMN 2
+        //Fists
+        if(gp.ui.commandCol == 1 && gp.ui.commandRow == 0){
+            drawSelect(gp.ui.commandCol, gp.ui.commandRow);
+            g2.drawString("X", gp.ui.commandCol, gp.ui.commandRow);
+        }
+        //Sword + Shield
+        if(gp.ui.commandCol == 1 && gp.ui.commandRow == 1){
+            drawSelect(gp.ui.commandCol, gp.ui.commandRow);
+            g2.drawString("X", gp.ui.commandCol, gp.ui.commandRow);
+        }
+        //Sword
+        if(gp.ui.commandCol == 1 && gp.ui.commandRow == 2){
+            drawSelect(gp.ui.commandCol, gp.ui.commandRow);
+            g2.drawString("X", gp.ui.commandCol, gp.ui.commandRow);
+        }
+        //Bow
+        if(gp.ui.commandCol == 1 && gp.ui.commandRow == 3){
+            drawSelect(gp.ui.commandCol, gp.ui.commandRow);
+            g2.drawString("X", gp.ui.commandCol, gp.ui.commandRow);
+        }
+        //Staff
+        if(gp.ui.commandCol == 1 && gp.ui.commandRow == 4){
+            drawSelect(gp.ui.commandCol, gp.ui.commandRow);
+            g2.drawString("X", gp.ui.commandCol, gp.ui.commandRow);
+        }
+        //Daggers
+        if(gp.ui.commandCol == 1 && gp.ui.commandRow == 5){
+            drawSelect(gp.ui.commandCol, gp.ui.commandRow);
+            g2.drawString("X", gp.ui.commandCol, gp.ui.commandRow);
+        }
+
+        //COLUMN 3
+        //light
+        if(gp.ui.commandCol == 2 && gp.ui.commandRow == 0){
+            drawSelect(gp.ui.commandCol, gp.ui.commandRow);
+            g2.drawString("X", gp.ui.commandCol, gp.ui.commandRow);
+        }
+        //medium
+        if(gp.ui.commandCol == 2 && gp.ui.commandRow == 1){
+            drawSelect(gp.ui.commandCol, gp.ui.commandRow);
+            g2.drawString("X", gp.ui.commandCol, gp.ui.commandRow);
+        }
+        //heavy
+        if(gp.ui.commandCol == 2 && gp.ui.commandRow == 2){
+            drawSelect(gp.ui.commandCol, gp.ui.commandRow);
+            g2.drawString("X", gp.ui.commandCol, gp.ui.commandRow);
+        }
+
+        //COLUMN 4
+        //next
+        if(gp.ui.commandCol == 3 && gp.ui.commandRow == 0){
+            drawSelect(7, 6);
+            g2.drawString("X", gp.ui.commandCol, gp.ui.commandRow);
+        }
+        //skip
+        if(gp.ui.commandCol == 3 && gp.ui.commandRow == 1){
+            drawSelect(7, 7);
+            g2.drawString("X", gp.ui.commandCol, gp.ui.commandRow);
+        }
+    }
+    public void drawSelect(int x, int y){
+        g2.drawImage(sel, x*gp.tileSize*2, y*gp.tileSize*2, gp.tileSize*2, gp.tileSize*2, null);
     }
 }

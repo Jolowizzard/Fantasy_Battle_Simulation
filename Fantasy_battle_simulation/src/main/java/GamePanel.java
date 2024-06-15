@@ -18,7 +18,7 @@ public class GamePanel extends JPanel implements Runnable{
     public final int ScreenHeight = tileSize * maxScreenRow;
 
     //FPS
-    int FPS = 30;
+    int FPS = 60;
 
     //System
     KeyHandler keyH = new KeyHandler(this);
@@ -27,6 +27,7 @@ public class GamePanel extends JPanel implements Runnable{
     //Sound music = new Sound(); // Created 2 different objects for Sound Effect and Music. If you use 1 object SE or Music stops sometimes.
     //Sound se = new Sound();
     Thread gameThread;
+
     
     //Entity
     Hero hero = new Hero(this, keyH);
