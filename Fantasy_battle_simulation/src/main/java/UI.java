@@ -185,7 +185,7 @@ public class UI {
             text = "Yellow Team Hero " + Integer.toString(commandCount+1);
             text2 = "Hero " + Integer.toString(commandCount+1);
         }
-        int x = gp.tileSize*13/2;
+        int x = gp.tileSize*7;
         int y = gp.tileSize*1;
 
         //Shadow
