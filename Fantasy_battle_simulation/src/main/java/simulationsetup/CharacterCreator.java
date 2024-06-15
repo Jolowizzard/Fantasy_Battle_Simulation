@@ -199,40 +199,59 @@ public class CharacterCreator {
         }
         return null;
     }
-    public void CharacterCreation(Tile ChoosenTile, String ChoosenName )
+    public Character CharacterCreation(Tile ChoosenTile, String ChoosenName )
     {
+        Character error = new Knight();
         if(getKnight()==true)
         {
-            createKnight(CounterId,ChoosenTile, ChoosenName);
+            Character character=createKnight(CounterId,ChoosenTile, ChoosenName);
+            CounterId = CounterId - 1;
+            return character;
         }
         if(getPaladin()==true) {
-            createPaladin(CounterId, ChoosenTile, ChoosenName);
+            Character character=createPaladin(CounterId, ChoosenTile, ChoosenName);
+            CounterId = CounterId - 1;
+            return character;
         }
             if(getWizard()==true)
             {
-                createWizard(CounterId,ChoosenTile, ChoosenName);
+                Character character=createWizard(CounterId,ChoosenTile, ChoosenName);
+                CounterId = CounterId - 1;
+                return character;
             }
             if(getDruid()==true)
             {
-                createDruid(CounterId,ChoosenTile, ChoosenName);
+                Character character=createDruid(CounterId,ChoosenTile, ChoosenName);
+                CounterId = CounterId - 1;
+                return character;
             }
             if(getMarksman()==true)
             {
-                createMarksman(CounterId,ChoosenTile, ChoosenName);
+                Character character=createMarksman(CounterId,ChoosenTile, ChoosenName);
+                CounterId = CounterId - 1;
+                return character;
             }
             if(getRanger()==true)
             {
-                createRanger(CounterId,ChoosenTile, ChoosenName);
+                Character character=createRanger(CounterId,ChoosenTile, ChoosenName);
+                CounterId = CounterId - 1;
+                return character;
             }
             if(getAssassin()==true)
             {
-                createAssassin(CounterId,ChoosenTile, ChoosenName);
+                Character character=createAssassin(CounterId,ChoosenTile, ChoosenName);
+                CounterId = CounterId - 1;
+                return character;
             }
             if(getThief()==true)
             {
-                createThief(CounterId,ChoosenTile, ChoosenName);
+                Character character = createThief(CounterId,ChoosenTile, ChoosenName);
+                CounterId = CounterId - 1;
+                return character;
+
             }
             CounterId = CounterId - 1;
+      return error;
     }
 
 public void SetCharacterBooleansToFalse()
