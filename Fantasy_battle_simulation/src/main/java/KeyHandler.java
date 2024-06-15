@@ -100,6 +100,7 @@ InventoryCreator inventoryCreator = new InventoryCreator();
         //THIRD SCREEN  CHARACTER SELECTION
         else if(gp.ui.titleScreenState == 2){
             if(code == KeyEvent.VK_W){
+                System.out.println(Integer.toString(gp.ui.commandCol)+" "+(Integer.toString(gp.ui.commandRow)));
                 gp.ui.commandRow--;
                 if(gp.ui.commandRow < 0 && gp.ui.commandCol == 0){
                     gp.ui.commandRow = 7;
@@ -119,6 +120,7 @@ InventoryCreator inventoryCreator = new InventoryCreator();
                 System.out.println(Integer.toString(gp.ui.commandCol)+" "+(Integer.toString(gp.ui.commandRow)));
             }
             if(code == KeyEvent.VK_S){
+                System.out.println(Integer.toString(gp.ui.commandCol)+" "+(Integer.toString(gp.ui.commandRow)));
                 gp.ui.commandRow++;
                 if(gp.ui.commandRow > 7 && gp.ui.commandCol == 0){
                     gp.ui.commandRow = 0;
@@ -138,6 +140,7 @@ InventoryCreator inventoryCreator = new InventoryCreator();
                 System.out.println(Integer.toString(gp.ui.commandCol)+" "+(Integer.toString(gp.ui.commandRow)));
             }
             if(code == KeyEvent.VK_A){
+                System.out.println(Integer.toString(gp.ui.commandCol)+" "+(Integer.toString(gp.ui.commandRow)));
                 if(gp.ui.commandCol == 0 && gp.ui.commandRow == 7){
                     gp.ui.commandCol--;
                     gp.ui.commandRow = 1;
@@ -158,6 +161,7 @@ InventoryCreator inventoryCreator = new InventoryCreator();
                 System.out.println(Integer.toString(gp.ui.commandCol)+" "+(Integer.toString(gp.ui.commandRow)));
             }
             if(code == KeyEvent.VK_D){
+                System.out.println(Integer.toString(gp.ui.commandCol)+" "+(Integer.toString(gp.ui.commandRow)));
                 if(gp.ui.commandCol == 0 && gp.ui.commandRow > 5){
                     gp.ui.commandCol++;
                     gp.ui.commandRow = 5;

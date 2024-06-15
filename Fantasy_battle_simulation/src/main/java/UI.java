@@ -176,11 +176,14 @@ public class UI {
         //Title Name
         g2.setFont(g2.getFont().deriveFont(Font.BOLD,35F));
         String text;
+        String text2;
         if(commandNum == 0){
-            text = "Purple Team Hero " + Integer.toString(commandCount+1);
+            text = "Purple Team";
+            text2 = "Hero " + Integer.toString(commandCount+1);
         }
         else{
             text = "Yellow Team Hero " + Integer.toString(commandCount+1);
+            text2 = "Hero " + Integer.toString(commandCount+1);
         }
         int x = gp.tileSize*13/2;
         int y = gp.tileSize*1;
@@ -193,6 +196,7 @@ public class UI {
             g2.setColor(new Color(255, 174, 66));
         }
         g2.drawString(text, x+3, y+3);
+        g2.drawString(text2, x+3, gp.tileSize+y+3);
         //Main Text
         if(commandNum == 0){
             g2.setColor(new Color(174, 55, 255));
@@ -201,6 +205,7 @@ public class UI {
             g2.setColor(new Color(255, 255, 0));
         }
         g2.drawString(text, x, y);
+        g2.drawString(text2, x+3, gp.tileSize+y);
         
         //Menu
 
