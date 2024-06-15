@@ -36,13 +36,14 @@ public class CharacterCreator {
         InteligenceType intelligence = null;
         int i = 0;
         String characterType = characterStats[i++];
+
         if(characterType.equals("Warrior")){
             int BlockChance = Integer.parseInt(characterStats[i++]);
             int BlockValue = Integer.parseInt(characterStats[i++]);
             if(characterStats[i++].equals("Knight")) {
                 characters.Character knight = new Knight(BlockChance, BlockValue);
             }else if(characterStats[i++].equals("Paladin")) {
-                Character paladin = new Paladin(BlockChance,BlockValue);
+                Character paladin = new Paladin(BlockChance, BlockValue);
             }
         }else if(characterType.equals("Shooter"))
         {
@@ -50,6 +51,7 @@ public class CharacterCreator {
             int CritValue = Integer.parseInt(characterStats[i++]);
             if(characterStats[i++].equals("Ranger")) {
                 Character ranger = new Ranger(CritChance, CritValue);
+                setCharactersStats(ranger,characterStats);
             }else if(characterStats[i++].equals("Marksman")) {
                 Character marksman = new Marksman(CritChance, CritValue);
             }
