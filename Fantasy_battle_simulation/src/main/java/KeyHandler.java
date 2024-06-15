@@ -190,162 +190,147 @@ InventoryCreator inventoryCreator = new InventoryCreator();
                 if(gp.ui.commandCol == 0 && gp.ui.commandRow == 0){
                     characterCreator.SetCharacterBooleansToFalse();
                     characterCreator.setKnight(true);
-                    //zaznacz
-                    //odznacz pozostałe
+                    gp.ui.col0 = 1;
                 }
                 //Paladin
                 else if(gp.ui.commandCol == 0 && gp.ui.commandRow == 1){
                     characterCreator.SetCharacterBooleansToFalse();
                     characterCreator.setPaladin(true);
-                    //zaznacz
-                    //odznacz pozostałe
+                    gp.ui.col0 = 2;
                 }
                 //Archer
                 else if(gp.ui.commandCol == 0 && gp.ui.commandRow == 2){
                     characterCreator.SetCharacterBooleansToFalse();
                     characterCreator.setRanger(true);
-                    //zaznacz
-                    //odznacz pozostałe
+                    gp.ui.col0 = 3;
                 }
                 //Marksman
                 else if(gp.ui.commandCol == 0 && gp.ui.commandRow == 3){
                     characterCreator.SetCharacterBooleansToFalse();
                     characterCreator.setMarksman(true);
-                    //zaznacz
-                    //odznacz pozostałe
+                    gp.ui.col0 = 4;
                 }
                 //Archmage
                 else if(gp.ui.commandCol == 0 && gp.ui.commandRow == 4){
                     characterCreator.SetCharacterBooleansToFalse();
                     characterCreator.setWizard(true);
-                    //zaznacz
-                    //odznacz pozostałe
+                    gp.ui.col0 = 5;
                 }
                 //Druid
                 else if(gp.ui.commandCol == 0 && gp.ui.commandRow == 5){
                     characterCreator.SetCharacterBooleansToFalse();
                     characterCreator.setDruid(true);
-                    //zaznacz
-                    //odznacz pozostałe
+                    gp.ui.col0 = 6;
                 }
                 //Assasin
                 else if(gp.ui.commandCol == 0 && gp.ui.commandRow == 6){
                     characterCreator.SetCharacterBooleansToFalse();
                     characterCreator.setAssassin(true);
-                    //zaznacz
-                    //odznacz pozostałe
+                    gp.ui.col0 = 7;
                 }
                 //Thief
                 else if(gp.ui.commandCol == 0 && gp.ui.commandRow == 7){
                    characterCreator.SetCharacterBooleansToFalse();
                     characterCreator.setThief(true);
-                    //zaznacz
-                    //odznacz pozostałe
+                    gp.ui.col0 = 8;
                 }
 
                 //Fists
                 if(gp.ui.commandCol == 1 && gp.ui.commandRow == 0){
                     inventoryCreator.setWeaponsToFalse();
                     inventoryCreator.setfists(true);
-                    //zaznacz
-                    //odznacz pozostałe
+                    gp.ui.col1 = 1;
                 }
                 //Sword
                 else if(gp.ui.commandCol == 1 && gp.ui.commandRow == 1){
                     inventoryCreator.setWeaponsToFalse();
                     inventoryCreator.setsword(true);
-                    //zaznacz
-                    //odznacz pozostałe
+                    gp.ui.col1 = 2;
                 }
                 //Sword+Shield
                 else if(gp.ui.commandCol == 1 && gp.ui.commandRow == 2){
                     inventoryCreator.setWeaponsToFalse();
                     inventoryCreator.setswordshield(true);
-                    //zaznacz
-                    //odznacz pozostałe
+                    gp.ui.col1 = 3;
                 }
                 //Bow
                 else if(gp.ui.commandCol == 1 && gp.ui.commandRow == 3){
                     inventoryCreator.setWeaponsToFalse();
                     inventoryCreator.setbow(true);
-                    //zaznacz
-                    //odznacz pozostałe
+                    gp.ui.col1 = 4;
                 }
                 //Staff
                 else if(gp.ui.commandCol == 1 && gp.ui.commandRow == 4){
                     inventoryCreator.setWeaponsToFalse();
                     inventoryCreator.setstaff(true);
-                    //zaznacz
-                    //odznacz pozostałe
+                    gp.ui.col1 = 5;
                 }
                 //Daggers
                 else if(gp.ui.commandCol == 1 && gp.ui.commandRow == 5){
                     inventoryCreator.setWeaponsToFalse();
                     inventoryCreator.setdaggers(true);
-                    //zaznacz
-                    //odznacz pozostałe
+                    gp.ui.col1 = 6;
                 }
 
                 //Light Armor
                 if(gp.ui.commandCol == 2 && gp.ui.commandRow == 0){
                     inventoryCreator.setArmorToFalse();
                     inventoryCreator.setlight(true);
-                    //zaznacz
-                    //odznacz pozostałe
+                    gp.ui.col2 = 1;
                 }
                 //Medium armor
                 else if(gp.ui.commandCol == 2 && gp.ui.commandRow == 1){
                     inventoryCreator.setArmorToFalse();
                     inventoryCreator.setmedium(true);
-                    //zaznacz
-                    //odznacz pozostałe
+                    gp.ui.col2 = 2;
                 }
                 //Heavy armor
                 else if(gp.ui.commandCol == 2 && gp.ui.commandRow == 2){
                     inventoryCreator.setArmorToFalse();
                     inventoryCreator.setheavy(true);
-                    //zaznacz
-                    //odznacz pozostałe
+                    gp.ui.col2 = 3;
                 }
 
                 //1 Potion
                 if(gp.ui.commandCol == 3 && gp.ui.commandRow == 0){
                     //inventoryCreator.setArmorToFalse();
                     //inventoryCreator.setlight(true);
-                    //zaznacz
-                    //odznacz pozostałe
+                    gp.ui.col3 = 1;
                 }
                 //2 Potions
                 else if(gp.ui.commandCol == 3 && gp.ui.commandRow == 1){
                     //inventoryCreator.setArmorToFalse();
                     //inventoryCreator.setmedium(true);
-                    //zaznacz
-                    //odznacz pozostałe
+                    gp.ui.col2 = 2;
                 }
                 //3 Potions
                 else if(gp.ui.commandCol == 3 && gp.ui.commandRow == 2){
                     //inventoryCreator.setArmorToFalse();
                     //inventoryCreator.setheavy(true);
-                    //zaznacz
-                    //odznacz pozostałe
+                    gp.ui.col2 = 3;
                 }
 
                 //Next
                 if(gp.ui.commandCol == 4 && gp.ui.commandRow == 0){
-                    //sprawdź czy żołnież gotowy?
-                    if(gp.ui.commandCount == 3 && gp.ui.commandNum == 1){
-                        //zapisz postać
-                        gp.gameState = gp.playState;
+                    if(gp.ui.col0 != 0 && gp.ui.col1 != 0 && gp.ui.col2 != 0 && gp.ui.col3 != 0){
+                        gp.ui.col0 = 0;
+                        gp.ui.col1 = 0;
+                        gp.ui.col2 = 0;
+                        gp.ui.col3 = 0;
+                        if(gp.ui.commandCount == 3 && gp.ui.commandNum == 1){
+                            //zapisz postać
+                            gp.gameState = gp.playState;
+                        }
+                        else if(gp.ui.commandCount == 3 && gp.ui.commandNum == 0){
+                            //zapisz postać
+                            gp.ui.commandCount = 0;
+                            gp.ui.commandNum++;
+                        }
+                        else{
+                            //zapisz postać
+                            gp.ui.commandCount++;
+                        } 
                     }
-                    else if(gp.ui.commandCount == 3 && gp.ui.commandNum == 0){
-                        //zapisz postać
-                        gp.ui.commandCount = 0;
-                        gp.ui.commandNum++;
-                    }
-                    else{
-                        //zapisz postać
-                        gp.ui.commandCount++;
-                    } 
                 }
                 //Skip
                 else if(gp.ui.commandCol == 4 && gp.ui.commandRow == 1){

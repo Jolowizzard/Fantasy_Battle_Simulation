@@ -14,6 +14,10 @@ public class UI {
     public int commandRow = 0;
     public int commandCount = 0;
     public int commandCol = 0;
+    public int col0 = 0;
+    public int col1 = 0;
+    public int col2 = 0;
+    public int col3 = 0;
     public int titleScreenState = 0; // 0 : Main Menu, 1 : the second screen, 2 : character screen
     BufferedImage csp, csy, sel, selected;
 
@@ -209,6 +213,20 @@ public class UI {
         
         //Menu
 
+        //Selected
+        if(gp.ui.col0 != 0){
+            drawSelected(0, gp.ui.col0);
+        }
+        if(gp.ui.col1 != 0){
+            drawSelected(0, gp.ui.col1);
+        }
+        if(gp.ui.col2 != 0){
+            drawSelected(0, gp.ui.col2);
+        }
+        if(gp.ui.col3 != 0){
+            drawSelected(0, gp.ui.col3);
+        }
+
         //COLUMN 1
         //knight
         if(gp.ui.commandCol == 0 && gp.ui.commandRow == 0){
@@ -309,5 +327,8 @@ public class UI {
     }
     public void drawSelect(int x, int y){
         g2.drawImage(sel, x*gp.tileSize*2, y*gp.tileSize*2, gp.tileSize*2, gp.tileSize*2, null);
+    }
+    public void drawSelected(int x, int y){
+        g2.drawImage(selected, x*gp.tileSize*2, y*gp.tileSize*2, gp.tileSize*2, gp.tileSize*2, null);
     }
 }
