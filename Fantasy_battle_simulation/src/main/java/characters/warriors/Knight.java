@@ -37,4 +37,8 @@ public class Knight extends Warrior {
         setBlockValue(4);
         setSubClass("Knight");
     }
+    public Knight(int BlockChance, int BlockValue){
+        super(BlockChance,BlockValue);
+    }
+    public Knight(){}
 }

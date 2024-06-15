@@ -37,4 +37,8 @@ public class Paladin extends Warrior {
         setBlockValue(15);
         setSubClass("Paladin");
     }
+    public Paladin(int BlockChance, int BlockValue){
+        super(BlockChance,BlockValue);
+    }
+    public Paladin(){}
 }

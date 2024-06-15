@@ -29,4 +29,5 @@ public class Assassin extends Rogue {
         setMovement(5);
         setDodgeChance(15);
     }
+    public Assassin(){}
 }

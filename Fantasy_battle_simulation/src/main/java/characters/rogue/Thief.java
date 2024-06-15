@@ -31,4 +31,5 @@ public class Thief extends Rogue {
         setMovement(5);
         setDodgeChance(25);
     }
+    public Thief(){}
 }

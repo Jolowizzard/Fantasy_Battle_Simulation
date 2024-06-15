@@ -12,4 +12,5 @@ public class Wizard extends Mage {
     public Wizard(int Id, String Name, InteligenceType inteligenceType, Tile Position, Inventory inventory){
         super(Id,Name,inteligenceType,Position,inventory);
     }
+    public Wizard(){}
 }

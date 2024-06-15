@@ -38,7 +38,7 @@ abstract public class Character {
         this.IsAlive=IsAlive;
         this.Position=Position;
     }
-    protected Character(int Id, String Name, InteligenceType inteligenceType, Tile Position, Inventory inventory){
+    public Character(int Id, String Name, InteligenceType inteligenceType, Tile Position, Inventory inventory){
         this.Id = Id;
         this.Position=Position;
         this.Name = Name;
@@ -54,11 +54,31 @@ abstract public class Character {
         this.inventory = inventory;
         IsAlive = true;
     }
-    protected Character(int Id, String Name, InteligenceType inteligenceType, Inventory inventory){
+    public Character(int Id, String Name, InteligenceType inteligenceType, Inventory inventory){
         this.Id = Id;
         this.Name = Name;
         this.IntType = inteligenceType;
         this.inventory = inventory;
+    }
+    public Character() {
+        this.Id = 0;
+        this.Name = null;
+        this.Race = null;
+        this.MaxHp = 0;
+        this.CurrentHp = 0;
+        this.Strength = 0;
+        this.Dexterity = 0;
+        this.Intelignece = 0;
+        this.Movement = 0;
+        this.DodgeChance = 0.0f;
+        this.inventory = null;
+        this.IntType = null;
+        this.IsAlive = false;
+        this.mainClass = null;
+        this.subClass = null;
+        this.temporalArmour = 0;
+        this.Position = null;
+        this.statusEffects = null;
     }
     public int getId(){
         return Id;

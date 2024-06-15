@@ -37,4 +37,9 @@ public class Marksman extends Shooter {
         setCritChance(5);
         setCritValue(50);
     }
+    public Marksman(int CritChance, int CritValue){
+        this.CritChance = CritChance;
+        this.CritValue = CritValue;
+    }
+    public Marksman(){}
 }

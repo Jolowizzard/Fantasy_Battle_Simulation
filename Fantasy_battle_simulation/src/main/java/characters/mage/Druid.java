@@ -12,4 +12,7 @@ public class Druid extends Mage {
     public Druid(int Id, String Name, InteligenceType inteligenceType, Tile Position, Inventory inventory){
         super(Id,Name,inteligenceType,Position,inventory);
     }
+    public Druid(){
+    }
+
 }

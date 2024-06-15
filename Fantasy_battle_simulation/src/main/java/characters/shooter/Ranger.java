@@ -38,4 +38,9 @@ public class Ranger extends Shooter {
         setCritChance(5);
         setCritValue(50);
     }
+    public Ranger(int CritChance, int CritValue){
+        this.CritChance = CritChance;
+        this.CritValue = CritValue;
+    }
+    public Ranger(){}
 }

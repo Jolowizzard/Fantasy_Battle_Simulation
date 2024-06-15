@@ -20,6 +20,7 @@ public abstract class Mage extends characters.Character {
         MagicCritValue = 0;
         setMainClass("Mage");
     }
+    Mage(){}
 
     public int getMagicCritChance(){
         return MagicCritChance;
