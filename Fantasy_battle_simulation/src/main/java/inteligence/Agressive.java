@@ -4,6 +4,7 @@ import characters.Character;
 import characters.rogue.Rogue;
 import characters.warriors.Warrior;
 import combat.Combat;
+import inventory.items.Item;
 import map.Tile;
 import searchalgorythm.SearchAlgorythm;
 import movement.MovesAndPaths;
@@ -13,7 +14,6 @@ import map.*;
 public class Agressive extends InteligenceType {
     // First prototype. Only two states which specifies two action, fighting and healing.
     private boolean readyToFight;
-    private boolean injured;
     public Agressive(boolean readyToFight){
         super();
         this.readyToFight=readyToFight;
@@ -23,7 +23,7 @@ public class Agressive extends InteligenceType {
         resolveStatusEffects();
         if(!character.checkIfIsAlive())
             return;
-        System.out.println(character.getName() + " : performe turn");
+        System.out.println(character.getName() + " : performe turn. In combat :" + inCombat + " Injured : " + isInjured());
         if(character.getInventory().getCurrentWeapon()==null) {
             character.getInventory().setCurrentWeapon(character.getInventory().getWeapons().get(0));
         }
@@ -34,6 +34,20 @@ public class Agressive extends InteligenceType {
         }
         if(checkIfYouWon())
             return;
+        //Performing healing actions
+        if(isInjured())
+        {
+            System.out.println("Checking for using healing potion : " +character.getCurrentHp() + " < " + (int)(((float)character.getMaxHp())*(float)(20.0/100.0)));
+            if(character.getCurrentHp()<(int)(((float)character.getMaxHp())*(float)(20.0/100.0))){
+                //Searching for HealPotion in the inventory this is not optimal thou, because he will try to use empty healpotions
+                for(int i =0; i< character.getInventory().getItems().size(); i++){
+                    if(character.getInventory().getItems().get(i).getName().equals("HealPotion")) {
+                        character.getInventory().getItems().get(i).use(character);
+                        break;
+                    }
+                }
+            }
+        }
         if(readyToFight){
             if(!checkIfEnemyIsInRange()){
                 MoveTowardsOpponent(character,target);

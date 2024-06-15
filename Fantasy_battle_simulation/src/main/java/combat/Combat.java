@@ -55,6 +55,7 @@ public class Combat {
     public void DealDamageToDefender(ArrayList<Integer> damageTypes){
         for(int i = 1 ; i<damageTypes.size();i+=2) {
             if (damageTypes.get(i) > 0) {
+                defender.getIntType().setInjured(true);
                 if (damageTypes.get(i) >= defender.getCurrentHp()) {
                     defender.takeDamage(defender.getCurrentHp());
                     defender.kill();

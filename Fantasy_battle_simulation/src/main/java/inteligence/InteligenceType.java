@@ -16,6 +16,7 @@ public abstract class InteligenceType{
     protected boolean inCombat=false;
     protected Team enemies;
     protected Team allays;
+    protected boolean injured;
     public InteligenceType(){
     }
     public characters.Character GetTarget(){return target;}
@@ -125,4 +126,10 @@ public abstract class InteligenceType{
         if(character.getCurrentHp()<=0)
             character.kill();
     }
+
+    public void setInjured(boolean injured) {
+        this.injured = injured;
+    }
+    public boolean isInjured() {return injured;}
+
 }
