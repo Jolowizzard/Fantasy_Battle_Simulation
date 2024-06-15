@@ -52,6 +52,19 @@ public class Combat {
         }
         // here damage Types goes to class, that prints logs to txt or csv file
 
+        //Adding damageBlocked
+        if(defender.getDamageTypesBlocked()==null){
+            defender.setDamageTypesBlocked(armourTypes);
+        }else{
+            defender.addDamageTypesBlocked(armourTypes);
+        }
+        //Adding damageDealt
+        if(attacker.getDamageTypesDealt()==null){
+            attacker.setDamageTypesDealt(damageTypes);
+        }else{
+            attacker.addDamageTypesDealt(damageTypes);
+        }
+
         DealDamageToDefender(damageTypes);
         //cleaning after combat
         defender.setTemporalArmour(0);

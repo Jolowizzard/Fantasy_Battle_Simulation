@@ -134,7 +134,7 @@ public abstract class InteligenceType{
     public void resolveStatusEffects(){
         int bleed = character.getSpecificStatusEffectValue(0);
         System.out.println("Character " + character.getName() + " Bleed: "+bleed);
-        character.receiveBleedDamage(bleed);
+        character.takeDamage(bleed);
         character.setSpecificStatusEffect(0,0);
         if(character.getCurrentHp()<=0)
             character.kill();

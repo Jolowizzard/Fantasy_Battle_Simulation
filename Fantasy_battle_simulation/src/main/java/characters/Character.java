@@ -3,6 +3,8 @@ import inventory.Inventory;
 import inteligence.*;
 import map.Tile;
 
+import java.util.ArrayList;
+
 abstract public class Character {
     private int Id;
     private String Name;
@@ -22,6 +24,9 @@ abstract public class Character {
     private int temporalArmour;
     private Tile Position;  // holds an information on which tile character is currently staying on.
     private int [] statusEffects = new int [1]; // There a status effects such as bleed, stun etc.
+    private ArrayList<Integer> damageTypesDealt;
+    private ArrayList<Integer> damageTypesBlocked;
+    private int damageTaken = 0;
     public Character(int Id, String Name, String Race, int MaxHp, int CurrentHp, int Strength, int Dexterity, int Inteligence, int Movement, float DodgeChance, Inventory inventory, InteligenceType IntType, boolean IsAlive, Tile Position){
         this.Id=Id;
         this.Name=Name;
@@ -183,7 +188,6 @@ abstract public class Character {
     public void setStrength(int strength) {
         Strength = strength;
     }
-    public void receiveBleedDamage(int bleed){setCurrentHp(getCurrentHp()-bleed);}
 
     public void setStatusEffects(int[] statusEffects) {
         this.statusEffects = statusEffects;
@@ -201,12 +205,44 @@ abstract public class Character {
     public boolean checkIfIsAlive(){
         return IsAlive;
     }
-    public void takeDamage(int Damage){this.CurrentHp=this.CurrentHp-Damage;}
+    public void takeDamage(int Damage){
+        this.CurrentHp=this.CurrentHp-Damage;
+        this.damageTaken+=Damage;
+    }
     public void kill(){
         IsAlive = false;
         Position.occupied=false;
     }
     public void useClassAbility(Character character){
     }
+    public int getDamageTaken() {
+        return damageTaken;
+    }
+    public void setDamageTaken(int damageTaken) {
+        this.damageTaken = damageTaken;
+    }
 
+    public void setDamageTypesBlocked(ArrayList<Integer> damageTypesBlocked) {
+        this.damageTypesBlocked = damageTypesBlocked;
+    }
+    public void setDamageTypesDealt(ArrayList<Integer> damageTypesDealt) {
+        this.damageTypesDealt = damageTypesDealt;
+    }
+
+    public ArrayList<Integer> getDamageTypesBlocked() {
+        return damageTypesBlocked;
+    }
+    public ArrayList<Integer> getDamageTypesDealt() {
+        return damageTypesDealt;
+    }
+    public void addDamageTypesBlocked(ArrayList<Integer> damageTypesBlocked) {
+        for(int i = 0;i<damageTypesBlocked.size();i+=2){
+            this.damageTypesBlocked.set(i+1,this.damageTypesBlocked.get(i+1)+damageTypesBlocked.get(i+1));
+        }
+    }
+    public void addDamageTypesDealt(ArrayList<Integer> damageTypesDealt){
+        for(int i = 0;i<damageTypesDealt.size();i+=2){
+            this.damageTypesDealt.set(i+1,this.damageTypesDealt.get(i+1)+damageTypesDealt.get(i+1));
+        }
+    }
 }

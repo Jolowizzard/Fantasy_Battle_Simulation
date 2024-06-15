@@ -11,6 +11,7 @@ import inventory.items.HealPotion;
 import inventory.items.Item;
 import map.MAPtable;
 import map.Tile;
+import simulationsetup.Scribe;
 import weapons.Bow;
 import weapons.Dagger;
 import weapons.Sword;
@@ -23,6 +24,11 @@ public class Simulation {
     private Team teamPurple;
     public Simulation(String mapName,Team teamYellow,Team teamPurple){
         MAPtable.InitializeMap("mapName");
+        this.teamYellow = teamYellow;
+        this.teamPurple = teamPurple;
+
+    }
+    public void simulate(){
         boolean oneTeamWon = false;
         int simulationTime = 0;
         ArrayList<characters.Character> stack = new ArrayList<>();
@@ -31,7 +37,7 @@ public class Simulation {
         if(teamYellow.getTeam().size()<teamPurple.getTeam().size()){
             BiggestTeamSize = teamPurple.getTeam().size();
         }
-        //preparing stack order
+        //preparing stack order . This order is permanent for the rest of the simulation and can not be changed
         for(int i = 0 ; i<BiggestTeamSize;i++)
         {
             if(i<teamPurple.getTeam().size())
@@ -56,7 +62,6 @@ public class Simulation {
         }
     }
     public static void main(String [] args ) {
-
         MAPtable.InitializeMap("map_3.txt");
         Weapon ssword = new Sword("weapons.Sword", 10, 0, 1, 100, false,false);
         Weapon bbow = new Bow("weapons.Bow", 10, 0, 6, 100, true,false);
@@ -170,11 +175,11 @@ public class Simulation {
             }
             if (!teamB.CheckIfTeamIsTeamAlive()) {
                 System.out.printf("Team A won");
-                return;
+                break;
             }
             if (!teamA.CheckIfTeamIsTeamAlive()) {
                 System.out.printf("Team B won");
-                return;
+                break;
             }
             System.out.println("Test object 1 :" + testobject1.getCurrentHp());
             System.out.println("Test object 2 :" + testobject2.getCurrentHp());
@@ -202,7 +207,10 @@ public class Simulation {
             System.out.println("Test object 2 :" + testobject2.getCurrentHp());
             System.out.println("Test object 3 :" + testobject3.getCurrentHp());
             System.out.println("Test object 4 :" + testobject4.getCurrentHp());
-    }
         }
+        System.out.println(testobject1.getName() + " : " + testobject1.getDamageTypesDealt());
+        System.out.println(testobject1.getName() + " : " +testobject1.getDamageTypesBlocked());
+        System.out.println(testobject1.getName() + " : " +testobject1.getDamageTaken());
+    }
     }
 
