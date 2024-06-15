@@ -1,18 +1,24 @@
 package gamestructure;
 
 import java.util.ArrayList;
-
+import characters.Character;
 public class Team{
-    public ArrayList<characters.Character> team;
+    private ArrayList<characters.Character> team;
 
-    public Team(ArrayList<characters.Character> team){
-        ArrayList<characters.Character> teamc = new ArrayList<>(team);
+    public Team(ArrayList<Character> team){
+        ArrayList<Character> teamc = new ArrayList<>(team);
         this.team = teamc;
     }
-    public ArrayList<characters.Character> getTeam(){
+    public Team(){
+        team = new ArrayList<>();
+    }
+    public void addCharacter(Character c){
+        team.add(c);
+    }
+    public ArrayList<Character> getTeam(){
         return team;
     }
-    public void RemoveFromTeam (characters.Character character){
+    public void RemoveFromTeam (Character character){
         if(!team.isEmpty()){
             team.remove(character);
         }

@@ -39,7 +39,7 @@ public class CharacterCreator {
         //return intelligence;
         return null;
     }
-    public Character createCharacterFromFile(String [] characterStats,String [] inventoryStats){
+    public Character createCharacterFromString(String [] characterStats,String [] inventoryStats){
         Inventory inventory = new Inventory();
         InteligenceType intelligence = null;
         setInventoryStatsFromString(inventory,inventoryStats);
