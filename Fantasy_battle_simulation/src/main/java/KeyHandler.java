@@ -12,7 +12,6 @@ public class KeyHandler implements KeyListener{
     @Override
     public void keyPressed(KeyEvent e){
         int code = e.getKeyCode();
-        System.out.println("Pressed " + code);
 
         //TITLE STATE
         if(gp.gameState == gp.titleState){
@@ -37,7 +36,6 @@ public class KeyHandler implements KeyListener{
         //MAIN MENU
         if(gp.ui.titleScreenState == 0){
             if(code == KeyEvent.VK_W){
-                System.out.println("Wciśnięto W");
                 gp.ui.commandNum--;
                 if(gp.ui.commandNum < 0){
                     gp.ui.commandNum = 1;
@@ -51,54 +49,273 @@ public class KeyHandler implements KeyListener{
             }
             if(code == KeyEvent.VK_ENTER){
                 if(gp.ui.commandNum == 0){
-                    //gp.ui.titleScreenState = 1; // Character class selection screen
-                    gp.gameState = gp.playState; // Play game
+                    gp.ui.commandNum = 0;
+                    gp.ui.titleScreenState = 1; // Character class selection screen
+                    //gp.gameState = gp.playState; // Play game
                 }
                 if(gp.ui.commandNum == 1){
                     System.exit(0);
                 }
             }
         }
-        /*//SECOND SCREEN  CHARACTER SELECTION
-        else if (gp.ui.titleScreenState == 1) {
-            if (code == KeyEvent.VK_W) {
+        //SECOND SCREEN  CHOOSE START TYPE
+        else if(gp.ui.titleScreenState == 1){
+            if(code == KeyEvent.VK_W){
                 gp.ui.commandNum--;
-                if (gp.ui.commandNum < 0) {
-                    gp.ui.commandNum = 3;
+                if(gp.ui.commandNum < 0){
+                    gp.ui.commandNum = 2;
                 }
             }
-            if (code == KeyEvent.VK_S) {
+            if(code == KeyEvent.VK_S){
                 gp.ui.commandNum++;
-                if (gp.ui.commandNum > 3) {
+                if(gp.ui.commandNum > 2){
                     gp.ui.commandNum = 0;
                 }
             }
-
-            if (code == KeyEvent.VK_ENTER) {
-                //FIGHTER
-                if (gp.ui.commandNum == 0) {
-                    System.out.println("Do some fighter specific stuff!");
-                    gp.gameState = gp.playState;
-                    //gp.playMusic(0);
+            if(code == KeyEvent.VK_ENTER){
+                //BUILD TEAM
+                if(gp.ui.commandNum == 0){
+                    gp.ui.commandNum = 0;
+                    gp.ui.commandCount = 0;
+                    gp.ui.commandCol = 0;
+                    gp.ui.commandRow = 0;
+                    gp.ui.titleScreenState = 2;
                 }
-                //THIEF
-                if (gp.ui.commandNum == 1) {
-                    System.out.println("Do some thief specific stuff!");
+                //READ FILE
+                if(gp.ui.commandNum == 1){
+                    //tu trzba funkcję czytaj z pliku
                     gp.gameState = gp.playState;
-                    //gp.playMusic(0);
-                }
-                //SORCERER
-                if (gp.ui.commandNum == 2) {
-                    System.out.println("Do some sorcerer specific stuff!");
-                    gp.gameState = gp.playState;
-                    //gp.playMusic(0);
                 }
                 //BACK
-                if (gp.ui.commandNum == 3) {
+                if(gp.ui.commandNum == 2){
+                    gp.ui.commandNum = 0;
                     gp.ui.titleScreenState = 0;
                 }
             }
-        }*/
+        }
+        //THIRD SCREEN  CHARACTER SELECTION
+        else if(gp.ui.titleScreenState == 2){
+            if(code == KeyEvent.VK_W){
+                gp.ui.commandRow--;
+                if(gp.ui.commandRow < 0 && gp.ui.commandCol == 0){
+                    gp.ui.commandRow = 7;
+                }
+                else if(gp.ui.commandRow < 0 && gp.ui.commandCol == 1){
+                    gp.ui.commandRow = 5;
+                }
+                else if(gp.ui.commandRow < 0 && gp.ui.commandCol == 2){
+                    gp.ui.commandRow = 2;
+                }
+                else if(gp.ui.commandRow < 0 && gp.ui.commandCol == 3){
+                    gp.ui.commandRow = 1;
+                }
+            }
+            if(code == KeyEvent.VK_S){
+                gp.ui.commandRow++;
+                if(gp.ui.commandRow > 7 && gp.ui.commandCol == 0){
+                    gp.ui.commandRow = 0;
+                }
+                else if(gp.ui.commandRow > 5 && gp.ui.commandCol == 1){
+                    gp.ui.commandRow = 0;
+                }
+                else if(gp.ui.commandRow > 2 && gp.ui.commandCol == 2){
+                    gp.ui.commandRow = 0;
+                }
+                else if(gp.ui.commandRow > 1 && gp.ui.commandCol == 3){
+                    gp.ui.commandRow = 0;
+                }
+            }
+            if(code == KeyEvent.VK_A){
+                if(gp.ui.commandCol == 0 && gp.ui.commandRow == 7){
+                    gp.ui.commandCol--;
+                    gp.ui.commandRow = 1;
+                }
+                else if(gp.ui.commandCol == 0){
+                    gp.ui.commandCol--;
+                    gp.ui.commandRow = 0;
+                }
+                else if(gp.ui.commandCol == 3){
+                    gp.ui.commandCol--;
+                    gp.ui.commandRow = 2;
+                }
+                else 
+                    gp.ui.commandCol--;
+                if(gp.ui.commandCol < 0){
+                    gp.ui.commandCol = 3;
+                }
+            }
+            if(code == KeyEvent.VK_D){
+                if(gp.ui.commandCol == 0 && gp.ui.commandRow > 5){
+                    gp.ui.commandCol++;
+                    gp.ui.commandRow = 5;
+                }
+                else if(gp.ui.commandCol == 1 && gp.ui.commandRow > 2){
+                    gp.ui.commandCol++;
+                    gp.ui.commandRow = 2;
+                }
+                else if(gp.ui.commandCol == 2){
+                    gp.ui.commandCol++;
+                    gp.ui.commandRow = 0;
+                }
+                else if(gp.ui.commandCol == 3){
+                    gp.ui.commandCol++;
+                    gp.ui.commandRow += 6;
+                }
+                else 
+                    gp.ui.commandCol++;
+                if(gp.ui.commandCol > 3){
+                    gp.ui.commandCol = 0;
+                }
+            }
+            if(code == KeyEvent.VK_ENTER){
+                //Knight
+                if(gp.ui.commandCol == 0 && gp.ui.commandRow == 0){
+                    //usuń poprzedni wybór jeśli był
+                    //zapisz że knight
+                    //zaznacz
+                    //odznacz pozostałe
+                }
+                //Paladin
+                else if(gp.ui.commandCol == 0 && gp.ui.commandRow == 1){
+                    //usuń poprzedni wybór jeśli był
+                    //zapisz że paladin
+                    //zaznacz
+                    //odznacz pozostałe
+                }
+                //Archer
+                else if(gp.ui.commandCol == 0 && gp.ui.commandRow == 2){
+                    //usuń poprzedni wybór jeśli był
+                    //zapisz że archer
+                    //zaznacz
+                    //odznacz pozostałe
+                }
+                //Marksman
+                else if(gp.ui.commandCol == 0 && gp.ui.commandRow == 3){
+                    //usuń poprzedni wybór jeśli był
+                    //zapisz że marskman
+                    //zaznacz
+                    //odznacz pozostałe
+                }
+                //Archmage
+                else if(gp.ui.commandCol == 0 && gp.ui.commandRow == 4){
+                    //usuń poprzedni wybór jeśli był
+                    //zapisz że archmage
+                    //zaznacz
+                    //odznacz pozostałe
+                }
+                //Druid
+                else if(gp.ui.commandCol == 0 && gp.ui.commandRow == 5){
+                    //usuń poprzedni wybór jeśli był
+                    //zapisz że druid
+                    //zaznacz
+                    //odznacz pozostałe
+                }
+                //Assasin
+                else if(gp.ui.commandCol == 0 && gp.ui.commandRow == 6){
+                    //usuń poprzedni wybór jeśli był
+                    //zapisz że assasin
+                    //zaznacz
+                    //odznacz pozostałe
+                }
+                //Thieft
+                else if(gp.ui.commandCol == 0 && gp.ui.commandRow == 7){
+                    //usuń poprzedni wybór jeśli był
+                    //zapisz że thieft
+                    //zaznacz
+                    //odznacz pozostałe
+                }
+
+                //Fists
+                if(gp.ui.commandCol == 1 && gp.ui.commandRow == 0){
+                    //usuń poprzedni wybór jeśli był
+                    //zapisz że fists
+                    //zaznacz
+                    //odznacz pozostałe
+                }
+                //Sword
+                else if(gp.ui.commandCol == 1 && gp.ui.commandRow == 1){
+                    //usuń poprzedni wybór jeśli był
+                    //zapisz że sword
+                    //zaznacz
+                    //odznacz pozostałe
+                }
+                //Sword+Shield
+                else if(gp.ui.commandCol == 1 && gp.ui.commandRow == 2){
+                    //usuń poprzedni wybór jeśli był
+                    //zapisz że sword+shield
+                    //zaznacz
+                    //odznacz pozostałe
+                }
+                //Bow
+                else if(gp.ui.commandCol == 1 && gp.ui.commandRow == 3){
+                    //usuń poprzedni wybór jeśli był
+                    //zapisz że bow
+                    //zaznacz
+                    //odznacz pozostałe
+                }
+                //Staff
+                else if(gp.ui.commandCol == 1 && gp.ui.commandRow == 4){
+                    //usuń poprzedni wybór jeśli był
+                    //zapisz że staff
+                    //zaznacz
+                    //odznacz pozostałe
+                }
+                //Daggers
+                else if(gp.ui.commandCol == 1 && gp.ui.commandRow == 5){
+                    //usuń poprzedni wybór jeśli był
+                    //zapisz że daggers
+                    //zaznacz
+                    //odznacz pozostałe
+                }
+
+                //Light Armor
+                if(gp.ui.commandCol == 2 && gp.ui.commandRow == 0){
+                    //usuń poprzedni wybór jeśli był
+                    //zapisz że light
+                    //zaznacz
+                    //odznacz pozostałe
+                }
+                //Medium armor
+                else if(gp.ui.commandCol == 2 && gp.ui.commandRow == 1){
+                    //usuń poprzedni wybór jeśli był
+                    //zapisz że medium
+                    //zaznacz
+                    //odznacz pozostałe
+                }
+                //Heavy armor
+                else if(gp.ui.commandCol == 2 && gp.ui.commandRow == 2){
+                    //usuń poprzedni wybór jeśli był
+                    //zapisz że heavy
+                    //zaznacz
+                    //odznacz pozostałe
+                }
+
+                //Next
+                if(gp.ui.commandCol == 3 && gp.ui.commandRow == 0){
+                    //sprawdź czy żołnież gotowy?
+                    if(gp.ui.commandCount == 3 && gp.ui.commandNum == 1){
+                        gp.gameState = gp.playState;
+                    }
+                    else if(gp.ui.commandCount == 3 && gp.ui.commandNum == 0){
+                        gp.ui.commandCount = 0;
+                        gp.ui.commandNum++;
+                    }
+                    else{
+                        gp.ui.commandCount++;
+                    } 
+                }
+                //Skip
+                else if(gp.ui.commandCol == 3 && gp.ui.commandRow == 1){
+                    //sprawdź czy żołnież gotowy?
+                    if(gp.ui.commandCount > 0 && gp.ui.commandNum == 1){
+                        gp.gameState = gp.playState;
+                    }
+                    else if(gp.ui.commandCount > 0 && gp.ui.commandNum == 0){
+                        gp.ui.commandNum++;
+                    }
+                }
+            }
+        }
     }
     public void playState(int code)
     {
