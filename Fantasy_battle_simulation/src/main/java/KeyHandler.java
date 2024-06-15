@@ -235,7 +235,7 @@ InventoryCreator inventoryCreator = new InventoryCreator();
                     //zaznacz
                     //odznacz pozostałe
                 }
-                //Thieft
+                //Thief
                 else if(gp.ui.commandCol == 0 && gp.ui.commandRow == 7){
                    characterCreator.SetCharacterBooleansToFalse();
                     characterCreator.setThief(true);

@@ -182,10 +182,10 @@ public class UI {
             text2 = "Hero " + Integer.toString(commandCount+1);
         }
         else{
-            text = "Yellow Team Hero " + Integer.toString(commandCount+1);
+            text = "Yellow Team" + Integer.toString(commandCount+1);
             text2 = "Hero " + Integer.toString(commandCount+1);
         }
-        int x = gp.tileSize*7;
+        int x = gp.tileSize*9;
         int y = gp.tileSize*1;
 
         //Shadow
