@@ -7,6 +7,8 @@ import gamestructure.Team;
 import inteligence.Agressive;
 import inteligence.InteligenceType;
 import inventory.Inventory;
+import inventory.items.HealPotion;
+import inventory.items.Item;
 import map.MAPtable;
 import map.Tile;
 import weapons.Bow;
@@ -30,12 +32,20 @@ public class Simulation {
         Weapons2.add(bbow);
         ArrayList<Armour> armours = new ArrayList<>();
         armours.add(lightArmour);
+        Item healPotion1 = new HealPotion("HealPotion");
+        Item healPotion2 = new HealPotion("HealPotion");
+        Item healPotion3 = new HealPotion("HealPotion");
+        Item healPotion4 = new HealPotion("HealPotion");
         Inventory inventory = new Inventory(Weapons,armours);
         Inventory inventory2 = new Inventory(Weapons2,armours);
         InteligenceType inteligenceType1 = new Agressive(true);
         InteligenceType inteligenceType2 = new Agressive(true);
         InteligenceType inteligenceType3 = new Agressive(true);
         InteligenceType inteligenceType4 = new Agressive(true);
+        inventory.addItem(healPotion1);
+        inventory.addItem(healPotion2);
+        inventory2.addItem(healPotion3);
+        inventory2.addItem(healPotion4);
         Tile start = new Tile(0, 0);
         Tile testobject4Tile = new Tile(0, 1);
         Tile finish = new Tile(15, 15);
@@ -151,6 +161,11 @@ public class Simulation {
                 testobject3.getIntType().PerformTurn();
             if (testobject4.checkIfIsAlive())
                 testobject4.getIntType().PerformTurn();
+            System.out.println("Heath after combat");
+            System.out.println("Test object 1 :" + testobject1.getCurrentHp());
+            System.out.println("Test object 2 :" + testobject2.getCurrentHp());
+            System.out.println("Test object 3 :" + testobject3.getCurrentHp());
+            System.out.println("Test object 4 :" + testobject4.getCurrentHp());
     }
         }
     }
