@@ -83,15 +83,13 @@ public class InventoryCreator {
         setdaggers(false);
     }
 
-
-
-
-    public void CreateInventory()
+    public Inventory CreateInventory()
     {
         Inventory inventory = new Inventory(AddWeaponsToInventory(), AddArmorToInvenotry());
         for(int i=0;i< AddItems().size();i++) {
             inventory.addItem(AddItems().get(i));
         }
+        return inventory;
     }
 
 
