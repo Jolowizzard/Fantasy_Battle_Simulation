@@ -3,6 +3,7 @@ package characters.shooter;
 import inteligence.InteligenceType;
 import inventory.Inventory;
 import map.Tile;
+import simulationsetup.Scribe;
 import utils.RandomNumber;
 
 import java.awt.image.CropImageFilter;
@@ -39,8 +40,10 @@ public abstract class Shooter extends characters.Character {
     }
     public int passiveCrit(){
         RandomNumber rand = new RandomNumber();
-        if(rand.generateRandomNumber()<=CritChance)
+        if(rand.generateRandomNumber()<=CritChance) {
+            Scribe.addLog("Passive Crit succeeded");
             return CritValue;
+        }
         return 0;
     }
 

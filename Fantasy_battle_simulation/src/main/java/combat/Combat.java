@@ -5,6 +5,8 @@ import characters.mage.Mage;
 import characters.shooter.Shooter;
 import characters.warriors.Warrior;
 import armours.*;
+import simulationsetup.Scribe;
+
 import java.util.ArrayList;
 public class Combat {
     //This class will be used to performe various combat action
@@ -16,20 +18,27 @@ public class Combat {
     public Combat (Character attacker, Character defender){
         this.attacker=attacker;
         this.defender=defender;
+        Scribe.addLog("Combat started:");
+        Scribe.addLog(attacker.getName() + " attacked " + defender.getName());
     }
     public void BeginCombat(){
         //checking dodge
-        if(CheckDodge(defender))
+        if(CheckDodge(defender)) {
+            Scribe.addLog(defender.getName() + " dodged");
             return;
+        }
         if(defender.getInventory().getCurrentItem()!=null){
-            if(defender.getInventory().getCurrentItem().use(defender))//if shield worked end combat
+            if(defender.getInventory().getCurrentItem().use(defender)) {//if shield worked end combat
+                Scribe.addLog(defender.getName() + " used Shield");
                 return;
+            }
         }
         ArrayList<Integer> damageTypes = attacker.getInventory().getCurrentWeapon().attack(attacker);
         ArrayList<Integer> armourTypes = resolveArmour();
         int currentDamage;
         int damageSum;
         //Dealing damage hier also we have wiggle room for printing amounts of specific types of damage
+        Scribe.addLog(attacker.getName() + " used " + attacker.getInventory().getCurrentWeapon().getName());
         int additionalDamage=0;
         for(int i=0 ;i <damageTypes.size();i+=2){
             additionalDamage=0;

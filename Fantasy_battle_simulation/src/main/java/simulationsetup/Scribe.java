@@ -5,16 +5,10 @@ import java.util.Scanner;
 
 public class Scribe {
     //This class writes down every thing, that happens in the simulation
-    private FileWriter myWrite;
-    private String filename;
-    Scanner sc;
-    public Scribe(String filename) throws FileNotFoundException {
-        try {
-            myWrite = new FileWriter(filename);
-        } catch (IOException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-        }
+    public static FileWriter myWrite;
+    private static String filename;
+    public Scribe(String filename){
+        this.filename = filename;
     }
 /*    public void createFile(String filename) {
         try {
@@ -29,8 +23,14 @@ public class Scribe {
             e.printStackTrace();
         }
     }*/
-    public void addLog(String text) throws IOException {
-        myWrite.write(text);
-        myWrite.close();
+    public static void addLog(String message){
+            try (FileWriter fw = new FileWriter(filename, true);
+                 BufferedWriter bw = new BufferedWriter(fw);
+                 PrintWriter out = new PrintWriter(bw)) {
+                out.println(message);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
     }
 }

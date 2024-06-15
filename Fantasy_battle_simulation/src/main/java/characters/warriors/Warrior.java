@@ -3,6 +3,7 @@ package characters.warriors;
 import inteligence.InteligenceType;
 import inventory.Inventory;
 import map.Tile;
+import simulationsetup.Scribe;
 import utils.RandomNumber;
 
 public abstract class Warrior extends characters.Character {
@@ -37,8 +38,10 @@ public abstract class Warrior extends characters.Character {
     }
     public int passiveBlock(){
         RandomNumber rand = new RandomNumber();
-        if(rand.generateRandomNumber()<=BlockChance)
+        if(rand.generateRandomNumber()<=BlockChance) {
+            Scribe.addLog("Passive Block succeeded");
             return BlockValue;
+        }
         return 0;
     }
     public void setBlockChance(int blockChance) {

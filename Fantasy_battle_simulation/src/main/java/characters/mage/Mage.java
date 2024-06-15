@@ -3,7 +3,10 @@ package characters.mage;
 import inteligence.InteligenceType;
 import inventory.Inventory;
 import map.Tile;
+import simulationsetup.Scribe;
 import utils.RandomNumber;
+
+import java.security.Provider;
 
 public abstract class Mage extends characters.Character {
     private int MagicCritChance;
@@ -31,8 +34,10 @@ public abstract class Mage extends characters.Character {
 
     public int passiveMagicCrit(){
     RandomNumber rand = new RandomNumber();
-        if(rand.generateRandomNumber()<=MagicCritChance)
+        if(rand.generateRandomNumber()<=MagicCritChance) {
+            Scribe.addLog("Passive Magic Crit Succeeded");
             return MagicCritValue;
+        }
         return 0;
     }
 }

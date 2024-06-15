@@ -56,8 +56,9 @@ public class Dagger extends Weapon{
     }
     private int applyBleed(Character user){
         RandomNumber d100 = new RandomNumber();
-        if(d100.generateRandomNumber()<=bleedChance)
+        if(d100.generateRandomNumber()<=bleedChance) {
             return bleedDamage;
+        }
         return 0;
     }
 }

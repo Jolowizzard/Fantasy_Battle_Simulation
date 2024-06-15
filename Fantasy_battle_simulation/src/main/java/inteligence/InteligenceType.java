@@ -7,6 +7,7 @@ import map.MAPtable;
 import map.Tile;
 import movement.MovesAndPaths;
 import searchalgorythm.SearchAlgorythm;
+import simulationsetup.Scribe;
 import weapons.Weapon;
 
 import java.util.ArrayList;
@@ -134,6 +135,7 @@ public abstract class InteligenceType{
     public void resolveStatusEffects(){
         int bleed = character.getSpecificStatusEffectValue(0);
         System.out.println("Character " + character.getName() + " Bleed: "+bleed);
+        Scribe.addLog(character.getName()+ " Bleeds : " + bleed);
         character.takeDamage(bleed);
         character.setSpecificStatusEffect(0,0);
         if(character.getCurrentHp()<=0)

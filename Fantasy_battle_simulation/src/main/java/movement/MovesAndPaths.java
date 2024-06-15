@@ -2,6 +2,7 @@ package movement;
 
 import map.MAPtable;
 import map.Tile;
+import simulationsetup.Scribe;
 
 import java.util.ArrayList;
 
@@ -16,6 +17,7 @@ public class MovesAndPaths {
         }
         else
             location = locations.get(movement-1);
+     Scribe.addLog(character.getName()+ " Moves to " + location);
         MAPtable.changeLocation(character,location);
     }
    /* static ArrayList<Integer> FindPath(int start,int target){
