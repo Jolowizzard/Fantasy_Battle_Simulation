@@ -4,6 +4,7 @@ import armours.Armour;
 import armours.HeavyArmour;
 import armours.LightArmour;
 import armours.MediumArmour;
+import inventory.Inventory;
 import inventory.items.HealPotion;
 import inventory.items.Item;
 import inventory.items.Shield;
@@ -87,7 +88,10 @@ public class InventoryCreator {
 
     public void CreateInventory()
     {
-
+        Inventory inventory = new Inventory(AddWeaponsToInventory(), AddArmorToInvenotry());
+        for(int i=0;i< AddItems().size();i++) {
+            inventory.addItem(AddItems().get(i));
+        }
     }
 
 
