@@ -25,6 +25,33 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class CharacterCreator {
+   private int CounterId = 99;
+    private boolean Knight = false;
+    private boolean Paladin = false;
+    private boolean Marksman = false;
+    private boolean Ranger = false;
+    private boolean Assassin = false;
+    private boolean Thief = false;
+    private boolean Wizard = false;
+    private boolean Druid = false;
+
+    public boolean getKnight(){return Knight;}
+    public boolean getPaladin(){return Paladin;}
+    public boolean getWizard(){return Wizard;}
+    public boolean getDruid(){return Druid;}
+    public boolean getMarksman(){return Marksman;}
+    public boolean getRanger(){return Ranger;}
+    public boolean getAssassin(){return Assassin;}
+    public boolean getThief(){return Thief;}
+
+    public void setKnight(boolean bool){Knight=bool;}
+    public void setPaladin(boolean bool){Paladin=bool;}
+    public void setWizard(boolean bool){Wizard=bool;}
+    public void setDruid(boolean bool){Druid=bool;}
+    public void setMarksman(boolean bool){Marksman=bool;}
+    public void setRanger(boolean bool){Ranger=bool;}
+    public void setAssassin(boolean bool){Assassin=bool;}
+    public void setThief(boolean bool){Thief=bool;}
     //method for creating characters in simulation
     //working with GUI
     public Character createCharater(){
@@ -172,12 +199,54 @@ public class CharacterCreator {
         }
         return null;
     }
-    public void CharacterCreation() {
-        int CounterId = 99;
+    public void CharacterCreation(Tile ChoosenTile, String ChoosenName )
+    {
+        if(getKnight()==true)
+        {
+            createKnight(CounterId,ChoosenTile, ChoosenName);
+        }
+        if(getPaladin()==true) {
+            createPaladin(CounterId, ChoosenTile, ChoosenName);
+        }
+            if(getWizard()==true)
+            {
+                createWizard(CounterId,ChoosenTile, ChoosenName);
+            }
+            if(getDruid()==true)
+            {
+                createDruid(CounterId,ChoosenTile, ChoosenName);
+            }
+            if(getMarksman()==true)
+            {
+                createMarksman(CounterId,ChoosenTile, ChoosenName);
+            }
+            if(getRanger()==true)
+            {
+                createRanger(CounterId,ChoosenTile, ChoosenName);
+            }
+            if(getAssassin()==true)
+            {
+                createAssassin(CounterId,ChoosenTile, ChoosenName);
+            }
+            if(getThief()==true)
+            {
+                createThief(CounterId,ChoosenTile, ChoosenName);
 
+            }
+            CounterId = CounterId - 1;
     }
 
-
+public void SetCharacterBooleansToFalse()
+{
+    setKnight(false);
+    setPaladin(false);
+    setMarksman(false);
+    setRanger(false);
+    setThief(false);
+    setAssassin(false);
+    setDruid(false);
+    setWizard(false);
+}
     public void createKnight(int id, Tile position, String Name) {
         ArrayList<Weapon> Weapons = new ArrayList<>();
         Inventory inventory = new Inventory();
@@ -219,7 +288,8 @@ public class CharacterCreator {
         InteligenceType intelligence = new Agressive(true);
         characters.Character newWizard = new Wizard(id, Name, intelligence, position, inventory);
     }
-    public void createAssasin(int id, Tile position, String Name) {
+
+    public void createAssassin(int id, Tile position, String Name) {
         ArrayList<Weapon> Weapons = new ArrayList<>();
         Inventory inventory = new Inventory();
         InteligenceType intelligence = new Agressive(true);
