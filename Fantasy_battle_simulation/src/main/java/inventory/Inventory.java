@@ -9,6 +9,7 @@ import java.util.ArrayList;
 public class Inventory {
     private Weapon CurrentWeapon;
     private Armour CurrentArmour;
+    private Item CurrentItem;
     private ArrayList<Weapon> Weapons;
     private ArrayList<Armour> Armours;
     private ArrayList<Item> Items;
@@ -40,6 +41,12 @@ public class Inventory {
         return CurrentArmour;
     }
 
+    public Item getCurrentItem() {
+        return CurrentItem;
+    }
+    public void setCurrentItem(Item currentItem) {
+        CurrentItem = currentItem;
+    }
     public void setCurrentWeapon(Weapon currentWeapon){
         this.CurrentWeapon = currentWeapon;
     }
