@@ -10,7 +10,11 @@ public class HealPotion extends Item{
         healthPercentageValue = 50;
         full = true;
     }
-
+    public HealPotion() {
+        setName("HealPotion");
+        healthPercentageValue = 50;
+        full = true;
+    }
     public int getHealthPercentageValue() {
         return healthPercentageValue;
     }

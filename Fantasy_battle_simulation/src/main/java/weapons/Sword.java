@@ -10,8 +10,10 @@ public class Sword extends Weapon {
     public Sword(String Name, int PhisicalDamage, int MagicDamage, int Range, int Accuracy, boolean Hands,boolean magickDamage){
         super(Name,PhisicalDamage,MagicDamage,Range,Accuracy,Hands,magickDamage);
     }
-    public void SetValues() {
+    public Sword(){
 
+    }
+    public void SetValues() {
     }
     @Override
     public ArrayList<Integer> attack(Character user) {

@@ -7,10 +7,10 @@ import map.Tile;
 import java.util.ArrayList;
 
 public class Staff extends Weapon{
-    Staff(String Name,int PhisicalDamage,int MagicDamage,int Range,int Accuracy,boolean Hands,boolean MagickWeapon){
+    public Staff(String Name,int PhisicalDamage,int MagicDamage,int Range,int Accuracy,boolean Hands,boolean MagickWeapon){
         super(Name,PhisicalDamage,MagicDamage,Range,Accuracy,Hands,MagickWeapon);
     }
-    Staff(){
+    public Staff(){
         setHands(true);
         setAccuracy(100);
         setMagicDamage(15);
