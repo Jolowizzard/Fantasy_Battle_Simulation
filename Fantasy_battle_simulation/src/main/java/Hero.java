@@ -26,12 +26,20 @@ public class Hero extends Entity{
 
             Knight_P = ImageIO.read(getClass().getResourceAsStream("Knight_P.png"));
             Knight_Y = ImageIO.read(getClass().getResourceAsStream("Knight_Y.png"));
+            Paladin_P = ImageIO.read(getClass().getResourceAsStream("Paladin_P.png"));
+            Paladin_Y = ImageIO.read(getClass().getResourceAsStream("Paladin_Y.png"));
             Archer_P = ImageIO.read(getClass().getResourceAsStream("Archer_P.png"));
             Archer_Y = ImageIO.read(getClass().getResourceAsStream("Archer_Y.png"));
+            Marksman_P = ImageIO.read(getClass().getResourceAsStream("Marksman_P.png"));
+            Marksman_Y = ImageIO.read(getClass().getResourceAsStream("Marksman_Y.png"));
             Archmage_P = ImageIO.read(getClass().getResourceAsStream("Archmage_P.png"));
             Archmage_Y = ImageIO.read(getClass().getResourceAsStream("Archmage_Y.png"));
+            Druid_P = ImageIO.read(getClass().getResourceAsStream("Druid_P.png"));
+            Druid_Y = ImageIO.read(getClass().getResourceAsStream("Druid_Y.png"));
             Assasin_P = ImageIO.read(getClass().getResourceAsStream("Assasin_P.png"));
             Assasin_Y = ImageIO.read(getClass().getResourceAsStream("Assasin_Y.png"));
+            Thief_P = ImageIO.read(getClass().getResourceAsStream("Thief_P.png"));
+            Thief_Y = ImageIO.read(getClass().getResourceAsStream("Thief_Y.png"));
 
         }catch(IOException e){
             e.printStackTrace();
