@@ -1,8 +1,10 @@
+import simulationsetup.CharacterCreator;
+
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 public class KeyHandler implements KeyListener{
-
+CharacterCreator characterCreator = new CharacterCreator();
     GamePanel gp;
 
     public KeyHandler(GamePanel gp){
@@ -170,57 +172,57 @@ public class KeyHandler implements KeyListener{
             if(code == KeyEvent.VK_ENTER){
                 //Knight
                 if(gp.ui.commandCol == 0 && gp.ui.commandRow == 0){
-                    //usuń poprzedni wybór jeśli był
-                    //zapisz że knight
+                    characterCreator.SetCharacterBooleansToFalse();
+                    characterCreator.setKnight(true);
                     //zaznacz
                     //odznacz pozostałe
                 }
                 //Paladin
                 else if(gp.ui.commandCol == 0 && gp.ui.commandRow == 1){
-                    //usuń poprzedni wybór jeśli był
-                    //zapisz że paladin
+                    characterCreator.SetCharacterBooleansToFalse();
+                    characterCreator.setPaladin(true);
                     //zaznacz
                     //odznacz pozostałe
                 }
                 //Archer
                 else if(gp.ui.commandCol == 0 && gp.ui.commandRow == 2){
-                    //usuń poprzedni wybór jeśli był
-                    //zapisz że archer
+                    characterCreator.SetCharacterBooleansToFalse();
+                    characterCreator.setRanger(true);
                     //zaznacz
                     //odznacz pozostałe
                 }
                 //Marksman
                 else if(gp.ui.commandCol == 0 && gp.ui.commandRow == 3){
-                    //usuń poprzedni wybór jeśli był
-                    //zapisz że marskman
+                    characterCreator.SetCharacterBooleansToFalse();
+                    characterCreator.setMarksman(true);
                     //zaznacz
                     //odznacz pozostałe
                 }
                 //Archmage
                 else if(gp.ui.commandCol == 0 && gp.ui.commandRow == 4){
-                    //usuń poprzedni wybór jeśli był
-                    //zapisz że archmage
+                    characterCreator.SetCharacterBooleansToFalse();
+                    characterCreator.setWizard(true);
                     //zaznacz
                     //odznacz pozostałe
                 }
                 //Druid
                 else if(gp.ui.commandCol == 0 && gp.ui.commandRow == 5){
-                    //usuń poprzedni wybór jeśli był
-                    //zapisz że druid
+                    characterCreator.SetCharacterBooleansToFalse();
+                    characterCreator.setDruid(true);
                     //zaznacz
                     //odznacz pozostałe
                 }
                 //Assasin
                 else if(gp.ui.commandCol == 0 && gp.ui.commandRow == 6){
-                    //usuń poprzedni wybór jeśli był
-                    //zapisz że assasin
+                    characterCreator.SetCharacterBooleansToFalse();
+                    characterCreator.setAssassin(true);
                     //zaznacz
                     //odznacz pozostałe
                 }
                 //Thieft
                 else if(gp.ui.commandCol == 0 && gp.ui.commandRow == 7){
-                    //usuń poprzedni wybór jeśli był
-                    //zapisz że thieft
+                   characterCreator.SetCharacterBooleansToFalse();
+                    characterCreator.setThief(true);
                     //zaznacz
                     //odznacz pozostałe
                 }
