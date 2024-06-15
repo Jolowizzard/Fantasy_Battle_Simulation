@@ -15,7 +15,7 @@ public class UI {
     public int commandCount = 0;
     public int commandCol = 0;
     public int titleScreenState = 0; // 0 : Main Menu, 1 : the second screen, 2 : character screen
-    BufferedImage cs, sel, selected;
+    BufferedImage csp, csy, sel, selected;
 
     public UI(GamePanel gp){
         this.gp = gp;
@@ -23,7 +23,8 @@ public class UI {
         arial_40 = new Font("Castellar", Font.PLAIN, 40);
 
         try{
-            cs = ImageIO.read(getClass().getResourceAsStream("Character screen.png"));
+            csp = ImageIO.read(getClass().getResourceAsStream("Character screen P.png"));
+            csy = ImageIO.read(getClass().getResourceAsStream("Character screen Y.png"));
             sel = ImageIO.read(getClass().getResourceAsStream("Select.png"));
         }catch(IOException e){
             e.printStackTrace();
@@ -164,7 +165,13 @@ public class UI {
         g2.setColor(Color.black);
         g2.fillRect(0, 0, gp.ScreenWidth, gp.ScreenHeight);
 
-        g2.drawImage(cs, 0, 0, gp.tileSize*16, gp.tileSize*16, null);
+        if(commandNum == 0){
+            g2.drawImage(csp, 0, 0, gp.tileSize*16, gp.tileSize*16, null);
+        }
+        else{
+            g2.drawImage(csy, 0, 0, gp.tileSize*16, gp.tileSize*16, null);
+        }
+        
 
         //Title Name
         g2.setFont(g2.getFont().deriveFont(Font.BOLD,35F));
@@ -183,7 +190,7 @@ public class UI {
             g2.setColor(new Color(119, 0, 200));
         }
         else{
-            g2.setColor(new Color(255, 255, 0));
+            g2.setColor(new Color(255, 174, 66));
         }
         g2.drawString(text, x+3, y+3);
         //Main Text
@@ -191,7 +198,7 @@ public class UI {
             g2.setColor(new Color(174, 55, 255));
         }
         else{
-            g2.setColor(new Color(255, 174, 66));
+            g2.setColor(new Color(255, 255, 0));
         }
         g2.drawString(text, x, y);
         
