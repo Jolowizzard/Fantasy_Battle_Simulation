@@ -100,6 +100,7 @@ InventoryCreator inventoryCreator = new InventoryCreator();
         //THIRD SCREEN  CHARACTER SELECTION
         else if(gp.ui.titleScreenState == 2){
             if(code == KeyEvent.VK_W){
+                System.out.println(Integer.toString(gp.ui.commandCol)+" "+(Integer.toString(gp.ui.commandRow)));
                 gp.ui.commandRow--;
                 if(gp.ui.commandRow < 0 && gp.ui.commandCol == 0){
                     gp.ui.commandRow = 7;
@@ -111,10 +112,15 @@ InventoryCreator inventoryCreator = new InventoryCreator();
                     gp.ui.commandRow = 2;
                 }
                 else if(gp.ui.commandRow < 0 && gp.ui.commandCol == 3){
+                    gp.ui.commandRow = 2;
+                }
+                else if(gp.ui.commandRow < 0 && gp.ui.commandCol == 4){
                     gp.ui.commandRow = 1;
                 }
+                System.out.println(Integer.toString(gp.ui.commandCol)+" "+(Integer.toString(gp.ui.commandRow)));
             }
             if(code == KeyEvent.VK_S){
+                System.out.println(Integer.toString(gp.ui.commandCol)+" "+(Integer.toString(gp.ui.commandRow)));
                 gp.ui.commandRow++;
                 if(gp.ui.commandRow > 7 && gp.ui.commandCol == 0){
                     gp.ui.commandRow = 0;
@@ -125,11 +131,16 @@ InventoryCreator inventoryCreator = new InventoryCreator();
                 else if(gp.ui.commandRow > 2 && gp.ui.commandCol == 2){
                     gp.ui.commandRow = 0;
                 }
-                else if(gp.ui.commandRow > 1 && gp.ui.commandCol == 3){
+                else if(gp.ui.commandRow > 2 && gp.ui.commandCol == 3){
                     gp.ui.commandRow = 0;
                 }
+                else if(gp.ui.commandRow > 1 && gp.ui.commandCol == 4){
+                    gp.ui.commandRow = 0;
+                }
+                System.out.println(Integer.toString(gp.ui.commandCol)+" "+(Integer.toString(gp.ui.commandRow)));
             }
             if(code == KeyEvent.VK_A){
+                System.out.println(Integer.toString(gp.ui.commandCol)+" "+(Integer.toString(gp.ui.commandRow)));
                 if(gp.ui.commandCol == 0 && gp.ui.commandRow == 7){
                     gp.ui.commandCol--;
                     gp.ui.commandRow = 1;
@@ -138,17 +149,19 @@ InventoryCreator inventoryCreator = new InventoryCreator();
                     gp.ui.commandCol--;
                     gp.ui.commandRow = 0;
                 }
-                else if(gp.ui.commandCol == 3){
+                else if(gp.ui.commandCol == 4){
                     gp.ui.commandCol--;
                     gp.ui.commandRow = 2;
                 }
                 else 
                     gp.ui.commandCol--;
                 if(gp.ui.commandCol < 0){
-                    gp.ui.commandCol = 3;
+                    gp.ui.commandCol = 4;
                 }
+                System.out.println(Integer.toString(gp.ui.commandCol)+" "+(Integer.toString(gp.ui.commandRow)));
             }
             if(code == KeyEvent.VK_D){
+                System.out.println(Integer.toString(gp.ui.commandCol)+" "+(Integer.toString(gp.ui.commandRow)));
                 if(gp.ui.commandCol == 0 && gp.ui.commandRow > 5){
                     gp.ui.commandCol++;
                     gp.ui.commandRow = 5;
@@ -157,19 +170,20 @@ InventoryCreator inventoryCreator = new InventoryCreator();
                     gp.ui.commandCol++;
                     gp.ui.commandRow = 2;
                 }
-                else if(gp.ui.commandCol == 2){
+                else if(gp.ui.commandCol == 3){
                     gp.ui.commandCol++;
                     gp.ui.commandRow = 0;
                 }
-                else if(gp.ui.commandCol == 3){
+                else if(gp.ui.commandCol == 4){
                     gp.ui.commandCol++;
                     gp.ui.commandRow += 6;
                 }
                 else 
                     gp.ui.commandCol++;
-                if(gp.ui.commandCol > 3){
+                if(gp.ui.commandCol > 4){
                     gp.ui.commandCol = 0;
                 }
+                System.out.println(Integer.toString(gp.ui.commandCol)+" "+(Integer.toString(gp.ui.commandRow)));
             }
             if(code == KeyEvent.VK_ENTER){
                 //Knight
@@ -294,23 +308,47 @@ InventoryCreator inventoryCreator = new InventoryCreator();
                     //odznacz pozostałe
                 }
 
-                //Next
+                //1 Potion
                 if(gp.ui.commandCol == 3 && gp.ui.commandRow == 0){
+                    //inventoryCreator.setArmorToFalse();
+                    //inventoryCreator.setlight(true);
+                    //zaznacz
+                    //odznacz pozostałe
+                }
+                //2 Potions
+                else if(gp.ui.commandCol == 3 && gp.ui.commandRow == 1){
+                    //inventoryCreator.setArmorToFalse();
+                    //inventoryCreator.setmedium(true);
+                    //zaznacz
+                    //odznacz pozostałe
+                }
+                //3 Potions
+                else if(gp.ui.commandCol == 3 && gp.ui.commandRow == 2){
+                    //inventoryCreator.setArmorToFalse();
+                    //inventoryCreator.setheavy(true);
+                    //zaznacz
+                    //odznacz pozostałe
+                }
+
+                //Next
+                if(gp.ui.commandCol == 4 && gp.ui.commandRow == 0){
                     //sprawdź czy żołnież gotowy?
                     if(gp.ui.commandCount == 3 && gp.ui.commandNum == 1){
+                        //zapisz postać
                         gp.gameState = gp.playState;
                     }
                     else if(gp.ui.commandCount == 3 && gp.ui.commandNum == 0){
+                        //zapisz postać
                         gp.ui.commandCount = 0;
                         gp.ui.commandNum++;
                     }
                     else{
+                        //zapisz postać
                         gp.ui.commandCount++;
                     } 
                 }
                 //Skip
-                else if(gp.ui.commandCol == 3 && gp.ui.commandRow == 1){
-                    //sprawdź czy żołnież gotowy?
+                else if(gp.ui.commandCol == 4 && gp.ui.commandRow == 1){
                     if(gp.ui.commandCount > 0 && gp.ui.commandNum == 1){
                         gp.gameState = gp.playState;
                     }

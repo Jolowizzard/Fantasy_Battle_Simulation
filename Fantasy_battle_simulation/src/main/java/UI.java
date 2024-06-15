@@ -176,13 +176,16 @@ public class UI {
         //Title Name
         g2.setFont(g2.getFont().deriveFont(Font.BOLD,35F));
         String text;
+        String text2;
         if(commandNum == 0){
-            text = "Purple Team Hero " + Integer.toString(commandCount+1);
+            text = "Purple Team";
+            text2 = "Hero " + Integer.toString(commandCount+1);
         }
         else{
             text = "Yellow Team Hero " + Integer.toString(commandCount+1);
+            text2 = "Hero " + Integer.toString(commandCount+1);
         }
-        int x = gp.tileSize*13/2;
+        int x = gp.tileSize*7;
         int y = gp.tileSize*1;
 
         //Shadow
@@ -193,6 +196,7 @@ public class UI {
             g2.setColor(new Color(255, 174, 66));
         }
         g2.drawString(text, x+3, y+3);
+        g2.drawString(text2, x+3, gp.tileSize+y+3);
         //Main Text
         if(commandNum == 0){
             g2.setColor(new Color(174, 55, 255));
@@ -201,6 +205,7 @@ public class UI {
             g2.setColor(new Color(255, 255, 0));
         }
         g2.drawString(text, x, y);
+        g2.drawString(text2, x+3, gp.tileSize+y);
         
         //Menu
 
@@ -208,103 +213,98 @@ public class UI {
         //knight
         if(gp.ui.commandCol == 0 && gp.ui.commandRow == 0){
             drawSelect(gp.ui.commandCol, gp.ui.commandRow);
-            g2.drawString("X", gp.ui.commandCol, gp.ui.commandRow);
         }
         //paladin
         if(gp.ui.commandCol == 0 && gp.ui.commandRow == 1){
             drawSelect(gp.ui.commandCol, gp.ui.commandRow);
-            g2.drawString("X", gp.ui.commandCol, gp.ui.commandRow);
         }
         //archer
         if(gp.ui.commandCol == 0 && gp.ui.commandRow == 2){
             drawSelect(gp.ui.commandCol, gp.ui.commandRow);
-            g2.drawString("X", gp.ui.commandCol, gp.ui.commandRow);
         }
         //marskman
         if(gp.ui.commandCol == 0 && gp.ui.commandRow == 3){
             drawSelect(gp.ui.commandCol, gp.ui.commandRow);
-            g2.drawString("X", gp.ui.commandCol, gp.ui.commandRow);
         }
         //archmage
         if(gp.ui.commandCol == 0 && gp.ui.commandRow == 4){
             drawSelect(gp.ui.commandCol, gp.ui.commandRow);
-            g2.drawString("X", gp.ui.commandCol, gp.ui.commandRow);
         }
         //druid
         if(gp.ui.commandCol == 0 && gp.ui.commandRow == 5){
             drawSelect(gp.ui.commandCol, gp.ui.commandRow);
-            g2.drawString("X", gp.ui.commandCol, gp.ui.commandRow);
         }
         //assasin
         if(gp.ui.commandCol == 0 && gp.ui.commandRow == 6){
             drawSelect(gp.ui.commandCol, gp.ui.commandRow);
-            g2.drawString("X", gp.ui.commandCol, gp.ui.commandRow);
         }
         //thief
         if(gp.ui.commandCol == 0 && gp.ui.commandRow == 7){
             drawSelect(gp.ui.commandCol, gp.ui.commandRow);
-            g2.drawString("X", gp.ui.commandCol, gp.ui.commandRow);
         }
 
         //COLUMN 2
         //Fists
         if(gp.ui.commandCol == 1 && gp.ui.commandRow == 0){
             drawSelect(gp.ui.commandCol, gp.ui.commandRow);
-            g2.drawString("X", gp.ui.commandCol, gp.ui.commandRow);
         }
         //Sword + Shield
         if(gp.ui.commandCol == 1 && gp.ui.commandRow == 1){
             drawSelect(gp.ui.commandCol, gp.ui.commandRow);
-            g2.drawString("X", gp.ui.commandCol, gp.ui.commandRow);
         }
         //Sword
         if(gp.ui.commandCol == 1 && gp.ui.commandRow == 2){
             drawSelect(gp.ui.commandCol, gp.ui.commandRow);
-            g2.drawString("X", gp.ui.commandCol, gp.ui.commandRow);
         }
         //Bow
         if(gp.ui.commandCol == 1 && gp.ui.commandRow == 3){
             drawSelect(gp.ui.commandCol, gp.ui.commandRow);
-            g2.drawString("X", gp.ui.commandCol, gp.ui.commandRow);
         }
         //Staff
         if(gp.ui.commandCol == 1 && gp.ui.commandRow == 4){
             drawSelect(gp.ui.commandCol, gp.ui.commandRow);
-            g2.drawString("X", gp.ui.commandCol, gp.ui.commandRow);
         }
         //Daggers
         if(gp.ui.commandCol == 1 && gp.ui.commandRow == 5){
             drawSelect(gp.ui.commandCol, gp.ui.commandRow);
-            g2.drawString("X", gp.ui.commandCol, gp.ui.commandRow);
         }
 
         //COLUMN 3
         //light
         if(gp.ui.commandCol == 2 && gp.ui.commandRow == 0){
             drawSelect(gp.ui.commandCol, gp.ui.commandRow);
-            g2.drawString("X", gp.ui.commandCol, gp.ui.commandRow);
         }
         //medium
         if(gp.ui.commandCol == 2 && gp.ui.commandRow == 1){
             drawSelect(gp.ui.commandCol, gp.ui.commandRow);
-            g2.drawString("X", gp.ui.commandCol, gp.ui.commandRow);
         }
         //heavy
         if(gp.ui.commandCol == 2 && gp.ui.commandRow == 2){
             drawSelect(gp.ui.commandCol, gp.ui.commandRow);
-            g2.drawString("X", gp.ui.commandCol, gp.ui.commandRow);
         }
 
         //COLUMN 4
-        //next
+        //1
         if(gp.ui.commandCol == 3 && gp.ui.commandRow == 0){
+            drawSelect(gp.ui.commandCol, gp.ui.commandRow);
+        }
+        //2
+        if(gp.ui.commandCol == 3 && gp.ui.commandRow == 1){
+            drawSelect(gp.ui.commandCol, gp.ui.commandRow);
+        }
+        //3
+        if(gp.ui.commandCol == 3 && gp.ui.commandRow == 2){
+            drawSelect(gp.ui.commandCol, gp.ui.commandRow);
+        }
+
+        //COLUMN 5
+        //next
+        if(gp.ui.commandCol == 4 && gp.ui.commandRow == 0){
             drawSelect(7, 6);
-            g2.drawString("X", gp.ui.commandCol, gp.ui.commandRow);
         }
         //skip
-        if(gp.ui.commandCol == 3 && gp.ui.commandRow == 1){
+        if(gp.ui.commandCol == 4 && gp.ui.commandRow == 1){
             drawSelect(7, 7);
-            g2.drawString("X", gp.ui.commandCol, gp.ui.commandRow);
         }
     }
     public void drawSelect(int x, int y){
