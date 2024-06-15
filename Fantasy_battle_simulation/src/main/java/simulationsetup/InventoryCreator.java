@@ -2,8 +2,8 @@ package simulationsetup;
 
 public class InventoryCreator {
     //Weapons
-   private boolean fists = false;
-   private boolean sword = false;
+    private boolean fists = false;
+    private boolean sword = false;
     private boolean swordshield = false;
     private boolean bow = false;
     private boolean staff = false;

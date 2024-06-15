@@ -22,7 +22,38 @@ public class Simulation {
     private Team teamYellow;
     private Team teamPurple;
     public Simulation(String mapName,Team teamYellow,Team teamPurple){
-
+        MAPtable.InitializeMap("mapName");
+        boolean oneTeamWon = false;
+        int simulationTime = 0;
+        ArrayList<characters.Character> stack = new ArrayList<>();
+        //checking which team is the biggest
+        int BiggestTeamSize = teamYellow.getTeam().size();
+        if(teamYellow.getTeam().size()<teamPurple.getTeam().size()){
+            BiggestTeamSize = teamPurple.getTeam().size();
+        }
+        //preparing stack order
+        for(int i = 0 ; i<BiggestTeamSize;i++)
+        {
+            if(i<teamPurple.getTeam().size())
+                stack.add(teamPurple.getTeam().get(i));
+            if(i<teamYellow.getTeam().size())
+                stack.add(teamYellow.getTeam().get(i));
+        }
+        while( !oneTeamWon || simulationTime < 100){
+            //Performing turns
+            for(int i = 0; i < stack.size(); i++)
+                stack.get(i).getIntType().PerformTurn();
+            //VictoryCheck
+            if (!teamYellow.CheckIfTeamIsTeamAlive()){
+                oneTeamWon = true;
+                System.out.printf("Team A won");
+            }
+            if (!teamPurple.CheckIfTeamIsTeamAlive()) {
+                oneTeamWon = true;
+                System.out.printf("Team B won");
+            }
+            simulationTime++;
+        }
     }
     public static void main(String [] args ) {
 
@@ -69,7 +100,7 @@ public class Simulation {
         MAPtable.placeCharacterOnMap(finish);
         MAPtable.placeCharacterOnMap(testobject1Tile);
         MAPtable.placeCharacterOnMap(testobject4Tile);
-/*        map.MAPtable.placeCharacterOnMap(g1);
+/*      map.MAPtable.placeCharacterOnMap(g1);
         map.MAPtable.placeCharacterOnMap(g2);
         map.MAPtable.placeCharacterOnMap(g3);
         map.MAPtable.placeCharacterOnMap(g4);

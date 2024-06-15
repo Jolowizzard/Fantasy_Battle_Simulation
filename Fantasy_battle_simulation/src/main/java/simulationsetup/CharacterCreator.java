@@ -143,24 +143,19 @@ public class CharacterCreator {
     private Weapon createWeapon(String name){
         switch (name) {
             case "Sword" -> {
-                Weapon weapon = new Sword();
-                return weapon;
+                return new Sword();
             }
             case "Staff" -> {
-                Weapon weapon = new Staff();
-                return weapon;
+                return new Staff();
             }
             case "Fists" -> {
-                Weapon weapon = new Fists();
-                return weapon;
+                return new Fists();
             }
             case "Bow" -> {
-                Weapon weapon = new Bow();
-                return weapon;
+                return new Bow();
             }
             case "Dagger" -> {
-                Weapon weapon = new Dagger();
-                return weapon;
+                return new Dagger();
             }
         }
         return null;
@@ -168,12 +163,10 @@ public class CharacterCreator {
     private Item createItem(String name){
         switch (name) {
             case "HealPotion" -> {
-                Item healPotion = new HealPotion();
-                return healPotion;
+                return new HealPotion();
             }
             case "Shield" -> {
-                Item shield = new Shield();
-                return shield;
+                return new Shield();
             }
         }
         return null;
@@ -181,20 +174,16 @@ public class CharacterCreator {
     private Armour createArmour(String name){
         switch (name) {
             case "NoArmour" -> {
-                Armour noArmour = new NoArmor();
-                return noArmour;
+                return new NoArmor();
             }
             case "LightArmour" -> {
-                Armour lightArmour = new LightArmour();
-                return lightArmour;
+                return new LightArmour();
             }
             case "MediumArmour" -> {
-                Armour mediumArmour = new MediumArmour();
-                return mediumArmour;
+                return new MediumArmour();
             }
             case "HeavyArmour" -> {
-                Armour heavyArmour = new HeavyArmour();
-                return heavyArmour;
+                return new HeavyArmour();
             }
         }
         return null;
