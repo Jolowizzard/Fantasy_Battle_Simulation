@@ -320,6 +320,8 @@ InventoryCreator inventoryCreator = new InventoryCreator();
                         gp.ui.col3 = 0;
                         if(gp.ui.commandCount == 3 && gp.ui.commandNum == 1){ //tu wybrano wszytkich bohaterów
                             //zapisz postać
+                            gp.ui.commandCol = 0;
+                            gp.ui.commandRow = 0;
                             gp.tileM.lodaMap();
                             gp.ui.titleScreenState = 3;
                         }
@@ -342,6 +344,8 @@ InventoryCreator inventoryCreator = new InventoryCreator();
                     gp.ui.col3 = 0;
                     if(gp.ui.commandCount > 0 && gp.ui.commandNum == 1){ //tu wybrano wszytkich bohaterów
                         gp.tileM.lodaMap();
+                        gp.ui.commandCol = 0;
+                        gp.ui.commandRow = 0;
                         gp.ui.titleScreenState = 3;
                     }
                     else if(gp.ui.commandCount > 0 && gp.ui.commandNum == 0){  //tu team się zmienia
@@ -374,6 +378,40 @@ InventoryCreator inventoryCreator = new InventoryCreator();
             if(code == KeyEvent.VK_ENTER){
                 gp.ui.titleScreenState = 4;
                 }
+        }
+        //FIFTH SCREEN  MAP SELECTION
+        else if(gp.ui.titleScreenState == 4){
+            if(code == KeyEvent.VK_W){
+                gp.ui.commandRow--;
+                if(gp.ui.commandRow < 0){
+                    gp.ui.commandRow = 15;
+                }
+            }
+            if(code == KeyEvent.VK_S){
+                gp.ui.commandRow++;
+                if(gp.ui.commandRow > 15){
+                    gp.ui.commandRow = 0;
+                }
+            }
+            if(code == KeyEvent.VK_A){
+                gp.ui.commandCol--;
+                if(gp.ui.commandCol < 0){
+                    gp.ui.commandCol = 15;
+                }
+            }
+            if(code == KeyEvent.VK_D){
+                gp.ui.commandCol++;
+                if(gp.ui.commandCol > 15){
+                    gp.ui.commandCol = 0;
+                }
+            }
+            if(code == KeyEvent.VK_ENTER){ //franek tutaj = = == = == = == = == = == == == = = = == = = == = = = = = = = == = == == = = == = == = == = == = == = = = == = = = == = = = = = == = = = = = = = == 
+                // if nie położono wszystkich
+                //get x get y
+                //połóż jednostkę
+                //else
+                //gp.gameState = gp.playState;
+            }
         }
     }
     public void playState(int code)
