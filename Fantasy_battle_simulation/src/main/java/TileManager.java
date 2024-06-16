@@ -74,7 +74,7 @@ public class TileManager {
     }
     public void lodaMap(){
         try{
-            //Wybór mapy - - - - - - - - - - -- - - -- - -- - - --  -- - -- - -- - - -- - - -- - -- - - - - - - - -- - - - - --- -- - -- - - - - --- - -- - - - - -- - - - - - - - 
+            //Wybór mapy
             InputStream is = getClass().getResourceAsStream(gp.mapName);
             BufferedReader br = new BufferedReader(new InputStreamReader(is));
 
@@ -91,7 +91,7 @@ public class TileManager {
 
                     int num = Integer.parseInt(numbers[col]);
 
-                    //generowanie losowych kafelków 0 (33% szans że 0, 8% szans na każdy z zakresu 2-9)- - - - -- - -- - -- - - - -- - - - -- - - - -- -- -- 
+                    //generowanie losowych kafelków 0 (33% szans że 0, 8% szans na każdy z zakresu 2-9) 
                     if(num == 0){
                         Random rand = new Random();
                         num = rand.nextInt(12) + 1;
