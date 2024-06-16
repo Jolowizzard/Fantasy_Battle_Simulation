@@ -2,12 +2,13 @@ package gamestructure;
 
 import java.util.ArrayList;
 import characters.Character;
+
 public class Team{
-    private ArrayList<characters.Character> team;
+    private ArrayList<Character> team;
 
     public Team(ArrayList<Character> team){
         ArrayList<Character> teamc = new ArrayList<>(team);
-        this.team = teamc;
+        this.team = team;
     }
     public Team(){
         team = new ArrayList<>();

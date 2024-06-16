@@ -45,18 +45,23 @@ public class Simulation {
             if(i<teamYellow.getTeam().size())
                 stack.add(teamYellow.getTeam().get(i));
         }
+        //for(c : stack)
         while( !oneTeamWon || simulationTime < 100){
             //Performing turns
             for(int i = 0; i < stack.size(); i++) {
+                Scribe.addLog(stack.get(i).getName()+" performs turn");
                 stack.get(i).getIntType().PerformTurn();
+                Scribe.addLog(".......");
             }
             //VictoryCheck
             if (!teamYellow.CheckIfTeamIsTeamAlive()){
                 oneTeamWon = true;
+                Scribe.addLog("Team Yellow wins");
                 System.out.printf("Team A won");
             }
             if (!teamPurple.CheckIfTeamIsTeamAlive()) {
                 oneTeamWon = true;
+                Scribe.addLog("Team Purple wins");
                 System.out.printf("Team B won");
             }
             simulationTime++;
@@ -209,7 +214,7 @@ public class Simulation {
                     testobject3.getIntType().PerformTurn();
                 if (testobject4.checkIfIsAlive())
                     testobject4.getIntType().PerformTurn();
-                System.out.println("Heath after combat");
+                System.out.println("Health after combat");
                 System.out.println("Test object 1 :" + testobject1.getCurrentHp());
                 System.out.println("Test object 2 :" + testobject2.getCurrentHp());
                 System.out.println("Test object 3 :" + testobject3.getCurrentHp());

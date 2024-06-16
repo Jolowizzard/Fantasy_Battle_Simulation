@@ -1,5 +1,8 @@
+import map.MAPtable;
 import simulationsetup.CharacterCreator;
 import simulationsetup.InventoryCreator;
+import simulationsetup.TeamCreator;
+import utils.FileChooserUtil;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -23,7 +26,6 @@ InventoryCreator inventoryCreator = new InventoryCreator();
         }
         //PLAY STATE
         else if(gp.gameState == gp.playState){
-            playState(code);
         }
         //PAUSE STATE
         else if(gp.gameState == gp.pauseState){
@@ -88,7 +90,14 @@ InventoryCreator inventoryCreator = new InventoryCreator();
                 //READ FILE
                 if(gp.ui.commandNum == 1){
                     //tu trzba funkcję czytaj z pliku
-                    gp.gameState = gp.playState;
+                    String filepath = FileChooserUtil.selectFilePath();
+                    if(filepath!= null) {
+                        TeamCreator teamCreator = new TeamCreator();
+                        teamCreator.CreateTeamsFromFile(filepath);
+                        //Tworzenie postaci do symulacji
+                        gp.gameState = gp.playState;
+                    }
+
                 }
                 //BACK
                 if(gp.ui.commandNum == 2){

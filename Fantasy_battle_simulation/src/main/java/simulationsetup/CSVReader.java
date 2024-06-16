@@ -12,7 +12,7 @@ public class CSVReader {
     private String delimiter;
 
     public CSVReader(String filePath) {
-        this(filePath, ",");
+        this(filePath, ";");
     }
 
     public CSVReader(String filePath, String delimiter) {

@@ -4,9 +4,11 @@ import java.io.*;
 import java.util.Scanner;
 
 public class MAPtable implements Cloneable {
+
     public static Tile [][] Map = new Tile[16][16];
     public static int colSize = 16;
     public static int rowSize = 16;
+    public static String mapName = null;
     //static int ToNumberMap[][] = new int [16][16];
     //adds field numbering
     static void NumberMap(int ToNumberMap[][])
@@ -64,6 +66,8 @@ public class MAPtable implements Cloneable {
             e.printStackTrace();
         }
     }
+    public void setMapName(String name){this.mapName = name;}
+    public String getMapName(){return this.mapName;}
     //returns location as a integer value corresponding to a ToNumberMap
     //returns X coordinate of field
  /*   static int xLocationOf(int example)

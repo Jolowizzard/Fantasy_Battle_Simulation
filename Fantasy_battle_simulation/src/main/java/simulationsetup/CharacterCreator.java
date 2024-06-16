@@ -72,31 +72,46 @@ public class CharacterCreator {
         setInventoryStatsFromString(inventory,inventoryStats);
         int i = 0;
         String characterType = characterStats[i++];
+
         if(characterType.equals("Warrior")){
+
             int BlockChance = Integer.parseInt(characterStats[i++]);
             int BlockValue = Integer.parseInt(characterStats[i++]);
-            if(characterStats[i++].equals("Knight")) {
+
+            if(characterStats[i].equals("Knight")) {
                 characters.Character knight = new Knight(BlockChance, BlockValue);
-                setCharactersStatsFromString(knight,characterStats,i);
+                setCharactersStatsFromString(knight,characterStats,++i);
                 knight.setInventory(inventory);
-            }else if(characterStats[i++].equals("Paladin")) {
+                return knight;
+
+            }else if(characterStats[i].equals("Paladin")) {
                 Character paladin = new Paladin(BlockChance, BlockValue);
-                setCharactersStatsFromString(paladin,characterStats,i);
+                setCharactersStatsFromString(paladin,characterStats,++i);
+                paladin.setInventory(inventory);
+                return paladin;
             }
+
         }else if(characterType.equals("Shooter")) {
             int CritChance = Integer.parseInt(characterStats[i++]);
             int CritValue = Integer.parseInt(characterStats[i++]);
-            if (characterStats[i++].equals("Ranger")) {
+
+            if (characterStats[i].equals("Ranger")) {
                 Character ranger = new Ranger(CritChance, CritValue);
-                setCharactersStatsFromString(ranger, characterStats, i);
-            } else if (characterStats[i++].equals("Marksman")) {
+                setCharactersStatsFromString(ranger, characterStats, ++i);
+                ranger.setInventory(inventory);
+                return ranger;
+
+            } else if (characterStats[i].equals("Marksman")) {
                 Character marksman = new Marksman(CritChance, CritValue);
-                setCharactersStatsFromString(marksman, characterStats, i);
+                setCharactersStatsFromString(marksman, characterStats, ++i);
+                marksman.setInventory(inventory);
+                return marksman;
             }
         }
         return null;
     }
     private void setCharactersStatsFromString(Character character,String [] characterStats,int currentIndex){
+
         character.setName(characterStats[currentIndex++]);
         character.setRace(characterStats[currentIndex++]);
         character.setMaxHp(Integer.parseInt(characterStats[currentIndex++]));
@@ -106,9 +121,11 @@ public class CharacterCreator {
         character.setIntelignece(Integer.parseInt(characterStats[currentIndex++]));
         character.setMovement(Integer.parseInt(characterStats[currentIndex++]));
         character.setDodgeChance(Integer.parseInt(characterStats[currentIndex++]));
+
         //setting position
         Tile tile = new Tile(Integer.parseInt(characterStats[currentIndex++]), Integer.parseInt(characterStats[currentIndex++]));
         character.setPosition(tile);
+
         //setting Intelligence Type
         if(characterStats[currentIndex++].equals("Aggressive")){
             InteligenceType inteligence = new Agressive(true);
