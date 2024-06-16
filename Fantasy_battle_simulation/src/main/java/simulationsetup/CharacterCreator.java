@@ -205,59 +205,68 @@ public class CharacterCreator {
         }
         return null;
     }
-    public Character CharacterCreation(Tile ChoosenTile, String ChoosenName )
+
+    public Character CharacterCreation(Tile ChoosenTile)
     {
         Character error = new Knight();
         if(getKnight()==true)
         {
+            String ChoosenName = "Knight"+String.valueOf(CounterId);
             Character character=createKnight(CounterId,ChoosenTile, ChoosenName);
             CounterId = CounterId - 1;
             return character;
         }
         if(getPaladin()==true) {
+            String ChoosenName = "Paladin"+String.valueOf(CounterId);
             Character character=createPaladin(CounterId, ChoosenTile, ChoosenName);
             CounterId = CounterId - 1;
             return character;
         }
-            if(getWizard()==true)
-            {
-                Character character=createWizard(CounterId,ChoosenTile, ChoosenName);
-                CounterId = CounterId - 1;
-                return character;
-            }
-            if(getDruid()==true)
-            {
-                Character character=createDruid(CounterId,ChoosenTile, ChoosenName);
-                CounterId = CounterId - 1;
-                return character;
-            }
-            if(getMarksman()==true)
-            {
-                Character character=createMarksman(CounterId,ChoosenTile, ChoosenName);
-                CounterId = CounterId - 1;
-                return character;
-            }
-            if(getRanger()==true)
-            {
-                Character character=createRanger(CounterId,ChoosenTile, ChoosenName);
-                CounterId = CounterId - 1;
-                return character;
-            }
-            if(getAssassin()==true)
-            {
-                Character character=createAssassin(CounterId,ChoosenTile, ChoosenName);
-                CounterId = CounterId - 1;
-                return character;
-            }
-            if(getThief()==true)
-            {
-                Character character = createThief(CounterId,ChoosenTile, ChoosenName);
-                CounterId = CounterId - 1;
-                return character;
-
-            }
+        if(getWizard()==true)
+        {
+            String ChoosenName = "Wizard"+String.valueOf(CounterId);
+            Character character=createWizard(CounterId,ChoosenTile, ChoosenName);
             CounterId = CounterId - 1;
-      return error;
+            return character;
+        }
+        if(getDruid()==true)
+        {
+            String ChoosenName = "Druid"+String.valueOf(CounterId);
+            Character character=createDruid(CounterId,ChoosenTile, ChoosenName);
+            CounterId = CounterId - 1;
+            return character;
+        }
+        if(getMarksman()==true)
+        {
+            String ChoosenName = "Marksman"+String.valueOf(CounterId);
+            Character character=createMarksman(CounterId,ChoosenTile, ChoosenName);
+            CounterId = CounterId - 1;
+            return character;
+        }
+        if(getRanger()==true)
+        {
+            String ChoosenName = "Ranger"+String.valueOf(CounterId);
+            Character character=createRanger(CounterId,ChoosenTile, ChoosenName);
+            CounterId = CounterId - 1;
+            return character;
+        }
+        if(getAssassin()==true)
+        {
+            String ChoosenName = "Assassin"+String.valueOf(CounterId);
+            Character character=createAssassin(CounterId,ChoosenTile, ChoosenName);
+            CounterId = CounterId - 1;
+            return character;
+        }
+        if(getThief()==true)
+        {
+            String ChoosenName = "Thief"+String.valueOf(CounterId);
+            Character character = createThief(CounterId,ChoosenTile, ChoosenName);
+            CounterId = CounterId - 1;
+            return character;
+
+        }
+        CounterId = CounterId - 1;
+        return error;
     }
 
 public void SetCharacterBooleansToFalse()
