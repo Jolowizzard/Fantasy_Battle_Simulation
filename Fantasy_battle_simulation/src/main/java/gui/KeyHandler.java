@@ -1,4 +1,6 @@
-import map.MAPtable;
+package gui;
+
+import gui.GamePanel;
 import simulationsetup.CharacterCreator;
 import simulationsetup.InventoryCreator;
 import simulationsetup.TeamCreator;

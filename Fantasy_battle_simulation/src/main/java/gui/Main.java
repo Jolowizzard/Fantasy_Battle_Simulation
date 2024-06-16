@@ -1,3 +1,7 @@
+package gui;
+
+import gui.GamePanel;
+
 import javax.swing.JFrame;
 
 public class Main{

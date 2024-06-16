@@ -1,4 +1,6 @@
+package gui;
 
+import gui.GamePanel;
 import map.Tile2;
 
 import java.awt.Graphics2D;
@@ -30,44 +32,44 @@ public class TileManager {
     public void getTileImage(){
         try{
             tile[0] = new Tile2();
-            tile[0].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("Tile_0.png")));
-            //tile[0].image = ImageIO.read(Objects.requireNonNull(Main.class.getResourceAsStream("Tile_0.png")));
+            tile[0].image = ImageIO.read(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("Tile_0.png")));
+            //tile[0].image = ImageIO.read(Objects.requireNonNull(gui.Main.class.getResourceAsStream("Tile_0.png")));
 
             tile[1] = new Tile2();
-            tile[1].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("Tile_1.png")));
-            //tile[1].image = ImageIO.read(Objects.requireNonNull(Main.class.getResourceAsStream("Tile_1.png")));
+            tile[1].image = ImageIO.read(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("Tile_1.png")));
+            //tile[1].image = ImageIO.read(Objects.requireNonNull(gui.Main.class.getResourceAsStream("Tile_1.png")));
 
             tile[2] = new Tile2();
-            tile[2].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("Tile_2.png")));
-            //tile[2].image = ImageIO.read(Objects.requireNonNull(Main.class.getResourceAsStream("Tile_2.png")));
+            tile[2].image = ImageIO.read(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("Tile_2.png")));
+            //tile[2].image = ImageIO.read(Objects.requireNonNull(gui.Main.class.getResourceAsStream("Tile_2.png")));
 
             tile[3] = new Tile2();
-            tile[3].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("Tile_3.png")));
-            //tile[3].image = ImageIO.read(Objects.requireNonNull(Main.class.getResourceAsStream("Tile_3.png")));
+            tile[3].image = ImageIO.read(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("Tile_3.png")));
+            //tile[3].image = ImageIO.read(Objects.requireNonNull(gui.Main.class.getResourceAsStream("Tile_3.png")));
 
             tile[4] = new Tile2();
-            tile[4].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("Tile_4.png")));
-            //tile[4].image = ImageIO.read(Objects.requireNonNull(Main.class.getResourceAsStream("Tile_4.png")));
+            tile[4].image = ImageIO.read(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("Tile_4.png")));
+            //tile[4].image = ImageIO.read(Objects.requireNonNull(gui.Main.class.getResourceAsStream("Tile_4.png")));
 
             tile[5] = new Tile2();
-            tile[5].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("Tile_5.png")));
-            //tile[5].image = ImageIO.read(Objects.requireNonNull(Main.class.getResourceAsStream("Tile_5.png")));
+            tile[5].image = ImageIO.read(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("Tile_5.png")));
+            //tile[5].image = ImageIO.read(Objects.requireNonNull(gui.Main.class.getResourceAsStream("Tile_5.png")));
 
             tile[6] = new Tile2();
-            tile[6].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("Tile_6.png")));
-            //tile[6].image = ImageIO.read(Objects.requireNonNull(Main.class.getResourceAsStream("Tile_6.png")));
+            tile[6].image = ImageIO.read(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("Tile_6.png")));
+            //tile[6].image = ImageIO.read(Objects.requireNonNull(gui.Main.class.getResourceAsStream("Tile_6.png")));
 
             tile[7] = new Tile2();
-            tile[7].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("Tile_7.png")));
-            //tile[7].image = ImageIO.read(Objects.requireNonNull(Main.class.getResourceAsStream("Tile_7.png")));
+            tile[7].image = ImageIO.read(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("Tile_7.png")));
+            //tile[7].image = ImageIO.read(Objects.requireNonNull(gui.Main.class.getResourceAsStream("Tile_7.png")));
 
             tile[8] = new Tile2();
-            tile[8].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("Tile_8.png")));
-            //tile[8].image = ImageIO.read(Objects.requireNonNull(Main.class.getResourceAsStream("Tile_8.png")));
+            tile[8].image = ImageIO.read(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("Tile_8.png")));
+            //tile[8].image = ImageIO.read(Objects.requireNonNull(gui.Main.class.getResourceAsStream("Tile_8.png")));
 
             tile[9] = new Tile2();
-            tile[9].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("Tile_9.png")));
-            //tile[9].image = ImageIO.read(Objects.requireNonNull(Main.class.getResourceAsStream("Tile_9.png")));
+            tile[9].image = ImageIO.read(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("Tile_9.png")));
+            //tile[9].image = ImageIO.read(Objects.requireNonNull(gui.Main.class.getResourceAsStream("Tile_9.png")));
 
         } catch(IOException e){
             e.printStackTrace();
@@ -76,7 +78,7 @@ public class TileManager {
     public void lodaMap(){
         try{
             //Wybór mapy - - - - - - - - - - -- - - -- - -- - - --  -- - -- - -- - - -- - - -- - -- - - - 
-            InputStream is = getClass().getResourceAsStream("map_1.txt");
+            InputStream is = getClass().getClassLoader().getResourceAsStream("map_1.txt");
             BufferedReader br = new BufferedReader(new InputStreamReader(is));
 
             int col = 0;

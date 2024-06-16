@@ -4,6 +4,7 @@ import characters.Character;
 import characters.rogue.Rogue;
 import characters.warriors.Warrior;
 import combat.Combat;
+import gui.GamePanel;
 import inventory.items.Item;
 import map.Tile;
 import searchalgorythm.SearchAlgorythm;
