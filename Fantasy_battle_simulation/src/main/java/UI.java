@@ -364,22 +364,8 @@ public class UI {
         g2.setColor(Color.black);
         g2.fillRect(0, 0, gp.ScreenWidth, gp.ScreenHeight);
 
-        String text = "";
-
         //Map
         gp.tileM.draw(g2);
-
-        //Title Name
-        g2.setFont(g2.getFont().deriveFont(Font.BOLD,80F));
-        int x = getXforCenteredText(gp.mapName);
-        int y = gp.tileSize*8;
-
-        //Shadow
-        g2.setColor(new Color(107, 0, 0));
-        g2.drawString(text, x+4, y+4);
-        //Main Text
-        g2.setColor(new Color(254, 32, 32));
-        g2.drawString(text, x, y);
 
     }
 }
