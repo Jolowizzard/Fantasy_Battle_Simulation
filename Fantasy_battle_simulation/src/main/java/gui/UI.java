@@ -1,7 +1,5 @@
 package gui;
 
-import gui.GamePanel;
-
 import java.awt.Graphics2D;
 import java.awt.Font;
 import java.awt.Color;
@@ -10,7 +8,7 @@ import javax.imageio.ImageIO;
 import java.io.IOException;
 
 public class UI {
-    
+
     GamePanel gp;
     Graphics2D g2;
     Font arial_40;
@@ -22,7 +20,8 @@ public class UI {
     public int col1 = 0;
     public int col2 = 0;
     public int col3 = 0;
-    public int titleScreenState = 0; // 0 : gui.Main Menu, 1 : the second screen, 2 : character screen
+    public int counter = 0;
+    public int titleScreenState = 0; // 0 : Main Menu, 1 : the second screen, 2 : character screen, 3 : map selection, 4 : units placement
     BufferedImage csp, csy, sel, selected;
 
     public UI(GamePanel gp){
@@ -34,6 +33,7 @@ public class UI {
             csp = ImageIO.read(getClass().getClassLoader().getResourceAsStream("Character screen P.png"));
             csy = ImageIO.read(getClass().getClassLoader().getResourceAsStream("Character screen Y.png"));
             sel = ImageIO.read(getClass().getClassLoader().getResourceAsStream("Select.png"));
+            selected = ImageIO.read(getClass().getClassLoader().getResourceAsStream("Selected.png"));
         }catch(IOException e){
             e.printStackTrace();
         }
@@ -49,7 +49,13 @@ public class UI {
 
         //Title State
         if(gp.gameState == gp.titleState){
-            if(titleScreenState == 2){
+            if(titleScreenState == 4){
+                drawPlacementScreen();
+            }
+            else if(titleScreenState == 3){
+                drawMapScreen();
+            }
+            else if(titleScreenState == 2){
                 drawCharacterScreen();
             }
             else if(titleScreenState == 1){
@@ -85,7 +91,7 @@ public class UI {
         return x;
     }
     public void drawTitleScreen(){
-        
+
         g2.setColor(Color.black);
         g2.fillRect(0, 0, gp.ScreenWidth, gp.ScreenHeight);
 
@@ -98,7 +104,7 @@ public class UI {
         //Shadow
         g2.setColor(new Color(107, 0, 0));
         g2.drawString(text, x+4, y+4);
-        //gui.Main Text
+        //Main Text
         g2.setColor(new Color(254, 32, 32));
         g2.drawString(text, x, y);
         //Knight
@@ -125,20 +131,20 @@ public class UI {
         }
     }
     public void drawStartScreen(){
-        
+
         g2.setColor(Color.black);
         g2.fillRect(0, 0, gp.ScreenWidth, gp.ScreenHeight);
 
         //Title Name
         g2.setFont(g2.getFont().deriveFont(Font.BOLD,40F));
-        String text = "Choose Type Of simulation.Simulation";
+        String text = "Choose Type Of Simulation";
         int x = getXforCenteredText(text);
         int y = gp.tileSize*4;
 
         //Shadow
         g2.setColor(new Color(107, 0, 0));
         g2.drawString(text, x+4, y+4);
-        //gui.Main Text
+        //Main Text
         g2.setColor(new Color(254, 32, 32));
         g2.drawString(text, x, y);
         //Menu
@@ -169,7 +175,7 @@ public class UI {
         }
     }
     public void drawCharacterScreen(){
-        
+
         g2.setColor(Color.black);
         g2.fillRect(0, 0, gp.ScreenWidth, gp.ScreenHeight);
 
@@ -179,7 +185,7 @@ public class UI {
         else{
             g2.drawImage(csy, 0, 0, gp.tileSize*16, gp.tileSize*16, null);
         }
-        
+
 
         //Title Name
         g2.setFont(g2.getFont().deriveFont(Font.BOLD,35F));
@@ -187,11 +193,11 @@ public class UI {
         String text2;
         if(commandNum == 0){
             text = "Purple Team";
-            text2 = "gui.Hero " + Integer.toString(commandCount+1);
+            text2 = "Hero " + Integer.toString(commandCount+1);
         }
         else{
-            text = "Yellow Team" + Integer.toString(commandCount+1);
-            text2 = "gui.Hero " + Integer.toString(commandCount+1);
+            text = "Yellow Team";
+            text2 = "Hero " + Integer.toString(commandCount+1);
         }
         int x = gp.tileSize*9;
         int y = gp.tileSize*1;
@@ -205,7 +211,7 @@ public class UI {
         }
         g2.drawString(text, x+3, y+3);
         g2.drawString(text2, x+3, gp.tileSize+y+3);
-        //gui.Main Text
+        //Main Text
         if(commandNum == 0){
             g2.setColor(new Color(174, 55, 255));
         }
@@ -214,7 +220,7 @@ public class UI {
         }
         g2.drawString(text, x, y);
         g2.drawString(text2, x+3, gp.tileSize+y);
-        
+
         //Menu
 
         //Selected
@@ -334,5 +340,38 @@ public class UI {
     }
     public void drawSelected(int x, int y){
         g2.drawImage(selected, x*gp.tileSize*2, y*gp.tileSize*2, gp.tileSize*2, gp.tileSize*2, null);
+    }
+    public void drawMapScreen(){
+
+        g2.setColor(Color.black);
+        g2.fillRect(0, 0, gp.ScreenWidth, gp.ScreenHeight);
+
+        //Map
+        gp.tileM.draw(g2);
+
+        //Map Name
+        g2.setFont(g2.getFont().deriveFont(Font.BOLD,80F));
+        int x = getXforCenteredText(gp.mapName);
+        int y = gp.tileSize*8;
+
+        //Shadow
+        g2.setColor(new Color(107, 0, 0));
+        g2.drawString(gp.mapName, x+4, y+4);
+        //Main Text
+        g2.setColor(new Color(254, 32, 32));
+        g2.drawString(gp.mapName, x, y);
+
+    }
+    public void drawPlacementScreen(){
+
+        g2.setColor(Color.black);
+        g2.fillRect(0, 0, gp.ScreenWidth, gp.ScreenHeight);
+
+        gp.tileM.draw(g2);
+
+        g2.drawImage(sel, commandCol*gp.tileSize, commandRow*gp.tileSize, gp.tileSize, gp.tileSize, null);
+        g2.drawImage(gp.hero.Knight_P, commandCol*gp.tileSize, commandRow*gp.tileSize, gp.tileSize, gp.tileSize, null);
+
+
     }
 }
