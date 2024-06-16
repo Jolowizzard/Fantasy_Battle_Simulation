@@ -215,16 +215,16 @@ public class UI {
 
         //Selected
         if(gp.ui.col0 != 0){
-            drawSelected(0, gp.ui.col0);
+            drawSelected(0, gp.ui.col0-1);
         }
         if(gp.ui.col1 != 0){
-            drawSelected(0, gp.ui.col1);
+            drawSelected(1, gp.ui.col1-1);
         }
         if(gp.ui.col2 != 0){
-            drawSelected(0, gp.ui.col2);
+            drawSelected(2, gp.ui.col2-1);
         }
         if(gp.ui.col3 != 0){
-            drawSelected(0, gp.ui.col3);
+            drawSelected(3, gp.ui.col3-1);
         }
 
         //COLUMN 1
