@@ -136,6 +136,7 @@ public class CharacterCreator {
         if(characterStats[currentIndex++].equals("Aggressive")){
             InteligenceType inteligence = new Agressive(true);
             character.setIntType(inteligence);
+            character.getIntType().setCharacter(character);
         }
     }
     private void setInventoryStatsFromString(Inventory inventory,String [] inventoryString){

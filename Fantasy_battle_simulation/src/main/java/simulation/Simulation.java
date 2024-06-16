@@ -1,9 +1,12 @@
+package simulation;
+
 import armours.Armour;
 import armours.LightArmour;
 import characters.rogue.Thief;
 import characters.shooter.Marksman;
 import characters.warriors.Knight;
 import gamestructure.Team;
+import gui.GamePanel;
 import inteligence.Agressive;
 import inteligence.InteligenceType;
 import inventory.Inventory;
@@ -18,53 +21,68 @@ import weapons.Sword;
 import weapons.Weapon;
 
 import java.util.ArrayList;
-
-public class Simulation {
+public class Simulation implements Runnable{
     private Team teamYellow;
     private Team teamPurple;
-    public Simulation(String mapName,Team teamYellow,Team teamPurple){
-        MAPtable.InitializeMap("mapName");
+    private GamePanel gamePanel;
+    public Simulation(GamePanel gamePanel,String mapName,Team teamYellow,Team teamPurple){
+        this.gamePanel=gamePanel;
+        MAPtable.InitializeMap("map_1.txt");
         this.teamYellow = teamYellow;
         this.teamPurple = teamPurple;
 
     }
-    public void simulate(){
-        boolean oneTeamWon = false;
-        int simulationTime = 0;
-        ArrayList<characters.Character> stack = new ArrayList<>();
-        //checking which team is the biggest
-        int BiggestTeamSize = teamYellow.getTeam().size();
-        if(teamYellow.getTeam().size()<teamPurple.getTeam().size()){
-            BiggestTeamSize = teamPurple.getTeam().size();
-        }
-        //preparing stack order . This order is permanent for the rest of the simulation and can not be changed
-        for(int i = 0 ; i<BiggestTeamSize;i++)
-        {
-            if(i<teamPurple.getTeam().size())
-                stack.add(teamPurple.getTeam().get(i));
-            if(i<teamYellow.getTeam().size())
-                stack.add(teamYellow.getTeam().get(i));
-        }
-        //for(c : stack)
-        while( !oneTeamWon || simulationTime < 100){
-            //Performing turns
-            for(int i = 0; i < stack.size(); i++) {
-                Scribe.addLog(stack.get(i).getName()+" performs turn");
-                stack.get(i).getIntType().PerformTurn();
-                Scribe.addLog(".......");
+    @Override
+    public void run(){
+        try {
+            try {
+                Scribe scribe = new Scribe("Log1.txt");
             }
-            //VictoryCheck
-            if (!teamYellow.CheckIfTeamIsTeamAlive()){
-                oneTeamWon = true;
-                Scribe.addLog("Team Yellow wins");
-                System.out.printf("Team A won");
+            catch (Exception e){
+                e.printStackTrace();
             }
-            if (!teamPurple.CheckIfTeamIsTeamAlive()) {
-                oneTeamWon = true;
-                Scribe.addLog("Team Purple wins");
-                System.out.printf("Team B won");
+            boolean oneTeamWon = false;
+            int simulationTime = 0;
+            ArrayList<characters.Character> stack = new ArrayList<>();
+            //checking which team is the biggest
+            int BiggestTeamSize = teamYellow.getTeam().size();
+            if (teamYellow.getTeam().size() < teamPurple.getTeam().size()) {
+                BiggestTeamSize = teamPurple.getTeam().size();
             }
-            simulationTime++;
+            //preparing stack order . This order is permanent for the rest of the simulation and can not be changed
+            for (int i = 0; i < BiggestTeamSize; i++) {
+                if (i < teamPurple.getTeam().size())
+                    stack.add(teamPurple.getTeam().get(i));
+                if (i < teamYellow.getTeam().size())
+                    stack.add(teamYellow.getTeam().get(i));
+            }
+            //Setting game panel for every intelligence
+            stack.forEach(character -> character.getIntType().setGamePanel(gamePanel));
+
+            while (!oneTeamWon && simulationTime < 100) {
+
+                //Performing turns
+                for (int i = 0; i < stack.size(); i++) {
+                    Scribe.addLog(stack.get(i).getName() + " performs turn");
+                    stack.get(i).getIntType().PerformTurn();
+                    Scribe.addLog(".......");
+                }
+
+                //VictoryCheck
+                if (!teamYellow.CheckIfTeamIsTeamAlive()) {
+                    oneTeamWon = true;
+                    Scribe.addLog("Team Yellow wins");
+                    System.out.printf("Team A won");
+                }
+                if (!teamPurple.CheckIfTeamIsTeamAlive()) {
+                    oneTeamWon = true;
+                    Scribe.addLog("Team Purple wins");
+                    System.out.printf("Team B won");
+                }
+                simulationTime++;
+            }
+        }catch (Exception e){
+            e.printStackTrace();
         }
     }
     public static void main(String [] args ) {
@@ -206,14 +224,14 @@ public class Simulation {
                 }
             }*/
                 System.out.println();
-                if (testobject1.checkIfIsAlive())
+                /*if (testobject1.checkIfIsAlive())
                     testobject1.getIntType().PerformTurn();
                 if (testobject2.checkIfIsAlive())
                     testobject2.getIntType().PerformTurn();
                 if (testobject3.checkIfIsAlive())
                     testobject3.getIntType().PerformTurn();
                 if (testobject4.checkIfIsAlive())
-                    testobject4.getIntType().PerformTurn();
+                    testobject4.getIntType().PerformTurn();*/
                 System.out.println("Health after combat");
                 System.out.println("Test object 1 :" + testobject1.getCurrentHp());
                 System.out.println("Test object 2 :" + testobject2.getCurrentHp());

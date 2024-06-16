@@ -633,3 +633,326 @@ Combat started:
 Test_1 attacked Test_3
 Test_1 used Dagger
 Tobi Bleeds : 0
+Test_1 Bleeds : 0
+Test_1 Moves to map.Tile@30dae81
+Test_2 Bleeds : 0
+Combat started:
+Test_2 attacked Test_2
+Test_2 used Dagger
+Test_3 Bleeds : 0
+Combat started:
+Test_3 attacked Test_2
+Test_3 used weapons.Bow
+Tobi Bleeds : 0
+Tobi Moves to map.Tile@76fb509a
+Test_1 Bleeds : 0
+Test_1 Moves to map.Tile@300ffa5d
+Test_2 Bleeds : 0
+Combat started:
+Test_2 attacked Test_2
+Test_2 used Dagger
+Test_3 Bleeds : 0
+Combat started:
+Test_3 attacked Test_3
+Test_3 used weapons.Bow
+Tobi Bleeds : 0
+Tobi Moves to map.Tile@1f17ae12
+Test_1 Bleeds : 0
+Test_1 Moves to map.Tile@4d405ef7
+Test_3 Bleeds : 0
+Combat started:
+Test_3 attacked Test_3
+Passive Block succeeded
+Test_3 used weapons.Bow
+Tobi Bleeds : 0
+Tobi Moves to map.Tile@6193b845
+Test_1 Bleeds : 0
+Test_1 Moves to map.Tile@2e817b38
+Test_3 Bleeds : 0
+Combat started:
+Test_3 attacked Test_3
+Test_3 used weapons.Bow
+Tobi Bleeds : 0
+Tobi Moves to map.Tile@c4437c4
+Test_1 Bleeds : 0
+Test_1 Moves to map.Tile@433c675d
+Test_3 Bleeds : 0
+Combat started:
+Test_3 attacked Test_3
+Test_3 used weapons.Bow
+Tobi Bleeds : 0
+Tobi Moves to map.Tile@3f91beef
+Test_1 Bleeds : 0
+Test_1 Moves to map.Tile@1a6c5a9e
+Test_3 Bleeds : 0
+Combat started:
+Test_3 attacked Test_3
+Test_3 used weapons.Bow
+Tobi Bleeds : 0
+Tobi Moves to map.Tile@37bba400
+Test_1 Bleeds : 0
+Test_1 Moves to map.Tile@179d3b25
+Test_3 Bleeds : 0
+Combat started:
+Test_3 attacked Test_3
+Passive Block succeeded
+Test_3 used weapons.Bow
+Tobi Bleeds : 0
+Tobi Moves to map.Tile@254989ff
+Combat started:
+Tobi attacked Test_3
+Tobi used weapons.Bow
+Test_1 Bleeds : 0
+Test_1 Moves to map.Tile@238e0d81
+Test_3 Bleeds : 0
+Combat started:
+Test_3 attacked Test_3
+Passive Block succeeded
+Test_3 used weapons.Bow
+Tobi Bleeds : 0
+Combat started:
+Tobi attacked Test_3
+Passive Block succeeded
+Tobi used weapons.Bow
+Test_1 Bleeds : 0
+Test_1 Moves to map.Tile@31221be2
+Test_3 Bleeds : 0
+Combat started:
+Test_3 attacked Test_3
+Passive Block succeeded
+Test_3 used weapons.Bow
+Tobi Bleeds : 0
+Combat started:
+Tobi attacked Test_3
+Tobi used weapons.Bow
+Test_1 Bleeds : 0
+Test_1 Moves to map.Tile@377dca04
+Test_3 Bleeds : 0
+Combat started:
+Test_3 attacked Test_3
+Test_3 used weapons.Bow
+Tobi Bleeds : 0
+Combat started:
+Tobi attacked Test_3
+Tobi used weapons.Bow
+Test_1 Bleeds : 0
+Test_1 Moves to map.Tile@728938a9
+Test_3 Bleeds : 0
+Combat started:
+Test_3 attacked Test_3
+Passive Block succeeded
+Test_3 used weapons.Bow
+Tobi Bleeds : 0
+Combat started:
+Tobi attacked Test_3
+Tobi used weapons.Bow
+Test_1 Bleeds : 0
+Test_1 Moves to map.Tile@21b8d17c
+Test_3 Bleeds : 0
+Combat started:
+Test_3 attacked Test_3
+Test_3 used weapons.Bow
+Tobi Bleeds : 0
+Combat started:
+Tobi attacked Test_3
+Tobi used weapons.Bow
+Test_1 Bleeds : 0
+Test_1 Moves to map.Tile@6433a2
+Test_3 Bleeds : 0
+Combat started:
+Test_3 attacked Test_3
+Test_3 used weapons.Bow
+Tobi Bleeds : 0
+Combat started:
+Tobi attacked Test_3
+Tobi used weapons.Bow
+Test_1 Bleeds : 0
+Test_1 Moves to map.Tile@5910e440
+Combat started:
+Test_1 attacked Test_3
+Test_1 used Dagger
+Tobi Bleeds : 0
+Test_1 Bleeds : 0
+Test_1 Moves to map.Tile@30dae81
+Test_2 Bleeds : 0
+Combat started:
+Test_2 attacked Test_2
+Test_2 dodged
+Test_3 Bleeds : 0
+Combat started:
+Test_3 attacked Test_2
+Test_2 dodged
+Tobi Bleeds : 0
+Tobi Moves to map.Tile@76fb509a
+Test_1 Bleeds : 0
+Test_1 Moves to map.Tile@300ffa5d
+Test_2 Bleeds : 0
+Combat started:
+Test_2 attacked Test_2
+Test_2 used Dagger
+Test_3 Bleeds : 0
+Combat started:
+Test_3 attacked Test_2
+Test_3 used weapons.Bow
+Tobi Bleeds : 0
+Tobi Moves to map.Tile@1f17ae12
+Test_1 Bleeds : 0
+Test_1 Moves to map.Tile@4d405ef7
+Test_2 Bleeds : 10
+Test_3 Bleeds : 0
+Combat started:
+Test_3 attacked Test_3
+Test_3 used weapons.Bow
+Tobi Bleeds : 0
+Tobi Moves to map.Tile@6193b845
+Test_1 Bleeds : 0
+Test_1 Moves to map.Tile@2e817b38
+Test_3 Bleeds : 0
+Combat started:
+Test_3 attacked Test_3
+Test_3 used weapons.Bow
+Tobi Bleeds : 0
+Tobi Moves to map.Tile@c4437c4
+Test_1 Bleeds : 0
+Test_1 Moves to map.Tile@433c675d
+Test_3 Bleeds : 0
+Combat started:
+Test_3 attacked Test_3
+Test_3 used weapons.Bow
+Tobi Bleeds : 0
+Tobi Moves to map.Tile@3f91beef
+Test_1 Bleeds : 0
+Test_1 Moves to map.Tile@1a6c5a9e
+Test_3 Bleeds : 0
+Combat started:
+Test_3 attacked Test_3
+Test_3 used weapons.Bow
+Tobi Bleeds : 0
+Tobi Moves to map.Tile@37bba400
+Test_1 Bleeds : 0
+Test_1 Moves to map.Tile@179d3b25
+Test_3 Bleeds : 0
+Combat started:
+Test_3 attacked Test_3
+Test_3 used weapons.Bow
+Tobi Bleeds : 0
+Tobi Moves to map.Tile@254989ff
+Combat started:
+Tobi attacked Test_3
+Tobi used weapons.Bow
+Test_1 Bleeds : 0
+Test_1 Moves to map.Tile@238e0d81
+Test_3 Bleeds : 0
+Combat started:
+Test_3 attacked Test_3
+Test_3 used weapons.Bow
+Tobi Bleeds : 0
+Combat started:
+Tobi attacked Test_3
+Tobi used weapons.Bow
+Test_1 Bleeds : 0
+Test_1 Moves to map.Tile@31221be2
+Test_3 Bleeds : 0
+Combat started:
+Test_3 attacked Test_3
+Test_3 used weapons.Bow
+Tobi Bleeds : 0
+Combat started:
+Tobi attacked Test_3
+Tobi used weapons.Bow
+Test_1 Bleeds : 0
+Test_1 Moves to map.Tile@377dca04
+Test_3 Bleeds : 0
+Combat started:
+Test_3 attacked Test_3
+Test_3 used weapons.Bow
+Tobi Bleeds : 0
+Combat started:
+Tobi attacked Test_3
+Passive Block succeeded
+Tobi used weapons.Bow
+Test_1 Bleeds : 0
+Test_1 Moves to map.Tile@728938a9
+Test_3 Bleeds : 0
+Combat started:
+Test_3 attacked Test_3
+Test_3 used weapons.Bow
+Tobi Bleeds : 0
+Combat started:
+Tobi attacked Test_3
+Tobi used weapons.Bow
+Test_1 Bleeds : 0
+Test_1 Moves to map.Tile@21b8d17c
+Test_3 Bleeds : 0
+Combat started:
+Test_3 attacked Test_3
+Test_3 used weapons.Bow
+Tobi Bleeds : 0
+Combat started:
+Tobi attacked Test_3
+Tobi used weapons.Bow
+Test_1 Bleeds : 0
+Test_1 Moves to map.Tile@6433a2
+Test_3 Bleeds : 0
+Combat started:
+Test_3 attacked Test_3
+Test_3 used weapons.Bow
+Tobi Bleeds : 0
+Combat started:
+Tobi attacked Test_3
+Test_3 dodged
+Test_1 Bleeds : 0
+Test_1 Moves to map.Tile@5910e440
+Combat started:
+Test_1 attacked Test_3
+Passive Block succeeded
+Test_1 used Dagger
+Test_3 Bleeds : 0
+Combat started:
+Test_3 attacked Test_3
+Test_3 used weapons.Bow
+Tobi Bleeds : 0
+Combat started:
+Tobi attacked Test_3
+Passive Block succeeded
+Tobi used weapons.Bow
+Test_1 Bleeds : 0
+Combat started:
+Test_1 attacked Test_3
+Passive Block succeeded
+Test_1 used Dagger
+Test_3 Bleeds : 10
+Combat started:
+Test_3 attacked Test_3
+Test_3 used weapons.Bow
+Tobi Bleeds : 0
+Combat started:
+Tobi attacked Test_3
+Tobi used weapons.Bow
+Test_1 Bleeds : 0
+Combat started:
+Test_1 attacked Test_3
+Test_1 used Dagger
+Test_3 Bleeds : 0
+Combat started:
+Test_3 attacked Test_3
+Test_3 used weapons.Bow
+Tobi Bleeds : 0
+Combat started:
+Tobi attacked Test_3
+Tobi used weapons.Bow
+Test_1 Bleeds : 0
+Combat started:
+Test_1 attacked Test_3
+Test_1 used Dagger
+Tobi Bleeds : 0
+Buknan performs turn
+Buknan performs turn
+Buknan performs turn
+Buknan performs turn
+Buknan performs turn
+Buknan performs turn
+Buknan Bleeds : 1
+.......
+Team Yellow wins
+Team Purple wins

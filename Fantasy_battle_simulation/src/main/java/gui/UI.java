@@ -1,3 +1,5 @@
+package gui;
+
 import java.awt.Graphics2D;
 import java.awt.Font;
 import java.awt.Color;
@@ -6,7 +8,7 @@ import javax.imageio.ImageIO;
 import java.io.IOException;
 
 public class UI {
-    
+
     GamePanel gp;
     Graphics2D g2;
     Font arial_40;
@@ -28,10 +30,10 @@ public class UI {
         arial_40 = new Font("Castellar", Font.PLAIN, 40);
 
         try{
-            csp = ImageIO.read(getClass().getResourceAsStream("Character screen P.png"));
-            csy = ImageIO.read(getClass().getResourceAsStream("Character screen Y.png"));
-            sel = ImageIO.read(getClass().getResourceAsStream("Select.png"));
-            selected = ImageIO.read(getClass().getResourceAsStream("Selected.png"));
+            csp = ImageIO.read(getClass().getClassLoader().getResourceAsStream("Character screen P.png"));
+            csy = ImageIO.read(getClass().getClassLoader().getResourceAsStream("Character screen Y.png"));
+            sel = ImageIO.read(getClass().getClassLoader().getResourceAsStream("Select.png"));
+            selected = ImageIO.read(getClass().getClassLoader().getResourceAsStream("Selected.png"));
         }catch(IOException e){
             e.printStackTrace();
         }
@@ -89,7 +91,7 @@ public class UI {
         return x;
     }
     public void drawTitleScreen(){
-        
+
         g2.setColor(Color.black);
         g2.fillRect(0, 0, gp.ScreenWidth, gp.ScreenHeight);
 
@@ -129,7 +131,7 @@ public class UI {
         }
     }
     public void drawStartScreen(){
-        
+
         g2.setColor(Color.black);
         g2.fillRect(0, 0, gp.ScreenWidth, gp.ScreenHeight);
 
@@ -173,7 +175,7 @@ public class UI {
         }
     }
     public void drawCharacterScreen(){
-        
+
         g2.setColor(Color.black);
         g2.fillRect(0, 0, gp.ScreenWidth, gp.ScreenHeight);
 
@@ -183,7 +185,7 @@ public class UI {
         else{
             g2.drawImage(csy, 0, 0, gp.tileSize*16, gp.tileSize*16, null);
         }
-        
+
 
         //Title Name
         g2.setFont(g2.getFont().deriveFont(Font.BOLD,35F));
@@ -218,7 +220,7 @@ public class UI {
         }
         g2.drawString(text, x, y);
         g2.drawString(text2, x+3, gp.tileSize+y);
-        
+
         //Menu
 
         //Selected
@@ -340,7 +342,7 @@ public class UI {
         g2.drawImage(selected, x*gp.tileSize*2, y*gp.tileSize*2, gp.tileSize*2, gp.tileSize*2, null);
     }
     public void drawMapScreen(){
-        
+
         g2.setColor(Color.black);
         g2.fillRect(0, 0, gp.ScreenWidth, gp.ScreenHeight);
 
@@ -361,7 +363,7 @@ public class UI {
 
     }
     public void drawPlacementScreen(){
-        
+
         g2.setColor(Color.black);
         g2.fillRect(0, 0, gp.ScreenWidth, gp.ScreenHeight);
 

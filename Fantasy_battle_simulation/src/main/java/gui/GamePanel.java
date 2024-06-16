@@ -1,3 +1,9 @@
+package gui;
+
+import map.MAPtable;
+import simulation.Simulation;
+import simulationsetup.TeamCreator;
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -29,7 +35,7 @@ public class GamePanel extends JPanel implements Runnable{
     Thread gameThread;
 
     
-    //Entity
+    //gui.Entity
     Hero hero = new Hero(this, keyH);
 
     //Game State
@@ -73,7 +79,7 @@ public class GamePanel extends JPanel implements Runnable{
         long timer = 0;
         int drawCount = 0;
 
-        while(gameThread != null){
+        while(gameThread != null && gameState != playState){
 
             currentTime = System.nanoTime();
 
@@ -87,6 +93,8 @@ public class GamePanel extends JPanel implements Runnable{
                 delta--;
                 drawCount++;
             }
+            if(gameState == playState)
+                break;
             /*FPS 
             if(timer >= 1000000000){
                 System.out.println("FPS: " + drawCount);
@@ -94,6 +102,9 @@ public class GamePanel extends JPanel implements Runnable{
                 timer = 0;
             }*/
         }
+        Simulation simulation = new Simulation(this, MAPtable.mapName, TeamCreator.teamYellow,TeamCreator.teamPurple);
+        simulation.run();
+        System.out.println("Out of while");
     }
     public void update(){
 
@@ -115,14 +126,13 @@ public class GamePanel extends JPanel implements Runnable{
             ui.draw(g2);
         }
         else{
-
             //Tile
             tileM.draw(g2);
         
             //Heroes
             hero.draw(g2);
 
-            //UI
+            //gui.UI
             ui.draw(g2);
 
             g2.dispose();
