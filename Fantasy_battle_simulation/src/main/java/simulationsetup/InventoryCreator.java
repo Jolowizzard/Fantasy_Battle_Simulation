@@ -66,6 +66,22 @@ public class InventoryCreator {
     public void setmedium(boolean bool){medium = bool;}
     public void setheavy(boolean bool){heavy = bool;}
 
+    private boolean potion1=false;
+    public boolean getpotion1(){return potion1;}
+    public void setpotion1(boolean bool){potion1 =bool;}
+    private boolean potion2=false;
+    public boolean getpotion2(){return potion2;}
+    public void setpotion2(boolean bool){potion2 =bool;}
+    private boolean potion3=false;
+    public boolean getpotion3(){return potion3;}
+    public void setpotion3(boolean bool){potion3 =bool;}
+    public void SetpotionsToFalse()
+    {
+        setpotion1(false);
+        setpotion2(false);
+        setpotion3(false);
+    }
+
     public void setArmorToFalse()
     {
         setmedium(false);
@@ -92,7 +108,6 @@ public class InventoryCreator {
         return inventory;
     }
 
-
     public ArrayList<Armour> AddArmorToInvenotry()
     {
         ArrayList<Armour> armours = new ArrayList<>();
@@ -113,7 +128,6 @@ public class InventoryCreator {
         }
         return armours;
     }
-
 
     public ArrayList<Weapon> AddWeaponsToInventory() {
         ArrayList<Weapon> weapons = new ArrayList<>();
@@ -144,7 +158,6 @@ public class InventoryCreator {
         return weapons;
     }
 
-
     public ArrayList<Item> AddItems()
     {
         ArrayList<Item> items = new ArrayList<>();
@@ -153,6 +166,29 @@ public class InventoryCreator {
             Shield shield = new Shield();
             items.add(shield);
         }
+        HealPotion potion = new HealPotion();
+        if(potion1==true)
+        {
+            addPotion(items, potion);
+        }
+        if(potion2==true)
+        {
+            addPotion(items, potion);
+            addPotion(items, potion);
+        }
+        if(potion3==true)
+        {
+            addPotion(items, potion);
+            addPotion(items, potion);
+            addPotion(items, potion);
+        }
         return items;
     }
+
+    public void addPotion(ArrayList items,HealPotion potion )
+    {
+        items.add(potion);
+    }
+
+
 }

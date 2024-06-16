@@ -293,20 +293,20 @@ InventoryCreator inventoryCreator = new InventoryCreator();
 
                 //1 Potion
                 if(gp.ui.commandCol == 3 && gp.ui.commandRow == 0){
-                    //inventoryCreator.setArmorToFalse();
-                    //inventoryCreator.setlight(true);
+                    inventoryCreator.SetpotionsToFalse();
+                    inventoryCreator.setpotion1(true);
                     gp.ui.col3 = 1;
                 }
                 //2 Potions
                 else if(gp.ui.commandCol == 3 && gp.ui.commandRow == 1){
-                    //inventoryCreator.setArmorToFalse();
-                    //inventoryCreator.setmedium(true);
+                    inventoryCreator.SetpotionsToFalse();
+                    inventoryCreator.setpotion2(true);
                     gp.ui.col2 = 2;
                 }
                 //3 Potions
                 else if(gp.ui.commandCol == 3 && gp.ui.commandRow == 2){
-                    //inventoryCreator.setArmorToFalse();
-                    //inventoryCreator.setheavy(true);
+                    inventoryCreator.SetpotionsToFalse();
+                    inventoryCreator.setpotion3(true);
                     gp.ui.col2 = 3;
                 }
 
