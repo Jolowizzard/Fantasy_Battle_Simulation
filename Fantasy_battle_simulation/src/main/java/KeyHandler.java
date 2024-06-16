@@ -41,13 +41,13 @@ InventoryCreator inventoryCreator = new InventoryCreator();
     {
         //MAIN MENU
         if(gp.ui.titleScreenState == 0){
-            if(code == KeyEvent.VK_W){
+            if(code == KeyEvent.VK_W || code == KeyEvent.VK_D){
                 gp.ui.commandNum--;
                 if(gp.ui.commandNum < 0){
                     gp.ui.commandNum = 1;
                 }
             }
-            if(code == KeyEvent.VK_S){
+            if(code == KeyEvent.VK_S || code == KeyEvent.VK_A){
                 gp.ui.commandNum++;
                 if(gp.ui.commandNum > 1){
                     gp.ui.commandNum = 0;
@@ -66,13 +66,13 @@ InventoryCreator inventoryCreator = new InventoryCreator();
         }
         //SECOND SCREEN  CHOOSE START TYPE
         else if(gp.ui.titleScreenState == 1){
-            if(code == KeyEvent.VK_W){
+            if(code == KeyEvent.VK_W || code == KeyEvent.VK_D){
                 gp.ui.commandNum--;
                 if(gp.ui.commandNum < 0){
                     gp.ui.commandNum = 2;
                 }
             }
-            if(code == KeyEvent.VK_S){
+            if(code == KeyEvent.VK_S || code == KeyEvent.VK_A){
                 gp.ui.commandNum++;
                 if(gp.ui.commandNum > 2){
                     gp.ui.commandNum = 0;
@@ -109,7 +109,6 @@ InventoryCreator inventoryCreator = new InventoryCreator();
         //THIRD SCREEN  CHARACTER SELECTION
         else if(gp.ui.titleScreenState == 2){
             if(code == KeyEvent.VK_W){
-                System.out.println(Integer.toString(gp.ui.commandCol)+" "+(Integer.toString(gp.ui.commandRow)));
                 gp.ui.commandRow--;
                 if(gp.ui.commandRow < 0 && gp.ui.commandCol == 0){
                     gp.ui.commandRow = 7;
@@ -126,10 +125,8 @@ InventoryCreator inventoryCreator = new InventoryCreator();
                 else if(gp.ui.commandRow < 0 && gp.ui.commandCol == 4){
                     gp.ui.commandRow = 1;
                 }
-                System.out.println(Integer.toString(gp.ui.commandCol)+" "+(Integer.toString(gp.ui.commandRow)));
             }
             if(code == KeyEvent.VK_S){
-                System.out.println(Integer.toString(gp.ui.commandCol)+" "+(Integer.toString(gp.ui.commandRow)));
                 gp.ui.commandRow++;
                 if(gp.ui.commandRow > 7 && gp.ui.commandCol == 0){
                     gp.ui.commandRow = 0;
@@ -146,10 +143,8 @@ InventoryCreator inventoryCreator = new InventoryCreator();
                 else if(gp.ui.commandRow > 1 && gp.ui.commandCol == 4){
                     gp.ui.commandRow = 0;
                 }
-                System.out.println(Integer.toString(gp.ui.commandCol)+" "+(Integer.toString(gp.ui.commandRow)));
             }
             if(code == KeyEvent.VK_A){
-                System.out.println(Integer.toString(gp.ui.commandCol)+" "+(Integer.toString(gp.ui.commandRow)));
                 if(gp.ui.commandCol == 0 && gp.ui.commandRow == 7){
                     gp.ui.commandCol--;
                     gp.ui.commandRow = 1;
@@ -167,10 +162,8 @@ InventoryCreator inventoryCreator = new InventoryCreator();
                 if(gp.ui.commandCol < 0){
                     gp.ui.commandCol = 4;
                 }
-                System.out.println(Integer.toString(gp.ui.commandCol)+" "+(Integer.toString(gp.ui.commandRow)));
             }
             if(code == KeyEvent.VK_D){
-                System.out.println(Integer.toString(gp.ui.commandCol)+" "+(Integer.toString(gp.ui.commandRow)));
                 if(gp.ui.commandCol == 0 && gp.ui.commandRow > 5){
                     gp.ui.commandCol++;
                     gp.ui.commandRow = 5;
@@ -192,7 +185,6 @@ InventoryCreator inventoryCreator = new InventoryCreator();
                 if(gp.ui.commandCol > 4){
                     gp.ui.commandCol = 0;
                 }
-                System.out.println(Integer.toString(gp.ui.commandCol)+" "+(Integer.toString(gp.ui.commandRow)));
             }
             if(code == KeyEvent.VK_ENTER){
                 //Knight
@@ -310,13 +302,13 @@ InventoryCreator inventoryCreator = new InventoryCreator();
                 else if(gp.ui.commandCol == 3 && gp.ui.commandRow == 1){
                     inventoryCreator.SetpotionsToFalse();
                     inventoryCreator.setpotion2(true);
-                    gp.ui.col2 = 2;
+                    gp.ui.col3 = 2;
                 }
                 //3 Potions
                 else if(gp.ui.commandCol == 3 && gp.ui.commandRow == 2){
                     inventoryCreator.SetpotionsToFalse();
                     inventoryCreator.setpotion3(true);
-                    gp.ui.col2 = 3;
+                    gp.ui.col3 = 3;
                 }
 
                 //Next
@@ -326,16 +318,17 @@ InventoryCreator inventoryCreator = new InventoryCreator();
                         gp.ui.col1 = 0;
                         gp.ui.col2 = 0;
                         gp.ui.col3 = 0;
-                        if(gp.ui.commandCount == 3 && gp.ui.commandNum == 1){
+                        if(gp.ui.commandCount == 3 && gp.ui.commandNum == 1){ //tu wybrano wszytkich bohaterów
                             //zapisz postać
-                            gp.gameState = gp.playState;
+                            gp.tileM.lodaMap();
+                            gp.ui.titleScreenState = 3;
                         }
-                        else if(gp.ui.commandCount == 3 && gp.ui.commandNum == 0){
+                        else if(gp.ui.commandCount == 3 && gp.ui.commandNum == 0){ //tu team się zmienia
                             //zapisz postać
                             gp.ui.commandCount = 0;
                             gp.ui.commandNum++;
                         }
-                        else{
+                        else{                   //next
                             //zapisz postać
                             gp.ui.commandCount++;
                         } 
@@ -343,14 +336,44 @@ InventoryCreator inventoryCreator = new InventoryCreator();
                 }
                 //Skip
                 else if(gp.ui.commandCol == 4 && gp.ui.commandRow == 1){
-                    if(gp.ui.commandCount > 0 && gp.ui.commandNum == 1){
-                        gp.gameState = gp.playState;
+                    gp.ui.col0 = 0;
+                    gp.ui.col1 = 0;
+                    gp.ui.col2 = 0;
+                    gp.ui.col3 = 0;
+                    if(gp.ui.commandCount > 0 && gp.ui.commandNum == 1){ //tu wybrano wszytkich bohaterów
+                        gp.tileM.lodaMap();
+                        gp.ui.titleScreenState = 3;
                     }
-                    else if(gp.ui.commandCount > 0 && gp.ui.commandNum == 0){
+                    else if(gp.ui.commandCount > 0 && gp.ui.commandNum == 0){  //tu team się zmienia
                         gp.ui.commandNum++;
+                        gp.ui.commandCount = 0;
                     }
                 }
             }
+        }
+        //FOURTH SCREEN  MAP SELECTION
+        else if(gp.ui.titleScreenState == 3){
+            if(code == KeyEvent.VK_W || code == KeyEvent.VK_D){
+                gp.mapNumber++;
+                if(gp.mapNumber > 9){
+                    gp.mapNumber = 1;
+                }
+                gp.mapName = "map_" + gp.mapNumber + ".txt";
+                gp.tileM.lodaMap();
+                //draw
+            }
+            if(code == KeyEvent.VK_S || code == KeyEvent.VK_A){
+                gp.mapNumber--;
+                if(gp.mapNumber < 1){
+                    gp.mapNumber = 9;
+                }
+                gp.mapName = "map_" + gp.mapNumber + ".txt";
+                gp.tileM.lodaMap();
+                //draw
+            }
+            if(code == KeyEvent.VK_ENTER){
+                gp.ui.titleScreenState = 4;
+                }
         }
     }
     public void playState(int code)

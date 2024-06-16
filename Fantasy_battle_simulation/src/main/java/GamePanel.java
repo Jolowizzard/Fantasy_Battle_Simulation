@@ -38,6 +38,9 @@ public class GamePanel extends JPanel implements Runnable{
     public final int playState = 1;
     public final int pauseState = 2;
 
+    int mapNumber = 1;
+    String mapName = "map_1.txt";
+
 
     public GamePanel() {
         this.setPreferredSize(new Dimension(ScreenWidth, ScreenHeight));
@@ -71,9 +74,6 @@ public class GamePanel extends JPanel implements Runnable{
         int drawCount = 0;
 
         while(gameThread != null){
-
-            //Czy działa
-            // System.out.println("Gra wlaczana");
 
             currentTime = System.nanoTime();
 

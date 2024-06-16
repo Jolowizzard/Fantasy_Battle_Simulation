@@ -7,7 +7,6 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.Objects;
 import java.util.*; 
 
 public class TileManager {
@@ -75,8 +74,8 @@ public class TileManager {
     }
     public void lodaMap(){
         try{
-            //Wybór mapy - - - - - - - - - - -- - - -- - -- - - --  -- - -- - -- - - -- - - -- - -- - - - 
-            InputStream is = getClass().getResourceAsStream("map_1.txt");
+            //Wybór mapy - - - - - - - - - - -- - - -- - -- - - --  -- - -- - -- - - -- - - -- - -- - - - - - - - -- - - - - --- -- - -- - - - - --- - -- - - - - -- - - - - - - - 
+            InputStream is = getClass().getResourceAsStream(gp.mapName);
             BufferedReader br = new BufferedReader(new InputStreamReader(is));
 
             int col = 0;
