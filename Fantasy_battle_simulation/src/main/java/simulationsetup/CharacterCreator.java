@@ -261,7 +261,7 @@ public class CharacterCreator {
     }
     private void createRepresentation(Character character,String name,GamePanel gamePanel){
         Hero characterRepresentation = new Hero(gamePanel);
-        characterRepresentation.setHeroType("Wizard");
+        characterRepresentation.setHeroType(name);
         character.setRepresentation(characterRepresentation);
     }
     private void setInventoryStatsFromString(Inventory inventory,String [] inventoryString){
@@ -340,61 +340,61 @@ public class CharacterCreator {
 
 
     //creates character with inventory choosen via GUI
-    public Character CharacterCreation(Tile ChoosenTile)
+    public Character CharacterCreation(Tile ChoosenTile, GamePanel gamePanel)
     {
         Character error = new Knight();
         if(getKnight()==true)
         {
             String ChoosenName = "Knight"+String.valueOf(CounterId);
-            Character character=createKnight(CounterId,ChoosenTile, ChoosenName);
+            Character character=createKnight(CounterId,ChoosenTile, ChoosenName, gamePanel);
             CounterId = CounterId - 1;
             return character;
         }
         if(getPaladin()==true) {
             String ChoosenName = "Paladin"+String.valueOf(CounterId);
-            Character character=createPaladin(CounterId, ChoosenTile, ChoosenName);
+            Character character=createPaladin(CounterId, ChoosenTile, ChoosenName, gamePanel);
             CounterId = CounterId - 1;
             return character;
         }
         if(getWizard()==true)
         {
             String ChoosenName = "Wizard"+String.valueOf(CounterId);
-            Character character=createWizard(CounterId,ChoosenTile, ChoosenName);
+            Character character=createWizard(CounterId,ChoosenTile, ChoosenName, gamePanel);
             CounterId = CounterId - 1;
             return character;
         }
         if(getDruid()==true)
         {
             String ChoosenName = "Druid"+String.valueOf(CounterId);
-            Character character=createDruid(CounterId,ChoosenTile, ChoosenName);
+            Character character=createDruid(CounterId,ChoosenTile, ChoosenName, gamePanel);
             CounterId = CounterId - 1;
             return character;
         }
         if(getMarksman()==true)
         {
             String ChoosenName = "Marksman"+String.valueOf(CounterId);
-            Character character=createMarksman(CounterId,ChoosenTile, ChoosenName);
+            Character character=createMarksman(CounterId,ChoosenTile, ChoosenName, gamePanel);
             CounterId = CounterId - 1;
             return character;
         }
         if(getRanger()==true)
         {
             String ChoosenName = "Ranger"+String.valueOf(CounterId);
-            Character character=createRanger(CounterId,ChoosenTile, ChoosenName);
+            Character character=createRanger(CounterId,ChoosenTile, ChoosenName, gamePanel);
             CounterId = CounterId - 1;
             return character;
         }
         if(getAssassin()==true)
         {
             String ChoosenName = "Assassin"+String.valueOf(CounterId);
-            Character character=createAssassin(CounterId,ChoosenTile, ChoosenName);
+            Character character=createAssassin(CounterId,ChoosenTile, ChoosenName, gamePanel);
             CounterId = CounterId - 1;
             return character;
         }
         if(getThief()==true)
         {
             String ChoosenName = "Thief"+String.valueOf(CounterId);
-            Character character = createThief(CounterId,ChoosenTile, ChoosenName);
+            Character character = createThief(CounterId,ChoosenTile, ChoosenName, gamePanel);
             CounterId = CounterId - 1;
             return character;
 
@@ -405,16 +405,20 @@ public class CharacterCreator {
 
 
     //adds hero to purple team
-    public void SaveHerotoPurple(Team teampurple)
+    public void SaveHerotoPurple(Team teampurple, GamePanel gamePanel)
     {
-       teampurple.addCharacter(CharacterCreation(TempTile));
+        Character character = CharacterCreation(TempTile,gamePanel);
+        character.getRepresentation().setHeroColor("P");
+        teampurple.addCharacter(character);
     }
 
 
     //adds hero to yellow team
-    public void SaveHerotoYellow(Team teamyellow)
+    public void SaveHerotoYellow(Team teamyellow, GamePanel gamePanel)
     {
-        teamyellow.addCharacter(CharacterCreation(TempTile));
+        Character character = CharacterCreation(TempTile,gamePanel);
+        character.getRepresentation().setHeroColor("Y");
+        teamyellow.addCharacter(character);
     }
 
 
@@ -435,8 +439,9 @@ public void SetCharacterBooleansToFalse()
 //changes character position to new Tile
 public void SavePosition(Character character,int coordX, int coordY)
 {
-    Tile temp = new Tile(coordX,coordY);
+    Tile temp = new Tile(coordY,coordX);
     character.setPosition(temp);
+    character.getRepresentation().setPosition(coordY,coordX);
 }
 
 
@@ -447,6 +452,9 @@ public void SaveAllCharactersPositions(int coordX, int coordY) {
         if (purplesaved < TeamCreator.teamPurple.getTeam().size())
         {
             SavePosition(TeamCreator.teamPurple.getTeam().get(purplesaved),coordX, coordY );
+            //System.out.println(TeamCreator.teamPurple.getTeam().get(purplesaved).getName()+"   "+TeamCreator.teamPurple.getTeam().get(purplesaved).getPosition().row+"   "+TeamCreator.teamPurple.getTeam().get(purplesaved).getPosition().col);
+            System.out.println(TeamCreator.teamPurple.getTeam().get(purplesaved).getName());
+            //System.out.println(TeamCreator.teamPurple.getTeam().get(purplesaved).getRepresentation().getHeroType());
             Map[coordX][coordY].SetAsOccupied();
             purplesaved = purplesaved+1;
             SavedPositions = SavedPositions+1;
@@ -454,6 +462,9 @@ public void SaveAllCharactersPositions(int coordX, int coordY) {
         else if (yellowsaved < TeamCreator.teamYellow.getTeam().size())
         {
             SavePosition(TeamCreator.teamYellow.getTeam().get(yellowsaved),coordX, coordY );
+            //System.out.println(TeamCreator.teamPurple.getTeam().get(purplesaved).getName()+"   "+TeamCreator.teamPurple.getTeam().get(purplesaved).getPosition().row+"   "+TeamCreator.teamPurple.getTeam().get(purplesaved).getPosition().col);
+            System.out.println(TeamCreator.teamYellow.getTeam().get(yellowsaved).getName());
+            //System.out.println(TeamCreator.teamYellow.getTeam().get(yellowsaved).getRepresentation().getHeroType());
             Map[coordX][coordY].SetAsOccupied();
             yellowsaved = yellowsaved+1;
             SavedPositions = SavedPositions+1;
@@ -467,59 +478,67 @@ public void SaveAllCharactersPositions(int coordX, int coordY) {
 
 
 //functions creating hero of a certain class
-    public Character createKnight(int id, Tile position, String Name) {
+    public Character createKnight(int id, Tile position, String Name, GamePanel gamePanel) {
         InventoryCreator inventory = new InventoryCreator();
         InteligenceType intelligence = new Agressive(true);
         characters.Character newKnight = new Knight(id, Name, intelligence, position, inventory.CreateInventory());
+        createRepresentation(newKnight,"Knight",gamePanel);
         return newKnight;
     }
 
-    public Character createPaladin(int id, Tile position, String Name) {
+    public Character createPaladin(int id, Tile position, String Name,GamePanel gamePanel) {
         InventoryCreator inventory = new InventoryCreator();
         InteligenceType intelligence = new Agressive(true);
         characters.Character newPaladin = new Paladin(id, Name, intelligence, position, inventory.CreateInventory());
+        createRepresentation(newPaladin,"Paladin",gamePanel);
         return newPaladin;
     }
 
-    public Character createRanger(int id, Tile position, String Name) {
+    public Character createRanger(int id, Tile position, String Name, GamePanel gamePanel) {
         InventoryCreator inventory = new InventoryCreator();
         InteligenceType intelligence = new Agressive(true);
         characters.Character newRanger = new Ranger(id, Name, intelligence, position, inventory.CreateInventory());
+        createRepresentation(newRanger,"Ranger",gamePanel);
         return newRanger;
     }
 
-    public Character createMarksman(int id, Tile position, String Name) {
+    public Character createMarksman(int id, Tile position, String Name, GamePanel gamePanel) {
         InventoryCreator inventory = new InventoryCreator();
         InteligenceType intelligence = new Agressive(true);
         characters.Character newMarksman = new Marksman(id, Name, intelligence, position, inventory.CreateInventory());
+        createRepresentation(newMarksman,"Marksman",gamePanel);
         return newMarksman;
     }
 
-    public Character createDruid(int id, Tile position, String Name) {
+    public Character createDruid(int id, Tile position, String Name, GamePanel gamePanel) {
         InventoryCreator inventory = new InventoryCreator();
         InteligenceType intelligence = new Agressive(true);
         characters.Character newDruid = new Druid(id, Name, intelligence, position, inventory.CreateInventory());
+        createRepresentation(newDruid,"Druid",gamePanel);
         return newDruid;
     }
 
-    public Character createWizard(int id, Tile position, String Name) {
+    public Character createWizard(int id, Tile position, String Name, GamePanel gamePanel) {
         InventoryCreator inventory = new InventoryCreator();
         InteligenceType intelligence = new Agressive(true);
         characters.Character newWizard = new Wizard(id, Name, intelligence, position, inventory.CreateInventory());
+        createRepresentation(newWizard,"Archmage",gamePanel);
         return newWizard;
     }
 
-    public Character createAssassin(int id, Tile position, String Name) {
+    public Character createAssassin(int id, Tile position, String Name, GamePanel gamePanel) {
         InventoryCreator inventory = new InventoryCreator();
         InteligenceType intelligence = new Agressive(true);
         characters.Character newAssasin = new Assassin(id, Name, intelligence, position, inventory.CreateInventory());
+        createRepresentation(newAssasin,"Assasin",gamePanel);
         return newAssasin;
     }
 
-    public Character createThief(int id, Tile position, String Name) {
+    public Character createThief(int id, Tile position, String Name, GamePanel gamePanel) {
         InventoryCreator inventory = new InventoryCreator();
         InteligenceType intelligence = new Agressive(true);
         characters.Character newThief = new Thief(id, Name, intelligence, position, inventory.CreateInventory());
+        createRepresentation(newThief,"Thief",gamePanel);
         return newThief;
     }
 }
