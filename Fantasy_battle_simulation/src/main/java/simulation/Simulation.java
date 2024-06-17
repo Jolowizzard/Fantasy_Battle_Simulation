@@ -52,6 +52,7 @@ public class Simulation implements Runnable{
             if (teamYellow.getTeam().size() < teamPurple.getTeam().size()) {
                 BiggestTeamSize = teamPurple.getTeam().size();
             }
+
             for (int col = 0; col < 16; col++) {
                 for (int row = 0; row < 16; row++) {
                     if (MAPtable.Map[col][row].solid) {

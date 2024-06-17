@@ -14,7 +14,7 @@ public class SearchAlgorythm {
     Tile startTile, destinationTile, currentTile;
     boolean goalReached = false;
 
-    Tile[][] tiles = new Tile[maxCol][maxRow];
+    Tile[][] tiles = new Tile[maxRow][maxCol];
     ArrayList<Tile> checked = new ArrayList<>();
     ArrayList<Tile> open = new ArrayList<>();
     // Constructor needs start tile, destination map.Tile, map used in simulation, size of the map, numbers of columns and rows
@@ -26,13 +26,13 @@ public class SearchAlgorythm {
         this.maxRow = maxRow;
     }
     private void Clone(Tile[][] map){
-        for(int i = 0;i<maxCol;i++){
-            for(int j =0 ;j<maxRow;j++){
-                tiles[i][j] = new Tile(map[i][j].col,map[i][j].row);
-                if(map[i][j].solid)
-                    tiles[i][j].SetAsSolid();
-                if(map[i][j].occupied)
-                    tiles[i][j].SetAsOccupied();
+        for(int col = 0;col<maxCol;col++){
+            for(int row =0 ;row<maxRow;row++){
+                tiles[row][col] = new Tile(map[row][col].col,map[row][col].row);
+                if(map[row][col].solid)
+                    tiles[row][col].SetAsSolid();
+                if(map[row][col].occupied)
+                    tiles[row][col].SetAsOccupied();
             }
         }
     }
@@ -43,21 +43,21 @@ public class SearchAlgorythm {
         }
     }*/
     private void SetStartTile(int col, int row){
-        tiles[col][row].SetAsStart();
-        startTile = tiles[col][row];
+        tiles[row][col].SetAsStart();
+        startTile = tiles[row][col];
         currentTile = startTile;
     }
     private void SetDestinationTile(int col, int row){
-        tiles[col][row].SetAsDestination();
-        destinationTile = tiles[col][row];
+        tiles[row][col].SetAsDestination();
+        destinationTile = tiles[row][col];
     }
     /*private void SetSolidNode(int col, int row){
-        tiles[col][row].SetAsSolid();
+        tiles[row][col].SetAsSolid();
     }*/
     private void SetCostOnTiles(){
         for(int col = 0;col<maxCol;col++){
             for(int row = 0;row<maxRow;row++)
-                GetCost(tiles[col][row]);
+                GetCost(tiles[row][col]);
         }
     }
     private void GetCost(Tile tile){
@@ -85,13 +85,13 @@ public class SearchAlgorythm {
             checked.add(currentTile);
             open.remove(currentTile);
             if(row-1 >= 0)
-                openTile(tiles[col][row-1]);
+                openTile(tiles[row-1][col]);
             if(row+1 < maxRow)
-                openTile(tiles[col][row+1]);
+                openTile(tiles[row+1][col]);
             if(col-1 >= 0)
-                openTile(tiles[col-1][row]);
+                openTile(tiles[row][col-1]);
             if(col+1 < maxCol)
-                openTile(tiles[col+1][row]);
+                openTile(tiles[row][col+1]);
 
             int bestTileIndex = 0;
             int bestTilefCost = Integer.MAX_VALUE;
@@ -144,7 +144,7 @@ public class SearchAlgorythm {
     private void ResetParents(){
         for(int i=0;i<maxCol;i++){
             for(int j=0; j<maxRow;j++){
-                tiles[i][j].parent=null;
+                tiles[j][i].parent=null;
             }
         }
     }
