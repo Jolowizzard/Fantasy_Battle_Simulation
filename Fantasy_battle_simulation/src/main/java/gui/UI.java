@@ -377,8 +377,12 @@ public class UI {
         gp.tileM.draw(g2);
 
         String name = "Knight_P";//tu trzeba dynamicznie
+        //g2.drawImage(sel, commandCol*gp.tileSize, commandRow*gp.tileSize, gp.tileSize, gp.tileSize, null);
+        //gp.hero.updatePositon(commandCol, commandRow);
+        //gp.hero.updateType(name);
+        //gp.hero.draw(g2);
 
-        if(MAPtable.Map[gp.ui.commandRow][gp.ui.commandCol].occupied != false || MAPtable.Map[gp.ui.commandRow][gp.ui.commandCol].solid != false){
+        if(MAPtable.Map[gp.ui.commandRow][gp.ui.commandCol].occupied == true || MAPtable.Map[gp.ui.commandRow][gp.ui.commandCol].solid == true){
             g2.drawImage(wrong, commandCol*gp.tileSize, commandRow*gp.tileSize, gp.tileSize, gp.tileSize, null);
             gp.hero.updatePositon(commandCol, commandRow);
             gp.hero.updateType(name);
@@ -391,7 +395,7 @@ public class UI {
             gp.hero.draw(g2);
         }
 
-        TeamCreator.teamYellow.getTeam().forEach(character -> character.getRepresentation().draw(g2));
-        TeamCreator.teamPurple.getTeam().forEach(character -> character.getRepresentation().draw(g2));
+        //TeamCreator.teamYellow.getTeam().forEach(character -> character.getRepresentation().draw(g2));
+        //TeamCreator.teamPurple.getTeam().forEach(character -> character.getRepresentation().draw(g2));
     }
 }

@@ -446,16 +446,15 @@ public void SaveAllCharactersPositions(int coordX, int coordY) {
     if (SavedPositions < TeamCreator.teamYellow.getTeam().size() + TeamCreator.teamPurple.getTeam().size()) {
         if (purplesaved < TeamCreator.teamPurple.getTeam().size())
         {
-
             SavePosition(TeamCreator.teamPurple.getTeam().get(purplesaved),coordX, coordY );
-            Map[coordX][coordY].SetAsOccupied();
+            Map[coordY][coordX].SetAsOccupied();
             purplesaved = purplesaved+1;
             SavedPositions = SavedPositions+1;
         }
         else if (yellowsaved < TeamCreator.teamYellow.getTeam().size())
         {
             SavePosition(TeamCreator.teamYellow.getTeam().get(yellowsaved),coordX, coordY );
-            Map[coordX][coordY].SetAsOccupied();
+            Map[coordY][coordX].SetAsOccupied();
             yellowsaved = yellowsaved+1;
             SavedPositions = SavedPositions+1;
         }
