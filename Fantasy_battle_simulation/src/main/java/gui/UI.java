@@ -6,6 +6,7 @@ import java.awt.Color;
 import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
 
+import map.MAPtable;
 import map.Tile;
 import simulationsetup.TeamCreator;
 
@@ -377,7 +378,7 @@ public class UI {
 
         String name = "Knight_P";//tu trzeba dynamicznie
 
-        if(Tile.occupied == true || Tile.solid == true){
+        if(MAPtable.Map[gp.ui.commandRow][gp.ui.commandCol].solid == true || MAPtable.Map[gp.ui.commandRow][gp.ui.commandCol].occupied  == true){
             g2.drawImage(wrong, commandCol*gp.tileSize, commandRow*gp.tileSize, gp.tileSize, gp.tileSize, null);
             gp.hero.updatePositon(commandCol, commandRow);
             gp.hero.updateType(name);
