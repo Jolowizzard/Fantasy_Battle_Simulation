@@ -28,10 +28,18 @@ import java.util.ArrayList;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+//import static jdk.vm.ci.hotspot.riscv64.RISCV64HotSpotRegisterConfig.gp;
+
 public class CharacterCreator {
-    int purpleteamcount = 0;
-    int yellowteamcount = 0;
-    int whichteam = 0;
+
+    private int whichteam = 0;
+    int SavedPositions = 0;
+
+    private int purplesaved = 0;
+    private int yellowsaved = 0;
+
+    private int coordX;
+    private int coordY;
 
     Tile TempTile = new Tile(16,16); // jesli blad to zmienic na istniejacy tile od 0 do 15;
    private int CounterId = 99;
@@ -352,6 +360,31 @@ public void SetCharacterBooleansToFalse()
     setDruid(false);
     setWizard(false);
 }
+
+public void SavePosition(Character character,int coordX, int coordY)
+{
+    Tile temp = new Tile(coordX,coordY);
+    character.setPosition(temp);
+}
+
+public void SaveAllCharactersPositions(int coordX, int coordY) {
+
+    if (SavedPositions < TeamCreator.teamYellow.getTeam().size() + TeamCreator.teamPurple.getTeam().size()) {
+        if (purplesaved < TeamCreator.teamPurple.getTeam().size())
+        {
+            System.out.println(TeamCreator.teamPurple.getTeam().get(purplesaved).getName()+"    "+TeamCreator.teamPurple.getTeam().get(purplesaved).getPosition().col+","+TeamCreator.teamPurple.getTeam().get(purplesaved).getPosition().row);
+            purplesaved = purplesaved+1;
+            SavedPositions = SavedPositions+1;
+        }
+        else if (yellowsaved < TeamCreator.teamYellow.getTeam().size())
+        {
+            System.out.println(TeamCreator.teamYellow.getTeam().get(yellowsaved).getName()+"    "+TeamCreator.teamYellow.getTeam().get(yellowsaved).getPosition().col+","+TeamCreator.teamYellow.getTeam().get(yellowsaved).getPosition().row);
+            yellowsaved = yellowsaved+1;
+            SavedPositions = SavedPositions+1;
+        }
+    }
+}
+
     public Character createKnight(int id, Tile position, String Name) {
         InventoryCreator inventory = new InventoryCreator();
         InteligenceType intelligence = new Agressive(true);

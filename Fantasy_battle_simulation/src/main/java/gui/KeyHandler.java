@@ -15,9 +15,8 @@ import java.awt.event.KeyListener;
 public class KeyHandler implements KeyListener{
 CharacterCreator characterCreator = new CharacterCreator();
 InventoryCreator inventoryCreator = new InventoryCreator();
-
 TeamCreator teamCreator = new TeamCreator();
-
+int SavedPositions = 0;
 
     GamePanel gp;
 
@@ -421,6 +420,7 @@ TeamCreator teamCreator = new TeamCreator();
                 //połóż jednostkę
                 //else
                 //gp.gameState = gp.playState;
+               characterCreator.SaveAllCharactersPositions(gp.ui.commandCol,gp.ui.commandRow);
             }
         }
     }
