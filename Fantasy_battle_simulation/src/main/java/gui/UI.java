@@ -5,6 +5,10 @@ import java.awt.Font;
 import java.awt.Color;
 import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
+
+import map.Tile;
+import simulationsetup.TeamCreator;
+
 import java.io.IOException;
 
 public class UI {
@@ -373,7 +377,7 @@ public class UI {
 
         String name = "Knight_P";//tu trzeba dynamicznie
 
-        if(gp.tileM.mapTileNum[commandCol][commandRow] == 1){
+        if(if(Tile.occupied == true || Tile.solid == true)){
             g2.drawImage(wrong, commandCol*gp.tileSize, commandRow*gp.tileSize, gp.tileSize, gp.tileSize, null);
             gp.hero.updatePositon(commandCol, commandRow);
             gp.hero.updateType(name);
@@ -386,7 +390,7 @@ public class UI {
             gp.hero.draw(g2);
         }
 
-        //ogarnij klasę i team postaci i gdzie stoi
-        //g2.drawImage(gp.hero.klasa i team, x*gp.tileSize, y*gp.tileSize, gp.tileSize, gp.tileSize, null);
+        TeamCreator.teamYellow.getTeam().forEach(character -> character.getRepresentation().draw(g2));
+        TeamCreator.teamPurple.getTeam().forEach(character -> character.getRepresentation().draw(g2));
     }
 }

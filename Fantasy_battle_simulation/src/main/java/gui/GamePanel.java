@@ -141,12 +141,14 @@ public class GamePanel extends JPanel implements Runnable{
         else{
             //Tile
             tileM.draw(g2);
+            
+            //Heroes
             TeamCreator.teamYellow.getTeam().forEach(character -> character.getRepresentation().draw(g2));
             TeamCreator.teamPurple.getTeam().forEach(character -> character.getRepresentation().draw(g2));
-            //Heroes
-            //hero.draw(g2);
+
             //gui.UI
             ui.draw(g2);
+  
             g2.dispose();
         }
     }
