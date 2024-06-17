@@ -121,6 +121,13 @@ public class GamePanel extends JPanel implements Runnable{
         
             //Heroes
             hero.draw(g2);
+            hero.draw(g2);
+            hero.draw(g2);
+            hero.draw(g2);
+            hero.draw(g2);
+            hero.draw(g2);
+            hero.draw(g2);
+            hero.draw(g2);
 
             //UI
             ui.draw(g2);

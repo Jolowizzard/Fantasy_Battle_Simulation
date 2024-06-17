@@ -18,7 +18,8 @@ public class UI {
     public int col1 = 0;
     public int col2 = 0;
     public int col3 = 0;
-    public int counter = 0;
+    public int counterP = 0;
+    public int counterY = 0;
     public int titleScreenState = 0; // 0 : Main Menu, 1 : the second screen, 2 : character screen, 3 : map selection, 4 : units placement
     BufferedImage csp, csy, sel, selected;
 
@@ -370,6 +371,7 @@ public class UI {
         g2.drawImage(sel, commandCol*gp.tileSize, commandRow*gp.tileSize, gp.tileSize, gp.tileSize, null);
         g2.drawImage(gp.hero.Knight_P, commandCol*gp.tileSize, commandRow*gp.tileSize, gp.tileSize, gp.tileSize, null);
 
-
+        //ogarnij klasę i team postaci i gdzie stoi
+        //g2.drawImage(gp.hero.klasa i team, x*gp.tileSize, y*gp.tileSize, gp.tileSize, gp.tileSize, null);
     }
 }
