@@ -40,11 +40,11 @@ public class MAPtable implements Cloneable {
     }
     public static void changeLocation(characters.Character character, Tile location){
         Tile previousLocation = character.getPosition();
-        Map[previousLocation.col][previousLocation.row].SetAsUnoccupied();
+        Map[previousLocation.row][previousLocation.col].SetAsUnoccupied();
         int row = location.row;
         int col = location.col;
-        character.setPosition(Map[col][row]);
-        Map[col][row].SetAsOccupied();
+        character.setPosition(Map[row][col]);
+        Map[row][col].SetAsOccupied();
     }
     //Function initializes the map from a .txt file
     public static void InitializeMap(String fileName){
@@ -56,7 +56,7 @@ public class MAPtable implements Cloneable {
             while ((line = reader.readLine()) != null) {
                 line = line.replaceAll("\\s", "");
                 for (int i = 0; i < line.length(); i++) {
-                    Map[x][i] = new Tile(x, i);
+                    Map[x][i] = new Tile(i, x);
                     if (line.charAt(i) == '1')
                         Map[x][i].SetAsSolid();
                 }

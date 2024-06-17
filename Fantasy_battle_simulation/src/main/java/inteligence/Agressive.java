@@ -28,11 +28,9 @@ public class Agressive extends InteligenceType {
         if(character.getInventory().getCurrentWeapon()==null) {
             character.getInventory().setCurrentWeapon(character.getInventory().getWeapons().get(0));
         }
+
         target = lookForTarget();
-        if(inCombat)
-        {
-            target = lookForTarget();
-        }
+
         if(checkIfYouWon())
             return;
         //Performing healing actions

@@ -15,7 +15,9 @@ import java.util.ArrayList;
 
 
 public abstract class InteligenceType{
+
     protected Character target;
+
     protected Character character;
     protected boolean inCombat=false;
     protected Team enemies;
