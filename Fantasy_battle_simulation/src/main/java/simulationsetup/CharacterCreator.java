@@ -41,7 +41,7 @@ public class CharacterCreator {
     private int coordX;
     private int coordY;
 
-    Tile TempTile = new Tile(16,16); // jesli blad to zmienic na istniejacy tile od 0 do 15;
+    Tile TempTile = new Tile(16,16);
    private int CounterId = 99;
     private boolean Knight = false;
     private boolean Paladin = false;
@@ -69,8 +69,7 @@ public class CharacterCreator {
     public void setRanger(boolean bool){Ranger=bool;}
     public void setAssassin(boolean bool){Assassin=bool;}
     public void setThief(boolean bool){Thief=bool;}
-    //method for creating characters in simulation
-    //working with GUI
+
     public Character createCharater(){
         ArrayList<Weapon> Weapons = new ArrayList<>();
         Inventory inventory = new Inventory();
@@ -277,6 +276,8 @@ public class CharacterCreator {
         return null;
     }
 
+
+    //creates character with inventory choosen via GUI
     public Character CharacterCreation(Tile ChoosenTile)
     {
         Character error = new Knight();
@@ -340,15 +341,22 @@ public class CharacterCreator {
         return error;
     }
 
+
+    //adds hero to purple team
     public void SaveHerotoPurple(Team teampurple)
     {
        teampurple.addCharacter(CharacterCreation(TempTile));
     }
 
+
+    //adds hero to yellow team
     public void SaveHerotoYellow(Team teamyellow)
     {
         teamyellow.addCharacter(CharacterCreation(TempTile));
     }
+
+
+    //sets all character booleans to false
 public void SetCharacterBooleansToFalse()
 {
     setKnight(false);
@@ -361,12 +369,16 @@ public void SetCharacterBooleansToFalse()
     setWizard(false);
 }
 
+
+//changes character position to new Tile
 public void SavePosition(Character character,int coordX, int coordY)
 {
     Tile temp = new Tile(coordX,coordY);
     character.setPosition(temp);
 }
 
+
+//saves all characters starting Tiles
 public void SaveAllCharactersPositions(int coordX, int coordY) {
 
     if (SavedPositions < TeamCreator.teamYellow.getTeam().size() + TeamCreator.teamPurple.getTeam().size()) {
@@ -386,6 +398,12 @@ public void SaveAllCharactersPositions(int coordX, int coordY) {
     }
 }
 
+
+
+
+
+
+//functions creating hero of a certain class
     public Character createKnight(int id, Tile position, String Name) {
         InventoryCreator inventory = new InventoryCreator();
         InteligenceType intelligence = new Agressive(true);
