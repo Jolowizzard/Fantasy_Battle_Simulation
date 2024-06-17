@@ -421,6 +421,7 @@ int SavedPositions = 0;
                 //else
                 //gp.gameState = gp.playState;
                characterCreator.SaveAllCharactersPositions(gp.ui.commandCol,gp.ui.commandRow);
+               //if(SavedPositions==TeamCreator.teamYellow.getTeam().size() + TeamCreator.teamPurple.getTeam().size()){gp.gameState = gp.playState;}
             }
         }
     }
