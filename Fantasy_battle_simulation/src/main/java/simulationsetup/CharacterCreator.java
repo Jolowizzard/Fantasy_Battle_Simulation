@@ -13,6 +13,7 @@ import characters.rogue.Assassin;
 import gui.Entity;
 import gui.GamePanel;
 import gui.Hero;
+import gamestructure.Team;
 import inteligence.Agressive;
 import inteligence.InteligenceType;
 import inventory.Inventory;
@@ -28,6 +29,11 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class CharacterCreator {
+    int purpleteamcount = 0;
+    int yellowteamcount = 0;
+    int whichteam = 0;
+
+    Tile TempTile = new Tile(16,16); // jesli blad to zmienic na istniejacy tile od 0 do 15;
    private int CounterId = 99;
     private boolean Knight = false;
     private boolean Paladin = false;
@@ -326,6 +332,15 @@ public class CharacterCreator {
         return error;
     }
 
+    public void SaveHerotoPurple(Team teampurple)
+    {
+       teampurple.addCharacter(CharacterCreation(TempTile));
+    }
+
+    public void SaveHerotoYellow(Team teamyellow)
+    {
+        teamyellow.addCharacter(CharacterCreation(TempTile));
+    }
 public void SetCharacterBooleansToFalse()
 {
     setKnight(false);

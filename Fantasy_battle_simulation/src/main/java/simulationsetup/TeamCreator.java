@@ -19,7 +19,7 @@ public class TeamCreator {
             CharacterCreator characterCreator = new CharacterCreator();
             CSVReader csvReader = new CSVReader(fileName);
             List<String[]> csvData = csvReader.readAll();
-            if(csvData.size() > 0) {
+            if (csvData.size() > 0) {
                 for (int i = 0; i < csvData.size() / 2; i += 2) {
                     teamYellow.addCharacter(characterCreator.createCharacterFromString(csvData.get(i), csvData.get(i + 1),gamePanel));//reading characters statistics and inventor setup
                 }
@@ -43,6 +43,12 @@ public class TeamCreator {
     public Team getTeamPurple() {
         return teamPurple;
     }
+
     public Team getTeamYellow() {
-        return teamYellow;}
+        return teamYellow;
+    }
+
+
+
+
 }

@@ -48,10 +48,6 @@ public class Hero extends Entity {
             e.printStackTrace();
         }
     }
-    public void update(){
-        //tu x i y zmieniać
-
-    }
     public void draw(Graphics2D g2){
 
         BufferedImage image = null;
@@ -63,11 +59,23 @@ public class Hero extends Entity {
             case "Knight_Y":
                 image = Knight_Y;
                 break;
+            case "Paladin_P":
+                image = Paladin_P;
+                break;
+            case "Paladin_Y":
+                image = Paladin_Y;
+                break;    
             case "Archer_P":
                 image = Archer_P;
                 break;
             case "Archer_Y":
                 image = Archer_Y;
+                break;
+            case "Marksman_P":
+                image = Marksman_P;
+                break;
+            case "Marksman_Y":
+                image = Marksman_Y;
                 break;
             case "Archmage_P":
                 image = Archmage_P;
@@ -75,13 +83,32 @@ public class Hero extends Entity {
             case "Archmage_Y":
                 image = Archmage_Y;
                 break;
+            case "Druid_P":
+                image = Druid_P;
+                break;
+            case "Druid_Y":
+                image = Druid_Y;
+                break;
             case "Assasin_P":
                 image = Assasin_P;
                 break;
             case "Assasin_Y":
                 image = Assasin_Y;
                 break;
+            case "Thief_P":
+                image = Thief_P;
+                break;
+            case "Thief_Y":
+                image = Thief_Y;
+                break;
         }
-        g2.drawImage(image, x, y, gp.tileSize, gp.tileSize, null);
+        g2.drawImage(image, x*gp.tileSize, y*gp.tileSize, gp.tileSize, gp.tileSize, null);
+    }
+    public void updatePositon(int x, int y){
+        this.x = x;
+        this.y = y;
+    }
+    public void updateType(String name){
+        this.heroType = name;
     }
 }

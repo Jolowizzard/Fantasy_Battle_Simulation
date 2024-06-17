@@ -35,7 +35,7 @@ public class GamePanel extends JPanel implements Runnable{
     Thread gameThread;
 
     Simulation simulation;
-    
+
     //gui.Entity
     Hero hero = new Hero(this);
 
@@ -46,7 +46,7 @@ public class GamePanel extends JPanel implements Runnable{
     public final int pauseState = 2;
     public boolean stop = false;
     int mapNumber = 1;
-    String mapName = "map_1.txt";
+    String mapName = "map_"+ mapNumber +".txt";
 
 
     public GamePanel() {
@@ -116,6 +116,7 @@ public class GamePanel extends JPanel implements Runnable{
 
         if(gameState == playState){
 
+            //hero.updatePositon(maxScreenCol, playState);
         }
         if(gameState == pauseState){
             //nothing
