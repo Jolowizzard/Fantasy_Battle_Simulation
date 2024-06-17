@@ -395,7 +395,8 @@ public class UI {
             gp.hero.draw(g2);
         }
 
-        //TeamCreator.teamYellow.getTeam().forEach(character -> character.getRepresentation().draw(g2));
-        //TeamCreator.teamPurple.getTeam().forEach(character -> character.getRepresentation().draw(g2));
+        TeamCreator.teamPurple.getTeam().forEach(character -> character.getRepresentation().draw(g2));
+        TeamCreator.teamYellow.getTeam().forEach(character -> character.getRepresentation().draw(g2));
+
     }
 }

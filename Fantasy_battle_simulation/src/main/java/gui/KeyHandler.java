@@ -333,13 +333,13 @@ int SavedPositions = 0;
                             gp.ui.titleScreenState = 3;
                         }
                         else if(gp.ui.commandCount == 3 && gp.ui.commandNum == 0){ //tu team się zmienia
-                            characterCreator.SaveHerotoPurple(teamCreator.teamPurple);
+                            characterCreator.SaveHerotoPurple(teamCreator.teamPurple,gp);
                             gp.ui.commandCount = 0;
                             gp.ui.commandNum++;
                         }
                         else{                   //next
-                            if(gp.ui.commandNum == 0){characterCreator.SaveHerotoPurple(teamCreator.teamPurple);}
-                            if(gp.ui.commandNum == 1){characterCreator.SaveHerotoYellow(teamCreator.teamYellow);}
+                            if(gp.ui.commandNum == 0){characterCreator.SaveHerotoPurple(teamCreator.teamPurple,gp);}
+                            if(gp.ui.commandNum == 1){characterCreator.SaveHerotoYellow(teamCreator.teamYellow, gp);}
                             gp.ui.commandCount++;
                         } 
                     }
