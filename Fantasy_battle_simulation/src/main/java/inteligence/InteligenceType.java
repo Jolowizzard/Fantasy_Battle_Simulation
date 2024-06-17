@@ -21,15 +21,7 @@ public abstract class InteligenceType{
     protected Team enemies;
     protected Team allays;
     protected boolean injured;
-    private GamePanel gamePanel;
 
-    public GamePanel getGamePanel() {
-        return gamePanel;
-    }
-
-    public void setGamePanel(GamePanel gamePanel) {
-        this.gamePanel = gamePanel;
-    }
     public InteligenceType(){
     }
     public characters.Character GetTarget(){return target;}
@@ -90,7 +82,7 @@ public abstract class InteligenceType{
         SearchAlgorythm searchAlgorythm = new SearchAlgorythm(character.getPosition(),target.getPosition(), MAPtable.Map, MAPtable.colSize, MAPtable.rowSize);
         ArrayList<Tile> path = new ArrayList<>();
         path = searchAlgorythm.search();
-        MovesAndPaths.Move(character,path,gamePanel);
+        MovesAndPaths.Move(character,path);
     }
     public abstract void PerformTurn();
 

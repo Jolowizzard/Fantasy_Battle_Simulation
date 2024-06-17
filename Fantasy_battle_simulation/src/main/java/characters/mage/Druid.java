@@ -1,6 +1,7 @@
 package characters.mage;
 
 import characters.mage.Mage;
+import gui.GamePanel;
 import inteligence.InteligenceType;
 import inventory.Inventory;
 import map.Tile;
@@ -12,7 +13,9 @@ public class Druid extends Mage {
     public Druid(int Id, String Name, InteligenceType inteligenceType, Tile Position, Inventory inventory){
         super(Id,Name,inteligenceType,Position,inventory);
     }
-    public Druid(){
+    public Druid(int CritChance, int CritValue, GamePanel gamePanel){
+        super(CritChance,CritValue,gamePanel);
     }
+    public Druid(){}
 
 }

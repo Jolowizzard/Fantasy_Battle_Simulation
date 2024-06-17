@@ -11,12 +11,10 @@ import javax.imageio.ImageIO;
 public class Hero extends Entity {
     
     GamePanel gp;
-    KeyHandler keyH;
+    //KeyHandler keyH;
 
-    public Hero(GamePanel gp, KeyHandler keyH){
+    public Hero(GamePanel gp){
         this.gp = gp;
-        this.keyH = keyH;
-
         setDefaultValues();
         getHeroImage();
     }

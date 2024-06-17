@@ -1,4 +1,6 @@
 package characters;
+import gui.Entity;
+import gui.Hero;
 import inventory.Inventory;
 import inteligence.*;
 import map.Tile;
@@ -25,9 +27,9 @@ abstract public class Character {
     private String subClass;//stores information about character's sub class Knight, Paladin etc.
     private int temporalArmour;
     private Tile Position;  // holds an information on which tile character is currently staying on.
-    private final List<Integer> statusEffects = new ArrayList<>(List.of(1)); // There a status effects such as bleed, stun etc.
+    private final List<Integer> statusEffects = new ArrayList<>(List.of(0)); // There a status effects such as bleed, stun etc.
     private ArrayList<Integer> damageTypesDealt;
-
+    private Hero representation;
     private ArrayList<Integer> damageTypesBlocked;
     private int damageTaken = 0;
     public Character(int Id, String Name, String Race, int MaxHp, int CurrentHp, int Strength, int Dexterity, int Inteligence, int Movement, float DodgeChance, Inventory inventory, InteligenceType IntType, boolean IsAlive, Tile Position){
@@ -87,6 +89,10 @@ abstract public class Character {
         this.temporalArmour = 0;
         this.Position = null;
     }
+    public void setRepresentation(Hero hero){
+        this.representation = hero;
+    }
+    public Hero getRepresentation(){return representation;}
     public int getId(){
         return Id;
     }

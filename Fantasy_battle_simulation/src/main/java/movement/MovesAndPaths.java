@@ -3,23 +3,47 @@ package movement;
 import gui.GamePanel;
 import map.MAPtable;
 import map.Tile;
+import simulation.Simulation;
 import simulationsetup.Scribe;
 
 import java.util.ArrayList;
 
 public class MovesAndPaths {
- public static void Move(characters.Character character, ArrayList<Tile> locations, GamePanel gamePanel){
+ public static void Move(characters.Character character, ArrayList<Tile> locations){
         int movement = character.getMovement()-character.getInventory().getCurrentArmour().getMSReduction();
         if(movement<=0)
             return;
         Tile location = null;
         if(movement>locations.size()){
+            try {
+                smallMoveAnimation(character, locations);
+            }catch (Exception e){
+                e.printStackTrace();
+            }
             location = locations.get((movement-1)-(movement-locations.size()));//Stands next to the target
         }
-        else
-            location = locations.get(movement-1);
-     Scribe.addLog(character.getName()+ " Moves to " + location);
+        else {
+            try {
+                smallMoveAnimation(character, locations);
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+            location = locations.get(movement - 1);
+        }
+     try {
+         Thread.sleep(20);
+     }catch (Exception e){
+         e.printStackTrace();
+     }
+
+     Scribe.addLog(character.getName()+ " Moves to " + location.col + " " + location.row);
         MAPtable.changeLocation(character,location);
+    }
+    private static void smallMoveAnimation(characters.Character character, ArrayList<Tile> locations) throws InterruptedException {
+        for(int i = 0;i<character.getMovement();i++){
+            character.getRepresentation().setPosition(locations.get(i).col,locations.get(i).row);
+            Thread.sleep(500);
+        }
     }
    /* static ArrayList<Integer> FindPath(int start,int target){
         int position=start;

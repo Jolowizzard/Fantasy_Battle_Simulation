@@ -5,11 +5,11 @@ public class LightArmour extends Armour {
         super(NameId,physicalProtection,magicalProtection,MSReduction);
     }
     public LightArmour(int NameId){
-        super(NameId,3,1,1);
+        super(NameId,3,1,0);
     }
     public LightArmour(){
         setPhysicalProtection(3);
         setMagicalProtection(1);
-        setMSReduction(1);
+        setMSReduction(0);
     }
 }
