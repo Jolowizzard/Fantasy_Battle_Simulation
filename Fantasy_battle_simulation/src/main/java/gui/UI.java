@@ -377,7 +377,7 @@ public class UI {
 
         String name = "Knight_P";//tu trzeba dynamicznie
 
-        if(if(Tile.occupied == true || Tile.solid == true)){
+        if(Tile.occupied == true || Tile.solid == true){
             g2.drawImage(wrong, commandCol*gp.tileSize, commandRow*gp.tileSize, gp.tileSize, gp.tileSize, null);
             gp.hero.updatePositon(commandCol, commandRow);
             gp.hero.updateType(name);
