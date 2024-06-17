@@ -384,6 +384,7 @@ int SavedPositions = 0;
                 //draw
             }
             if(code == KeyEvent.VK_ENTER){
+                //zainicjuj mapę
                 gp.ui.titleScreenState = 4;
                 }
         }
@@ -415,13 +416,13 @@ int SavedPositions = 0;
                 }
             }
             if(code == KeyEvent.VK_ENTER){ //franek tutaj = = == = == = == = == = == == == = = = == = = == = = = = = = = == = == == = = == = == = == = == = == = = = == = = = == = = = = = == = = = = = = = == 
-                // if nie położono wszystkich
-                //get x get y
-                //połóż jednostkę
-                //else
-                //gp.gameState = gp.playState;
-               characterCreator.SaveAllCharactersPositions(gp.ui.commandCol,gp.ui.commandRow);
-               //if(SavedPositions==TeamCreator.teamYellow.getTeam().size() + TeamCreator.teamPurple.getTeam().size()){gp.gameState = gp.playState;}
+                if(MAPtable.Map[gp.ui.commandRow][gp.ui.commandCol].occupied != true && MAPtable.Map[gp.ui.commandRow][gp.ui.commandCol].solid != true){
+                    characterCreator.SaveAllCharactersPositions(gp.ui.commandCol,gp.ui.commandRow);
+                }
+                //zacząć grę jak postawiono wszystkie jednostki
+                if(SavedPositions==TeamCreator.teamYellow.getTeam().size() + TeamCreator.teamPurple.getTeam().size()){
+                    gp.gameState = gp.playState;
+                }
             }
         }
     }
