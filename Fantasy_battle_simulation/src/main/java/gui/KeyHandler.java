@@ -386,6 +386,7 @@ int SavedPositions = 0;
             if(code == KeyEvent.VK_ENTER){
                 MAPtable.InitializeMap(gp.mapName);
                 gp.ui.titleScreenState = 4;
+                gp.setcursor(TeamCreator.teamPurple.getTeam().get(0).getRepresentation().heroType);
                 }
         }
 
@@ -417,7 +418,8 @@ int SavedPositions = 0;
             }
             if(code == KeyEvent.VK_ENTER){ //franek tutaj = = == = == = == = == = == == == = = = == = = == = = = = = = = == = == == = = == = == = == = == = == = = = == = = = == = = = = = == = = = = = = = == 
                 if(MAPtable.Map[gp.ui.commandRow][gp.ui.commandCol].occupied == false && MAPtable.Map[gp.ui.commandRow][gp.ui.commandCol].solid == false){
-                    characterCreator.SaveAllCharactersPositions(gp.ui.commandRow,gp.ui.commandCol);
+
+                    characterCreator.SaveAllCharactersPositions(gp.ui.commandRow,gp.ui.commandCol, gp);
                 }
                 //zacząć grę jak postawiono wszystkie jednostki
                 if(SavedPositions==TeamCreator.teamYellow.getTeam().size() + TeamCreator.teamPurple.getTeam().size())

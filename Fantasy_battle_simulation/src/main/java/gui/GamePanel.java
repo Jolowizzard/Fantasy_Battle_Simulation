@@ -23,6 +23,10 @@ public class GamePanel extends JPanel implements Runnable{
     public final int ScreenWidth = tileSize * maxScreenCol;
     public final int ScreenHeight = tileSize * maxScreenRow;
 
+    private String cursor = "";
+
+    public String getcursor(){return cursor;}
+    public void setcursor(String string){cursor = string;}
     //FPS
     int FPS = 60;
     int mapNumber = 1;

@@ -376,7 +376,7 @@ public class UI {
 
         gp.tileM.draw(g2);
 
-        String name = "Knight_P";//tu trzeba dynamicznie
+        String name = gp.getcursor();//tu trzeba dynamicznie
         //g2.drawImage(sel, commandCol*gp.tileSize, commandRow*gp.tileSize, gp.tileSize, gp.tileSize, null);
         //gp.hero.updatePositon(commandCol, commandRow);
         //gp.hero.updateType(name);
