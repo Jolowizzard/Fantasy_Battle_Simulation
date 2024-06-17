@@ -25,7 +25,7 @@ public class Combat {
             e.printStackTrace();
         }
 
-        Scribe.addLog(attacker.getName() + " attacked " + defender.getName());
+        Scribe.addLog(attacker.getName() + " attacked " + defender.getName() + " with " + attacker.getInventory().getCurrentWeapon().getName());
 
         try {
             Thread.sleep(20);

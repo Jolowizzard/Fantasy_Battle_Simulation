@@ -23,7 +23,7 @@ public class UI {
     public int counterP = 0;
     public int counterY = 0;
     public int titleScreenState = 0; // 0 : Main Menu, 1 : the second screen, 2 : character screen, 3 : map selection, 4 : units placement
-    BufferedImage csp, csy, sel, selected;
+    BufferedImage csp, csy, sel, selected, wrong;
 
     public UI(GamePanel gp){
         this.gp = gp;
@@ -35,6 +35,7 @@ public class UI {
             csy = ImageIO.read(getClass().getClassLoader().getResourceAsStream("Character screen Y.png"));
             sel = ImageIO.read(getClass().getClassLoader().getResourceAsStream("Select.png"));
             selected = ImageIO.read(getClass().getClassLoader().getResourceAsStream("Selected.png"));
+            wrong = ImageIO.read(getClass().getClassLoader().getResourceAsStream("Wrong.png"));
         }catch(IOException e){
             e.printStackTrace();
         }
@@ -371,10 +372,19 @@ public class UI {
         gp.tileM.draw(g2);
 
         String name = "Knight_P";//tu trzeba dynamicznie
-        g2.drawImage(sel, commandCol*gp.tileSize, commandRow*gp.tileSize, gp.tileSize, gp.tileSize, null);
-        gp.hero.updatePositon(commandCol, commandRow);
-        gp.hero.updateType(name);
-        gp.hero.draw(g2);
+
+        if(gp.tileM.mapTileNum[commandCol][commandRow] == 1){
+            g2.drawImage(wrong, commandCol*gp.tileSize, commandRow*gp.tileSize, gp.tileSize, gp.tileSize, null);
+            gp.hero.updatePositon(commandCol, commandRow);
+            gp.hero.updateType(name);
+            gp.hero.draw(g2);
+        }
+        else{
+            g2.drawImage(sel, commandCol*gp.tileSize, commandRow*gp.tileSize, gp.tileSize, gp.tileSize, null);
+            gp.hero.updatePositon(commandCol, commandRow);
+            gp.hero.updateType(name);
+            gp.hero.draw(g2);
+        }
 
         //ogarnij klasę i team postaci i gdzie stoi
         //g2.drawImage(gp.hero.klasa i team, x*gp.tileSize, y*gp.tileSize, gp.tileSize, gp.tileSize, null);

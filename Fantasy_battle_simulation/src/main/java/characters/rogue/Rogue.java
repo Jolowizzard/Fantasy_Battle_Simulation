@@ -36,11 +36,13 @@ public abstract class Rogue extends characters.Character {
         }
         else{
             Character target = intTyp.lookForTeammate();
-            Character character = intTyp.getCharacter();
-            double distance;
-            distance = Math.sqrt(Math.pow(character.getPosition().col-target.getPosition().col,2)+Math.pow(character.getPosition().row-target.getPosition().row,2));
-            if(distance>1)
-                intTyp.MoveTowardsOpponent(character,target);
+            if(target != null) {
+                Character character = intTyp.getCharacter();
+                double distance;
+                distance = Math.sqrt(Math.pow(character.getPosition().col - target.getPosition().col, 2) + Math.pow(character.getPosition().row - target.getPosition().row, 2));
+                if (distance > 1)
+                    intTyp.MoveTowardsOpponent(character, target);
+            }
         }
     }
 

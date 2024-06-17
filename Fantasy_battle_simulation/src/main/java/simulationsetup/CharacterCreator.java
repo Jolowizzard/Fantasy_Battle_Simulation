@@ -115,11 +115,19 @@ public class CharacterCreator {
                 return knight;
 
             }else if(characterStats[i].equals("Paladin")) {
+
                 Character paladin = new Paladin(BlockChance, BlockValue);
+                Hero characterRepresentation = new Hero(gamePanel);
+
+                characterRepresentation.setHeroType("Paladin");
+                paladin.setRepresentation(characterRepresentation);
+
+                paladin.setMainClass(characterType);
+                paladin.setSubClass("Paladin");
+
                 setCharactersStatsFromString(paladin,characterStats,++i);
                 paladin.setInventory(inventory);
-                Hero characterRepresentation = new Hero(gamePanel);
-                paladin.setRepresentation(characterRepresentation);
+
                 return paladin;
             }
 
@@ -129,14 +137,32 @@ public class CharacterCreator {
 
             if (characterStats[i].equals("Ranger")) {
                 Character ranger = new Ranger(CritChance, CritValue);
+                Hero characterRepresentation = new Hero(gamePanel);
+
+                characterRepresentation.setHeroType("Archer");
+                ranger.setRepresentation(characterRepresentation);
+
+                ranger.setMainClass(characterType);
+                ranger.setSubClass("Ranger");
+
                 setCharactersStatsFromString(ranger, characterStats, ++i);
                 ranger.setInventory(inventory);
+
                 return ranger;
 
             } else if (characterStats[i].equals("Marksman")) {
                 Character marksman = new Marksman(CritChance, CritValue);
+                Hero characterRepresentation = new Hero(gamePanel);
+
+                characterRepresentation.setHeroType("Marksman");
+                marksman.setRepresentation(characterRepresentation);
+
+                marksman.setMainClass(characterType);
+                marksman.setSubClass("Marksman");
+
                 setCharactersStatsFromString(marksman, characterStats, ++i);
                 marksman.setInventory(inventory);
+
                 return marksman;
             }
         }else if(characterType.equals("Mage")){
@@ -145,33 +171,61 @@ public class CharacterCreator {
 
             if (characterStats[i].equals("Wizard")) {
                 Character wizard = new Wizard(MagicCritChance, MagicCritValue,gamePanel);
+
+                createRepresentation(wizard,"Archmage",gamePanel);
+
+                wizard.setMainClass(characterType);
+                wizard.setSubClass("Wizard");
+
                 setCharactersStatsFromString(wizard, characterStats, ++i);
                 wizard.setInventory(inventory);
+
                 return wizard;
 
             } else if (characterStats[i].equals("Druid")) {
                 Character druid = new Druid(MagicCritChance, MagicCritValue,gamePanel);
+
+                createRepresentation(druid,"Druid",gamePanel);
+
+                druid.setMainClass(characterType);
+                druid.setSubClass("Druid");
+
                 setCharactersStatsFromString(druid, characterStats, ++i);
                 druid.setInventory(inventory);
+
                 return druid;
             }
         }else if(characterType.equals("Rogue")){
             boolean secoundMove = false;
-            if(Integer.parseInt(characterStats[i])==1)
+            if(Integer.parseInt(characterStats[i++])==1)
                 secoundMove = true;
             else
                 secoundMove = false;
-            i++;
+
             if (characterStats[i].equals("Thief")) {
                 Character Thief = new Thief(secoundMove);
+
+                createRepresentation(Thief,"Thief",gamePanel);
+
+                Thief.setMainClass(characterType);
+                Thief.setSubClass("Thief");
+
                 setCharactersStatsFromString(Thief, characterStats, ++i);
                 Thief.setInventory(inventory);
+
                 return Thief;
 
             } else if (characterStats[i].equals("Assassin")) {
                 Character assassin = new Assassin(secoundMove);
+
+                createRepresentation(assassin,"Assassin",gamePanel);
+
+                assassin.setMainClass(characterType);
+                assassin.setSubClass("Assassin");
+
                 setCharactersStatsFromString(assassin, characterStats, ++i);
                 assassin.setInventory(inventory);
+
                 return assassin;
             }
 
@@ -201,6 +255,11 @@ public class CharacterCreator {
             character.setIntType(inteligence);
             character.getIntType().setCharacter(character);
         }
+    }
+    private void createRepresentation(Character character,String name,GamePanel gamePanel){
+        Hero characterRepresentation = new Hero(gamePanel);
+        characterRepresentation.setHeroType("Wizard");
+        character.setRepresentation(characterRepresentation);
     }
     private void setInventoryStatsFromString(Inventory inventory,String [] inventoryString){
         for(int i = 0 ;i< inventoryString.length;i++){

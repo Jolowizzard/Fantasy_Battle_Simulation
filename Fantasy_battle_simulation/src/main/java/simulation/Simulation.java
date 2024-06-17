@@ -30,7 +30,7 @@ public class Simulation implements Runnable{
     private boolean oneTeamWon;
     public Simulation(GamePanel gamePanel,String mapName,Team teamYellow,Team teamPurple){
         this.gamePanel=gamePanel;
-        MAPtable.InitializeMap("map_1.txt");
+        MAPtable.InitializeMap(mapName);
         this.teamYellow = teamYellow;
         this.teamPurple = teamPurple;
 
@@ -46,10 +46,23 @@ public class Simulation implements Runnable{
             }
             int simulationTime = 0;
             ArrayList<characters.Character> stack = new ArrayList<>();
+
             //checking which team is the biggest
             int BiggestTeamSize = teamYellow.getTeam().size();
             if (teamYellow.getTeam().size() < teamPurple.getTeam().size()) {
                 BiggestTeamSize = teamPurple.getTeam().size();
+            }
+            for (int col = 0; col < 16; col++) {
+                for (int row = 0; row < 16; row++) {
+                    if (MAPtable.Map[col][row].solid) {
+                        System.out.print("\u001B[47m");
+                        System.out.print("1 ");
+                    } else {
+                        System.out.print("\u001B[40m");
+                        System.out.print("0 ");
+                    }
+                }
+                System.out.println();
             }
             //preparing stack order . This order is permanent for the rest of the simulation and can not be changed
             for (int i = 0; i < BiggestTeamSize; i++) {
@@ -65,15 +78,19 @@ public class Simulation implements Runnable{
                     teamYellow.getTeam().get(i).getIntType().setAllays(teamYellow);
                 }
             }
-            //Printing every character on map
+            //Some simulation setup
             double drawInterval = 1000000000/60; //FPS
             double delta = 0;
             long lastTime = 0;
             long currentTime;
             long timer = 0;
-            int drawCount = 0;
-                stack.forEach(character -> character.getIntType().inventorySetup());
-            while (!oneTeamWon && simulationTime < 100) {
+
+            //Setting up inventory
+            stack.forEach(character -> character.getIntType().inventorySetup());
+
+            //placing characters on map
+            stack.forEach(character -> MAPtable.placeCharacterOnMap(character.getPosition()));
+            while (!oneTeamWon) {
                 currentTime = System.nanoTime();
 
                 delta += (currentTime - lastTime) / drawInterval;
@@ -82,7 +99,6 @@ public class Simulation implements Runnable{
 
                 if(delta >= 1){
                     delta--;
-                    drawCount++;
                 }
                 //Performing turns
                 Thread.sleep(1000);
@@ -122,7 +138,7 @@ public class Simulation implements Runnable{
         catch (Exception e){
             e.printStackTrace();
         }
-            MAPtable.InitializeMap("map_1.txt");
+            MAPtable.InitializeMap("map_3.txt");
             Weapon ssword = new Sword("weapons.Sword", 10, 0, 1, 100, false, false);
             Weapon bbow = new Bow("weapons.Bow", 10, 0, 6, 100, true, false);
             Weapon dagger = new Dagger();
