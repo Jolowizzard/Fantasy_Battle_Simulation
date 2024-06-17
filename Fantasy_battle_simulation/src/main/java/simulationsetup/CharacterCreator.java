@@ -498,7 +498,7 @@ public void SaveAllCharactersPositions(int coordX, int coordY) {
         InventoryCreator inventory = new InventoryCreator();
         InteligenceType intelligence = new Agressive(true);
         characters.Character newRanger = new Ranger(id, Name, intelligence, position, inventory.CreateInventory());
-        createRepresentation(newRanger,"Ranger",gamePanel);
+        createRepresentation(newRanger,"Archer",gamePanel);
         return newRanger;
     }
 
