@@ -370,8 +370,11 @@ public class UI {
 
         gp.tileM.draw(g2);
 
+        String name = "Knight_P";//tu trzeba dynamicznie
         g2.drawImage(sel, commandCol*gp.tileSize, commandRow*gp.tileSize, gp.tileSize, gp.tileSize, null);
-        g2.drawImage(gp.hero.Knight_P, commandCol*gp.tileSize, commandRow*gp.tileSize, gp.tileSize, gp.tileSize, null);
+        gp.hero.updatePositon(commandCol, commandRow);
+        gp.hero.updateType(name);
+        gp.hero.draw(g2);
 
         //ogarnij klasę i team postaci i gdzie stoi
         //g2.drawImage(gp.hero.klasa i team, x*gp.tileSize, y*gp.tileSize, gp.tileSize, gp.tileSize, null);

@@ -78,7 +78,7 @@ public class TileManager {
     public void lodaMap(){
         try{
             //Wybór mapy - - - - - - - - - - -- - - -- - -- - - --  -- - -- - -- - - -- - - -- - -- - - - 
-            InputStream is = getClass().getClassLoader().getResourceAsStream("map_1.txt");
+            InputStream is = getClass().getClassLoader().getResourceAsStream(gp.mapName);
             BufferedReader br = new BufferedReader(new InputStreamReader(is));
 
             int col = 0;

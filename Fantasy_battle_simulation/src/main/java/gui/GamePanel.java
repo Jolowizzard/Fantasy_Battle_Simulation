@@ -45,7 +45,7 @@ public class GamePanel extends JPanel implements Runnable{
     public final int pauseState = 2;
 
     int mapNumber = 1;
-    String mapName = "map_1.txt";
+    String mapName = "map_"+ mapNumber +".txt";
 
 
     public GamePanel() {
@@ -109,7 +109,7 @@ public class GamePanel extends JPanel implements Runnable{
     public void update(){
 
         if(gameState == playState){
-            hero.update();
+            //hero.updatePositon(maxScreenCol, playState);
         }
         if(gameState == pauseState){
             //nothing
@@ -130,13 +130,6 @@ public class GamePanel extends JPanel implements Runnable{
             tileM.draw(g2);
         
             //Heroes
-            hero.draw(g2);
-            hero.draw(g2);
-            hero.draw(g2);
-            hero.draw(g2);
-            hero.draw(g2);
-            hero.draw(g2);
-            hero.draw(g2);
             hero.draw(g2);
 
             //gui.UI
