@@ -4,6 +4,8 @@ import inteligence.*;
 import map.Tile;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 abstract public class Character {
     private int Id;
@@ -23,8 +25,9 @@ abstract public class Character {
     private String subClass;//stores information about character's sub class Knight, Paladin etc.
     private int temporalArmour;
     private Tile Position;  // holds an information on which tile character is currently staying on.
-    private int [] statusEffects = new int [1]; // There a status effects such as bleed, stun etc.
+    private final List<Integer> statusEffects = new ArrayList<>(List.of(1)); // There a status effects such as bleed, stun etc.
     private ArrayList<Integer> damageTypesDealt;
+
     private ArrayList<Integer> damageTypesBlocked;
     private int damageTaken = 0;
     public Character(int Id, String Name, String Race, int MaxHp, int CurrentHp, int Strength, int Dexterity, int Inteligence, int Movement, float DodgeChance, Inventory inventory, InteligenceType IntType, boolean IsAlive, Tile Position){
@@ -83,7 +86,6 @@ abstract public class Character {
         this.subClass = null;
         this.temporalArmour = 0;
         this.Position = null;
-        this.statusEffects = null;
     }
     public int getId(){
         return Id;
@@ -189,17 +191,18 @@ abstract public class Character {
         Strength = strength;
     }
 
-    public void setStatusEffects(int[] statusEffects) {
-        this.statusEffects = statusEffects;
+    public void setStatusEffects(List<Integer> list) {
+        this.statusEffects.clear();
+        this.statusEffects.addAll(list);
     }
-    public void setSpecificStatusEffect(int statusEffect, int newValue) {this.statusEffects[statusEffect] = newValue;}
+    public void setSpecificStatusEffect(int statusEffect, int newValue){this.statusEffects.set(statusEffect,newValue);}
     public void setSubClass(String subClass) {
         this.subClass = subClass;
     }
-    public int[] getStatusEffects() {
+    public List<Integer> getStatusEffects() {
         return statusEffects;
     }
-    public int getSpecificStatusEffectValue(int statusEffect) {return statusEffects[statusEffect];}
+    public int getSpecificStatusEffectValue(int statusEffect) {return statusEffects.get(statusEffect);}
     public void setPosition(Tile NewPosition){Position = NewPosition;}
     public void setTemporalArmour(int temporalArmour){this.temporalArmour = temporalArmour;}
     public boolean checkIfIsAlive(){

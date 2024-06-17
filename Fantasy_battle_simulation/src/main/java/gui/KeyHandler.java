@@ -1,4 +1,9 @@
+package gui;
 import map.MAPtable;
+import map.Tile;
+
+
+import gui.GamePanel;
 import simulationsetup.CharacterCreator;
 import simulationsetup.InventoryCreator;
 import simulationsetup.TeamCreator;
@@ -10,6 +15,10 @@ import java.awt.event.KeyListener;
 public class KeyHandler implements KeyListener{
 CharacterCreator characterCreator = new CharacterCreator();
 InventoryCreator inventoryCreator = new InventoryCreator();
+
+TeamCreator teamCreator = new TeamCreator();
+
+
     GamePanel gp;
 
     public KeyHandler(GamePanel gp){
@@ -319,19 +328,19 @@ InventoryCreator inventoryCreator = new InventoryCreator();
                         gp.ui.col2 = 0;
                         gp.ui.col3 = 0;
                         if(gp.ui.commandCount == 3 && gp.ui.commandNum == 1){ //tu wybrano wszytkich bohaterów
-                            //zapisz postać
                             gp.ui.commandCol = 0;
                             gp.ui.commandRow = 0;
                             gp.tileM.lodaMap();
                             gp.ui.titleScreenState = 3;
                         }
                         else if(gp.ui.commandCount == 3 && gp.ui.commandNum == 0){ //tu team się zmienia
-                            //zapisz postać
+                            characterCreator.SaveHerotoPurple(teamCreator.teamPurple);
                             gp.ui.commandCount = 0;
                             gp.ui.commandNum++;
                         }
                         else{                   //next
-                            //zapisz postać
+                            if(gp.ui.commandNum == 0){characterCreator.SaveHerotoPurple(teamCreator.teamPurple);}
+                            if(gp.ui.commandNum == 1){characterCreator.SaveHerotoYellow(teamCreator.teamYellow);}
                             gp.ui.commandCount++;
                         } 
                     }
@@ -379,6 +388,7 @@ InventoryCreator inventoryCreator = new InventoryCreator();
                 gp.ui.titleScreenState = 4;
                 }
         }
+
         //FIFTH SCREEN  MAP SELECTION
         else if(gp.ui.titleScreenState == 4){
             if(code == KeyEvent.VK_W){

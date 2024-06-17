@@ -13,16 +13,17 @@ public class TeamCreator {
         teamPurple = new Team();
         teamYellow = new Team();
     }
-    public void CreateTeamsFromFile(String fileName){
+
+    public void CreateTeamsFromFile(String fileName) {
         try {
             CharacterCreator characterCreator = new CharacterCreator();
             CSVReader csvReader = new CSVReader(fileName);
             List<String[]> csvData = csvReader.readAll();
-            if(csvData.size() > 0) {
+            if (csvData.size() > 0) {
                 for (int i = 0; i < csvData.size() / 2; i += 2) {
                     teamYellow.addCharacter(characterCreator.createCharacterFromString(csvData.get(i), csvData.get(i + 1)));//reading characters statistics and inventor setup
                 }
-                if(csvData.size()>2) {
+                if (csvData.size() > 2) {
                     for (int i = (csvData.size() / 2); i < csvData.size(); i += 2) {
                         teamPurple.addCharacter(characterCreator.createCharacterFromString(csvData.get(i), csvData.get(i + 1)));
                     }
@@ -30,8 +31,7 @@ public class TeamCreator {
                 System.out.println(teamYellow.getTeam());
                 System.out.println(teamPurple.getTeam());
             }
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -39,6 +39,12 @@ public class TeamCreator {
     public Team getTeamPurple() {
         return teamPurple;
     }
+
     public Team getTeamYellow() {
-        return teamYellow;}
+        return teamYellow;
+    }
+
+
+
+
 }

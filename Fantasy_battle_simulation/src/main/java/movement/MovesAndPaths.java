@@ -1,5 +1,6 @@
 package movement;
 
+import gui.GamePanel;
 import map.MAPtable;
 import map.Tile;
 import simulationsetup.Scribe;
@@ -7,7 +8,7 @@ import simulationsetup.Scribe;
 import java.util.ArrayList;
 
 public class MovesAndPaths {
- public static void Move(characters.Character character, ArrayList<Tile> locations){
+ public static void Move(characters.Character character, ArrayList<Tile> locations, GamePanel gamePanel){
         int movement = character.getMovement()-character.getInventory().getCurrentArmour().getMSReduction();
         if(movement<=0)
             return;

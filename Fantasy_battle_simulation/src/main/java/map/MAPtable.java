@@ -1,5 +1,7 @@
 package map;
 
+import gui.Main;
+
 import java.io.*;
 import java.util.Scanner;
 
@@ -47,7 +49,7 @@ public class MAPtable implements Cloneable {
     //Function initializes the map from a .txt file
     public static void InitializeMap(String fileName){
         try {
-            InputStream is = MAPtable.class.getResourceAsStream("/" + fileName);// Reading a file from resources
+            InputStream is = Main.class.getClassLoader().getResourceAsStream(fileName);// Reading a file from resources
             BufferedReader reader = new BufferedReader(new InputStreamReader(is));
             String line;
             int x = 0;
