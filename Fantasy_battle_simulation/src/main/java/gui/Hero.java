@@ -43,6 +43,7 @@ public class Hero extends Entity {
             Assasin_Y = ImageIO.read(getClass().getClassLoader().getResourceAsStream("Assasin_Y.png"));
             Thief_P = ImageIO.read(getClass().getClassLoader().getResourceAsStream("Thief_P.png"));
             Thief_Y = ImageIO.read(getClass().getClassLoader().getResourceAsStream("Thief_Y.png"));
+            Dead = ImageIO.read(getClass().getClassLoader().getResourceAsStream("Dead_Unit.png"));
 
         }catch(IOException e){
             e.printStackTrace();
@@ -100,6 +101,9 @@ public class Hero extends Entity {
                 break;
             case "Thief_Y":
                 image = Thief_Y;
+                break;
+            case "Dead":
+                image = Dead;
                 break;
         }
         g2.drawImage(image, x*gp.tileSize, y*gp.tileSize, gp.tileSize, gp.tileSize, null);
