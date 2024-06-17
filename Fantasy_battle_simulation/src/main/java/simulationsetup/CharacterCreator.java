@@ -446,7 +446,7 @@ public void SavePosition(Character character,int coordX, int coordY)
 
 
 //saves all characters starting Tiles
-public void SaveAllCharactersPositions(int coordX, int coordY) {
+public void SaveAllCharactersPositions(int coordX, int coordY, GamePanel gamePanel) {
 
     if (SavedPositions < TeamCreator.teamYellow.getTeam().size() + TeamCreator.teamPurple.getTeam().size()) {
         if (purplesaved < TeamCreator.teamPurple.getTeam().size())
@@ -457,6 +457,8 @@ public void SaveAllCharactersPositions(int coordX, int coordY) {
             //System.out.println(TeamCreator.teamPurple.getTeam().get(purplesaved).getRepresentation().getHeroType());
             Map[coordX][coordY].SetAsOccupied();
             purplesaved = purplesaved+1;
+            if(purplesaved<TeamCreator.teamPurple.getTeam().size()){
+            gamePanel.setcursor(TeamCreator.teamPurple.getTeam().get(purplesaved).getRepresentation().heroType);}else{gamePanel.setcursor(TeamCreator.teamYellow.getTeam().get(0).getRepresentation().heroType);}
             SavedPositions = SavedPositions+1;
         }
         else if (yellowsaved < TeamCreator.teamYellow.getTeam().size())
@@ -467,6 +469,8 @@ public void SaveAllCharactersPositions(int coordX, int coordY) {
             //System.out.println(TeamCreator.teamYellow.getTeam().get(yellowsaved).getRepresentation().getHeroType());
             Map[coordX][coordY].SetAsOccupied();
             yellowsaved = yellowsaved+1;
+            if(yellowsaved <TeamCreator.teamYellow.getTeam().size()){
+            gamePanel.setcursor(TeamCreator.teamYellow.getTeam().get(yellowsaved).getRepresentation().heroType) ;}
             SavedPositions = SavedPositions+1;
         }
     }
@@ -498,7 +502,7 @@ public void SaveAllCharactersPositions(int coordX, int coordY) {
         InventoryCreator inventory = new InventoryCreator();
         InteligenceType intelligence = new Agressive(true);
         characters.Character newRanger = new Ranger(id, Name, intelligence, position, inventory.CreateInventory());
-        createRepresentation(newRanger,"Ranger",gamePanel);
+        createRepresentation(newRanger,"Archer",gamePanel);
         return newRanger;
     }
 
