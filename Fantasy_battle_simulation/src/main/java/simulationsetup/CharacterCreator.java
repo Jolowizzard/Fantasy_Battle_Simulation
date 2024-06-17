@@ -431,13 +431,14 @@ public void SaveAllCharactersPositions(int coordX, int coordY) {
     if (SavedPositions < TeamCreator.teamYellow.getTeam().size() + TeamCreator.teamPurple.getTeam().size()) {
         if (purplesaved < TeamCreator.teamPurple.getTeam().size())
         {
-            System.out.println(TeamCreator.teamPurple.getTeam().get(purplesaved).getName()+"    "+TeamCreator.teamPurple.getTeam().get(purplesaved).getPosition().col+","+TeamCreator.teamPurple.getTeam().get(purplesaved).getPosition().row);
+
+            SavePosition(TeamCreator.teamPurple.getTeam().get(purplesaved),coordX, coordY );
             purplesaved = purplesaved+1;
             SavedPositions = SavedPositions+1;
         }
         else if (yellowsaved < TeamCreator.teamYellow.getTeam().size())
         {
-            System.out.println(TeamCreator.teamYellow.getTeam().get(yellowsaved).getName()+"    "+TeamCreator.teamYellow.getTeam().get(yellowsaved).getPosition().col+","+TeamCreator.teamYellow.getTeam().get(yellowsaved).getPosition().row);
+            SavePosition(TeamCreator.teamYellow.getTeam().get(yellowsaved),coordX, coordY );
             yellowsaved = yellowsaved+1;
             SavedPositions = SavedPositions+1;
         }
