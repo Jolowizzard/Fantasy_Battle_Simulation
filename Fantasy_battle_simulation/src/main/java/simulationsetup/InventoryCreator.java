@@ -110,7 +110,7 @@ public class InventoryCreator {
 
     public ArrayList<Armour> AddArmorToInvenotry()
     {
-        ArrayList<Armour> armours = new ArrayList<>();
+        ArrayList<Armour> armours = new ArrayList<Armour>();
         if(light == true)
         {
             Armour lightArmour = new LightArmour();
@@ -130,7 +130,7 @@ public class InventoryCreator {
     }
 
     public ArrayList<Weapon> AddWeaponsToInventory() {
-        ArrayList<Weapon> weapons = new ArrayList<>();
+        ArrayList<Weapon> weapons = new ArrayList<Weapon>();
         if (fists == true) {
             Weapon fists = new Fists();
             weapons.add(fists);
@@ -160,7 +160,7 @@ public class InventoryCreator {
 
     public ArrayList<Item> AddItems()
     {
-        ArrayList<Item> items = new ArrayList<>();
+        ArrayList<Item> items = new ArrayList<Item>();
         if(swordshield==true)
         {
             Shield shield = new Shield();
