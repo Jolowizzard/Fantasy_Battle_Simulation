@@ -89,20 +89,25 @@ public abstract class InteligenceType{
     public Character getCharacter(){return character;}
 
     public void inventorySetup(){
-        //setting optimal weapon - this with highest damage output
+        //setting optimal weapon - looking for the highest range and then the highest damage output
         ArrayList<Weapon> weapons = character.getInventory().getWeapons();
         int expectedDamageOutput;
         int optimalWeaponIndex = -1;
         int tmp = 0;
+        int maxRange = 0;
         for(int i =0;i<weapons.size();i++){
-            expectedDamageOutput = 0;
-            ArrayList<Integer> damageString =  weapons.get(i).attack(character);
-            for(int j=1;j<damageString.size();j+=2)
-                expectedDamageOutput += damageString.get(j);
+            //calculating expected damage output
+            if(weapons.get(i).getRange()>=maxRange) {
+                maxRange = weapons.get(i).getRange();
+                expectedDamageOutput = 0;
+                ArrayList<Integer> damageString =  weapons.get(i).attack(character);
+                for (int j = 1; j < damageString.size(); j += 2)
+                    expectedDamageOutput += damageString.get(j);
 
-            if(expectedDamageOutput>tmp) {
-                optimalWeaponIndex = i;
-                tmp = expectedDamageOutput;
+                if (expectedDamageOutput > tmp) {
+                    optimalWeaponIndex = i;
+                    tmp = expectedDamageOutput;
+                }
             }
         }
         //setting optimal armour - this with highest damage reduction
@@ -125,12 +130,14 @@ public abstract class InteligenceType{
         if(optimalArmourIndex!=-1)
             character.getInventory().setCurrentArmour(armours.get(optimalArmourIndex));
         ArrayList<Item> items = character.getInventory().getItems();
-        //Looking for shield
+        //Looking for shield if both in hand is one-handed weapon
+        if(!character.getInventory().getCurrentWeapon().getHands()) {
 
-        for(int i = 0 ;i < items.size();i++){
-            if(items.get(i).getName().equals("Shield")){
-                character.getInventory().setCurrentItem(items.get(i));
-                break;
+            for (Item item : items) {
+                if (item.getName().equals("Shield")) {
+                    character.getInventory().setCurrentItem(item);
+                    break;
+                }
             }
         }
 

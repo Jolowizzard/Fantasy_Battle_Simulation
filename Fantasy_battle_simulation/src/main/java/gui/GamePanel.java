@@ -25,7 +25,8 @@ public class GamePanel extends JPanel implements Runnable{
 
     //FPS
     int FPS = 60;
-
+    int mapNumber = 1;
+    String mapName = "map_"+ mapNumber +".txt";
     //System
     KeyHandler keyH = new KeyHandler(this);
     TileManager tileM = new TileManager(this);
@@ -45,9 +46,14 @@ public class GamePanel extends JPanel implements Runnable{
     public final int playState = 1;
     public final int pauseState = 2;
     public boolean stop = false;
-    int mapNumber = 1;
-    String mapName = "map_"+ mapNumber +".txt";
 
+
+    public String getMapName() {
+        return mapName;
+    }
+    public void setMapName(String mapName){
+        this.mapName = mapName;
+    }
 
     public GamePanel() {
         this.setPreferredSize(new Dimension(ScreenWidth, ScreenHeight));
@@ -96,9 +102,9 @@ public class GamePanel extends JPanel implements Runnable{
             }
             if(gameState == playState) {
                 if (simulation == null) {
-                    simulation = new Simulation(this, MAPtable.mapName, TeamCreator.teamYellow, TeamCreator.teamPurple);
+                    simulation = new Simulation(this, mapName, TeamCreator.teamYellow, TeamCreator.teamPurple);
+                    tileM.lodaMap();
                     new Thread(simulation).start();
-                    System.out.printf("Generating new Thread");
                 }
             }
             /*FPS 

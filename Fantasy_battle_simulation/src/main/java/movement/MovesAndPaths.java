@@ -1,5 +1,6 @@
 package movement;
 
+import characters.Character;
 import gui.GamePanel;
 import map.MAPtable;
 import map.Tile;
@@ -14,9 +15,10 @@ public class MovesAndPaths {
         if(movement<=0)
             return;
         Tile location = null;
+        //locations.forEach(tile -> System.out.println(tile.col + " " + tile.row));
         if(movement>locations.size()){
             try {
-                smallMoveAnimation(character, locations);
+                smallMoveAnimation(character.getMovement()-(character.getMovement()-locations.size()), locations,character);
             }catch (Exception e){
                 e.printStackTrace();
             }
@@ -24,7 +26,7 @@ public class MovesAndPaths {
         }
         else {
             try {
-                smallMoveAnimation(character, locations);
+                smallMoveAnimation(character.getMovement(),locations,character);
             }catch (Exception e){
                 e.printStackTrace();
             }
@@ -39,10 +41,10 @@ public class MovesAndPaths {
      Scribe.addLog(character.getName()+ " Moves to " + location.col + " " + location.row);
         MAPtable.changeLocation(character,location);
     }
-    private static void smallMoveAnimation(characters.Character character, ArrayList<Tile> locations) throws InterruptedException {
-        for(int i = 0;i<character.getMovement();i++){
+    private static void smallMoveAnimation(int movement, ArrayList<Tile> locations, Character character) throws InterruptedException {
+        for(int i = 0;i<movement;i++){
             character.getRepresentation().setPosition(locations.get(i).col,locations.get(i).row);
-            Thread.sleep(500);
+            Thread.sleep(200);
         }
     }
    /* static ArrayList<Integer> FindPath(int start,int target){

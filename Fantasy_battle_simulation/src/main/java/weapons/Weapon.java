@@ -72,5 +72,6 @@ public abstract class Weapon {
     //There damage type and damage;
     public abstract ArrayList<Integer> attack(Character user);
     public abstract boolean canAttack(Character character, Character target);
+    public boolean getHands(){return this.Hands;}
 
 }
