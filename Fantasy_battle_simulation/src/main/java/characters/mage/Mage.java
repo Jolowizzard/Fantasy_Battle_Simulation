@@ -1,5 +1,6 @@
 package characters.mage;
 
+import gui.GamePanel;
 import inteligence.InteligenceType;
 import inventory.Inventory;
 import map.Tile;
@@ -23,7 +24,11 @@ public abstract class Mage extends characters.Character {
         MagicCritValue = 0;
         setMainClass("Mage");
     }
-    Mage(){}
+    public Mage(int CritChance, int CritValue, GamePanel gamePanel){
+        MagicCritChance = CritChance;
+        MagicCritValue = CritValue;
+    }
+    public Mage(){}
 
     public int getMagicCritChance(){
         return MagicCritChance;

@@ -95,7 +95,7 @@ InventoryCreator inventoryCreator = new InventoryCreator();
                     String filepath = FileChooserUtil.selectFilePath();
                     if(filepath!= null) {
                         TeamCreator teamCreator = new TeamCreator();
-                        teamCreator.CreateTeamsFromFile(filepath);
+                        teamCreator.CreateTeamsFromFile(filepath,gp);
                         //Tworzenie postaci do symulacji
                         gp.gameState = gp.playState;
                     }

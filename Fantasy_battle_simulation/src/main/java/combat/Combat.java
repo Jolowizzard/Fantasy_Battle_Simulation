@@ -19,25 +19,57 @@ public class Combat {
         this.attacker=attacker;
         this.defender=defender;
         Scribe.addLog("Combat started:");
+        try {
+            Thread.sleep(20);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
         Scribe.addLog(attacker.getName() + " attacked " + defender.getName());
+
+        try {
+            Thread.sleep(20);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
     }
     public void BeginCombat(){
         //checking dodge
         if(CheckDodge(defender)) {
             Scribe.addLog(defender.getName() + " dodged");
+            try {
+                Thread.sleep(20);
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+
             return;
         }
         if(defender.getInventory().getCurrentItem()!=null){
+            try {
+                Thread.sleep(20);
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+
             if(defender.getInventory().getCurrentItem().use(defender)) {//if shield worked end combat
                 Scribe.addLog(defender.getName() + " used Shield");
+                try {
+                    Thread.sleep(20);
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+
                 return;
+
             }
         }
         ArrayList<Integer> damageTypes = attacker.getInventory().getCurrentWeapon().attack(attacker);
         ArrayList<Integer> armourTypes = resolveArmour();
         int currentDamage;
         int damageSum;
-        //Dealing damage hier also we have wiggle room for printing amounts of specific types of damage
+        //Dealing damage here also we have wiggle room for printing amounts of specific types of damage
         Scribe.addLog(attacker.getName() + " used " + attacker.getInventory().getCurrentWeapon().getName());
         int additionalDamage=0;
         for(int i=0 ;i <damageTypes.size();i+=2){

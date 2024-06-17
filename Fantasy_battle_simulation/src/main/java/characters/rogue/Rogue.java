@@ -5,6 +5,8 @@ import inteligence.InteligenceType;
 import inventory.Inventory;
 import map.Tile;
 
+import java.math.RoundingMode;
+
 public abstract class Rogue extends characters.Character {
     private boolean SecondMove;
 
@@ -19,7 +21,9 @@ public abstract class Rogue extends characters.Character {
         setMainClass("Rogue");
     }
     public Rogue(){};
-
+    public Rogue(boolean secondMove){
+        this.SecondMove = secondMove;
+    }
     public boolean getSecondMove() {
         return SecondMove;
     }

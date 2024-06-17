@@ -34,16 +34,17 @@ public class GamePanel extends JPanel implements Runnable{
     //Sound se = new Sound();
     Thread gameThread;
 
+    Simulation simulation;
     
     //gui.Entity
-    Hero hero = new Hero(this, keyH);
+    Hero hero = new Hero(this);
 
     //Game State
     public int gameState;
     public final int titleState = 0;
     public final int playState = 1;
     public final int pauseState = 2;
-
+    public boolean stop = false;
     int mapNumber = 1;
     String mapName = "map_1.txt";
 
@@ -55,7 +56,9 @@ public class GamePanel extends JPanel implements Runnable{
         this.addKeyListener(keyH);
         this.setFocusable(true);
     }
-
+    public void stopGamePanel(){
+        stop = true;
+    }
     public void setupGame(){
 
         /*playMusic(0);   // 0 = BlueBoyAdventure.wav
@@ -68,7 +71,6 @@ public class GamePanel extends JPanel implements Runnable{
         gameThread = new Thread(this);
         gameThread.start();
     }
-
     @Override
     public void run() {
 
@@ -78,8 +80,7 @@ public class GamePanel extends JPanel implements Runnable{
         long currentTime;
         long timer = 0;
         int drawCount = 0;
-
-        while(gameThread != null && gameState != playState){
+        while(gameThread != null && !stop){
 
             currentTime = System.nanoTime();
 
@@ -93,8 +94,13 @@ public class GamePanel extends JPanel implements Runnable{
                 delta--;
                 drawCount++;
             }
-            if(gameState == playState)
-                break;
+            if(gameState == playState) {
+                if (simulation == null) {
+                    simulation = new Simulation(this, MAPtable.mapName, TeamCreator.teamYellow, TeamCreator.teamPurple);
+                    new Thread(simulation).start();
+                    System.out.printf("Generating new Thread");
+                }
+            }
             /*FPS 
             if(timer >= 1000000000){
                 System.out.println("FPS: " + drawCount);
@@ -102,14 +108,14 @@ public class GamePanel extends JPanel implements Runnable{
                 timer = 0;
             }*/
         }
-        Simulation simulation = new Simulation(this, MAPtable.mapName, TeamCreator.teamYellow,TeamCreator.teamPurple);
+       /* Simulation simulation = new Simulation(this, MAPtable.mapName, TeamCreator.teamYellow,TeamCreator.teamPurple);
         simulation.run();
-        System.out.println("Out of while");
+        System.out.println("Out of while");*/
     }
     public void update(){
 
         if(gameState == playState){
-            hero.update();
+
         }
         if(gameState == pauseState){
             //nothing
@@ -128,13 +134,12 @@ public class GamePanel extends JPanel implements Runnable{
         else{
             //Tile
             tileM.draw(g2);
-        
+            TeamCreator.teamYellow.getTeam().forEach(character -> character.getRepresentation().draw(g2));
+            TeamCreator.teamPurple.getTeam().forEach(character -> character.getRepresentation().draw(g2));
             //Heroes
-            hero.draw(g2);
-
+            //hero.draw(g2);
             //gui.UI
             ui.draw(g2);
-
             g2.dispose();
         }
     }

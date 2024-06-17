@@ -20,11 +20,14 @@ import weapons.Dagger;
 import weapons.Sword;
 import weapons.Weapon;
 
+import java.awt.*;
 import java.util.ArrayList;
 public class Simulation implements Runnable{
     private Team teamYellow;
     private Team teamPurple;
     private GamePanel gamePanel;
+    public static Graphics2D g2;
+    private boolean oneTeamWon;
     public Simulation(GamePanel gamePanel,String mapName,Team teamYellow,Team teamPurple){
         this.gamePanel=gamePanel;
         MAPtable.InitializeMap("map_1.txt");
@@ -41,7 +44,6 @@ public class Simulation implements Runnable{
             catch (Exception e){
                 e.printStackTrace();
             }
-            boolean oneTeamWon = false;
             int simulationTime = 0;
             ArrayList<characters.Character> stack = new ArrayList<>();
             //checking which team is the biggest
@@ -51,33 +53,59 @@ public class Simulation implements Runnable{
             }
             //preparing stack order . This order is permanent for the rest of the simulation and can not be changed
             for (int i = 0; i < BiggestTeamSize; i++) {
-                if (i < teamPurple.getTeam().size())
+                if (i < teamPurple.getTeam().size()) {
                     stack.add(teamPurple.getTeam().get(i));
-                if (i < teamYellow.getTeam().size())
+                    //Final steps in preparing intelligence
+                    teamPurple.getTeam().get(i).getIntType().setEnemies(teamYellow);
+                    teamPurple.getTeam().get(i).getIntType().setAllays(teamPurple);
+                }
+                if (i < teamYellow.getTeam().size()) {
                     stack.add(teamYellow.getTeam().get(i));
+                    teamYellow.getTeam().get(i).getIntType().setEnemies(teamPurple);
+                    teamYellow.getTeam().get(i).getIntType().setAllays(teamYellow);
+                }
             }
-            //Setting game panel for every intelligence
-            stack.forEach(character -> character.getIntType().setGamePanel(gamePanel));
-
+            //Printing every character on map
+            double drawInterval = 1000000000/60; //FPS
+            double delta = 0;
+            long lastTime = 0;
+            long currentTime;
+            long timer = 0;
+            int drawCount = 0;
+                stack.forEach(character -> character.getIntType().inventorySetup());
             while (!oneTeamWon && simulationTime < 100) {
+                currentTime = System.nanoTime();
 
+                delta += (currentTime - lastTime) / drawInterval;
+                timer += (currentTime - lastTime);
+                lastTime = currentTime;
+
+                if(delta >= 1){
+                    delta--;
+                    drawCount++;
+                }
                 //Performing turns
+                Thread.sleep(1000);
                 for (int i = 0; i < stack.size(); i++) {
                     Scribe.addLog(stack.get(i).getName() + " performs turn");
+                    Thread.sleep(500);
                     stack.get(i).getIntType().PerformTurn();
                     Scribe.addLog(".......");
+                    Thread.sleep(500);
+                    System.out.println(stack.get(i).getCurrentHp());
                 }
-
                 //VictoryCheck
                 if (!teamYellow.CheckIfTeamIsTeamAlive()) {
-                    oneTeamWon = true;
                     Scribe.addLog("Team Yellow wins");
-                    System.out.printf("Team A won");
+                    setOneTeamWon(true);
+                    gamePanel.stopGamePanel();
+                    //System.out.printf("Team A won");
                 }
                 if (!teamPurple.CheckIfTeamIsTeamAlive()) {
-                    oneTeamWon = true;
+                    setOneTeamWon(true);
                     Scribe.addLog("Team Purple wins");
-                    System.out.printf("Team B won");
+                    gamePanel.stopGamePanel();
+                    //System.out.printf("Team B won");
                 }
                 simulationTime++;
             }
@@ -85,6 +113,8 @@ public class Simulation implements Runnable{
             e.printStackTrace();
         }
     }
+    public boolean checkIfSimulationEnded(){return oneTeamWon;}
+    private void setOneTeamWon(boolean value){oneTeamWon = value;}
     public static void main(String [] args ) {
         try {
             Scribe scribe = new Scribe("Log1.txt");
@@ -92,7 +122,7 @@ public class Simulation implements Runnable{
         catch (Exception e){
             e.printStackTrace();
         }
-            MAPtable.InitializeMap("map_3.txt");
+            MAPtable.InitializeMap("map_1.txt");
             Weapon ssword = new Sword("weapons.Sword", 10, 0, 1, 100, false, false);
             Weapon bbow = new Bow("weapons.Bow", 10, 0, 6, 100, true, false);
             Weapon dagger = new Dagger();
@@ -144,16 +174,17 @@ public class Simulation implements Runnable{
             inteligenceType2.setCharacter(testobject2);
             inteligenceType3.setCharacter(testobject3);
             inteligenceType4.setCharacter(testobject4);
-            ArrayList<characters.Character> team = new ArrayList<>();
-            team.add(testobject1);
-            team.add(testobject4);
-            Team teamA = new Team(team);
-            team.clear();
-            team.add(testobject2);
-            team.add(testobject3);
-            Team teamB = new Team(team);
+            Team teamA = new Team();
+            teamA.addCharacter(testobject1);
+            teamA.addCharacter(testobject4);
+
+            Team teamB = new Team();
+            teamB.addCharacter(testobject2);
+            teamB.addCharacter(testobject3);
+
             System.out.println(teamA.getTeam());
             System.out.println(teamB.getTeam());
+
             testobject2.getIntType().setEnemies(teamA);
             testobject3.getIntType().setEnemies(teamA);
             testobject1.getIntType().setEnemies(teamB);
@@ -211,10 +242,10 @@ public class Simulation implements Runnable{
                     System.out.printf("Team B won");
                     break;
                 }
-                System.out.println("Test object 1 :" + testobject1.getCurrentHp());
-                System.out.println("Test object 2 :" + testobject2.getCurrentHp());
-                System.out.println("Test object 3 :" + testobject3.getCurrentHp());
-                System.out.println("Test object 4 :" + testobject4.getCurrentHp());
+                System.out.println("Test object 1 :" + testobject1.getCurrentHp() + " Position " + testobject1.getPosition().col + " : " + testobject1.getPosition().row);
+                System.out.println("Test object 2 :" + testobject2.getCurrentHp()+ " Position " + testobject2.getPosition().col + " : " + testobject2.getPosition().row);
+                System.out.println("Test object 3 :" + testobject3.getCurrentHp()+ " Position " + testobject3.getPosition().col + " : " + testobject3.getPosition().row);
+                System.out.println("Test object 4 :" + testobject4.getCurrentHp()+ " Position " + testobject4.getPosition().col + " : " + testobject4.getPosition().row);
 
 /*            for(int r =0;r<16;r++){
                 for(int k=0;k<16;k++){
@@ -224,14 +255,14 @@ public class Simulation implements Runnable{
                 }
             }*/
                 System.out.println();
-                /*if (testobject1.checkIfIsAlive())
+                if (testobject1.checkIfIsAlive())
                     testobject1.getIntType().PerformTurn();
                 if (testobject2.checkIfIsAlive())
                     testobject2.getIntType().PerformTurn();
                 if (testobject3.checkIfIsAlive())
                     testobject3.getIntType().PerformTurn();
                 if (testobject4.checkIfIsAlive())
-                    testobject4.getIntType().PerformTurn();*/
+                    testobject4.getIntType().PerformTurn();
                 System.out.println("Health after combat");
                 System.out.println("Test object 1 :" + testobject1.getCurrentHp());
                 System.out.println("Test object 2 :" + testobject2.getCurrentHp());

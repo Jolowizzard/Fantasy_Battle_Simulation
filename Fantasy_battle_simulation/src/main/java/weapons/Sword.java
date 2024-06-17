@@ -11,6 +11,13 @@ public class Sword extends Weapon {
         super(Name,PhisicalDamage,MagicDamage,Range,Accuracy,Hands,magickDamage);
     }
     public Sword(){
+        setAccuracy(100);
+        setHands(false);
+        setName("Sword");
+        setMagicDamage(0);
+        setRange(1);
+        setMagickWeapon(false);
+        setPhisicalDamage(10);
 
     }
     public void SetValues() {
