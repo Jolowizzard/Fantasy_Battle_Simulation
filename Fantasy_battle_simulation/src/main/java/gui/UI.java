@@ -378,7 +378,7 @@ public class UI {
 
         String name = "Knight_P";//tu trzeba dynamicznie
 
-        if(MAPtable.Map[gp.ui.commandRow][gp.ui.commandCol].solid == true || MAPtable.Map[gp.ui.commandRow][gp.ui.commandCol].occupied  == true){
+        if(MAPtable.Map[gp.ui.commandRow][gp.ui.commandCol].occupied != false || MAPtable.Map[gp.ui.commandRow][gp.ui.commandCol].solid != false){
             g2.drawImage(wrong, commandCol*gp.tileSize, commandRow*gp.tileSize, gp.tileSize, gp.tileSize, null);
             gp.hero.updatePositon(commandCol, commandRow);
             gp.hero.updateType(name);
