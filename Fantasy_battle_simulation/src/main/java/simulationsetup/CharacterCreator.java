@@ -20,6 +20,7 @@ import inventory.Inventory;
 import inventory.items.HealPotion;
 import inventory.items.Item;
 import inventory.items.Shield;
+import map.MAPtable;
 import map.Tile;
 import weapons.*;
 
@@ -27,6 +28,8 @@ import java.util.ArrayList;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+
+import static map.MAPtable.Map;
 
 //import static jdk.vm.ci.hotspot.riscv64.RISCV64HotSpotRegisterConfig.gp;
 
@@ -445,12 +448,14 @@ public void SaveAllCharactersPositions(int coordX, int coordY) {
         {
 
             SavePosition(TeamCreator.teamPurple.getTeam().get(purplesaved),coordX, coordY );
+            Map[coordX][coordY].SetAsOccupied();
             purplesaved = purplesaved+1;
             SavedPositions = SavedPositions+1;
         }
         else if (yellowsaved < TeamCreator.teamYellow.getTeam().size())
         {
             SavePosition(TeamCreator.teamYellow.getTeam().get(yellowsaved),coordX, coordY );
+            Map[coordX][coordY].SetAsOccupied();
             yellowsaved = yellowsaved+1;
             SavedPositions = SavedPositions+1;
         }
