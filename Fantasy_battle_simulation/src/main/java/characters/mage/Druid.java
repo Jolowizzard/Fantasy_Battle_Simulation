@@ -13,9 +13,32 @@ public class Druid extends Mage {
     }
     public Druid(int Id, String Name, InteligenceType inteligenceType, Tile Position, Inventory inventory){
         super(Id,Name,inteligenceType,Position,inventory);
+        setRace("Human");
+        setMaxHp(150);
+        setCurrentHp(150);
+        setStrength(9);
+        setDexterity(9);
+        setIntelignece(18);
+        setMovement(2);
+        setDodgeChance(2);
+        setMagicCritChance(6);
+        setMagicCritValue(30);
+        setSubClass("Druid");
+
     }
     public Druid(int CritChance, int CritValue, GamePanel gamePanel){
         super(CritChance,CritValue,gamePanel);
+        setRace("Human");
+        setMaxHp(150);
+        setCurrentHp(150);
+        setStrength(9);
+        setDexterity(9);
+        setIntelignece(18);
+        setMovement(2);
+        setDodgeChance(2);
+        setMagicCritChance(6);
+        setMagicCritValue(30);
+        setSubClass("Druid");
     }
     public Druid(){}
 

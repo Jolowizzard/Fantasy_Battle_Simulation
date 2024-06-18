@@ -36,6 +36,12 @@ public abstract class Mage extends characters.Character {
     public int getMagicCritValue(){
         return MagicCritValue;
     }
+    public void setMagicCritChance(int magicCritChance) {
+        MagicCritChance = magicCritChance;
+    }
+    public void setMagicCritValue(int magicCritValue) {
+        MagicCritValue = magicCritValue;
+    }
 
     public int passiveMagicCrit(){
     RandomNumber rand = new RandomNumber();
