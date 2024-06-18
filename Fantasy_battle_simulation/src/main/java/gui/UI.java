@@ -177,7 +177,7 @@ public class UI {
         //Menu
         g2.setFont(g2.getFont().deriveFont(Font.BOLD,40F));
 
-        text = "BUILD YOUR TEAM";
+        text = "BUILD YOUR OWN";
         x = getXforCenteredText(text);
         y += gp.tileSize*6;
         g2.drawString(text, x, y);
@@ -185,7 +185,7 @@ public class UI {
             g2.drawString(">", x-gp.tileSize, y);
         }
 
-        text = "READ TEAM FROM FILE";
+        text = "READ FROM FILE";
         x = getXforCenteredText(text);
         y += gp.tileSize;
         g2.drawString(text, x, y);

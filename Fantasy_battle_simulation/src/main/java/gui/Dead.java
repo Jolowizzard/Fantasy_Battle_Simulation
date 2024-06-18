@@ -8,6 +8,10 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 
+
+/**
+ * Creates and Draws Dead Unit Sprite
+ */
 public class Dead extends Entity{
 
     GamePanel gp;
@@ -17,6 +21,9 @@ public class Dead extends Entity{
 
         getDeadImage();
     }
+/**
+ * Loads Dead Unit Sprite
+ */
     public void getDeadImage(){
 
         try{
@@ -25,14 +32,14 @@ public class Dead extends Entity{
             e.printStackTrace();
         }
     }
+/**
+ * Draws Dead Unit
+ * @param g2
+ */
     public void draw(Graphics2D g2){
 
         BufferedImage image = Dead;
 
         g2.drawImage(image, x*gp.tileSize, y*gp.tileSize, gp.tileSize, gp.tileSize, null);
-    }
-    public void updatePositon(int x, int y){
-        this.x = x;
-        this.y = y;
     }
 }

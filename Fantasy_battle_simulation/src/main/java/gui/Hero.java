@@ -7,7 +7,9 @@ import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import javax.imageio.ImageIO;
-
+/**
+ * Creates and Draws Hero Sprite
+ */
 public class Hero extends Entity {
     
     GamePanel gp;
@@ -17,11 +19,17 @@ public class Hero extends Entity {
         setDefaultValues();
         getHeroImage();
     }
+/**
+ * Sets Default Values
+ */
     public void setDefaultValues(){
         x = 0;
         y = 0;
         heroType = "Knight_P";
     }
+/**
+ * Loads Hero Sprite
+ */
     public void getHeroImage(){
 
         try{
@@ -47,6 +55,10 @@ public class Hero extends Entity {
             e.printStackTrace();
         }
     }
+/**
+ * Draw Hero
+ * @param g2
+ */
     public void draw(Graphics2D g2){
 
         BufferedImage image = null;
@@ -103,10 +115,10 @@ public class Hero extends Entity {
         }
         g2.drawImage(image, x*gp.tileSize, y*gp.tileSize, gp.tileSize, gp.tileSize, null);
     }
-    public void updatePositon(int x, int y){
-        this.x = x;
-        this.y = y;
-    }
+/**
+ * Sets Hero Type
+ * @param name
+ */
     public void updateType(String name){
         this.heroType = name;
     }
