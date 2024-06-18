@@ -12,9 +12,33 @@ public class Wizard extends Mage {
     }
     public Wizard(int Id, String Name, InteligenceType inteligenceType, Tile Position, Inventory inventory){
         super(Id,Name,inteligenceType,Position,inventory);
+        setRace("Human");
+        setMaxHp(110);
+        setCurrentHp(110);
+        setStrength(7);
+        setDexterity(8);
+        setIntelignece(20);
+        setMovement(2);
+        setDodgeChance(4);
+        setMagicCritChance(8);
+        setMagicCritValue(50);
+        setSubClass("Wizard");
+
     }
     public Wizard(int CritChance, int CritValue, GamePanel gamePanel){
         super(CritChance,CritValue,gamePanel);
+        setRace("Human");
+        setMaxHp(110);
+        setCurrentHp(110);
+        setStrength(7);
+        setDexterity(8);
+        setIntelignece(20);
+        setMovement(2);
+        setDodgeChance(4);
+        setMagicCritChance(8);
+        setMagicCritValue(50);
+        setSubClass("Wizard");
+        
     }
     public Wizard(){}
 }

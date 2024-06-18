@@ -12,31 +12,32 @@ public class Ranger extends Shooter {
     }
     public Ranger(int Id, String Name, InteligenceType inteligenceType, Tile Position, Inventory inventory){
         super(Id,Name,inteligenceType,Position,inventory);
-        setSubClass("Ranger");
         setRace("Human");
-        setMaxHp(80);
-        setCurrentHp(80);
-        setStrength(10);
-        setDexterity(30);
-        setIntelignece(10);
+        setMaxHp(130);
+        setCurrentHp(130);
+        setStrength(11);
+        setDexterity(18);
+        setIntelignece(11);
         setMovement(4);
-        setDodgeChance(10);
+        setDodgeChance(20);
         setCritChance(5);
-        setCritValue(50);
+        setCritValue(30);
+        setSubClass("Ranger");
+
     }
     public Ranger(int Id, String Name, InteligenceType inteligenceType, Inventory inventory){
         super(Id,Name,inteligenceType,inventory);
-        setSubClass("Ranger");
         setRace("Human");
-        setMaxHp(80);
-        setCurrentHp(80);
-        setStrength(10);
-        setDexterity(30);
-        setIntelignece(10);
+        setMaxHp(130);
+        setCurrentHp(130);
+        setStrength(11);
+        setDexterity(18);
+        setIntelignece(11);
         setMovement(4);
-        setDodgeChance(10);
+        setDodgeChance(20);
         setCritChance(5);
-        setCritValue(50);
+        setCritValue(30);
+        setSubClass("Ranger");
     }
     public Ranger(int CritChance, int CritValue){
         this.CritChance = CritChance;

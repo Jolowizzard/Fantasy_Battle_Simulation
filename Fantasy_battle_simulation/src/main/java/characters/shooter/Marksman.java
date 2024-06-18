@@ -11,31 +11,32 @@ public class Marksman extends Shooter {
     }
     public Marksman(int Id, String Name, InteligenceType inteligenceType, Tile Position, Inventory inventory){
         super(Id,Name,inteligenceType,Position,inventory);
-        setSubClass("Marksman");
         setRace("Human");
-        setMaxHp(80);
-        setCurrentHp(80);
+        setMaxHp(100);
+        setCurrentHp(100);
         setStrength(10);
-        setDexterity(30);
-        setIntelignece(10);
-        setMovement(4);
+        setDexterity(16);
+        setIntelignece(12);
+        setMovement(3);
         setDodgeChance(10);
-        setCritChance(5);
+        setCritChance(10);
         setCritValue(50);
+        setSubClass("Marksman");
+
     }
     public Marksman(int Id, String Name, InteligenceType inteligenceType, Inventory inventory){
         super(Id,Name,inteligenceType,inventory);
-        setSubClass("Marksman");
         setRace("Human");
-        setMaxHp(80);
-        setCurrentHp(80);
+        setMaxHp(100);
+        setCurrentHp(100);
         setStrength(10);
-        setDexterity(30);
-        setIntelignece(10);
-        setMovement(4);
+        setDexterity(16);
+        setIntelignece(12);
+        setMovement(3);
         setDodgeChance(10);
-        setCritChance(5);
+        setCritChance(10);
         setCritValue(50);
+        setSubClass("Marksman");
     }
     public Marksman(int CritChance, int CritValue){
         this.CritChance = CritChance;

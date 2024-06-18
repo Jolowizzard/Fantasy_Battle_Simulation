@@ -14,7 +14,7 @@ public class Bow extends Weapon {
     public Bow(){
         setName("Bow");
         setHands(true);
-        setAccuracy(70);
+        setAccuracy(80);
         setRange(4);
         setMagicDamage(0);
         setMagickWeapon(false);

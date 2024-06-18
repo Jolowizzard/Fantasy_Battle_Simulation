@@ -12,28 +12,29 @@ public class Paladin extends Warrior {
     public Paladin(int Id, String Name, InteligenceType inteligenceType, Tile Position, Inventory inventory){
         super(Id,Name,inteligenceType,Position,inventory);
         setRace("Human");
-        setMaxHp(150);
-        setCurrentHp(150);
-        setStrength(10);
-        setDexterity(10);
+        setMaxHp(200);
+        setCurrentHp(200);
+        setStrength(18);
+        setDexterity(14);
         setIntelignece(10);
         setMovement(3);
         setDodgeChance(5);
-        setBlockChance(20);
+        setBlockChance(30);
         setBlockValue(15);
         setSubClass("Paladin");
+
     }
     public Paladin(int Id, String Name, InteligenceType inteligenceType, Inventory inventory){
         super(Id,Name,inteligenceType,inventory);
         setRace("Human");
-        setMaxHp(150);
-        setCurrentHp(150);
-        setStrength(10);
-        setDexterity(10);
+        setMaxHp(200);
+        setCurrentHp(200);
+        setStrength(18);
+        setDexterity(14);
         setIntelignece(10);
         setMovement(3);
         setDodgeChance(5);
-        setBlockChance(20);
+        setBlockChance(30);
         setBlockValue(15);
         setSubClass("Paladin");
     }

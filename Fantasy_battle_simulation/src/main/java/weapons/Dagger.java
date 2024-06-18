@@ -32,7 +32,7 @@ public class Dagger extends Weapon{
             ArrayList<Integer> damageTypes = new ArrayList<>();
             //Now we use only two damage types - magical and physical
             damageTypes.add(0);
-            damageTypes.add(getPhisicalDamage() + user.getStrength()/20 + user.getDexterity());
+            damageTypes.add(getPhisicalDamage() + user.getDexterity()/2);
 
             damageTypes.add(1);
             if(getMagickWeapon())
