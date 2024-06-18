@@ -23,7 +23,10 @@ public abstract class InteligenceType{
     protected Team enemies;
     protected Team allays;
     protected boolean injured;
+    protected GamePanel gamePanel;
 
+    public void setGamePanel(GamePanel gamePanel){this.gamePanel = gamePanel;}
+    public GamePanel getGamePanel(){return gamePanel;}
     public InteligenceType(){
     }
     public characters.Character GetTarget(){return target;}
@@ -80,11 +83,11 @@ public abstract class InteligenceType{
         }
         return OptimalTarget;
     }
-    public void MoveTowardsOpponent(characters.Character character, characters.Character target){
+    public void MoveTowardsOpponent(characters.Character character, characters.Character target,GamePanel gamePanel){
         SearchAlgorythm searchAlgorythm = new SearchAlgorythm(character.getPosition(),target.getPosition(), MAPtable.Map, MAPtable.colSize, MAPtable.rowSize);
         ArrayList<Tile> path = new ArrayList<>();
         path = searchAlgorythm.search();
-        MovesAndPaths.Move(character,path);
+        MovesAndPaths.Move(character,path,gamePanel);
     }
     public abstract void PerformTurn();
 
