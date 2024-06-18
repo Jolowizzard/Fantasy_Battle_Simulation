@@ -2885,3 +2885,76 @@ Ranger98 used Sword
 .......
 Knight99 performs turn
 Knight99 Bleeds : 0
+Knight99 performs turn
+Knight99 Bleeds : 0
+Knight99 Moves to 0 3
+.......
+Ranger98 performs turn
+Ranger98 Bleeds : 0
+Ranger98 Moves to 3 7
+.......
+Knight99 performs turn
+Knight99 Bleeds : 0
+Knight99 Moves to 2 4
+.......
+Ranger98 performs turn
+Ranger98 Bleeds : 0
+Ranger98 Moves to 3 6
+.......
+Knight99 performs turn
+Knight99 Bleeds : 0
+Knight99 Moves to 0 3
+.......
+Ranger98 performs turn
+Ranger98 Bleeds : 0
+Ranger98 Moves to 5 5
+.......
+Knight99 performs turn
+Knight99 Bleeds : 0
+Knight99 Moves to 1 5
+.......
+Ranger98 performs turn
+Ranger98 Bleeds : 0
+Ranger98 Moves to 4 5
+.......
+Knight99 performs turn
+Knight99 Bleeds : 0
+Knight99 Moves to 3 5
+.......
+Ranger98 performs turn
+Ranger98 Bleeds : 0
+Combat started:
+Ranger98 attacked Knight99 with Sword
+Passive Block succeeded
+Ranger98 used Sword
+.......
+Knight99 performs turn
+Knight99 Bleeds : 0
+Knight99 performs turn
+Knight99 Bleeds : 0
+Knight99 Moves to 0 3
+.......
+Ranger98 performs turn
+Ranger98 Bleeds : 0
+Ranger98 Moves to 0 11
+.......
+Knight99 performs turn
+Knight99 Bleeds : 0
+Knight99 Moves to 0 6
+.......
+Ranger98 performs turn
+Ranger98 Bleeds : 0
+Ranger98 Moves to 0 10
+.......
+Knight99 performs turn
+Knight99 Bleeds : 0
+Knight99 Moves to 0 9
+.......
+Ranger98 performs turn
+Ranger98 Bleeds : 0
+Combat started:
+Ranger98 attacked Knight99 with Sword
+Ranger98 used Sword
+.......
+Knight99 performs turn
+Knight99 Bleeds : 0

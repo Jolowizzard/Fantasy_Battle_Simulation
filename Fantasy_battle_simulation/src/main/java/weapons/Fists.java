@@ -4,10 +4,17 @@ import characters.Character;
 
 import java.util.ArrayList;
 
+/**
+ * Weapon type fists
+ */
 public class Fists extends Weapon{
     public Fists(String Name, int PhisicalDamage, int MagicDamage, int Range, int Accuracy, boolean Hands,boolean magickWeapon){
         super(Name,PhisicalDamage,MagicDamage,Range,Accuracy,Hands,magickWeapon);
     }
+
+    /**
+     * default constructor of fists
+     */
     public Fists() {
         setName("Fists");
         setHands(false);
@@ -19,6 +26,9 @@ public class Fists extends Weapon{
     }
 
     @Override
+    /**
+     * returns damage types of fists
+     */
     public ArrayList<Integer> attack(Character user) {
 
         ArrayList<Integer> damageTypes = new ArrayList<>();
@@ -29,6 +39,9 @@ public class Fists extends Weapon{
     }
 
     @Override
+    /**
+     * chcecks if character can attack target with fists
+     */
     public boolean canAttack(Character character, Character target) {
         return false;
     }
