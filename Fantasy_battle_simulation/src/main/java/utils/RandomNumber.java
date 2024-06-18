@@ -1,6 +1,10 @@
 package utils;
 import java.util.Random;
 
+
+/**
+ * generates random number
+ */
 public class RandomNumber {
     public int generateRandomNumber(){
         Random rand = new Random();
