@@ -14,83 +14,133 @@ import java.util.ArrayList;
 
 public class InventoryCreator {
     //Weapons
-    private boolean fists = false;
-    private boolean sword = false;
-    private boolean swordshield = false;
-    private boolean bow = false;
-    private boolean staff = false;
-    private boolean daggers = false;
+    private static boolean fists = false;
+    private static boolean sword = false;
+    private static boolean swordshield = false;
+    private static boolean bow = false;
+    private static boolean staff = false;
+    private static boolean daggers = false;
 
-    public boolean getfists(){return fists;}
-    public boolean getsword(){return sword;}
-    public boolean getbow(){return bow;}
-    public boolean getswordshield(){return swordshield;}
-    public boolean getstaff(){return staff;}
-    public boolean getdaggers(){return daggers;}
+    public boolean getfists() {
+        return fists;
+    }
 
-    public void setfists(boolean bool)
-    {
+    public boolean getsword() {
+        return sword;
+    }
+
+    public boolean getbow() {
+        return bow;
+    }
+
+    public boolean getswordshield() {
+        return swordshield;
+    }
+
+    public boolean getstaff() {
+        return staff;
+    }
+
+    public boolean getdaggers() {
+        return daggers;
+    }
+
+    public void setfists(boolean bool) {
         fists = bool;
     }
 
-    public void setsword(boolean bool)
-    {
+    public void setsword(boolean bool) {
         sword = bool;
     }
-    public void setbow(boolean bool){bow = bool;}
 
-    public void setswordshield(boolean bool)
-    {
+    public void setbow(boolean bool) {
+        bow = bool;
+    }
+
+    public void setswordshield(boolean bool) {
         swordshield = bool;
     }
 
-    public void setstaff(boolean bool)
-    {
+    public void setstaff(boolean bool) {
         staff = bool;
     }
 
-    public void setdaggers(boolean bool)
-    {
+    public void setdaggers(boolean bool) {
         daggers = bool;
     }
+
     //Armor
-    private boolean light =false;
-    private boolean medium =false;
-    private boolean heavy =false;
+    private static boolean light = false;
+    private static boolean medium = false;
+    private static boolean heavy = false;
 
-    public boolean getlight(){return light;}
-    public boolean getmedium(){return medium;}
-    public boolean getheavy(){return heavy;}
+    public boolean getlight() {
+        return light;
+    }
 
-    public void setlight(boolean bool){light = bool;}
-    public void setmedium(boolean bool){medium = bool;}
-    public void setheavy(boolean bool){heavy = bool;}
+    public boolean getmedium() {
+        return medium;
+    }
 
-    private boolean potion1=false;
-    public boolean getpotion1(){return potion1;}
-    public void setpotion1(boolean bool){potion1 =bool;}
-    private boolean potion2=false;
-    public boolean getpotion2(){return potion2;}
-    public void setpotion2(boolean bool){potion2 =bool;}
-    private boolean potion3=false;
-    public boolean getpotion3(){return potion3;}
-    public void setpotion3(boolean bool){potion3 =bool;}
-    public void SetpotionsToFalse()
-    {
+    public boolean getheavy() {
+        return heavy;
+    }
+
+    public void setlight(boolean bool) {
+        light = bool;
+    }
+
+    public void setmedium(boolean bool) {
+        medium = bool;
+    }
+
+    public void setheavy(boolean bool) {
+        heavy = bool;
+    }
+
+    private static boolean potion1 = false;
+
+    public boolean getpotion1() {
+        return potion1;
+    }
+
+    public void setpotion1(boolean bool) {
+        potion1 = bool;
+    }
+
+    private static boolean potion2 = false;
+
+    public boolean getpotion2() {
+        return potion2;
+    }
+
+    public void setpotion2(boolean bool) {
+        potion2 = bool;
+    }
+
+    private static boolean potion3 = false;
+
+    public boolean getpotion3() {
+        return potion3;
+    }
+
+    public void setpotion3(boolean bool) {
+        potion3 = bool;
+    }
+
+    public void SetpotionsToFalse() {
         setpotion1(false);
         setpotion2(false);
         setpotion3(false);
     }
 
-    public void setArmorToFalse()
-    {
+    public void setArmorToFalse() {
         setmedium(false);
         setlight(false);
         setheavy(false);
     }
 
-    public void setWeaponsToFalse()
-    {
+    public void setWeaponsToFalse() {
         setfists(false);
         setsword(false);
         setbow(false);
@@ -99,96 +149,73 @@ public class InventoryCreator {
         setdaggers(false);
     }
 
-    public Inventory CreateInventory()
-    {
-        Inventory inventory = new Inventory(AddWeaponsToInventory(), AddArmorToInvenotry());
-        for(int i=0;i< AddItems().size();i++) {
-            inventory.addItem(AddItems().get(i));
-        }
-        return inventory;
+    public void CreateInventory(Inventory inventory) {
+
     }
 
-    public ArrayList<Armour> AddArmorToInvenotry()
-    {
-        ArrayList<Armour> armours = new ArrayList<Armour>();
-        if(light == true)
-        {
+    public void AddArmorToInventory(Inventory inventory) {
+        if (light == true) {
             Armour lightArmour = new LightArmour();
-            armours.add(lightArmour);
+            inventory.addArmour(lightArmour);
+            System.out.println("dodano armor");
         }
-        if(medium == true)
-        {
+        if (medium == true) {
             Armour mediumArmour = new MediumArmour();
-            armours.add(mediumArmour);
+            inventory.addArmour(mediumArmour);
         }
-        if(heavy == true)
-        {
+        if (heavy == true) {
             Armour heavyArmour = new HeavyArmour();
-            armours.add(heavyArmour);
+            inventory.addArmour(heavyArmour);
         }
-        return armours;
     }
 
-    public ArrayList<Weapon> AddWeaponsToInventory() {
-        ArrayList<Weapon> weapons = new ArrayList<Weapon>();
+    public void AddWeaponsToInventory(Inventory inventory) {
+
         if (fists == true) {
             Weapon fists = new Fists();
-            weapons.add(fists);
+            inventory.addWeapon(fists);
         }
         if (sword == true) {
             Weapon ssword = new Sword();
-            weapons.add(ssword);
+            inventory.addWeapon(ssword);
         }
         if (bow == true) {
             Weapon bow = new Bow();
-            weapons.add(bow);
+            inventory.addWeapon(bow);
         }
         if (swordshield == true) {
             Weapon ssword = new Sword();
-            weapons.add(ssword);
+            inventory.addWeapon(ssword);
         }
         if (staff == true) {
             Weapon staff = new Staff();
-            weapons.add(staff);
+            inventory.addWeapon(staff);
         }
         if (daggers == true) {
             Weapon daggers = new Dagger();
-            weapons.add(daggers);
+            inventory.addWeapon(daggers);
         }
-        return weapons;
     }
 
-    public ArrayList<Item> AddItems()
-    {
-        ArrayList<Item> items = new ArrayList<Item>();
-        if(swordshield==true)
-        {
+    public void AddItems(Inventory inventory) {
+        if (swordshield == true) {
             Shield shield = new Shield();
-            items.add(shield);
+            inventory.addItem(shield);
+            System.out.println("dodano pote");
         }
         HealPotion potion = new HealPotion();
-        if(potion1==true)
-        {
-            addPotion(items, potion);
+        if (potion1 == true) {
+            inventory.addItem(potion);
         }
-        if(potion2==true)
-        {
-            addPotion(items, potion);
-            addPotion(items, potion);
+        if (potion2 == true) {
+            inventory.addItem(potion);
+            inventory.addItem(potion);
         }
-        if(potion3==true)
-        {
-            addPotion(items, potion);
-            addPotion(items, potion);
-            addPotion(items, potion);
+        if (potion3 == true) {
+            inventory.addItem(potion);
+            inventory.addItem(potion);
+            inventory.addItem(potion);
         }
-        return items;
+
     }
-
-    public void addPotion(ArrayList items,HealPotion potion )
-    {
-        items.add(potion);
-    }
-
-
 }

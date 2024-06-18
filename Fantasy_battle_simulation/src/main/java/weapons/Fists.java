@@ -20,7 +20,12 @@ public class Fists extends Weapon{
 
     @Override
     public ArrayList<Integer> attack(Character user) {
-        return null;
+
+        ArrayList<Integer> damageTypes = new ArrayList<>();
+        damageTypes.add(0);
+
+
+        return damageTypes;
     }
 
     @Override

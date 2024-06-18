@@ -36,7 +36,7 @@ import static map.MAPtable.Map;
 public class CharacterCreator {
 
     private int whichteam = 0;
-    int SavedPositions = 0;
+    public static int SavedPositions = 0;
 
     private int purplesaved = 0;
     private int yellowsaved = 0;
@@ -483,65 +483,105 @@ public void SaveAllCharactersPositions(int coordX, int coordY, GamePanel gamePan
 
 //functions creating hero of a certain class
     public Character createKnight(int id, Tile position, String Name, GamePanel gamePanel) {
+        Inventory inv = new Inventory();
         InventoryCreator inventory = new InventoryCreator();
         InteligenceType intelligence = new Agressive(true);
-        characters.Character newKnight = new Knight(id, Name, intelligence, position, inventory.CreateInventory());
+        characters.Character newKnight = new Knight(id, Name, intelligence, position, inv);
+        intelligence.setCharacter(newKnight);
+        inventory.AddWeaponsToInventory(inv);
+        inventory.AddArmorToInventory(inv);
+        inventory.AddItems(inv);
         createRepresentation(newKnight,"Knight",gamePanel);
         return newKnight;
     }
 
     public Character createPaladin(int id, Tile position, String Name,GamePanel gamePanel) {
+        Inventory inv = new Inventory();
         InventoryCreator inventory = new InventoryCreator();
         InteligenceType intelligence = new Agressive(true);
-        characters.Character newPaladin = new Paladin(id, Name, intelligence, position, inventory.CreateInventory());
+        characters.Character newPaladin = new Paladin(id, Name, intelligence, position, inv);
+        intelligence.setCharacter(newPaladin);
+        inventory.AddWeaponsToInventory(inv);
+        inventory.AddArmorToInventory(inv);
+        inventory.AddItems(inv);
         createRepresentation(newPaladin,"Paladin",gamePanel);
         return newPaladin;
     }
 
     public Character createRanger(int id, Tile position, String Name, GamePanel gamePanel) {
+        Inventory inv = new Inventory();
         InventoryCreator inventory = new InventoryCreator();
         InteligenceType intelligence = new Agressive(true);
-        characters.Character newRanger = new Ranger(id, Name, intelligence, position, inventory.CreateInventory());
+        characters.Character newRanger = new Ranger(id, Name, intelligence, position, inv);
+        intelligence.setCharacter(newRanger);
+        inventory.AddWeaponsToInventory(inv);
+        inventory.AddArmorToInventory(inv);
+        inventory.AddItems(inv);
         createRepresentation(newRanger,"Archer",gamePanel);
         return newRanger;
     }
 
     public Character createMarksman(int id, Tile position, String Name, GamePanel gamePanel) {
+        Inventory inv = new Inventory();
         InventoryCreator inventory = new InventoryCreator();
         InteligenceType intelligence = new Agressive(true);
-        characters.Character newMarksman = new Marksman(id, Name, intelligence, position, inventory.CreateInventory());
+        characters.Character newMarksman = new Marksman(id, Name, intelligence, position, inv);
+        intelligence.setCharacter(newMarksman);
+        inventory.AddWeaponsToInventory(inv);
+        inventory.AddArmorToInventory(inv);
+        inventory.AddItems(inv);
         createRepresentation(newMarksman,"Marksman",gamePanel);
         return newMarksman;
     }
 
     public Character createDruid(int id, Tile position, String Name, GamePanel gamePanel) {
+        Inventory inv = new Inventory();
         InventoryCreator inventory = new InventoryCreator();
         InteligenceType intelligence = new Agressive(true);
-        characters.Character newDruid = new Druid(id, Name, intelligence, position, inventory.CreateInventory());
+        characters.Character newDruid = new Druid(id, Name, intelligence, position, inv);
+        intelligence.setCharacter(newDruid);
+        inventory.AddWeaponsToInventory(inv);
+        inventory.AddArmorToInventory(inv);
+        inventory.AddItems(inv);
         createRepresentation(newDruid,"Druid",gamePanel);
         return newDruid;
     }
 
     public Character createWizard(int id, Tile position, String Name, GamePanel gamePanel) {
+        Inventory inv = new Inventory();
         InventoryCreator inventory = new InventoryCreator();
         InteligenceType intelligence = new Agressive(true);
-        characters.Character newWizard = new Wizard(id, Name, intelligence, position, inventory.CreateInventory());
+        characters.Character newWizard = new Wizard(id, Name, intelligence, position, inv);
+        intelligence.setCharacter(newWizard);
+        inventory.AddWeaponsToInventory(inv);
+        inventory.AddArmorToInventory(inv);
+        inventory.AddItems(inv);
         createRepresentation(newWizard,"Archmage",gamePanel);
         return newWizard;
     }
 
     public Character createAssassin(int id, Tile position, String Name, GamePanel gamePanel) {
+        Inventory inv = new Inventory();
         InventoryCreator inventory = new InventoryCreator();
         InteligenceType intelligence = new Agressive(true);
-        characters.Character newAssasin = new Assassin(id, Name, intelligence, position, inventory.CreateInventory());
+        characters.Character newAssasin = new Assassin(id, Name, intelligence, position, inv);
+        intelligence.setCharacter(newAssasin);
+        inventory.AddWeaponsToInventory(inv);
+        inventory.AddArmorToInventory(inv);
+        inventory.AddItems(inv);
         createRepresentation(newAssasin,"Assasin",gamePanel);
         return newAssasin;
     }
 
     public Character createThief(int id, Tile position, String Name, GamePanel gamePanel) {
+        Inventory inv = new Inventory();
         InventoryCreator inventory = new InventoryCreator();
         InteligenceType intelligence = new Agressive(true);
-        characters.Character newThief = new Thief(id, Name, intelligence, position, inventory.CreateInventory());
+        characters.Character newThief = new Thief(id, Name, intelligence, position, inv);
+        intelligence.setCharacter(newThief);
+        inventory.AddWeaponsToInventory(inv);
+        inventory.AddArmorToInventory(inv);
+        inventory.AddItems(inv);
         createRepresentation(newThief,"Thief",gamePanel);
         return newThief;
     }

@@ -422,7 +422,7 @@ int SavedPositions = 0;
                     characterCreator.SaveAllCharactersPositions(gp.ui.commandRow,gp.ui.commandCol, gp);
                 }
                 //zacząć grę jak postawiono wszystkie jednostki
-                if(SavedPositions==TeamCreator.teamYellow.getTeam().size() + TeamCreator.teamPurple.getTeam().size())
+                if(characterCreator.SavedPositions==TeamCreator.teamYellow.getTeam().size() + TeamCreator.teamPurple.getTeam().size())
                 {
                     gp.gameState = gp.playState;
                 }
