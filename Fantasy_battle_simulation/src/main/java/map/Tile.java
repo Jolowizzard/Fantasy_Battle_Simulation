@@ -2,6 +2,9 @@ package map;
 
 import java.awt.image.BufferedImage;
 
+/**
+ * Map consists of Tiles
+ */
 public class Tile {
     public Tile parent;
     public int col;
@@ -19,6 +22,11 @@ public class Tile {
 
     public BufferedImage image;
 
+    /**
+     * Tile consists of coordinates row and column
+     * @param col
+     * @param row
+     */
     public  Tile(int col, int row){
         this.col = col;
         this.row = row;
@@ -29,9 +37,17 @@ public class Tile {
     public void SetAsDestination(){
         destination = true;
     }
+
+    /**
+     * Solid indicates that on certain Tile there is an obsticle
+     */
     public void SetAsSolid(){
         solid = true;
     }
+
+    /**
+     * Occupied indicates that on certain Tile there is another character
+     */
     public void SetAsOccupied(){
         occupied = true;
     }

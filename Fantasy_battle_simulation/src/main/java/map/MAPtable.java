@@ -13,6 +13,12 @@ public class MAPtable implements Cloneable {
     public static String mapName = null;
     //static int ToNumberMap[][] = new int [16][16];
     //adds field numbering
+
+
+    /**
+     * initiates secondary map used in code and testing
+     * @param ToNumberMap
+     */
     static void NumberMap(int ToNumberMap[][])
     {
         int iteration = 1;
@@ -25,6 +31,11 @@ public class MAPtable implements Cloneable {
             }
         }
     }
+
+    /**
+     * used to place character on certain Tile on map
+     * @param location
+     */
     public static void placeCharacterOnMap(Tile location){
         int row = location.row;
         int col = location.col;
@@ -38,6 +49,12 @@ public class MAPtable implements Cloneable {
             System.out.println();
         }
     }
+
+    /**
+     * used to change location of character if he was placed on map already
+     * @param character
+     * @param location
+     */
     public static void changeLocation(characters.Character character, Tile location){
         Tile previousLocation = character.getPosition();
         Map[previousLocation.row][previousLocation.col].SetAsUnoccupied();
@@ -46,7 +63,11 @@ public class MAPtable implements Cloneable {
         character.setPosition(Map[row][col]);
         Map[row][col].SetAsOccupied();
     }
-    //Function initializes the map from a .txt file
+
+    /**
+     * Function initializes the map from a .txt file
+     * @param fileName
+     */
     public static void InitializeMap(String fileName){
         try {
             InputStream is = Main.class.getClassLoader().getResourceAsStream(fileName);// Reading a file from resources
