@@ -6,6 +6,9 @@ import map.Tile;
 import simulationsetup.Scribe;
 import utils.RandomNumber;
 
+/**
+ * character type warrior
+ */
 public abstract class Warrior extends characters.Character {
     private int BlockChance;
     private int BlockValue;
@@ -15,6 +18,15 @@ public abstract class Warrior extends characters.Character {
         this.BlockValue=BlockValue;
         setMainClass("Warrior");
     }
+
+    /**
+     * default constructor of a warrior
+     * @param Id
+     * @param Name
+     * @param inteligenceType
+     * @param Position
+     * @param inventory
+     */
     public Warrior(int Id, String Name, InteligenceType inteligenceType, Tile Position, Inventory inventory){
         super(Id,Name,inteligenceType,Position,inventory);
         BlockChance = 0;
@@ -36,6 +48,11 @@ public abstract class Warrior extends characters.Character {
     public int getBlockValue(){
         return BlockValue;
     }
+
+    /**
+     * returns value of block (warrior passive)
+     * @return
+     */
     public int passiveBlock(){
         RandomNumber rand = new RandomNumber();
         if(rand.generateRandomNumber()<=BlockChance) {

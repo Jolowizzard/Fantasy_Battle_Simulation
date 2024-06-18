@@ -5,6 +5,9 @@ import inteligence.InteligenceType;
 import inventory.Inventory;
 import map.Tile;
 
+/**
+ * shooter type ranger
+ */
 public class Ranger extends Shooter {
     public Ranger(int Id, String Name, String Race, int MaxHp, int CurrentHp, int Strength, int Dexterity, int Inteligence, int Movement, float DodgeChance, Inventory inventory, InteligenceType IntType, boolean IsAlive, int CritChance, int CritValue, Tile Position){
         super(Id,Name,Race,MaxHp,CurrentHp,Strength,Dexterity,Inteligence,Movement,DodgeChance,inventory,IntType,IsAlive,CritChance,CritValue,Position);
@@ -25,6 +28,14 @@ public class Ranger extends Shooter {
         setSubClass("Ranger");
 
     }
+
+    /**
+     * default constructor of ranger
+     * @param Id
+     * @param Name
+     * @param inteligenceType
+     * @param inventory
+     */
     public Ranger(int Id, String Name, InteligenceType inteligenceType, Inventory inventory){
         super(Id,Name,inteligenceType,inventory);
         setRace("Human");
