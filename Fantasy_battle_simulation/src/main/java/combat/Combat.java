@@ -5,6 +5,7 @@ import characters.mage.Mage;
 import characters.shooter.Shooter;
 import characters.warriors.Warrior;
 import armours.*;
+import gui.GamePanel;
 import simulationsetup.Scribe;
 
 import java.util.ArrayList;
@@ -26,7 +27,7 @@ public class Combat {
         }
 
         Scribe.addLog(attacker.getName() + " attacked " + defender.getName() + " with " + attacker.getInventory().getCurrentWeapon().getName());
-
+        attacker.getIntType().getGamePanel().logEvent(attacker.getName() + " attacked " + defender.getName() + " with " + attacker.getInventory().getCurrentWeapon().getName());
         try {
             Thread.sleep(20);
         }catch (Exception e){
@@ -37,6 +38,7 @@ public class Combat {
     public void BeginCombat(){
         //checking dodge
         if(CheckDodge(defender)) {
+            defender.getIntType().getGamePanel().logEvent(defender.getName() + " dodged");
             Scribe.addLog(defender.getName() + " dodged");
             try {
                 Thread.sleep(20);
@@ -54,6 +56,7 @@ public class Combat {
             }
 
             if(defender.getInventory().getCurrentItem().use(defender)) {//if shield worked end combat
+                defender.getIntType().getGamePanel().logEvent(defender.getName() + " used Shield");
                 Scribe.addLog(defender.getName() + " used Shield");
                 try {
                     Thread.sleep(20);
@@ -70,7 +73,9 @@ public class Combat {
         int currentDamage;
         int damageSum;
         //Dealing damage here also we have wiggle room for printing amounts of specific types of damage
+        attacker.getIntType().getGamePanel().logEvent(attacker.getName() + " used " + attacker.getInventory().getCurrentWeapon().getName());
         Scribe.addLog(attacker.getName() + " used " + attacker.getInventory().getCurrentWeapon().getName());
+
         int additionalDamage=0;
         for(int i=0 ;i <damageTypes.size();i+=2){
             additionalDamage=0;
@@ -115,9 +120,11 @@ public class Combat {
             if (damageTypes.get(i) > 0) {
                 defender.getIntType().setInjured(true);
                 if (damageTypes.get(i) >= defender.getCurrentHp()) {
+                    defender.getIntType().getGamePanel().logEvent(defender.getName() + " received" + damageTypes.get(i)+"and died");
                     defender.takeDamage(defender.getCurrentHp());
                     defender.kill();
                 } else {
+                    defender.getIntType().getGamePanel().logEvent(defender.getName() + " received");
                     defender.takeDamage(damageTypes.get(i));
                 }
             }

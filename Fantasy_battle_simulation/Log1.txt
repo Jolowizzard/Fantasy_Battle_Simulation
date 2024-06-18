@@ -1,2069 +1,1010 @@
-Buknan performs turn
-Buknan Bleeds : 0
-.......
-Team Purple wins
-Buknan performs turn
-Buknan Bleeds : 0
-.......
-Team Purple wins
-Buknan performs turn
-Buknan Bleeds : 0
-.......
-Team Purple wins
-Buknan performs turn
-Buknan Bleeds : 0
-Combat started:
-Buknan attacked Buknan with Sword
-Buknan used Shield
-Buknan performs turn
-Buknan Bleeds : 0
-Combat started:
-Buknan attacked Buknan with Sword
-Buknan used Sword
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-Combat started:
-Tobi attacked Tobi with Bow
-Tobi used Shield
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-Combat started:
-Tobi attacked Tobi with Dagger
-Tobi used Dagger
-Buknan performs turn
-Buknan Bleeds : 0
-Combat started:
-Buknan attacked Buknan with Sword
-Buknan used Shield
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Combat started:
-Buknan attacked Buknan with Dagger
-Buknan used Shield
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-Combat started:
-Tobi attacked Tobi with Bow
-Tobi used Shield
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-Combat started:
-Tobi attacked Tobi with Dagger
-Tobi used Dagger
-Tobi Moves to 15 5
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Combat started:
-Buknan attacked Buknan with Sword
-Buknan used Sword
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-Tobi Moves to 8 2
-Tobi Moves to 2 0
-Combat started:
-Tobi attacked Buknan with Dagger
-Buknan dodged
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Combat started:
-Buknan attacked Tobi with Sword
-Tobi used Shield
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-Combat started:
-Tobi attacked Buknan with Dagger
-Buknan used Shield
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Combat started:
-Buknan attacked Tobi with Sword
-Tobi used Shield
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-Combat started:
-Tobi attacked Buknan with Dagger
-Buknan used Shield
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Combat started:
-Buknan attacked Tobi with Sword
-Tobi used Shield
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-Combat started:
-Tobi attacked Buknan with Dagger
-Buknan used Shield
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Combat started:
-Buknan attacked Tobi with Sword
-Buknan used Sword
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-.......
-Team Yellow wins
-Franek performs turn
-Franek Bleeds : 0
-Franek Moves to 8 12
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 2 8
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 8 13
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-Tobi Moves to 3 8
-Tobi Moves to 7 12
-Combat started:
-Tobi attacked Franek with Dagger
-Franek used Shield
-.......
-Franek performs turn
-Franek Bleeds : 0
-Combat started:
-Franek attacked Tobi with Sword
-Franek used Sword
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 7 12
-Combat started:
-Buknan attacked Franek with Dagger
-Franek used Shield
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Combat started:
-Slawomir attacked Buknan with Bow
-Buknan used Shield
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-.......
-Franek performs turn
-Franek Bleeds : 0
-Combat started:
-Franek attacked Buknan with Sword
-Passive Block succeeded
-Franek used Sword
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-.......
-Team Yellow wins
-Franek performs turn
-Franek Bleeds : 0
-Franek Moves to 8 12
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 2 8
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 8 13
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-Tobi Moves to 3 8
-Tobi Moves to 7 12
-Combat started:
-Tobi attacked Franek with Dagger
-Tobi used Dagger
-.......
-Franek performs turn
-Franek Bleeds : 10
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 7 3
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Combat started:
-Slawomir attacked Tobi with Bow
-Tobi used Shield
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-Tobi Moves to 7 13
-Combat started:
-Tobi attacked Slawomir with Dagger
-Tobi used Dagger
-Tobi Moves to 3 7
-.......
-Team Purple wins
-Franek performs turn
-Franek Bleeds : 0
-Franek Moves to 8 12
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 2 8
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 8 13
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-Tobi Moves to 3 8
-Tobi Moves to 7 12
-Combat started:
-Tobi attacked Franek with Dagger
-Franek dodged
-.......
-Franek performs turn
-Franek Bleeds : 0
-Combat started:
-Franek attacked Tobi with Sword
-Tobi used Shield
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 7 13
-Combat started:
-Buknan attacked Slawomir with Dagger
-Buknan used Dagger
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-.......
-Tobi performs turn
-Franek performs turn
-Franek Bleeds : 0
-Franek Moves to 15 5
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 6 4
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 13 6
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-Tobi Moves to 6 5
-Tobi Moves to 12 6
-Combat started:
-Tobi attacked Slawomir with Dagger
-Slawomir dodged
-.......
-Franek performs turn
-Franek Bleeds : 0
-Franek Moves to 12 5
-Combat started:
-Franek attacked Tobi with Sword
-Franek used Sword
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 11 5
-Combat started:
-Buknan attacked Franek with Dagger
-Franek used Shield
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Combat started:
-Slawomir attacked Buknan with Bow
-Buknan used Shield
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-.......
-Franek performs turn
-Franek Bleeds : 0
-Combat started:
-Franek attacked Buknan with Sword
-Franek used Sword
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-.......
-Team Yellow wins
-Franek performs turn
-Franek Bleeds : 0
-Franek Moves to 15 5
-.......
-Franek performs turn
-Franek Bleeds : 0
-Franek Moves to 15 5
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 6 4
-.......
-Franek performs turn
-Franek Bleeds : 0
-Franek performs turn
-Franek Bleeds : 0
-Franek Moves to 15 5
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 6 4
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 13 6
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-Tobi Moves to 6 5
-Tobi Moves to 12 6
-Combat started:
-Tobi attacked Slawomir with Dagger
-Tobi used Dagger
-.......
-Franek performs turn
-Franek Bleeds : 0
-Franek Moves to 15 5
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 6 4
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 13 6
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-Tobi Moves to 6 5
-Tobi Moves to 12 6
-Combat started:
-Tobi attacked Slawomir with Dagger
-Tobi used Dagger
-.......
-Franek performs turn
-Franek Bleeds : 0
-Franek Moves to 8 12
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 2 8
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 8 13
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-Tobi Moves to 3 8
-Tobi Moves to 7 12
-Combat started:
-Tobi attacked Franek with Dagger
-Franek used Shield
-.......
-Franek performs turn
-Franek Bleeds : 0
-Combat started:
-Franek attacked Tobi with Sword
-Tobi used Shield
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 7 13
-Combat started:
-Buknan attacked Slawomir with Dagger
-Buknan used Dagger
-.......
-Slawomir performs turn
-Slawomir Bleeds : 10
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-Combat started:
-Tobi attacked Franek with Dagger
-Franek used Shield
-.......
-Franek performs turn
-Franek Bleeds : 0
-Combat started:
-Franek attacked Tobi with Sword
-Tobi used Shield
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 8 13
-Combat started:
-Buknan attacked Franek with Dagger
-Buknan used Dagger
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-.......
-Team Purple wins
-Franek performs turn
-Franek Bleeds : 0
-Franek Moves to 8 12
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 2 8
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 8 13
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-Tobi Moves to 3 8
-Tobi Moves to 7 12
-Combat started:
-Tobi attacked Franek with Dagger
-Franek used Shield
-.......
-Franek performs turn
-Franek Bleeds : 0
-Combat started:
-Franek attacked Tobi with Sword
-Franek used Sword
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 7 12
-Combat started:
-Buknan attacked Franek with Dagger
-Buknan used Dagger
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Combat started:
-Slawomir attacked Buknan with Bow
-Franek performs turn
-Franek Bleeds : 0
-Franek performs turn
-Franek Bleeds : 0
-Franek Moves to 9 9
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 6 6
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 8 9
-Combat started:
-Slawomir attacked Buknan with Bow
-Buknan used Shield
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-Tobi Moves to 7 6
-Tobi Moves to 7 9
-Combat started:
-Tobi attacked Slawomir with Dagger
-Tobi used Dagger
-.......
-Franek performs turn
-Franek Bleeds : 0
-Franek Moves to 8 9
-Combat started:
-Franek attacked Tobi with Sword
-Tobi used Shield
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 8 8
-Combat started:
-Buknan attacked Franek with Dagger
-Buknan used Dagger
-.......
-Slawomir performs turn
-Slawomir Bleeds : 10
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-.......
-Team Purple wins
-Franek performs turn
-Franek Bleeds : 0
-Franek Moves to 9 9
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 6 6
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 8 9
-Combat started:
-Slawomir attacked Buknan with Bow
-Slawomir used Bow
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-Tobi Moves to 6 7
-Tobi Moves to 7 9
-Combat started:
-Tobi attacked Slawomir with Dagger
-Tobi used Dagger
-.......
-Franek performs turn
-Franek Bleeds : 0
-Franek Moves to 8 9
-Combat started:
-Franek attacked Tobi with Sword
-Franek used Sword
-Passive Magic Crit Succeeded
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-.......
-Team Yellow wins
-Franek performs turn
-Franek Bleeds : 0
-Franek Moves to 9 9
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 6 6
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 8 9
-Combat started:
-Slawomir attacked Buknan with Bow
-Buknan used Shield
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-Tobi Moves to 7 6
-Tobi Moves to 7 9
-Combat started:
-Tobi attacked Slawomir with Dagger
-Tobi used Dagger
-.......
-Franek performs turn
-Franek Bleeds : 0
-Franek Moves to 8 9
-Combat started:
-Franek attacked Tobi with Sword
-Tobi used Shield
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 8 8
-Combat started:
-Buknan attacked Franek with Dagger
-Buknan used Dagger
-.......
-Slawomir performs turn
-Slawomir Bleeds : 10
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-.......
-Team Purple wins
-Franek performs turn
-Franek Bleeds : 0
-Franek Moves to 9 9
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 6 6
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 8 9
-Combat started:
-Slawomir attacked Buknan with Bow
-Buknan used Shield
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-Tobi Moves to 7 6
-Tobi Moves to 7 9
-Combat started:
-Tobi attacked Slawomir with Dagger
-Tobi used Dagger
-.......
-Franek performs turn
-Franek Bleeds : 0
-Franek Moves to 8 9
-Combat started:
-Franek attacked Tobi with Sword
-Tobi used Shield
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 8 8
-Combat started:
-Buknan attacked Franek with Dagger
-Franek used Shield
-.......
-Slawomir performs turn
-Slawomir Bleeds : 10
-.......
-Tobi performs turn
-Franek performs turn
-Franek Bleeds : 0
-Franek Moves to 14 11
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 1 4
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 13 11
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-Tobi Moves to 6 7
-Tobi Moves to 13 10
-Combat started:
-Tobi attacked Slawomir with Dagger
-Tobi used Dagger
-.......
-Franek performs turn
-Franek Bleeds : 0
-Franek Moves to 14 10
-Combat started:
-Franek attacked Tobi with Sword
-Tobi used Shield
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 3 5
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-Combat started:
-Tobi attacked Franek with Dagger
-Franek used Shield
-Tobi Moves to 8 5
-.......
-Franek performs turn
-Franek Bleeds : 0
-Franek Moves to 11 10
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 6 5
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-Test_1 Bleeds : 0
-Test_1 Moves to 1 2
-Test_2 Bleeds : 0
-Test_2 Moves to 14 11
-Test_2 Moves to 14 6
-Test_3 Bleeds : 0
-Test_3 Moves to 15 11
-Tobi Bleeds : 0
-Tobi Moves to 0 5
-Test_1 Bleeds : 0
-Test_1 Moves to 1 5
-Test_2 Bleeds : 0
-Test_2 Moves to 9 6
-Test_2 Moves to 4 6
-Test_3 Bleeds : 0
-Test_3 Moves to 14 9
-Tobi Bleeds : 0
-Combat started:
-Tobi attacked Test_2 with weapons.Bow
-Tobi used weapons.Bow
-Test_1 Bleeds : 0
-Test_1 Moves to 3 4
-Test_2 Bleeds : 0
-Test_2 Moves to 4 4
-Combat started:
-Test_2 attacked Test_1 with Dagger
-Passive Block succeeded
-Test_2 used Dagger
-Test_2 Moves to 7 6
-Test_3 Bleeds : 0
-Test_3 Moves to 14 6
-Tobi Bleeds : 0
-Tobi Moves to 4 5
-Combat started:
-Tobi attacked Test_2 with weapons.Bow
-Test_2 dodged
-Test_1 Bleeds : 10
-Test_1 Moves to 5 5
-Test_2 Bleeds : 0
-Test_2 Moves to 5 6
-Combat started:
-Test_2 attacked Test_1 with Dagger
-Passive Block succeeded
-Test_2 used Dagger
-Test_2 Moves to 10 6
-Test_3 Bleeds : 0
-Test_3 Moves to 12 5
-Tobi Bleeds : 0
-Tobi Moves to 8 5
-Combat started:
-Tobi attacked Test_2 with weapons.Bow
-Test_2 dodged
-Test_2 Bleeds : 0
-Test_2 Moves to 9 5
-Combat started:
-Test_2 attacked Tobi with Dagger
-Test_2 used Dagger
-Test_2 Moves to 11 5
-Test_3 Bleeds : 0
-Combat started:
-Test_3 attacked Tobi with weapons.Bow
-Test_3 used weapons.Bow
-Tobi Bleeds : 10
-Combat started:
-Tobi attacked Test_2 with weapons.Bow
-Tobi used weapons.Bow
-Test_2 Bleeds : 0
-Test_2 Moves to 9 5
-Combat started:
-Test_2 attacked Tobi with Dagger
-Test_2 used Dagger
-Test_2 Moves to 11 5
-Test_3 Bleeds : 0
-Test_1 Bleeds : 0
-Test_1 Moves to 1 2
-Test_2 Bleeds : 0
-Test_2 Moves to 14 11
-Test_2 Moves to 14 6
-Test_3 Bleeds : 0
-Test_3 Moves to 15 11
-Tobi Bleeds : 0
-Tobi Moves to 0 5
-Test_1 Bleeds : 0
-Test_1 Moves to 1 5
-Test_2 Bleeds : 0
-Test_2 Moves to 9 6
-Test_2 Moves to 4 6
-Test_3 Bleeds : 0
-Test_3 Moves to 14 9
-Tobi Bleeds : 0
-Combat started:
-Tobi attacked Test_2 with weapons.Bow
-Tobi used weapons.Bow
-Test_1 Bleeds : 0
-Test_1 Moves to 3 4
-Test_2 Bleeds : 0
-Test_2 Moves to 4 4
-Combat started:
-Test_2 attacked Test_1 with Dagger
-Test_2 used Dagger
-Test_2 Moves to 7 6
-Test_3 Bleeds : 0
-Test_3 Moves to 14 6
-Tobi Bleeds : 0
-Tobi Moves to 4 5
-Combat started:
-Tobi attacked Test_2 with weapons.Bow
-Tobi used weapons.Bow
-Test_1 Bleeds : 10
-Test_1 Moves to 5 5
-Test_2 Bleeds : 0
-Test_2 Moves to 5 6
-Combat started:
-Test_2 attacked Test_1 with Dagger
-Test_2 used Dagger
-Test_2 Moves to 10 6
-Test_3 Bleeds : 0
-Test_3 Moves to 12 5
-Tobi Bleeds : 0
-Tobi Moves to 8 5
-Combat started:
-Tobi attacked Test_2 with weapons.Bow
-Tobi used weapons.Bow
-Test_2 Bleeds : 0
-Test_2 Moves to 9 5
-Combat started:
-Test_2 attacked Tobi with Dagger
-Test_2 used Dagger
-Test_2 Moves to 11 5
-Test_3 Bleeds : 0
-Combat started:
-Test_3 attacked Tobi with weapons.Bow
-Test_3 used weapons.Bow
-Tobi Bleeds : 10
-Combat started:
-Tobi attacked Test_2 with weapons.Bow
-Tobi used weapons.Bow
-Test_2 Bleeds : 0
-Test_2 Moves to 9 5
-Combat started:
-Test_2 attacked Tobi with Dagger
-Test_2 used Dagger
-Test_2 Moves to 11 5
-Test_3 Bleeds : 0
-Test_1 Bleeds : 0
-Test_1 Moves to 1 2
-Test_2 Bleeds : 0
-Test_2 Moves to 14 11
-Test_2 Moves to 14 6
-Test_3 Bleeds : 0
-Test_3 Moves to 15 11
-Tobi Bleeds : 0
-Tobi Moves to 0 5
-Test_1 Bleeds : 0
-Test_1 Moves to 1 5
-Test_2 Bleeds : 0
-Test_2 Moves to 9 6
-Test_2 Moves to 4 6
-Test_3 Bleeds : 0
-Test_3 Moves to 14 9
-Tobi Bleeds : 0
-Combat started:
-Tobi attacked Test_2 with weapons.Bow
-Tobi used weapons.Bow
-Test_1 Bleeds : 0
-Test_1 Moves to 3 4
-Test_2 Bleeds : 0
-Test_2 Moves to 4 4
-Combat started:
-Test_2 attacked Test_1 with Dagger
-Test_2 used Dagger
-Test_2 Moves to 7 6
-Test_3 Bleeds : 0
-Test_3 Moves to 14 6
-Tobi Bleeds : 0
-Tobi Moves to 4 5
-Combat started:
-Tobi attacked Test_2 with weapons.Bow
-Tobi used weapons.Bow
-Test_1 Bleeds : 0
-Test_1 Moves to 5 5
-Test_2 Bleeds : 0
-Test_2 Moves to 5 6
-Combat started:
-Test_2 attacked Test_1 with Dagger
-Test_2 used Dagger
-Test_2 Moves to 10 6
-Test_3 Bleeds : 0
-Test_3 Moves to 12 5
-Tobi Bleeds : 0
-Tobi Moves to 7 6
-Combat started:
-Tobi attacked Test_2 with weapons.Bow
-Tobi used weapons.Bow
-Test_1 Bleeds : 0
-Test_1 Moves to 8 5
-Test_2 Bleeds : 0
-Test_2 Moves to 9 5
-Combat started:
-Test_2 attacked Test_1 with Dagger
-Passive Block succeeded
-Test_2 used Dagger
-Test_2 Moves to 11 5
-Test_3 Bleeds : 0
-Combat started:
-Test_3 attacked Test_1 with weapons.Bow
-Test_3 used weapons.Bow
-Tobi Bleeds : 0
-Combat started:
-Tobi attacked Test_2 with weapons.Bow
-Tobi used weapons.Bow
-Passive Crit succeeded
-Test_3 Bleeds : 0
-Combat started:
-Test_3 attacked Tobi with weapons.Bow
-Tobi dodged
-Tobi Bleeds : 0
-Combat started:
-Tobi attacked Test_3 with weapons.Bow
-Tobi used weapons.Bow
-Test_3 Bleeds : 0
-Combat started:
-Test_3 attacked Tobi with weapons.Bow
-Test_3 used weapons.Bow
-Tobi Bleeds : 0
-Combat started:
-Tobi attacked Test_3 with weapons.Bow
-Tobi used weapons.Bow
-Test_3 Bleeds : 0
-Combat started:
-Test_3 attacked Tobi with weapons.Bow
-Test_3 used weapons.Bow
-Tobi Bleeds : 0
-Combat started:
-Tobi attacked Test_3 with weapons.Bow
-Tobi used weapons.Bow
-Test_3 Bleeds : 0
-Combat started:
-Test_3 attacked Tobi with weapons.Bow
-Test_3 used weapons.Bow
-Tobi Bleeds : 0
-Combat started:
-Tobi attacked Test_3 with weapons.Bow
-Test_3 dodged
-Test_3 Bleeds : 0
-Combat started:
-Test_3 attacked Tobi with weapons.Bow
-Test_3 used weapons.Bow
-Tobi Bleeds : 0
-Combat started:
-Tobi attacked Test_3 with weapons.Bow
-Tobi used weapons.Bow
-Test_3 Bleeds : 0
-Combat started:
-Test_3 attacked Tobi with weapons.Bow
-Test_3 used weapons.Bow
-Tobi Bleeds : 0
-Combat started:
-Tobi attacked Test_3 with weapons.Bow
-Tobi used weapons.Bow
-Test_3 Bleeds : 0
-Combat started:
-Test_3 attacked Tobi with weapons.Bow
-Test_3 used weapons.Bow
-Tobi Bleeds : 0
-Combat started:
-Tobi attacked Test_3 with weapons.Bow
-Tobi used weapons.Bow
-Test_3 Bleeds : 0
-Combat started:
-Test_3 attacked Tobi with weapons.Bow
-Test_3 used weapons.Bow
-Tobi Bleeds : 0
-Combat started:
-Tobi attacked Test_3 with weapons.Bow
-Tobi used weapons.Bow
-Test_3 Bleeds : 0
-Combat started:
-Test_3 attacked Tobi with weapons.Bow
-Test_3 used weapons.Bow
-Tobi Bleeds : 0
-Combat started:
-Tobi attacked Test_3 with weapons.Bow
-Tobi used weapons.Bow
-Test_3 Bleeds : 0
-Combat started:
-Test_3 attacked Tobi with weapons.Bow
-Test_3 used weapons.Bow
-Tobi Bleeds : 0
-Combat started:
-Tobi attacked Test_3 with weapons.Bow
-Tobi used weapons.Bow
-Test_3 Bleeds : 0
-Combat started:
-Test_3 attacked Tobi with weapons.Bow
-Tobi dodged
-Tobi Bleeds : 0
-Combat started:
-Tobi attacked Test_3 with weapons.Bow
-Tobi used weapons.Bow
-Test_3 Bleeds : 0
-Combat started:
-Test_3 attacked Tobi with weapons.Bow
-Test_3 used weapons.Bow
-Tobi Bleeds : 0
-Combat started:
-Tobi attacked Test_3 with weapons.Bow
-Passive Block succeeded
-Tobi used weapons.Bow
-Test_3 Bleeds : 0
-Combat started:
-Test_3 attacked Tobi with weapons.Bow
-Test_3 used weapons.Bow
-Tobi Bleeds : 0
-Combat started:
-Tobi attacked Test_3 with weapons.Bow
-Passive Block succeeded
-Tobi used weapons.Bow
-Test_3 Bleeds : 0
-Combat started:
-Test_3 attacked Tobi with weapons.Bow
-Test_3 used weapons.Bow
-Tobi Bleeds : 0
-Combat started:
-Tobi attacked Test_3 with weapons.Bow
-Passive Block succeeded
-Tobi used weapons.Bow
-Test_3 Bleeds : 0
-Combat started:
-Test_3 attacked Tobi with weapons.Bow
-Tobi dodged
-Tobi Bleeds : 0
-Combat started:
-Tobi attacked Test_3 with weapons.Bow
-Passive Block succeeded
-Tobi used weapons.Bow
-Test_3 Bleeds : 0
-Combat started:
-Test_3 attacked Tobi with weapons.Bow
-Test_3 used weapons.Bow
-Tobi Bleeds : 0
-Combat started:
-Tobi attacked Test_3 with weapons.Bow
-Tobi used weapons.Bow
-Test_3 Bleeds : 0
-Combat started:
-Test_3 attacked Tobi with weapons.Bow
-Test_3 used weapons.Bow
-Tobi Bleeds : 0
-Combat started:
-Tobi attacked Test_3 with weapons.Bow
-Test_3 dodged
-Test_3 Bleeds : 0
-Combat started:
-Test_3 attacked Tobi with weapons.Bow
-Test_3 used weapons.Bow
-Tobi Bleeds : 0
-Combat started:
-Tobi attacked Test_3 with weapons.Bow
-Test_3 dodged
-Franek performs turn
-Franek Bleeds : 0
-Franek Moves to 14 11
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 1 4
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 13 11
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-Tobi Moves to 6 7
-Tobi Moves to 13 10
-Combat started:
-Tobi attacked Slawomir with Dagger
-Tobi used Dagger
-.......
-Franek performs turn
-Franek Bleeds : 0
-Franek Moves to 14 10
-Combat started:
-Franek attacked Tobi with Sword
-Tobi used Shield
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 3 5
-.......
-Slawomir performs turn
-Slawomir Bleeds : 10
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-Combat started:
-Tobi attacked Franek with Dagger
-Franek used Shield
-Tobi Moves to 8 5
-.......
-Franek performs turn
-Franek Bleeds : 0
-Franek Moves to 11 10
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 6 5
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-Tobi Moves to 10 10
-Combat started:
-Tobi attacked Franek with Dagger
-Franek used Shield
-Tobi Moves to 7 5
-.......
-Franek performs turn
-Franek Bleeds : 0
-Franek Moves to 9 9
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 6 8
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-Tobi Moves to 9 8
-Combat started:
-Tobi attacked Franek with Dagger
-Franek used Shield
-Tobi Moves to 7 8
-.......
-Franek performs turn
-Franek Bleeds : 0
-Franek Moves to 7 9
-Combat started:
-Franek attacked Tobi with Sword
-Tobi used Shield
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 6 9
-Combat started:
-Buknan attacked Franek with Dagger
-Franek used Shield
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-Combat started:
-Tobi attacked Franek with Dagger
-Franek used Shield
-Tobi Moves to 6 8
-.......
-Franek performs turn
-Franek Bleeds : 0
-Combat started:
-Franek attacked Buknan with Sword
-Buknan used Shield
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Combat started:
-Buknan attacked Franek with Dagger
-Buknan used Dagger
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-.......
-Team Purple wins
-Franek performs turn
-Franek Bleeds : 0
-Franek Moves to 12 15
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 3 0
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 13 11
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-Tobi Moves to 9 4
-Tobi Moves to 13 10
-Combat started:
-Tobi attacked Slawomir with Dagger
-Tobi used Dagger
-.......
-Franek performs turn
-Franek Bleeds : 0
-Franek Moves to 13 13
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 4 2
-.......
-Slawomir performs turn
-Slawomir Bleeds : 10
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-Tobi Moves to 13 12
-Combat started:
-Tobi attacked Franek with Dagger
-Franek used Shield
-Tobi Moves to 11 4
-.......
-Franek performs turn
-Franek Bleeds : 0
-Franek Moves to 13 10
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 6 3
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-Tobi Moves to 12 10
-Combat started:
-Tobi attacked Franek with Dagger
-Tobi used Dagger
-Tobi Moves to 9 3
-.......
-Team Purple wins
-Franek performs turn
-Franek Bleeds : 0
-Franek Moves to 12 15
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 3 0
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 13 11
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-Tobi Moves to 9 4
-Tobi Moves to 13 10
-Combat started:
-Tobi attacked Slawomir with Dagger
-Tobi used Dagger
-.......
-Franek performs turn
-Franek Bleeds : 0
-Franek Moves to 13 13
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 4 2
-.......
-Slawomir performs turn
-Slawomir Bleeds : 10
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-Tobi Moves to 13 12
-Combat started:
-Tobi attacked Franek with Dagger
-Tobi used Dagger
-Tobi Moves to 11 4
-.......
-Team Purple wins
-Franek performs turn
-Franek Bleeds : 0
-Franek Moves to 14 11
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 1 4
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 13 11
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-Tobi Moves to 6 7
-Tobi Moves to 13 10
-Combat started:
-Tobi attacked Slawomir with Dagger
-Slawomir dodged
-.......
-Franek performs turn
-Franek Bleeds : 0
-Franek Moves to 14 10
-Combat started:
-Franek attacked Tobi with Sword
-Tobi used Shield
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 3 5
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Combat started:
-Slawomir attacked Tobi with Bow
-Tobi used Shield
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-Combat started:
-Tobi attacked Franek with Dagger
-Franek used Shield
-Tobi Moves to 8 5
-.......
-Franek performs turn
-Franek Bleeds : 0
-Franek Moves to 11 10
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 6 5
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 10 11
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-Tobi Moves to 10 10
-Combat started:
-Tobi attacked Franek with Dagger
-Franek used Shield
-Tobi Moves to 7 5
-.......
-Franek performs turn
-Franek Bleeds : 0
-Franek Moves to 9 9
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 6 8
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 8 10
-Combat started:
-Slawomir attacked Buknan with Bow
-Buknan used Shield
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-Tobi Moves to 9 8
-Combat started:
-Tobi attacked Franek with Dagger
-Franek dodged
-Tobi Moves to 7 8
-.......
-Franek performs turn
-Franek Bleeds : 0
-Franek Moves to 7 9
-Combat started:
-Franek attacked Tobi with Sword
-Franek used Sword
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 6 9
-Combat started:
-Buknan attacked Franek with Dagger
-Franek used Shield
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Combat started:
-Slawomir attacked Buknan with Bow
-Buknan used Shield
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-.......
-Franek performs turn
-Franek Bleeds : 0
-Combat started:
-Franek attacked Buknan with Sword
-Buknan used Shield
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Combat started:
-Buknan attacked Franek with Dagger
-Franek used Shield
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Combat started:
-Slawomir attacked Buknan with Bow
-Buknan used Shield
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-.......
-Franek performs turn
-Franek Bleeds : 0
-Combat started:
-Franek attacked Buknan with Sword
-Buknan used Shield
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Combat started:
-Buknan attacked Franek with Dagger
-Franek used Shield
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Combat started:
-Slawomir attacked Buknan with Bow
-Buknan used Shield
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-.......
-Franek performs turn
-Franek Bleeds : 0
-Combat started:
-Franek attacked Buknan with Sword
-Buknan used Shield
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Combat started:
-Buknan attacked Franek with Dagger
-Franek used Shield
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Combat started:
-Slawomir attacked Buknan with Bow
-Passive Block succeeded
-Slawomir used Bow
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-.......
-Team Yellow wins
-Franek performs turn
-Franek Bleeds : 0
-Franek Moves to 14 11
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 1 4
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 13 11
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-Tobi Moves to 6 7
-Tobi Moves to 13 10
-Combat started:
-Tobi attacked Slawomir with Dagger
-Tobi used Dagger
-.......
-Franek performs turn
-Franek Bleeds : 0
-Franek Moves to 14 10
-Combat started:
-Franek attacked Tobi with Sword
-Tobi used Shield
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 3 5
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-Combat started:
-Tobi attacked Franek with Dagger
-Franek used Shield
-Tobi Moves to 8 5
-.......
-Franek performs turn
-Franek Bleeds : 0
-Franek Moves to 11 10
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 6 5
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-Tobi Moves to 10 10
-Combat started:
-Tobi attacked Franek with Dagger
-Franek used Shield
-Tobi Moves to 7 5
-.......
-Franek performs turn
-Franek Bleeds : 0
-Franek Moves to 9 9
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 6 8
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-Tobi Moves to 9 8
-Combat started:
-Tobi attacked Franek with Dagger
-Tobi used Dagger
-Tobi Moves to 7 8
-.......
-Team Purple wins
-Franek performs turn
-Franek Bleeds : 0
-Franek Moves to 12 15
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 3 0
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 13 11
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-Tobi Moves to 9 4
-Tobi Moves to 13 10
-Combat started:
-Tobi attacked Slawomir with Dagger
-Tobi used Dagger
-.......
-Franek performs turn
-Franek Bleeds : 0
-Franek Moves to 13 13
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 4 2
-.......
-Slawomir performs turn
-Slawomir Bleeds : 10
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-Tobi Moves to 13 12
-Combat started:
-Tobi attacked Franek with Dagger
-Tobi used Dagger
-Tobi Moves to 11 4
-.......
-Team Purple wins
-Franek performs turn
-Franek Bleeds : 0
-Franek Moves to 12 15
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 3 0
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 13 11
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-Tobi Moves to 4 2
-Tobi Moves to 6 3
-.......
-Franek performs turn
-Franek Bleeds : 0
-Franek Moves to 11 13
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 4 2
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 13 8
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-Tobi Moves to 9 3
-Tobi Moves to 9 6
-.......
-Franek performs turn
-Franek Bleeds : 0
-Franek Moves to 10 11
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 6 3
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 12 6
-Combat started:
-Slawomir attacked Tobi with Bow
-Tobi used Shield
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-Tobi Moves to 11 6
-Combat started:
-Tobi attacked Slawomir with Dagger
-Tobi used Dagger
-Tobi Moves to 9 5
-.......
-Franek performs turn
-Franek Bleeds : 0
-Franek Moves to 11 9
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 9 3
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-Tobi Moves to 11 6
-Tobi Moves to 12 8
-.......
-Franek performs turn
-Franek Bleeds : 0
-Franek Moves to 12 9
-Combat started:
-Franek attacked Tobi with Sword
-Tobi used Shield
-.......
-Buknan performs turn
-Franek performs turn
-Franek Bleeds : 0
-Franek Moves to 12 15
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 3 0
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 13 11
-.......
-Tobi performs turn
-Tobi Bleeds : 0
-Tobi Moves to 4 2
-Tobi Moves to 6 3
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 13 11
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 1 4
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 11 10
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 3 5
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 9 9
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 6 5
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 9 6
-Combat started:
-Slawomir attacked Buknan with Bow
-Buknan dodged
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 8 6
-Combat started:
-Buknan attacked Slawomir with Dagger
-Buknan used Dagger
-.......
-Team Purple wins
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 13 11
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 1 4
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 12 9
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 1 7
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 9 9
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 2 9
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 6 9
-Combat started:
-Slawomir attacked Buknan with Bow
-Slawomir used Bow
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-.......
-Team Yellow wins
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 13 11
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 1 4
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 12 9
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 1 7
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 9 9
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 2 9
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 6 9
-Combat started:
-Slawomir attacked Buknan with Bow
-Buknan used Shield
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 5 9
-Combat started:
-Buknan attacked Slawomir with Dagger
-Buknan used Dagger
-.......
-Team Purple wins
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 11 13
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 3 2
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 10 11
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 3 5
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 13 9
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 4 5
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 7 14
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 6 2
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 12 6
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 1 8
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 4 11
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 9 3
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 4 9
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 12 12
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 4 1
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 12 9
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 1 1
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 9 9
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 4 1
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 9 6
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 3 3
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 6 6
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 4 5
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Combat started:
-Slawomir attacked Buknan with Bow
-Buknan used Shield
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 6 5
-Combat started:
-Buknan attacked Slawomir with Dagger
-Buknan used Dagger
-.......
-Team Purple wins
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 13 11
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 3 0
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 9 12
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 2 2
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 12 6
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 2 5
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 6 9
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 7 3
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 9 3
-Combat started:
-Slawomir attacked Buknan with Bow
-Buknan dodged
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 3 8
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 2 7
-Combat started:
-Slawomir attacked Buknan with Bow
-Buknan used Shield
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 8 2
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 13 11
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 3 0
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 13 8
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 4 2
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 13 5
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 6 3
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 11 6
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 9 3
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Combat started:
-Slawomir attacked Buknan with Bow
-Buknan used Shield
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-Buknan Moves to 9 6
-.......
-Slawomir performs turn
-Slawomir Bleeds : 0
-Combat started:
-Slawomir attacked Buknan with Bow
-Slawomir used Bow
-.......
-Buknan performs turn
-Buknan Bleeds : 0
-.......
-Team Yellow wins
-Slawomir performs turn
-Slawomir Bleeds : 0
-Slawomir Moves to 12 12
+Zebo performs turn
+Zebo Bleeds : 0
+Zebo Moves to 11 12
 .......
 Buknan performs turn
 Buknan Bleeds : 0
 Buknan Moves to 2 3
 .......
+lukasz performs turn
+lukasz Bleeds : 0
+lukasz Moves to 13 11
+.......
 Slawomir performs turn
 Slawomir Bleeds : 0
-Slawomir Moves to 11 10
+Slawomir Moves to 3 3
+.......
+Aleksander performs turn
+Aleksander Bleeds : 0
+Aleksander Moves to 14 10
+.......
+Tobi performs turn
+Tobi Bleeds : 0
+Tobi Moves to 3 2
+.......
+Zebo performs turn
+Zebo Bleeds : 0
+Zebo Moves to 11 9
+.......
+Buknan performs turn
+Buknan Bleeds : 0
+Buknan Moves to 2 6
+.......
+lukasz performs turn
+lukasz Bleeds : 0
+lukasz Moves to 11 12
+.......
+Slawomir performs turn
+Slawomir Bleeds : 0
+Slawomir Moves to 4 5
+.......
+Aleksander performs turn
+Aleksander Bleeds : 0
+Zebo performs turn
+Zebo Bleeds : 0
+Zebo Moves to 11 12
+.......
+Buknan performs turn
+Buknan Bleeds : 0
+Buknan Moves to 2 3
+.......
+lukasz performs turn
+lukasz Bleeds : 0
+lukasz Moves to 13 11
+.......
+Slawomir performs turn
+Slawomir Bleeds : 0
+Slawomir Moves to 3 3
+.......
+Aleksander performs turn
+Aleksander Bleeds : 0
+Aleksander Moves to 14 10
+.......
+Tobi performs turn
+Tobi Bleeds : 0
+Tobi Moves to 3 2
+.......
+Zebo performs turn
+Zebo Bleeds : 0
+Zebo Moves to 11 9
+.......
+Buknan performs turn
+Buknan Bleeds : 0
+Buknan Moves to 2 6
+.......
+lukasz performs turn
+lukasz Bleeds : 0
+lukasz Moves to 11 12
+.......
+Slawomir performs turn
+Slawomir Bleeds : 0
+Slawomir Moves to 4 5
+.......
+Aleksander performs turn
+Aleksander Bleeds : 0
+Aleksander Moves to 13 12
+.......
+Tobi performs turn
+Tobi Bleeds : 0
+Tobi Moves to 4 4
+.......
+Zebo performs turn
+Zebo Bleeds : 0
+Zebo Moves to 11 6
+.......
+Buknan performs turn
+Buknan Bleeds : 0
+Buknan Moves to 2 3
+.......
+lukasz performs turn
+lukasz Bleeds : 0
+lukasz Moves to 11 9
+.......
+Slawomir performs turn
+Slawomir Bleeds : 0
+Slawomir Moves to 6 6
+.......
+Aleksander performs turn
+Aleksander Bleeds : 0
+Aleksander Moves to 11 11
+.......
+Tobi performs turn
+Tobi Bleeds : 0
+Tobi Moves to 4 7
+.......
+Zebo performs turn
+Zebo Bleeds : 0
+Zebo Moves to 8 6
+Combat started:
+Zebo attacked Slawomir with Bow
+Zebo used Bow
 .......
 Buknan performs turn
 Buknan Bleeds : 0
 Buknan Moves to 4 4
 .......
+lukasz performs turn
+lukasz Bleeds : 0
+lukasz Moves to 9 8
+.......
 Slawomir performs turn
 Slawomir Bleeds : 0
-Slawomir Moves to 11 7
+.......
+Aleksander performs turn
+Aleksander Bleeds : 0
+Aleksander Moves to 10 9
+.......
+Tobi performs turn
+Tobi Bleeds : 0
+Tobi Moves to 7 7
+.......
+Zebo performs turn
+Zebo Bleeds : 0
+Combat started:
+Zebo attacked Tobi with Bow
+Tobi used Shield
 .......
 Buknan performs turn
 Buknan Bleeds : 0
 Buknan Moves to 5 6
 .......
+lukasz performs turn
+lukasz Bleeds : 0
+Combat started:
+lukasz attacked Tobi with Bow
+Tobi used Shield
+.......
 Slawomir performs turn
 Slawomir Bleeds : 0
-Slawomir Moves to 8 7
+.......
+Aleksander performs turn
+Aleksander Bleeds : 0
+Combat started:
+Aleksander attacked Tobi with Bow
+Tobi dodged
+.......
+Tobi performs turn
+Tobi Bleeds : 0
+Tobi Moves to 7 6
+Combat started:
+Tobi attacked Zebo with Dagger
+Tobi used Dagger
+.......
+Zebo performs turn
+Zebo Bleeds : 0
 .......
 Buknan performs turn
 Buknan Bleeds : 0
-Buknan Moves to 8 6
+Buknan Moves to 7 7
+.......
+lukasz performs turn
+lukasz Bleeds : 0
 Combat started:
-Buknan attacked Slawomir with Dagger
-Buknan used Dagger
+lukasz attacked Buknan with Bow
+Buknan used Shield
+.......
+Slawomir performs turn
+Slawomir Bleeds : 0
+.......
+Aleksander performs turn
+Aleksander Bleeds : 0
+Combat started:
+Aleksander attacked Buknan with Bow
+Buknan used Shield
+.......
+Tobi performs turn
+Tobi Bleeds : 0
+Tobi Moves to 9 7
+Combat started:
+Tobi attacked lukasz with Dagger
+Tobi used Dagger
+.......
+Zebo performs turn
+Zebo Bleeds : 0
+.......
+Buknan performs turn
+Buknan Bleeds : 0
+Buknan Moves to 9 8
+.......
+lukasz performs turn
+lukasz Bleeds : 10
+.......
+Slawomir performs turn
+Slawomir Bleeds : 0
+.......
+Aleksander performs turn
+Aleksander Bleeds : 0
+Combat started:
+Aleksander attacked Buknan with Bow
+Buknan used Shield
+.......
+Tobi performs turn
+Tobi Bleeds : 0
+Tobi Moves to 9 9
+Combat started:
+Tobi attacked Aleksander with Dagger
+Tobi used Dagger
+.......
+Team Purple wins
+Zebo performs turn
+Zebo Bleeds : 0
+Zebo Moves to 11 12
+.......
+Buknan performs turn
+Buknan Bleeds : 0
+Buknan Moves to 2 3
+.......
+lukasz performs turn
+lukasz Bleeds : 0
+lukasz Moves to 13 11
+.......
+Slawomir performs turn
+Slawomir Bleeds : 0
+Slawomir Moves to 3 3
+.......
+Aleksander performs turn
+Aleksander Bleeds : 0
+Aleksander Moves to 14 10
+.......
+Tobi performs turn
+Tobi Bleeds : 0
+Tobi Moves to 3 2
+.......
+Zebo performs turn
+Zebo Bleeds : 0
+Zebo Moves to 11 9
+.......
+Buknan performs turn
+Buknan Bleeds : 0
+Buknan Moves to 2 6
+.......
+lukasz performs turn
+lukasz Bleeds : 0
+lukasz Moves to 11 12
+.......
+Slawomir performs turn
+Slawomir Bleeds : 0
+Slawomir Moves to 4 5
+.......
+Aleksander performs turn
+Aleksander Bleeds : 0
+Aleksander Moves to 13 12
+.......
+Tobi performs turn
+Tobi Bleeds : 0
+Tobi Moves to 4 4
+.......
+Zebo performs turn
+Zebo Bleeds : 0
+Zebo Moves to 11 6
+.......
+Buknan performs turn
+Buknan Bleeds : 0
+Buknan Moves to 2 3
+.......
+lukasz performs turn
+lukasz Bleeds : 0
+lukasz Moves to 11 9
+.......
+Slawomir performs turn
+Slawomir Bleeds : 0
+Slawomir Moves to 6 6
+.......
+Aleksander performs turn
+Aleksander Bleeds : 0
+Aleksander Moves to 11 11
+.......
+Tobi performs turn
+Tobi Bleeds : 0
+Tobi Moves to 4 7
+.......
+Zebo performs turn
+Zebo Bleeds : 0
+Zebo Moves to 8 6
+Combat started:
+Zebo attacked Slawomir with Bow
+Zebo used Bow
+.......
+Buknan performs turn
+Buknan Bleeds : 0
+Buknan Moves to 4 4
+.......
+lukasz performs turn
+lukasz Bleeds : 0
+lukasz Moves to 9 8
+.......
+Slawomir performs turn
+Slawomir Bleeds : 0
+.......
+Aleksander performs turn
+Aleksander Bleeds : 0
+Aleksander Moves to 10 9
+.......
+Tobi performs turn
+Tobi Bleeds : 0
+Tobi Moves to 7 7
+.......
+Zebo performs turn
+Zebo Bleeds : 0
+Combat started:
+Zebo attacked Tobi with Bow
+Tobi dodged
+.......
+Zebo performs turn
+Zebo Bleeds : 0
+Zebo Moves to 11 12
+.......
+Buknan performs turn
+Buknan Bleeds : 0
+Buknan Moves to 2 3
+.......
+lukasz performs turn
+lukasz Bleeds : 0
+lukasz Moves to 13 11
+.......
+Slawomir performs turn
+Zebo performs turn
+Zebo Bleeds : 0
+Zebo Moves to 11 12
+.......
+Buknan performs turn
+Buknan Bleeds : 0
+Buknan Moves to 2 3
+.......
+lukasz performs turn
+lukasz Bleeds : 0
+lukasz Moves to 13 11
+.......
+Slawomir performs turn
+Slawomir Bleeds : 0
+Slawomir Moves to 3 3
+.......
+Aleksander performs turn
+Aleksander Bleeds : 0
+Aleksander Moves to 14 10
+.......
+Tobi performs turn
+Tobi Bleeds : 0
+Tobi Moves to 3 2
+.......
+Zebo performs turn
+Zebo Bleeds : 0
+Zebo Moves to 11 9
+.......
+Buknan performs turn
+Buknan Bleeds : 0
+Buknan Moves to 2 6
+.......
+lukasz performs turn
+lukasz Bleeds : 0
+Zebo performs turn
+Zebo Bleeds : 0
+Zebo Moves to 11 3
+.......
+Buknan performs turn
+Buknan Bleeds : 0
+Buknan Moves to 2 3
+.......
+lukasz performs turn
+lukasz Bleeds : 0
+lukasz Moves to 12 12
+.......
+Slawomir performs turn
+Slawomir Bleeds : 0
+Slawomir Moves to 3 3
+.......
+Aleksander performs turn
+Aleksander Bleeds : 0
+Aleksander Moves to 12 14
+.......
+Tobi performs turn
+Tobi Bleeds : 0
+Tobi Moves to 3 2
+.......
+Zebo performs turn
+Zebo Bleeds : 0
+Zebo Moves to 11 6
+.......
+Buknan performs turn
+Buknan Bleeds : 0
+Buknan Moves to 2 6
+.......
+lukasz performs turn
+lukasz Bleeds : 0
+lukasz Moves to 11 10
+.......
+Slawomir performs turn
+Slawomir Bleeds : 0
+Slawomir Moves to 4 5
+.......
+Aleksander performs turn
+Aleksander Bleeds : 0
+Aleksander Moves to 11 12
+.......
+Tobi performs turn
+Tobi Bleeds : 0
+Tobi Moves to 4 4
+.......
+Zebo performs turn
+Zebo Bleeds : 0
+Zebo Moves to 8 6
+.......
+Buknan performs turn
+Buknan Bleeds : 0
+Buknan Moves to 2 3
+.......
+lukasz performs turn
+lukasz Bleeds : 0
+lukasz Moves to 11 7
+.......
+Slawomir performs turn
+Slawomir Bleeds : 0
+Slawomir Moves to 6 6
+Combat started:
+Slawomir attacked Zebo with Bow
+Slawomir used Bow
+.......
+Aleksander performs turn
+Aleksander Bleeds : 0
+Aleksander Moves to 11 9
+.......
+Tobi performs turn
+Tobi Bleeds : 0
+Tobi Moves to 4 7
+.......
+Zebo performs turn
+Zebo Bleeds : 0
+.......
+Buknan performs turn
+Buknan Bleeds : 0
+Buknan Moves to 4 4
+.......
+lukasz performs turn
+lukasz Bleeds : 0
+lukasz Moves to 8 7
+Combat started:
+lukasz attacked Slawomir with Bow
+lukasz used Bow
+Passive Magic Crit Succeeded
+.......
+Slawomir performs turn
+Slawomir Bleeds : 0
+.......
+Aleksander performs turn
+Aleksander Bleeds : 0
+Aleksander Moves to 9 8
+.......
+Tobi performs turn
+Tobi Bleeds : 0
+Tobi Moves to 7 7
+Combat started:
+Tobi attacked lukasz with Dagger
+Tobi used Dagger
+.......
+Zebo performs turn
+Zebo Bleeds : 0
+.......
+Buknan performs turn
+Buknan Bleeds : 0
+Buknan Moves to 5 6
+.......
+lukasz performs turn
+lukasz Bleeds : 0
+.......
+Slawomir performs turn
+Slawomir Bleeds : 0
+.......
+Aleksander performs turn
+Aleksander Bleeds : 0
+Combat started:
+Aleksander attacked Tobi with Bow
+Tobi used Shield
+.......
+Tobi performs turn
+Tobi Bleeds : 0
+Tobi Moves to 9 7
+Combat started:
+Tobi attacked Aleksander with Dagger
+Tobi used Dagger
+.......
+Team Purple wins
+Zebo performs turn
+Zebo Bleeds : 0
+Zebo Moves to 11 3
+.......
+Buknan performs turn
+Buknan Bleeds : 0
+Buknan Moves to 2 3
+.......
+lukasz performs turn
+lukasz Bleeds : 0
+lukasz Moves to 12 12
+.......
+Slawomir performs turn
+Slawomir Bleeds : 0
+Slawomir Moves to 3 3
+.......
+Aleksander performs turn
+Aleksander Bleeds : 0
+Aleksander Moves to 12 14
+.......
+Tobi performs turn
+Tobi Bleeds : 0
+Tobi Moves to 3 2
+.......
+Zebo performs turn
+Zebo Bleeds : 0
+Zebo performs turn
+Zebo Bleeds : 0
+Zebo Moves to 11 3
+.......
+Buknan performs turn
+Buknan Bleeds : 0
+Buknan Moves to 2 3
+.......
+lukasz performs turn
+lukasz Bleeds : 0
+lukasz Moves to 12 12
+.......
+Slawomir performs turn
+Slawomir Bleeds : 0
+Slawomir Moves to 3 3
+.......
+Aleksander performs turn
+Aleksander Bleeds : 0
+Aleksander Moves to 12 14
+.......
+Tobi performs turn
+Tobi Bleeds : 0
+Tobi Moves to 3 2
+.......
+Zebo performs turn
+Zebo Bleeds : 0
+Zebo performs turn
+Zebo Bleeds : 0
+Zebo Moves to 11 3
+.......
+Buknan performs turn
+Buknan Bleeds : 0
+Buknan Moves to 2 3
+.......
+lukasz performs turn
+lukasz Bleeds : 0
+lukasz Moves to 12 12
+.......
+Slawomir performs turn
+Slawomir Bleeds : 0
+Slawomir Moves to 3 3
+.......
+Aleksander performs turn
+Aleksander Bleeds : 0
+Aleksander Moves to 12 14
+.......
+Tobi performs turn
+Tobi Bleeds : 0
+Tobi Moves to 3 2
+.......
+Zebo performs turn
+Zebo Bleeds : 0
+Zebo Moves to 11 6
+.......
+Buknan performs turn
+Buknan Bleeds : 0
+Buknan Moves to 2 6
+.......
+lukasz performs turn
+lukasz Bleeds : 0
+lukasz Moves to 11 10
+.......
+Slawomir performs turn
+Slawomir Bleeds : 0
+Slawomir Moves to 4 5
+.......
+Aleksander performs turn
+Aleksander Bleeds : 0
+Aleksander Moves to 11 12
+.......
+Tobi performs turn
+Tobi Bleeds : 0
+Tobi Moves to 4 4
+.......
+Zebo performs turn
+Zebo Bleeds : 0
+Zebo Moves to 8 6
+.......
+Buknan performs turn
+Buknan Bleeds : 0
+Buknan Moves to 2 3
+.......
+lukasz performs turn
+lukasz Bleeds : 0
+lukasz Moves to 11 7
+.......
+Slawomir performs turn
+Slawomir Bleeds : 0
+Slawomir Moves to 6 6
+Combat started:
+Slawomir attacked Zebo with Bow
+Slawomir used Bow
+.......
+Aleksander performs turn
+Aleksander Bleeds : 0
+Aleksander Moves to 11 9
+.......
+Tobi performs turn
+Tobi Bleeds : 0
+Tobi Moves to 4 7
+.......
+Zebo performs turn
+Zebo Bleeds : 0
+.......
+Buknan performs turn
+Buknan Bleeds : 0
+Buknan Moves to 4 4
+.......
+lukasz performs turn
+lukasz Bleeds : 0
+lukasz Moves to 8 7
+Combat started:
+lukasz attacked Slawomir with Bow
+lukasz used Bow
+.......
+Slawomir performs turn
+Slawomir Bleeds : 0
+.......
+Aleksander performs turn
+Aleksander Bleeds : 0
+Aleksander Moves to 9 8
+.......
+Tobi performs turn
+Tobi Bleeds : 0
+Tobi Moves to 7 7
+Combat started:
+Tobi attacked lukasz with Dagger
+Tobi used Dagger
+.......
+Zebo performs turn
+Zebo Bleeds : 0
+.......
+Buknan performs turn
+Buknan Bleeds : 0
+Buknan Moves to 5 6
+.......
+lukasz performs turn
+lukasz Bleeds : 10
+.......
+Slawomir performs turn
+Slawomir Bleeds : 0
+.......
+Aleksander performs turn
+Aleksander Bleeds : 0
+Combat started:
+Aleksander attacked Tobi with Bow
+Tobi used Shield
+.......
+Tobi performs turn
+Tobi Bleeds : 0
+Tobi Moves to 9 7
+Combat started:
+Tobi attacked Aleksander with Dagger
+Aleksander dodged
+.......
+Zebo performs turn
+Zebo Bleeds : 0
+.......
+Buknan performs turn
+Buknan Bleeds : 0
+Buknan Moves to 6 8
+.......
+lukasz performs turn
+lukasz Bleeds : 0
+.......
+Slawomir performs turn
+Slawomir Bleeds : 0
+.......
+Aleksander performs turn
+Aleksander Bleeds : 0
+Combat started:
+Aleksander attacked Tobi with Bow
+Tobi used Shield
+.......
+Tobi performs turn
+Tobi Bleeds : 0
+Combat started:
+Tobi attacked Aleksander with Dagger
+Tobi used Dagger
+.......
+Team Purple wins
+Zebo performs turn
+Zebo Bleeds : 0
+Zebo Moves to 11 3
+.......
+Buknan performs turn
+Buknan Bleeds : 0
+Buknan Moves to 2 3
+.......
+lukasz performs turn
+lukasz Bleeds : 0
+lukasz Moves to 12 12
+.......
+Slawomir performs turn
+Slawomir Bleeds : 0
+Slawomir Moves to 3 3
+.......
+Aleksander performs turn
+Aleksander Bleeds : 0
+Aleksander Moves to 12 14
+.......
+Tobi performs turn
+Tobi Bleeds : 0
+Tobi Moves to 3 2
+.......
+Zebo performs turn
+Zebo Bleeds : 0
+Zebo Moves to 11 6
+.......
+Buknan performs turn
+Buknan Bleeds : 0
+Buknan Moves to 2 6
+.......
+lukasz performs turn
+lukasz Bleeds : 0
+lukasz Moves to 11 10
+.......
+Slawomir performs turn
+Slawomir Bleeds : 0
+Slawomir Moves to 4 5
+.......
+Aleksander performs turn
+Aleksander Bleeds : 0
+Aleksander Moves to 11 12
+.......
+Tobi performs turn
+Tobi Bleeds : 0
+Tobi Moves to 4 4
+.......
+Zebo performs turn
+Zebo Bleeds : 0
+Zebo Moves to 8 6
+.......
+Buknan performs turn
+Buknan Bleeds : 0
+Buknan Moves to 2 3
+.......
+lukasz performs turn
+lukasz Bleeds : 0
+lukasz Moves to 11 7
+.......
+Slawomir performs turn
+Slawomir Bleeds : 0
+Slawomir Moves to 6 6
+Combat started:
+Slawomir attacked Zebo with Bow
+Slawomir used Bow
+.......
+Aleksander performs turn
+Aleksander Bleeds : 0
+Aleksander Moves to 11 9
+.......
+Tobi performs turn
+Tobi Bleeds : 0
+Tobi Moves to 4 7
+.......
+Zebo performs turn
+Zebo Bleeds : 0
+.......
+Buknan performs turn
+Buknan Bleeds : 0
+Buknan Moves to 4 4
+.......
+lukasz performs turn
+lukasz Bleeds : 0
+lukasz Moves to 8 7
+Combat started:
+lukasz attacked Slawomir with Bow
+Slawomir dodged
+.......
+Slawomir performs turn
+Slawomir Bleeds : 0
+Combat started:
+Slawomir attacked lukasz with Bow
+Slawomir used Bow
+.......
+Aleksander performs turn
+Aleksander Bleeds : 0
+Aleksander Moves to 10 7
+.......
+Tobi performs turn
+Tobi Bleeds : 0
+Tobi Moves to 7 7
+.......
+Zebo performs turn
+Zebo Bleeds : 0
+.......
+Buknan performs turn
+Buknan Bleeds : 0
+Buknan Moves to 4 7
+.......
+lukasz performs turn
+lukasz Bleeds : 0
+.......
+Slawomir performs turn
+Slawomir Bleeds : 0
+Slawomir Moves to 9 6
+.......
+Aleksander performs turn
+Aleksander Bleeds : 0
+Combat started:
+Aleksander attacked Slawomir with Bow
+Aleksander used Bow
+.......
+Tobi performs turn
+Tobi Bleeds : 0
+Tobi Moves to 9 7
+Combat started:
+Tobi attacked Aleksander with Dagger
+Tobi used Dagger
+.......
+Team Purple wins
+Zebo performs turn
+Zebo Bleeds : 0
+Zebo Moves to 11 3
+.......
+Buknan performs turn
+Buknan Bleeds : 0
+Buknan Moves to 2 3
+.......
+lukasz performs turn
+lukasz Bleeds : 0
+lukasz Moves to 12 12
+.......
+Slawomir performs turn
+Slawomir Bleeds : 0
+Slawomir Moves to 3 3
+.......
+Aleksander performs turn
+Aleksander Bleeds : 0
+Aleksander Moves to 12 14
+.......
+Tobi performs turn
+Tobi Bleeds : 0
+Tobi Moves to 3 2
+.......
+Zebo performs turn
+Zebo Bleeds : 0
+Zebo Moves to 11 6
+.......
+Buknan performs turn
+Buknan Bleeds : 0
+Buknan Moves to 2 6
+.......
+lukasz performs turn
+lukasz Bleeds : 0
+lukasz Moves to 11 10
+.......
+Slawomir performs turn
+Slawomir Bleeds : 0
+Slawomir Moves to 4 5
+.......
+Aleksander performs turn
+Aleksander Bleeds : 0
+Aleksander Moves to 11 12
+.......
+Tobi performs turn
+Tobi Bleeds : 0
+Tobi Moves to 4 4
+.......
+Zebo performs turn
+Zebo Bleeds : 0
+Zebo Moves to 8 6
+.......
+Buknan performs turn
+Buknan Bleeds : 0
+Buknan Moves to 2 3
+.......
+lukasz performs turn
+lukasz Bleeds : 0
+lukasz Moves to 11 7
+.......
+Slawomir performs turn
+Slawomir Bleeds : 0
+Slawomir Moves to 6 6
+Combat started:
+Slawomir attacked Zebo with Bow
+Zebo dodged
+.......
+Aleksander performs turn
+Aleksander Bleeds : 0
+Aleksander Moves to 11 9
+.......
+Tobi performs turn
+Tobi Bleeds : 0
+Tobi Moves to 4 7
+.......
+Zebo performs turn
+Zebo Bleeds : 0
+Combat started:
+Zebo attacked Slawomir with Bow
+Zebo used Bow
+.......
+Buknan performs turn
+Buknan Bleeds : 0
+Buknan Moves to 4 4
+.......
+lukasz performs turn
+lukasz Bleeds : 0
+lukasz Moves to 8 7
+Combat started:
+lukasz attacked Tobi with Bow
+Tobi used Shield
+.......
+Slawomir performs turn
+Slawomir Bleeds : 0
+.......
+Aleksander performs turn
+Aleksander Bleeds : 0
+Aleksander Moves to 9 8
+.......
+Tobi performs turn
+Tobi Bleeds : 0
+Tobi Moves to 7 7
+Combat started:
+Tobi attacked lukasz with Dagger
+Tobi used Dagger
+.......
+Zebo performs turn
+Zebo Bleeds : 0
+Combat started:
+Zebo attacked Tobi with Bow
+Tobi used Shield
+.......
+Buknan performs turn
+Buknan Bleeds : 0
+Buknan Moves to 5 6
+.......
+lukasz performs turn
+lukasz Bleeds : 10
+.......
+Slawomir performs turn
+Slawomir Bleeds : 0
+.......
+Aleksander performs turn
+Aleksander Bleeds : 0
+Combat started:
+Aleksander attacked Tobi with Bow
+Tobi used Shield
+.......
+Tobi performs turn
+Tobi Bleeds : 0
+Tobi Moves to 7 6
+Combat started:
+Tobi attacked Zebo with Dagger
+Tobi used Dagger
+.......
+Zebo performs turn
+Zebo Bleeds : 10
+.......
+Buknan performs turn
+Buknan Bleeds : 0
+Buknan Moves to 7 7
+.......
+lukasz performs turn
+lukasz Bleeds : 0
+.......
+Slawomir performs turn
+Slawomir Bleeds : 0
+.......
+Aleksander performs turn
+Aleksander Bleeds : 0
+Combat started:
+Aleksander attacked Buknan with Bow
+Buknan used Shield
+.......
+Tobi performs turn
+Tobi Bleeds : 0
+Tobi Moves to 9 7
+Combat started:
+Tobi attacked Aleksander with Dagger
+Tobi used Dagger
 .......
 Team Purple wins

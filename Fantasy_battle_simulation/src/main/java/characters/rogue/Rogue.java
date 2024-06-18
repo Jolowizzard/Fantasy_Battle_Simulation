@@ -32,7 +32,7 @@ public abstract class Rogue extends characters.Character {
         InteligenceType intTyp = getIntType();
 
         if(wantsToAttack){
-            intTyp.MoveTowardsOpponent(intTyp.getCharacter(),intTyp.GetTarget());
+            intTyp.MoveTowardsOpponent(intTyp.getCharacter(),intTyp.GetTarget(),intTyp.getGamePanel());
         }
         else{
             Character target = intTyp.lookForTeammate();
@@ -41,7 +41,7 @@ public abstract class Rogue extends characters.Character {
                 double distance;
                 distance = Math.sqrt(Math.pow(character.getPosition().col - target.getPosition().col, 2) + Math.pow(character.getPosition().row - target.getPosition().row, 2));
                 if (distance > 1)
-                    intTyp.MoveTowardsOpponent(character, target);
+                    intTyp.MoveTowardsOpponent(character, target,intTyp.getGamePanel());
             }
         }
     }

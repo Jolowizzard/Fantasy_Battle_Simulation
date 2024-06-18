@@ -8,6 +8,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.util.ArrayList;
 
 import javax.swing.JPanel;
 
@@ -43,6 +44,7 @@ public class GamePanel extends JPanel implements Runnable{
 
     //gui.Entity
     Hero hero = new Hero(this);
+    public ArrayList<Dead> deads = new ArrayList<>();
 
     //Game State
     public int gameState;
@@ -50,8 +52,10 @@ public class GamePanel extends JPanel implements Runnable{
     public final int playState = 1;
     public final int pauseState = 2;
     public boolean stop = false;
+    public LogWindow logWindow;
+    public void initializeDeads(){
 
-
+    }
     public String getMapName() {
         return mapName;
     }
@@ -65,6 +69,7 @@ public class GamePanel extends JPanel implements Runnable{
         this.setDoubleBuffered(true);
         this.addKeyListener(keyH);
         this.setFocusable(true);
+        logWindow = new LogWindow();
     }
     public void stopGamePanel(){
         stop = true;
@@ -108,6 +113,7 @@ public class GamePanel extends JPanel implements Runnable{
                 if (simulation == null) {
                     simulation = new Simulation(this, mapName, TeamCreator.teamYellow, TeamCreator.teamPurple);
                     tileM.lodaMap();
+                    logWindow.setVisible(true);
                     new Thread(simulation).start();
                 }
             }
@@ -121,6 +127,9 @@ public class GamePanel extends JPanel implements Runnable{
        /* Simulation simulation = new Simulation(this, MAPtable.mapName, TeamCreator.teamYellow,TeamCreator.teamPurple);
         simulation.run();
         System.out.println("Out of while");*/
+    }
+    public void logEvent(String message) {
+        logWindow.appendLog(message);
     }
     public void update(){
 

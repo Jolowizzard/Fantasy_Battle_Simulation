@@ -10,7 +10,7 @@ import simulationsetup.Scribe;
 import java.util.ArrayList;
 
 public class MovesAndPaths {
- public static void Move(characters.Character character, ArrayList<Tile> locations){
+ public static void Move(characters.Character character, ArrayList<Tile> locations,GamePanel gamePanel){
         int movement = character.getMovement()-character.getInventory().getCurrentArmour().getMSReduction();
         if(movement<=0)
             return;
@@ -37,7 +37,7 @@ public class MovesAndPaths {
      }catch (Exception e){
          e.printStackTrace();
      }
-
+    gamePanel.logEvent(character.getName()+ " Moves to " + location.col + " " + location.row);
      Scribe.addLog(character.getName()+ " Moves to " + location.col + " " + location.row);
         MAPtable.changeLocation(character,location);
     }

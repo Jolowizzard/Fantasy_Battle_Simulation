@@ -53,18 +53,6 @@ public class Simulation implements Runnable{
                 BiggestTeamSize = teamPurple.getTeam().size();
             }
 
-            for (int col = 0; col < 16; col++) {
-                for (int row = 0; row < 16; row++) {
-                    if (MAPtable.Map[col][row].solid) {
-                        System.out.print("\u001B[47m");
-                        System.out.print("1 ");
-                    } else {
-                        System.out.print("\u001B[40m");
-                        System.out.print("0 ");
-                    }
-                }
-                System.out.println();
-            }
             //preparing stack order . This order is permanent for the rest of the simulation and can not be changed
             for (int i = 0; i < BiggestTeamSize; i++) {
                 if (i < teamPurple.getTeam().size()) {
@@ -72,11 +60,14 @@ public class Simulation implements Runnable{
                     //Final steps in preparing intelligence
                     teamPurple.getTeam().get(i).getIntType().setEnemies(teamYellow);
                     teamPurple.getTeam().get(i).getIntType().setAllays(teamPurple);
+                    teamPurple.getTeam().get(i).getIntType().setGamePanel(gamePanel);
                 }
                 if (i < teamYellow.getTeam().size()) {
                     stack.add(teamYellow.getTeam().get(i));
+
                     teamYellow.getTeam().get(i).getIntType().setEnemies(teamPurple);
                     teamYellow.getTeam().get(i).getIntType().setAllays(teamYellow);
+                    teamYellow.getTeam().get(i).getIntType().setGamePanel(gamePanel);
                 }
             }
             //Some simulation setup
@@ -91,6 +82,7 @@ public class Simulation implements Runnable{
 
             //placing characters on map
             stack.forEach(character -> MAPtable.placeCharacterOnMap(character.getPosition()));
+
             while (!oneTeamWon) {
                 currentTime = System.nanoTime();
 
@@ -104,23 +96,27 @@ public class Simulation implements Runnable{
                 //Performing turns
                 Thread.sleep(1000);
                 for (int i = 0; i < stack.size(); i++) {
+                    gamePanel.logEvent(stack.get(i).getName() + " performs turn");
                     Scribe.addLog(stack.get(i).getName() + " performs turn");
                     Thread.sleep(500);
                     stack.get(i).getIntType().PerformTurn();
+                    gamePanel.logEvent(".......");
                     Scribe.addLog(".......");
                     Thread.sleep(500);
                     System.out.println(stack.get(i).getCurrentHp());
                 }
                 //VictoryCheck
                 if (!teamYellow.CheckIfTeamIsTeamAlive()) {
-                    Scribe.addLog("Team Yellow wins");
                     setOneTeamWon(true);
+                    Scribe.addLog("Team Yellow wins");
+                    gamePanel.logEvent("Team Yellow wins");
                     gamePanel.stopGamePanel();
                     //System.out.printf("Team A won");
                 }
                 if (!teamPurple.CheckIfTeamIsTeamAlive()) {
                     setOneTeamWon(true);
                     Scribe.addLog("Team Purple wins");
+                    gamePanel.logEvent("Team Purple wins");
                     gamePanel.stopGamePanel();
                     //System.out.printf("Team B won");
                 }

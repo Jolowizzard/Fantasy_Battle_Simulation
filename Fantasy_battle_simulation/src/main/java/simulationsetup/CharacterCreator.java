@@ -36,13 +36,17 @@ import static map.MAPtable.Map;
 public class CharacterCreator {
 
     private int whichteam = 0;
-    int SavedPositions = 0;
+    private int  SavedPositions = 0;
 
     private int purplesaved = 0;
     private int yellowsaved = 0;
 
     private int coordX;
     private int coordY;
+
+    public int getSavedPositions() {
+        return SavedPositions;
+    }
 
     Tile TempTile = new Tile(16,16);
    private int CounterId = 99;
@@ -221,10 +225,10 @@ public class CharacterCreator {
             } else if (characterStats[i].equals("Assassin")) {
                 Character assassin = new Assassin(secoundMove);
 
-                createRepresentation(assassin,"Assassin",gamePanel);
+                createRepresentation(assassin,"Assasin",gamePanel);
 
                 assassin.setMainClass(characterType);
-                assassin.setSubClass("Assassin");
+                assassin.setSubClass("Assasin");
 
                 setCharactersStatsFromString(assassin, characterStats, ++i);
                 assassin.setInventory(inventory);
@@ -340,7 +344,7 @@ public class CharacterCreator {
 
 
     //creates character with inventory choosen via GUI
-    public Character CharacterCreation(Tile ChoosenTile, GamePanel gamePanel)
+    public Character CharacterCreation(Tile ChoosenTile,GamePanel gamePanel)
     {
         Character error = new Knight();
         if(getKnight()==true)
