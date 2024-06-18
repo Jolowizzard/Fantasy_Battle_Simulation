@@ -20,6 +20,11 @@ public abstract class Rogue extends characters.Character {
         SecondMove = false;
         setMainClass("Rogue");
     }
+    public Rogue(int Id, String Name, InteligenceType inteligenceType, Inventory inventory) {
+        super(Id, Name, inteligenceType, inventory);
+        SecondMove = false;
+        setMainClass("Rouge");
+    }
     public Rogue(){};
     public Rogue(boolean secondMove){
         this.SecondMove = secondMove;

@@ -25,8 +25,8 @@ public class Wizard extends Mage {
         setSubClass("Wizard");
 
     }
-    public Wizard(int CritChance, int CritValue, GamePanel gamePanel){
-        super(CritChance,CritValue,gamePanel);
+    public Wizard(int Id, String Name, InteligenceType inteligenceType, Inventory inventory){
+        super(Id,Name,inteligenceType,inventory);
         setRace("Human");
         setMaxHp(110);
         setCurrentHp(110);
