@@ -14,7 +14,7 @@ public class Fists extends Weapon{
         setAccuracy(100);
         setMagicDamage(0);
         setMagickWeapon(false);
-        setPhisicalDamage(10);
+        setPhisicalDamage(20);
         setRange(1);
     }
 
@@ -23,7 +23,7 @@ public class Fists extends Weapon{
 
         ArrayList<Integer> damageTypes = new ArrayList<>();
         damageTypes.add(0);
-
+        damageTypes.add(getPhisicalDamage() + user.getStrength()/10);
 
         return damageTypes;
     }

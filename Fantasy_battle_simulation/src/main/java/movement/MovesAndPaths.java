@@ -22,7 +22,7 @@ public class MovesAndPaths {
             }catch (Exception e){
                 e.printStackTrace();
             }
-            location = locations.get((movement-1)-(movement-locations.size()));//Stands next to the target
+           if((movement-1)-(movement-locations.size())>=0){location = locations.get((movement-1)-(movement-locations.size()));}//Stands next to the target
         }
         else {
             try {
