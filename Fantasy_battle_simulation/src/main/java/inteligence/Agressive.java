@@ -49,7 +49,7 @@ public class Agressive extends InteligenceType {
         }
         if(readyToFight){
             if(!checkIfEnemyIsInRange()){
-                MoveTowardsOpponent(character,target);
+                MoveTowardsOpponent(character,target,gamePanel);
                 if(character.getMainClass().equals("Rogue") && !checkIfEnemyIsInRange()){
                     Rogue rogue = (Rogue) character;
                     boolean acitveSecondMove = rogue.getSecondMove();
@@ -75,7 +75,7 @@ public class Agressive extends InteligenceType {
                     System.out.println(character.getName() + ": Enemy in range, ready to attack");
                     combat.BeginCombat();
                 } else {
-                    MoveTowardsOpponent(character,target);
+                    MoveTowardsOpponent(character,target,gamePanel);
                     if (character.getInventory().getCurrentWeapon().canAttack(character, target)) {
                         target.getIntType().setInCombat();
                         Combat combat = new Combat(character,target);

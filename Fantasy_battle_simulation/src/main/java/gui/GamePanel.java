@@ -51,6 +51,8 @@ public class GamePanel extends JPanel implements Runnable{
     public final int pauseState = 2;
     public boolean stop = false;
 
+    private LogWindow logWindow;
+
 
     public String getMapName() {
         return mapName;
@@ -65,6 +67,7 @@ public class GamePanel extends JPanel implements Runnable{
         this.setDoubleBuffered(true);
         this.addKeyListener(keyH);
         this.setFocusable(true);
+        logWindow = new LogWindow();
     }
     public void stopGamePanel(){
         stop = true;
@@ -108,6 +111,7 @@ public class GamePanel extends JPanel implements Runnable{
                 if (simulation == null) {
                     simulation = new Simulation(this, mapName, TeamCreator.teamYellow, TeamCreator.teamPurple);
                     tileM.lodaMap();
+                    logWindow.setVisible(true);
                     new Thread(simulation).start();
                 }
             }
@@ -132,6 +136,10 @@ public class GamePanel extends JPanel implements Runnable{
             //nothing
         }
 
+    }
+
+    public void logEvent(String message) {
+        logWindow.appendLog(message);
     }
     public void paintComponent(Graphics g) {
 

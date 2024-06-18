@@ -72,11 +72,13 @@ public class Simulation implements Runnable{
                     //Final steps in preparing intelligence
                     teamPurple.getTeam().get(i).getIntType().setEnemies(teamYellow);
                     teamPurple.getTeam().get(i).getIntType().setAllays(teamPurple);
+                    teamPurple.getTeam().get(i).getIntType().setGamePanel(gamePanel);
                 }
                 if (i < teamYellow.getTeam().size()) {
                     stack.add(teamYellow.getTeam().get(i));
                     teamYellow.getTeam().get(i).getIntType().setEnemies(teamPurple);
                     teamYellow.getTeam().get(i).getIntType().setAllays(teamYellow);
+                    teamYellow.getTeam().get(i).getIntType().setGamePanel(gamePanel);
                 }
             }
             //Some simulation setup
@@ -104,9 +106,11 @@ public class Simulation implements Runnable{
                 //Performing turns
                 Thread.sleep(1000);
                 for (int i = 0; i < stack.size(); i++) {
+                    gamePanel.logEvent(stack.get(i).getName() + " performs turn");
                     Scribe.addLog(stack.get(i).getName() + " performs turn");
                     Thread.sleep(500);
                     stack.get(i).getIntType().PerformTurn();
+                    gamePanel.logEvent(". . . . . . .");
                     Scribe.addLog(".......");
                     Thread.sleep(500);
                     System.out.println(stack.get(i).getCurrentHp());
@@ -115,12 +119,14 @@ public class Simulation implements Runnable{
                 if (!teamYellow.CheckIfTeamIsTeamAlive()) {
                     Scribe.addLog("Team Yellow wins");
                     setOneTeamWon(true);
+                    gamePanel.logEvent("Team Yellow wins");
                     gamePanel.stopGamePanel();
                     //System.out.printf("Team A won");
                 }
                 if (!teamPurple.CheckIfTeamIsTeamAlive()) {
                     setOneTeamWon(true);
                     Scribe.addLog("Team Purple wins");
+                    gamePanel.logEvent("Team Purple wins");
                     gamePanel.stopGamePanel();
                     //System.out.printf("Team B won");
                 }
