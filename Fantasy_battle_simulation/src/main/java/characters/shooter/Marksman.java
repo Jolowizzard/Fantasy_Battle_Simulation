@@ -5,37 +5,49 @@ import inteligence.InteligenceType;
 import inventory.Inventory;
 import map.Tile;
 
+/**
+ * shooter type marksman
+ */
 public class Marksman extends Shooter {
     public Marksman(int Id, String Name, String Race, int MaxHp, int CurrentHp, int Strength, int Dexterity, int Inteligence, int Movement, float DodgeChance, Inventory inventory, InteligenceType IntType, boolean IsAlive, int CritChance, int CritValue, Tile Position){
         super(Id,Name,Race,MaxHp,CurrentHp,Strength,Dexterity,Inteligence,Movement,DodgeChance,inventory,IntType,IsAlive,CritChance,CritValue,Position);
     }
     public Marksman(int Id, String Name, InteligenceType inteligenceType, Tile Position, Inventory inventory){
         super(Id,Name,inteligenceType,Position,inventory);
-        setSubClass("Marksman");
         setRace("Human");
-        setMaxHp(80);
-        setCurrentHp(80);
+        setMaxHp(100);
+        setCurrentHp(100);
         setStrength(10);
-        setDexterity(30);
-        setIntelignece(10);
-        setMovement(4);
+        setDexterity(16);
+        setIntelignece(12);
+        setMovement(3);
         setDodgeChance(10);
-        setCritChance(5);
+        setCritChance(10);
         setCritValue(50);
+        setSubClass("Marksman");
+
     }
+
+    /**
+     * default constructor of marksman
+     * @param Id
+     * @param Name
+     * @param inteligenceType
+     * @param inventory
+     */
     public Marksman(int Id, String Name, InteligenceType inteligenceType, Inventory inventory){
         super(Id,Name,inteligenceType,inventory);
-        setSubClass("Marksman");
         setRace("Human");
-        setMaxHp(80);
-        setCurrentHp(80);
+        setMaxHp(100);
+        setCurrentHp(100);
         setStrength(10);
-        setDexterity(30);
-        setIntelignece(10);
-        setMovement(4);
+        setDexterity(16);
+        setIntelignece(12);
+        setMovement(3);
         setDodgeChance(10);
-        setCritChance(5);
+        setCritChance(10);
         setCritValue(50);
+        setSubClass("Marksman");
     }
     public Marksman(int CritChance, int CritValue){
         this.CritChance = CritChance;

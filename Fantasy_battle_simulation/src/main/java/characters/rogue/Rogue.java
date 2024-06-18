@@ -7,6 +7,9 @@ import map.Tile;
 
 import java.math.RoundingMode;
 
+/**
+ * character type rogue
+ */
 public abstract class Rogue extends characters.Character {
     private boolean SecondMove;
 
@@ -15,6 +18,15 @@ public abstract class Rogue extends characters.Character {
         this.SecondMove = SecondMove;
         setMainClass("Rogue");
     }
+
+    /**
+     * default constructor of a rogue
+     * @param Id
+     * @param Name
+     * @param inteligenceType
+     * @param Position
+     * @param inventory
+     */
     public Rogue(int Id, String Name, InteligenceType inteligenceType, Tile Position, Inventory inventory) {
         super(Id, Name, inteligenceType, Position, inventory);
         SecondMove = false;
@@ -28,6 +40,11 @@ public abstract class Rogue extends characters.Character {
         return SecondMove;
     }
     public void setSecondMove(boolean secondMove){this.SecondMove = secondMove;}
+
+    /**
+     * method performs second move during characters turn (rogue passive)
+     * @param wantsToAttack
+     */
     public void performSecondMove(boolean wantsToAttack){
         InteligenceType intTyp = getIntType();
 

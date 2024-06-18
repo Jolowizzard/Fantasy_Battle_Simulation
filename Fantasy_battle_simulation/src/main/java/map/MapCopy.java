@@ -11,6 +11,16 @@ public class MapCopy {
     Tile[][] tiles = new Tile[maxCol][maxRow];
     ArrayList<Tile> checked = new ArrayList<>();
     ArrayList<Tile> open = new ArrayList<>();
+
+
+    /**
+     * makes copy of a map
+     * @param startTile
+     * @param destinationTile
+     * @param map
+     * @param maxCol
+     * @param maxRow
+     */
     public MapCopy(Tile startTile,Tile destinationTile,Tile [][] map,int maxCol,int maxRow){
         Clone(map);
         this.startTile = startTile;
@@ -18,6 +28,11 @@ public class MapCopy {
         this.maxCol = maxCol;
         this.maxRow = maxRow;
     }
+
+    /**
+     * clones Tiles of a map
+     * @param map
+     */
     private void Clone(Tile [][] map){
         for(int i = 0;i<maxCol;i++){
             for(int j =0 ;j<maxRow;j++){
@@ -29,6 +44,11 @@ public class MapCopy {
             }
         }
     }
+
+    /**
+     *
+     * @param tile
+     */
     public void GetCost(Tile tile){
         int xDis = Math.abs(tile.col - startTile.col);
         int yDis = Math.abs(tile.row - startTile.col);

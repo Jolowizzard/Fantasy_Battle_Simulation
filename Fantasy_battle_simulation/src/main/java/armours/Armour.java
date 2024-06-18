@@ -8,6 +8,14 @@ public abstract class Armour {
     private int magicalProtection;
     private int MSReduction;//Amount of MS reducted by wearing an armour
 
+
+    /**
+     * default constructor of all armours
+     * @param NameId
+     * @param physicalProtection
+     * @param magicalProtection
+     * @param MSReduction
+     */
     public Armour(int NameId,int physicalProtection,int magicalProtection,int MSReduction){
         this.NameId=NameId;
         this.physicalProtection=physicalProtection;

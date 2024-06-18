@@ -6,10 +6,17 @@ import characters.Character;
 
 import java.util.ArrayList;
 
+/**
+ * Weapon type sword
+ */
 public class Sword extends Weapon {
     public Sword(String Name, int PhisicalDamage, int MagicDamage, int Range, int Accuracy, boolean Hands,boolean magickDamage){
         super(Name,PhisicalDamage,MagicDamage,Range,Accuracy,Hands,magickDamage);
     }
+
+    /**
+     * default constructor of sword
+     */
     public Sword(){
         setAccuracy(100);
         setHands(false);
@@ -23,11 +30,15 @@ public class Sword extends Weapon {
     public void SetValues() {
     }
     @Override
+
+    /**
+     * returns damage types of sword
+     */
     public ArrayList<Integer> attack(Character user) {
         ArrayList<Integer> damageTypes = new ArrayList<>();
         //Now we use only two damage types - magical and physical
         damageTypes.add(0);
-        damageTypes.add(getPhisicalDamage() + user.getStrength()/10);
+        damageTypes.add(getPhisicalDamage() + user.getStrength()/5);
         if(getMagickWeapon()) {
             damageTypes.add(1);
             damageTypes.add(getMagicDamage() + user.getIntelignece());
@@ -35,6 +46,9 @@ public class Sword extends Weapon {
         return damageTypes;
     }
     @Override
+    /**
+     * checks if character can attack target with sword
+     */
     public boolean canAttack(Character character, Character target){
         double distance;
         //calculating euclidean distance between to characters

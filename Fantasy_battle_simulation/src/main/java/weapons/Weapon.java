@@ -4,6 +4,10 @@ import characters.Character;
 
 import java.util.ArrayList;
 
+
+/**
+ * abstract class of weapons
+ */
 public abstract class Weapon {
     private String Name;
     private int PhisicalDamage;
@@ -12,6 +16,18 @@ public abstract class Weapon {
     private int Accuracy;
     private boolean MagicWeapon; // 1 - weapon is magical and deals magic damage ; 0 - weapon isnt magical and deals physical damage
     private boolean Hands;// 0 equals 1 handed weapon and 1 equals 2 handed weapon
+
+
+    /**
+     * default construcor of all weapons
+     * @param Name
+     * @param PhisicalDamage
+     * @param MagicDamage
+     * @param Range
+     * @param Accuracy
+     * @param Hands
+     * @param MagickWeapon
+     */
     Weapon(String Name,int PhisicalDamage,int MagicDamage,int Range,int Accuracy,boolean Hands,boolean MagickWeapon){
         this.Name=Name;
         this.PhisicalDamage=PhisicalDamage;

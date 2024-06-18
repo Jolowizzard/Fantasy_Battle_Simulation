@@ -153,6 +153,11 @@ public class InventoryCreator {
 
     }
 
+
+    /**
+     * adds choosen armor via gui to inventory
+     * @param inventory
+     */
     public void AddArmorToInventory(Inventory inventory) {
         if (light == true) {
             Armour lightArmour = new LightArmour();
@@ -169,11 +174,17 @@ public class InventoryCreator {
         }
     }
 
+
+    /**
+     * adds choosen weapons via gui to inventory
+     * @param inventory
+     */
     public void AddWeaponsToInventory(Inventory inventory) {
 
         if (fists == true) {
             Weapon fists = new Fists();
             inventory.addWeapon(fists);
+            System.out.println("dodano piachy");
         }
         if (sword == true) {
             Weapon ssword = new Sword();
@@ -197,6 +208,11 @@ public class InventoryCreator {
         }
     }
 
+
+    /**
+     * adds choosen items via gui to inventory
+     * @param inventory
+     */
     public void AddItems(Inventory inventory) {
         if (swordshield == true) {
             Shield shield = new Shield();

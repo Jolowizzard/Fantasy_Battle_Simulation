@@ -9,6 +9,9 @@ import utils.RandomNumber;
 
 import java.security.Provider;
 
+/**
+ * character type Mage
+ */
 public abstract class Mage extends characters.Character {
     private int MagicCritChance;
     private int MagicCritValue;
@@ -18,6 +21,16 @@ public abstract class Mage extends characters.Character {
         this.MagicCritValue=MagicCritValue;
         setMainClass("Mage");
     }
+
+
+    /**
+     * default constructor of mage
+     * @param Id
+     * @param Name
+     * @param inteligenceType
+     * @param Position
+     * @param inventory
+     */
     Mage(int Id, String Name, InteligenceType inteligenceType, Tile Position, Inventory inventory){
         super(Id,Name,inteligenceType,Position,inventory);
         MagicCritChance = 0;
@@ -36,7 +49,18 @@ public abstract class Mage extends characters.Character {
     public int getMagicCritValue(){
         return MagicCritValue;
     }
+    public void setMagicCritChance(int magicCritChance) {
+        MagicCritChance = magicCritChance;
+    }
+    public void setMagicCritValue(int magicCritValue) {
+        MagicCritValue = magicCritValue;
+    }
 
+
+    /**
+     * returns value of magiccrit of a Mage
+     * @return
+     */
     public int passiveMagicCrit(){
     RandomNumber rand = new RandomNumber();
         if(rand.generateRandomNumber()<=MagicCritChance) {

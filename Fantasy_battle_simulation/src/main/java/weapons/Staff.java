@@ -6,10 +6,18 @@ import map.Tile;
 
 import java.util.ArrayList;
 
+
+/**
+ * Weapon type staff
+ */
 public class Staff extends Weapon{
     public Staff(String Name,int PhisicalDamage,int MagicDamage,int Range,int Accuracy,boolean Hands,boolean MagickWeapon){
         super(Name,PhisicalDamage,MagicDamage,Range,Accuracy,Hands,MagickWeapon);
     }
+
+    /**
+     * default creator of Staff
+     */
     public Staff(){
         setHands(true);
         setAccuracy(100);
@@ -20,6 +28,9 @@ public class Staff extends Weapon{
         setMagickWeapon(true);
     }
     @Override
+    /**
+     * returns damagetypes of staff
+     */
     public ArrayList<Integer> attack(Character user) {
             ArrayList<Integer> damageTypes = new ArrayList<>();
             //Now we use only two damage types - magical and physical
@@ -32,6 +43,9 @@ public class Staff extends Weapon{
             return damageTypes;
     }
     @Override
+    /**
+     * returns if character can attack target with staff
+     */
     public boolean canAttack(Character character, Character target){
         Tile startTile = character.getPosition();
         Tile finish = target.getPosition();

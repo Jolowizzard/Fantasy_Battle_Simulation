@@ -85,6 +85,14 @@ public class CharacterCreator {
         //return intelligence;
         return null;
     }
+
+    /**
+     * creates new character from given String (used to read from file)
+     * @param characterStats
+     * @param inventoryStats
+     * @param gamePanel
+     * @return
+     */
     public Character createCharacterFromString(String [] characterStats, String [] inventoryStats, GamePanel gamePanel){
         Inventory inventory = new Inventory();
         setInventoryStatsFromString(inventory,inventoryStats);
@@ -235,6 +243,14 @@ public class CharacterCreator {
         }
         return null;
     }
+
+
+    /**
+     * sets characters stats from String(used to read stats from file)
+     * @param character
+     * @param characterStats
+     * @param currentIndex
+     */
     private void setCharactersStatsFromString(Character character,String [] characterStats,int currentIndex){
 
         character.setName(characterStats[currentIndex++]);
@@ -259,11 +275,24 @@ public class CharacterCreator {
             character.getIntType().setCharacter(character);
         }
     }
+
+    /**
+     * assings graphic representation to a character
+     * @param character
+     * @param name
+     * @param gamePanel
+     */
     private void createRepresentation(Character character,String name,GamePanel gamePanel){
         Hero characterRepresentation = new Hero(gamePanel);
         characterRepresentation.setHeroType(name);
         character.setRepresentation(characterRepresentation);
     }
+
+    /**
+     * sets inventory from String (used to read  Inventory form file)
+     * @param inventory
+     * @param inventoryString
+     */
     private void setInventoryStatsFromString(Inventory inventory,String [] inventoryString){
         for(int i = 0 ;i< inventoryString.length;i++){
             if(inventoryString[i].equals("Weapons")){
@@ -289,6 +318,7 @@ public class CharacterCreator {
             }
         }
     }
+
     private Weapon createWeapon(String name){
         switch (name) {
             case "Sword" -> {
@@ -338,7 +368,12 @@ public class CharacterCreator {
         return null;
     }
 
-
+    /**
+     * Creates new character of a type and inventory set via gui
+     * @param ChoosenTile
+     * @param gamePanel
+     * @return
+     */
     //creates character with inventory choosen via GUI
     public Character CharacterCreation(Tile ChoosenTile, GamePanel gamePanel)
     {
@@ -404,7 +439,11 @@ public class CharacterCreator {
     }
 
 
-    //adds hero to purple team
+    /**
+     * adds choosen hero to team purple
+     * @param teampurple
+     * @param gamePanel
+     */
     public void SaveHerotoPurple(Team teampurple, GamePanel gamePanel)
     {
         Character character = CharacterCreation(TempTile,gamePanel);
@@ -412,7 +451,11 @@ public class CharacterCreator {
         teampurple.addCharacter(character);
     }
 
-
+    /**
+     * adds chosem hero to team yellow
+     * @param teamyellow
+     * @param gamePanel
+     */
     //adds hero to yellow team
     public void SaveHerotoYellow(Team teamyellow, GamePanel gamePanel)
     {
@@ -436,23 +479,36 @@ public void SetCharacterBooleansToFalse()
 }
 
 
-//changes character position to new Tile
-public void SavePosition(Character character,int coordX, int coordY)
+
+
+    /**
+     * saves characters position as a new Tile
+     * @param character
+     * @param coordX
+     * @param coordY
+     */
+    public void SavePosition(Character character,int coordX, int coordY)
 {
     Tile temp = new Tile(coordY,coordX);
     character.setPosition(temp);
     character.getRepresentation().setPosition(coordY,coordX);
+    System.out.println(character.getInventory().getWeapons().get(0).getName());
 }
 
 
-//saves all characters starting Tiles
-public void SaveAllCharactersPositions(int coordX, int coordY, GamePanel gamePanel) {
+    /**
+     * saves all created characters(via gui) new positions
+     * @param coordX
+     * @param coordY
+     * @param gamePanel
+     */
+    public void SaveAllCharactersPositions(int coordX, int coordY, GamePanel gamePanel) {
 
     if (SavedPositions < TeamCreator.teamYellow.getTeam().size() + TeamCreator.teamPurple.getTeam().size()) {
         if (purplesaved < TeamCreator.teamPurple.getTeam().size())
         {
             SavePosition(TeamCreator.teamPurple.getTeam().get(purplesaved),coordX, coordY );
-            //System.out.println(TeamCreator.teamPurple.getTeam().get(purplesaved).getName()+"   "+TeamCreator.teamPurple.getTeam().get(purplesaved).getPosition().row+"   "+TeamCreator.teamPurple.getTeam().get(purplesaved).getPosition().col);
+            System.out.println(TeamCreator.teamPurple.getTeam().get(purplesaved).getName()+"  row; "+TeamCreator.teamPurple.getTeam().get(purplesaved).getPosition().row+" col:  "+TeamCreator.teamPurple.getTeam().get(purplesaved).getPosition().col);
             System.out.println(TeamCreator.teamPurple.getTeam().get(purplesaved).getName());
             //System.out.println(TeamCreator.teamPurple.getTeam().get(purplesaved).getRepresentation().getHeroType());
             Map[coordX][coordY].SetAsOccupied();
@@ -464,7 +520,7 @@ public void SaveAllCharactersPositions(int coordX, int coordY, GamePanel gamePan
         else if (yellowsaved < TeamCreator.teamYellow.getTeam().size())
         {
             SavePosition(TeamCreator.teamYellow.getTeam().get(yellowsaved),coordX, coordY );
-            //System.out.println(TeamCreator.teamPurple.getTeam().get(purplesaved).getName()+"   "+TeamCreator.teamPurple.getTeam().get(purplesaved).getPosition().row+"   "+TeamCreator.teamPurple.getTeam().get(purplesaved).getPosition().col);
+            System.out.println(TeamCreator.teamYellow.getTeam().get(yellowsaved).getName()+"  row; "+TeamCreator.teamYellow.getTeam().get(yellowsaved).getPosition().row+" col:  "+TeamCreator.teamYellow.getTeam().get(yellowsaved).getPosition().col);
             System.out.println(TeamCreator.teamYellow.getTeam().get(yellowsaved).getName());
             //System.out.println(TeamCreator.teamYellow.getTeam().get(yellowsaved).getRepresentation().getHeroType());
             Map[coordX][coordY].SetAsOccupied();
@@ -582,6 +638,7 @@ public void SaveAllCharactersPositions(int coordX, int coordY, GamePanel gamePan
         inventory.AddWeaponsToInventory(inv);
         inventory.AddArmorToInventory(inv);
         inventory.AddItems(inv);
+        System.out.println(newThief.getInventory().getWeapons().get(0).getName());
         createRepresentation(newThief,"Thief",gamePanel);
         return newThief;
     }

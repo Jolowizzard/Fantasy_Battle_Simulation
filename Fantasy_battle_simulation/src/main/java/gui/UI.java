@@ -384,13 +384,13 @@ public class UI {
 
         if(MAPtable.Map[gp.ui.commandRow][gp.ui.commandCol].occupied == true || MAPtable.Map[gp.ui.commandRow][gp.ui.commandCol].solid == true){
             g2.drawImage(wrong, commandCol*gp.tileSize, commandRow*gp.tileSize, gp.tileSize, gp.tileSize, null);
-            gp.hero.updatePositon(commandCol, commandRow);
+            gp.hero.setPosition(commandCol, commandRow);
             gp.hero.updateType(name);
             gp.hero.draw(g2);
         }
         else{
             g2.drawImage(sel, commandCol*gp.tileSize, commandRow*gp.tileSize, gp.tileSize, gp.tileSize, null);
-            gp.hero.updatePositon(commandCol, commandRow);
+            gp.hero.setPosition(commandCol, commandRow);
             gp.hero.updateType(name);
             gp.hero.draw(g2);
         }

@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+
+
 abstract public class Character {
     private int Id;
     private String Name;
@@ -32,6 +34,9 @@ abstract public class Character {
     private Hero representation;
     private ArrayList<Integer> damageTypesBlocked;
     private int damageTaken = 0;
+
+
+
     public Character(int Id, String Name, String Race, int MaxHp, int CurrentHp, int Strength, int Dexterity, int Inteligence, int Movement, float DodgeChance, Inventory inventory, InteligenceType IntType, boolean IsAlive, Tile Position){
         this.Id=Id;
         this.Name=Name;
@@ -48,6 +53,8 @@ abstract public class Character {
         this.IsAlive=IsAlive;
         this.Position=Position;
     }
+
+
     public Character(int Id, String Name, InteligenceType inteligenceType, Tile Position, Inventory inventory){
         this.Id = Id;
         this.Position=Position;
@@ -70,6 +77,10 @@ abstract public class Character {
         this.IntType = inteligenceType;
         this.inventory = inventory;
     }
+
+    /**
+     * default construcor of all characters
+     */
     public Character() {
         this.Id = 0;
         this.Name = null;
@@ -89,6 +100,12 @@ abstract public class Character {
         this.temporalArmour = 0;
         this.Position = null;
     }
+
+
+    /**
+     * returns representation of a character as a graphic
+     * @param hero
+     */
     public void setRepresentation(Hero hero){
         this.representation = hero;
     }

@@ -8,6 +8,9 @@ import utils.RandomNumber;
 
 import java.awt.image.CropImageFilter;
 
+/**
+ * character type shooter
+ */
 public abstract class Shooter extends characters.Character {
     protected int CritChance;
     protected int CritValue;
@@ -17,6 +20,15 @@ public abstract class Shooter extends characters.Character {
         this.CritValue=CritValue;
         setMainClass("Shooter");
     }
+
+    /**
+     * default cojnstructor of a shooter
+     * @param Id
+     * @param Name
+     * @param inteligenceType
+     * @param Position
+     * @param inventory
+     */
     public Shooter(int Id, String Name, InteligenceType inteligenceType, Tile Position, Inventory inventory){
         super(Id,Name,inteligenceType,Position,inventory);
         CritChance = 0;
@@ -38,6 +50,11 @@ public abstract class Shooter extends characters.Character {
     public int getCritValue(){
         return CritValue;
     }
+
+    /**
+     * returns crit value of Critattack (passive ability of shooter)
+     * @return
+     */
     public int passiveCrit(){
         RandomNumber rand = new RandomNumber();
         if(rand.generateRandomNumber()<=CritChance) {

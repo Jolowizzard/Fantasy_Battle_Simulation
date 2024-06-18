@@ -7,20 +7,33 @@ import weapons.Weapon;
 import combat.Combat;
 import java.util.ArrayList;
 import characters.*;
+
+
+/**
+ * Weapon type Bow
+ */
 public class Bow extends Weapon {
     public Bow(String Name, int PhisicalDamage, int MagicDamage, int Range, int Accuracy, boolean Hands,boolean magickWeapon){
         super(Name,PhisicalDamage,MagicDamage,Range,Accuracy,Hands,magickWeapon);
     }
+
+    /**
+     * constructor Bow
+     */
     public Bow(){
         setName("Bow");
         setHands(true);
-        setAccuracy(70);
+        setAccuracy(80);
         setRange(4);
         setMagicDamage(0);
         setMagickWeapon(false);
         setPhisicalDamage(10);
     }
     @Override
+
+    /**
+     * return damagetypes of Bow
+     */
     public ArrayList<Integer> attack(Character user) {
         ArrayList<Integer> damageTypes = new ArrayList<>();
         //Now we use only two damage types - magical and physical
@@ -33,6 +46,9 @@ public class Bow extends Weapon {
         return damageTypes;
     }
     @Override
+    /**
+     * chcecks if character can attack with a bow
+     */
     public boolean canAttack(Character character, Character target){
         Tile startTile = character.getPosition();
         Tile finish = target.getPosition();
@@ -69,7 +85,15 @@ public class Bow extends Weapon {
         }
         return true;
     }
-public Tile FindPlaceToAttackFrom(Character character, Character target){
+
+
+    /**
+     * finds place a character can attack target with a Bow
+     * @param character
+     * @param target
+     * @return
+     */
+    public Tile FindPlaceToAttackFrom(Character character, Character target){
      ArrayList <Tile> openTiles = new ArrayList<>();
      ArrayList <Tile> checkedTiles = new ArrayList<>();
      ArrayList<Tile> finalPath = new ArrayList<>();
@@ -132,6 +156,8 @@ public Tile FindPlaceToAttackFrom(Character character, Character target){
         /*return tile;*/
     return null;
     }
+
+
     private void GetCost(Tile tile, characters.Character character, characters.Character target){
         int xDis = Math.abs(tile.col - character.getPosition().col);
         int yDis = Math.abs(tile.row - character.getPosition().col);
