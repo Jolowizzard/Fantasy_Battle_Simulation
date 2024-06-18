@@ -4650,3 +4650,376 @@ Tobi performs turn
 Tobi Bleeds : 0
 .......
 Team Purple wins
+Knight99 performs turn
+Knight99 Bleeds : 0
+Knight99 Moves to 0 5
+.......
+Paladin95 performs turn
+Paladin95 Bleeds : 0
+Paladin95 Moves to 5 10
+.......
+Ranger98 performs turn
+Ranger98 Bleeds : 0
+Ranger98 Moves to 4 1
+.......
+Marksman94 performs turn
+Marksman94 Bleeds : 0
+.......
+Wizard97 performs turn
+Wizard97 Bleeds : 0
+.......
+Druid93 performs turn
+Druid93 Bleeds : 0
+.......
+Assassin96 performs turn
+Assassin96 Bleeds : 0
+Assassin96 Moves to 5 4
+.......
+Knight99 performs turn
+Knight99 Bleeds : 0
+Knight99 Moves to 0 7
+.......
+Paladin95 performs turn
+Paladin95 Bleeds : 0
+.......
+Ranger98 performs turn
+Ranger98 Bleeds : 0
+Ranger98 Moves to 5 1
+.......
+Marksman94 performs turn
+Marksman94 Bleeds : 0
+.......
+Wizard97 performs turn
+Wizard97 Bleeds : 0
+Wizard97 Moves to 2 3
+.......
+Druid93 performs turn
+Druid93 Bleeds : 0
+.......
+Assassin96 performs turn
+Assassin96 Bleeds : 0
+Assassin96 Moves to 5 6
+Assassin96 Moves to 3 6
+.......
+Knight99 performs turn
+Knight99 Bleeds : 0
+Knight99 Moves to 0 9
+.......
+Paladin95 performs turn
+Paladin95 Bleeds : 0
+Paladin95 Moves to 4 9
+.......
+Ranger98 performs turn
+Ranger98 Bleeds : 0
+Ranger98 Moves to 5 2
+.......
+Marksman94 performs turn
+Marksman94 Bleeds : 0
+.......
+Wizard97 performs turn
+Wizard97 Bleeds : 0
+Wizard97 Moves to 2 2
+.......
+Druid93 performs turn
+Druid93 Bleeds : 0
+.......
+Assassin96 performs turn
+Assassin96 Bleeds : 0
+Assassin96 Moves to 3 8
+Assassin96 Moves to 3 9
+Combat started:
+Assassin96 attacked Paladin95 with Dagger
+Passive Block succeeded
+Assassin96 used Dagger
+.......
+Knight99 performs turn
+Knight99 Bleeds : 0
+Knight99 Moves to 1 10
+.......
+Paladin95 performs turn
+Paladin95 Bleeds : 10
+Combat started:
+Paladin95 attacked Assassin96 with Sword
+Paladin95 used Sword
+.......
+Ranger98 performs turn
+Ranger98 Bleeds : 0
+Ranger98 Moves to 5 3
+.......
+Marksman94 performs turn
+Marksman94 Bleeds : 0
+.......
+Wizard97 performs turn
+Wizard97 Bleeds : 0
+Wizard97 Moves to 3 2
+.......
+Druid93 performs turn
+Druid93 Bleeds : 0
+.......
+Assassin96 performs turn
+Assassin96 Bleeds : 0
+Combat started:
+Assassin96 attacked Paladin95 with Dagger
+Passive Block succeeded
+Assassin96 used Dagger
+Assassin96 Moves to 2 10
+.......
+Knight99 performs turn
+Knight99 Bleeds : 0
+Knight99 Moves to 2 11
+.......
+Paladin95 performs turn
+Paladin95 Bleeds : 10
+Paladin95 Moves to 3 10
+Combat started:
+Paladin95 attacked Assassin96 with Sword
+Assassin96 dodged
+.......
+Ranger98 performs turn
+Ranger98 Bleeds : 0
+Ranger98 Moves to 5 4
+.......
+Marksman94 performs turn
+Marksman94 Bleeds : 0
+.......
+Wizard97 performs turn
+Wizard97 Bleeds : 0
+Wizard97 Moves to 3 1
+.......
+Druid93 performs turn
+Druid93 Bleeds : 0
+.......
+Assassin96 performs turn
+Assassin96 Bleeds : 0
+Combat started:
+Assassin96 attacked Paladin95 with Dagger
+Passive Block succeeded
+Assassin96 used Dagger
+.......
+Knight99 performs turn
+Knight99 Bleeds : 0
+Knight99 Moves to 2 13
+.......
+Paladin95 performs turn
+Paladin95 Bleeds : 10
+Combat started:
+Paladin95 attacked Assassin96 with Sword
+Paladin95 used Sword
+.......
+Ranger98 performs turn
+Ranger98 Bleeds : 0
+Ranger98 Moves to 5 5
+.......
+Marksman94 performs turn
+Marksman94 Bleeds : 0
+.......
+Wizard97 performs turn
+Wizard97 Bleeds : 0
+Wizard97 Moves to 4 1
+.......
+Druid93 performs turn
+Druid93 Bleeds : 0
+.......
+Assassin96 performs turn
+Assassin96 Bleeds : 0
+Combat started:
+Assassin96 attacked Paladin95 with Dagger
+Assassin96 used Dagger
+Assassin96 Moves to 2 12
+.......
+Knight99 performs turn
+Knight99 Bleeds : 0
+Knight99 Moves to 0 3
+.......
+Ranger98 performs turn
+Ranger98 Bleeds : 0
+Ranger98 Moves to 5 13
+.......
+Knight99 performs turn
+Knight99 Bleeds : 0
+Knight99 Moves to 1 5
+.......
+Ranger98 performs turn
+Ranger98 Bleeds : 0
+Ranger98 Moves to 5 12
+.......
+Knight99 performs turn
+Knight99 Bleeds : 0
+Knight99 Moves to 3 6
+.......
+Ranger98 performs turn
+Ranger98 Bleeds : 0
+Ranger98 Moves to 5 11
+.......
+Knight99 performs turn
+Knight99 Bleeds : 0
+Knight99 Moves to 3 9
+.......
+Ranger98 performs turn
+Ranger98 Bleeds : 0
+Ranger98 Moves to 5 10
+.......
+Knight99 performs turn
+Knight99 Bleeds : 0
+Knight99 Moves to 4 10
+Combat started:
+Knight99 attacked Ranger98 with Fists
+Ranger98 used Shield
+.......
+Ranger98 performs turn
+Ranger98 Bleeds : 0
+Combat started:
+Ranger98 attacked Knight99 with Sword
+Passive Block succeeded
+Ranger98 used Sword
+.......
+Knight99 performs turn
+Knight99 Bleeds : 0
+Combat started:
+Knight99 attacked Ranger98 with Fists
+Ranger98 used Shield
+.......
+Ranger98 performs turn
+Ranger98 Bleeds : 0
+Combat started:
+Ranger98 attacked Knight99 with Sword
+Passive Block succeeded
+Ranger98 used Sword
+.......
+Knight99 performs turn
+Knight99 Bleeds : 0
+Combat started:
+Knight99 attacked Ranger98 with Fists
+Ranger98 used Shield
+.......
+Ranger98 performs turn
+Ranger98 Bleeds : 0
+Combat started:
+Ranger98 attacked Knight99 with Sword
+Passive Block succeeded
+Ranger98 used Sword
+Passive Crit succeeded
+.......
+Knight99 performs turn
+Knight99 Bleeds : 0
+Combat started:
+Knight99 attacked Ranger98 with Fists
+Ranger98 dodged
+.......
+Ranger98 performs turn
+Ranger98 Bleeds : 0
+Combat started:
+Ranger98 attacked Knight99 with Sword
+Ranger98 used Sword
+.......
+Knight99 performs turn
+Knight99 Bleeds : 0
+Combat started:
+Knight99 attacked Ranger98 with Fists
+Knight99 used Fists
+.......
+Ranger98 performs turn
+Ranger98 Bleeds : 0
+Combat started:
+Ranger98 attacked Knight99 with Sword
+Ranger98 used Sword
+.......
+Knight99 performs turn
+Knight99 Bleeds : 0
+Combat started:
+Knight99 attacked Ranger98 with Fists
+Ranger98 used Shield
+.......
+Ranger98 performs turn
+Ranger98 Bleeds : 0
+Combat started:
+Ranger98 attacked Knight99 with Sword
+Passive Block succeeded
+Ranger98 used Sword
+.......
+Knight99 performs turn
+Knight99 Bleeds : 0
+Combat started:
+Knight99 attacked Ranger98 with Fists
+Ranger98 used Shield
+.......
+Ranger98 performs turn
+Ranger98 Bleeds : 0
+Combat started:
+Ranger98 attacked Knight99 with Sword
+Passive Block succeeded
+Ranger98 used Sword
+.......
+Knight99 performs turn
+Knight99 Bleeds : 0
+Combat started:
+Knight99 attacked Ranger98 with Fists
+Ranger98 used Shield
+.......
+Ranger98 performs turn
+Ranger98 Bleeds : 0
+Combat started:
+Ranger98 attacked Knight99 with Sword
+Ranger98 used Sword
+.......
+Knight99 performs turn
+Knight99 Bleeds : 0
+Combat started:
+Knight99 attacked Ranger98 with Fists
+Ranger98 used Shield
+.......
+Ranger98 performs turn
+Ranger98 Bleeds : 0
+Combat started:
+Ranger98 attacked Knight99 with Sword
+Passive Block succeeded
+Ranger98 used Sword
+.......
+Knight99 performs turn
+Knight99 Bleeds : 0
+Combat started:
+Knight99 attacked Ranger98 with Fists
+Ranger98 dodged
+.......
+Ranger98 performs turn
+Ranger98 Bleeds : 0
+Combat started:
+Ranger98 attacked Knight99 with Sword
+Knight99 dodged
+.......
+Knight99 performs turn
+Knight99 Bleeds : 0
+Combat started:
+Knight99 attacked Ranger98 with Fists
+Ranger98 used Shield
+.......
+Ranger98 performs turn
+Ranger98 Bleeds : 0
+Combat started:
+Ranger98 attacked Knight99 with Sword
+Ranger98 used Sword
+.......
+Knight99 performs turn
+Knight99 Bleeds : 0
+Combat started:
+Knight99 attacked Ranger98 with Fists
+Ranger98 used Shield
+.......
+Ranger98 performs turn
+Ranger98 Bleeds : 0
+Combat started:
+Ranger98 attacked Knight99 with Sword
+Ranger98 used Sword
+.......
+Knight99 performs turn
+Knight99 Bleeds : 0
+Combat started:
+Knight99 attacked Ranger98 with Fists
+Ranger98 used Shield
+.......
+Ranger98 performs turn
+Ranger98 Bleeds : 0
+Combat started:
+Ranger98 attacked Knight99 with Sword
+Ranger98 used Sword
+.......

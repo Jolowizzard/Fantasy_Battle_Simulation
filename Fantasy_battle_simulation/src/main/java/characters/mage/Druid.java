@@ -37,8 +37,8 @@ public class Druid extends Mage {
         setSubClass("Druid");
 
     }
-    public Druid(int Id, String Name, InteligenceType inteligenceType, Inventory inventory){
-        super(Id,Name,inteligenceType,inventory);
+    public Druid(int MagicCritChance, int MagicCritValue,GamePanel gamePanel){
+        super(MagicCritChance, MagicCritValue, gamePanel);
         setRace("Human");
         setMaxHp(150);
         setCurrentHp(150);
@@ -51,6 +51,9 @@ public class Druid extends Mage {
         setMagicCritValue(30);
         setSubClass("Druid");
     }
+
+
+
     public Druid(){}
 
 }

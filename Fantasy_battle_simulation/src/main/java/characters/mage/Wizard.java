@@ -38,8 +38,8 @@ public class Wizard extends Mage {
         setSubClass("Wizard");
 
     }
-    public Wizard(int Id, String Name, InteligenceType inteligenceType, Inventory inventory){
-        super(Id,Name,inteligenceType,inventory);
+    public Wizard(int MagicCritChance, int MagicCritValue,GamePanel gamePanel){
+        super(MagicCritChance, MagicCritValue,gamePanel);
         setRace("Human");
         setMaxHp(110);
         setCurrentHp(110);
@@ -53,5 +53,7 @@ public class Wizard extends Mage {
         setSubClass("Wizard");
         
     }
+
+
     public Wizard(){}
 }
