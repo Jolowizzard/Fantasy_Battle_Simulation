@@ -54,6 +54,8 @@ public class Tile {
     public void SetAsUnoccupied(){
         occupied = false;
     }
+
+
     public void SetAsChecked(){
         if(start == false && destination == false)
             checked=true;

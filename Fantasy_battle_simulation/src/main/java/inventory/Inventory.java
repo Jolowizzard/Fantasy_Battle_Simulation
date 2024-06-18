@@ -6,6 +6,9 @@ import weapons.Weapon;
 
 import java.util.ArrayList;
 
+/**
+ *   inventory consists of Weapons, Armours, Items
+ */
 public class Inventory {
     private Weapon CurrentWeapon;
     private Armour CurrentArmour;
@@ -13,11 +16,21 @@ public class Inventory {
     private ArrayList<Weapon> Weapons;
     private ArrayList<Armour> Armours;
     private ArrayList<Item> Items;
+
+    /**
+     * constructor of Inventory
+     */
     public Inventory(){
         Weapons = new ArrayList<>();
         Armours = new ArrayList<>();
         Items = new ArrayList<>();
     }
+
+    /**
+     * constructor of inventory
+     * @param Weapons
+     * @param Armours
+     */
     public Inventory(ArrayList<Weapon> Weapons,ArrayList<Armour> Armours){
        this.Weapons=Weapons;
        this.Armours=Armours;

@@ -6,6 +6,12 @@ import map.Tile;
 import java.util.ArrayList;
 
 public class FunctionForTests {
+    /**
+     * prints map
+     * @param start
+     * @param finish
+     * @param path
+     */
     static void PrintMap(Tile start, Tile finish, ArrayList<Tile> path){
         boolean printed=false;
         for(int i =0;i<16;i++){
