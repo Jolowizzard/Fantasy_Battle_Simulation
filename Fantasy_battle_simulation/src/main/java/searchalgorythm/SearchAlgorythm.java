@@ -5,6 +5,9 @@ import org.w3c.dom.Node;
 
 import java.util.ArrayList;
 
+/**
+ * used for pathfinding during simulation
+ */
 public class SearchAlgorythm {
     private int maxCol = 16;
     private int maxRow = 16;
@@ -18,6 +21,15 @@ public class SearchAlgorythm {
     ArrayList<Tile> checked = new ArrayList<>();
     ArrayList<Tile> open = new ArrayList<>();
     // Constructor needs start tile, destination map.Tile, map used in simulation, size of the map, numbers of columns and rows
+
+    /**
+     * sets parameters for future pathfinding
+     * @param startTile
+     * @param destinationTile
+     * @param map
+     * @param maxCol
+     * @param maxRow
+     */
     public SearchAlgorythm(Tile startTile, Tile destinationTile, Tile[][] map, int maxCol, int maxRow){
         Clone(map);
         this.startTile = startTile;
@@ -42,11 +54,23 @@ public class SearchAlgorythm {
                 tiles[col][row] = new map.Tile(col,row);
         }
     }*/
+
+    /**
+     * sets starting tile
+     * @param col
+     * @param row
+     */
     private void SetStartTile(int col, int row){
         tiles[row][col].SetAsStart();
         startTile = tiles[row][col];
         currentTile = startTile;
     }
+
+    /**
+     * sets destination tile
+     * @param col
+     * @param row
+     */
     private void SetDestinationTile(int col, int row){
         tiles[row][col].SetAsDestination();
         destinationTile = tiles[row][col];
@@ -54,6 +78,7 @@ public class SearchAlgorythm {
     /*private void SetSolidNode(int col, int row){
         tiles[row][col].SetAsSolid();
     }*/
+
     private void SetCostOnTiles(){
         for(int col = 0;col<maxCol;col++){
             for(int row = 0;row<maxRow;row++)
@@ -70,6 +95,11 @@ public class SearchAlgorythm {
         tile.fCost = tile.gCost + tile.hCost;
     }
     //Method searches for the shortest path to a destination and returns ArrayList of tiles from this path
+
+    /**
+     * pathfinding algorithm
+     * @return
+     */
     public ArrayList<Tile> search(){
         int steps=0;
         ArrayList<Tile> finalPath = new ArrayList<>();
@@ -141,6 +171,10 @@ public class SearchAlgorythm {
             open.add(tile);
         }
     }
+
+    /**
+     * resets pathfinding parameters
+     */
     private void ResetParents(){
         for(int i=0;i<maxCol;i++){
             for(int j=0; j<maxRow;j++){
