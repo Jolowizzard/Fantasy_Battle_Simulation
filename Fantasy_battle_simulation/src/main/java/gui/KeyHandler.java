@@ -12,6 +12,9 @@ import utils.FileChooserUtil;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+/**
+ * Manages Keyboard Input
+ */
 public class KeyHandler implements KeyListener{
 CharacterCreator characterCreator = new CharacterCreator();
 InventoryCreator inventoryCreator = new InventoryCreator();
@@ -25,6 +28,9 @@ int SavedPositions = 0;
     }
 
     @Override
+/**
+ * Checks Key Input
+ */
     public void keyPressed(KeyEvent e){
         int code = e.getKeyCode();
 
@@ -45,6 +51,10 @@ int SavedPositions = 0;
         }*/
     
     }
+/**
+ * Reacts to All Key Inputs
+ * @param code
+ */
     public void titleState(int code)
     {
         //MAIN MENU
@@ -429,12 +439,20 @@ int SavedPositions = 0;
             }
         }
     }
+/**
+ * Changes Game State to Pause State
+ * @param code
+ */
     public void playState(int code)
     {
         if(code == KeyEvent.VK_P){
             gp.gameState = gp.pauseState;
         }
     }
+/**
+ * Pause State State to Changes Game
+ * @param code
+ */
     public void pauseState(int code)
     {
         if(code == KeyEvent.VK_P){
@@ -450,7 +468,6 @@ int SavedPositions = 0;
             {
                 gp.ui.commandNum = 1;
             }
-            //gp.playSE(9);
         }
         if(code == KeyEvent.VK_S)
         {
@@ -459,14 +476,12 @@ int SavedPositions = 0;
             {
                 gp.ui.commandNum = 0;
             }
-            //gp.playSE(9);
         }
         if(code == KeyEvent.VK_ENTER)
         {
             if(gp.ui.commandNum == 0) //RETRY, reset position, life, mana, monsters, npcs...
             {
                 gp.gameState = gp.playState;
-                //gp.playMusic(0);
             }
             else if(gp.ui.commandNum == 1) //QUIT, reset everything
             {

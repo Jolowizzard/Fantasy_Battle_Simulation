@@ -12,6 +12,9 @@ import simulationsetup.TeamCreator;
 
 import java.io.IOException;
 
+/**
+ * Draws UI
+ */
 public class UI {
 
     GamePanel gp;
@@ -46,7 +49,10 @@ public class UI {
         }
 
     }
-
+/**
+ * Draws Screens
+ * @param g2
+ */
     public void draw(Graphics2D g2){
 
         this.g2 = g2;
@@ -83,6 +89,9 @@ public class UI {
         }
 
     }
+/**
+ * Draws Pause Screen
+ */
     public void drawPauseScreen(){
 
         g2.setFont(g2.getFont().deriveFont(Font.PLAIN,100F));
@@ -92,11 +101,19 @@ public class UI {
         g2.drawString(text,x,y);
 
     }
+/**
+ * Gets x Value to Center Given Text
+ * @param text
+ * @return
+ */
     public int getXforCenteredText(String text){
         int lenght = (int)g2.getFontMetrics().getStringBounds(text, g2).getWidth();
         int x = gp.ScreenWidth/2 - lenght/2;
         return x;
     }
+/**
+ * Draws Tilte Screen
+ */
     public void drawTitleScreen(){
 
         g2.setColor(Color.black);
@@ -137,6 +154,9 @@ public class UI {
             g2.drawString(">", x-gp.tileSize, y);
         }
     }
+/**
+ * Draws Start Screen
+ */
     public void drawStartScreen(){
 
         g2.setColor(Color.black);
@@ -157,7 +177,7 @@ public class UI {
         //Menu
         g2.setFont(g2.getFont().deriveFont(Font.BOLD,40F));
 
-        text = "BUILD YOUR TEAM";
+        text = "BUILD YOUR OWN";
         x = getXforCenteredText(text);
         y += gp.tileSize*6;
         g2.drawString(text, x, y);
@@ -165,7 +185,7 @@ public class UI {
             g2.drawString(">", x-gp.tileSize, y);
         }
 
-        text = "READ TEAM FROM FILE";
+        text = "READ FROM FILE";
         x = getXforCenteredText(text);
         y += gp.tileSize;
         g2.drawString(text, x, y);
@@ -181,6 +201,9 @@ public class UI {
             g2.drawString(">", x-gp.tileSize, y);
         }
     }
+/**
+ * Draws Character Creation Screen
+ */
     public void drawCharacterScreen(){
 
         g2.setColor(Color.black);
@@ -342,12 +365,25 @@ public class UI {
             drawSelect(7, 7);
         }
     }
+/**
+ * Draws Select Mark
+ * @param x
+ * @param y
+ */
     public void drawSelect(int x, int y){
         g2.drawImage(sel, x*gp.tileSize*2, y*gp.tileSize*2, gp.tileSize*2, gp.tileSize*2, null);
     }
+/**
+ * Draws Selected Mark
+ * @param x
+ * @param y
+ */
     public void drawSelected(int x, int y){
         g2.drawImage(selected, x*gp.tileSize*2, y*gp.tileSize*2, gp.tileSize*2, gp.tileSize*2, null);
     }
+/**
+ * Draws Map Choosing Screen
+ */
     public void drawMapScreen(){
 
         g2.setColor(Color.black);
@@ -369,6 +405,9 @@ public class UI {
         g2.drawString(gp.mapName, x, y);
 
     }
+/**
+ * Draws Hero Placement Screen
+ */
     public void drawPlacementScreen(){
 
         g2.setColor(Color.black);
@@ -382,7 +421,7 @@ public class UI {
         //gp.hero.updateType(name);
         //gp.hero.draw(g2);
 
-        if(MAPtable.Map[gp.ui.commandRow][gp.ui.commandCol].occupied == true || MAPtable.Map[gp.ui.commandRow][gp.ui.commandCol].solid == true){
+        if(MAPtable.Map[gp.ui.commandRow][gp.ui.commandCol].occupied != false || MAPtable.Map[gp.ui.commandRow][gp.ui.commandCol].solid != false){
             g2.drawImage(wrong, commandCol*gp.tileSize, commandRow*gp.tileSize, gp.tileSize, gp.tileSize, null);
             gp.hero.setPosition(commandCol, commandRow);
             gp.hero.updateType(name);
@@ -397,6 +436,5 @@ public class UI {
 
         TeamCreator.teamPurple.getTeam().forEach(character -> character.getRepresentation().draw(g2));
         TeamCreator.teamYellow.getTeam().forEach(character -> character.getRepresentation().draw(g2));
-
     }
 }

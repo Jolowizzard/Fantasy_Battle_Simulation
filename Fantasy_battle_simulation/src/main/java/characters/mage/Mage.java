@@ -37,6 +37,12 @@ public abstract class Mage extends characters.Character {
         MagicCritValue = 0;
         setMainClass("Mage");
     }
+    Mage(int Id, String Name, InteligenceType inteligenceType, Inventory inventory){
+        super(Id,Name,inteligenceType,inventory);
+        MagicCritChance = 0;
+        MagicCritValue = 0;
+        setMainClass("Mage");
+    }
     public Mage(int CritChance, int CritValue, GamePanel gamePanel){
         MagicCritChance = CritChance;
         MagicCritValue = CritValue;

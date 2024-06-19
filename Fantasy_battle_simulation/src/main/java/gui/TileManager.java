@@ -12,6 +12,9 @@ import java.io.InputStreamReader;
 import java.util.Objects;
 import java.util.*; 
 
+/**
+ * Manages Map Graphics and Map Generation
+ */
 public class TileManager {
     
     GamePanel gp;
@@ -29,6 +32,9 @@ public class TileManager {
         lodaMap();
     }
 
+/**
+ * Gets All Tiles Images
+ */
     public void getTileImage(){
         try{
             tile[0] = new Tile2();
@@ -75,9 +81,11 @@ public class TileManager {
             e.printStackTrace();
         }
     }
+/**
+ * Turns .txt File to Map
+ */
     public void lodaMap(){
         try{
-            //Wybór mapy - - - - - - - - - - -- - - -- - -- - - --  -- - -- - -- - - -- - - -- - -- - - - 
             InputStream is = getClass().getClassLoader().getResourceAsStream(gp.mapName);
             BufferedReader br = new BufferedReader(new InputStreamReader(is));
 
@@ -115,6 +123,10 @@ public class TileManager {
             e.printStackTrace();
         }
     }
+/**
+ * Draws Map
+ * @param g2
+ */
     public void draw(Graphics2D g2){
 
         int col = 0;

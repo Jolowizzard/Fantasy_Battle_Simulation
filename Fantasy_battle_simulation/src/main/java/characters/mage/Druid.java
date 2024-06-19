@@ -12,7 +12,6 @@ import map.Tile;
 public class Druid extends Mage {
     public Druid(int Id, String Name, String Race, int MaxHp, int CurrentHp, int Strength, int Dexterity, int Inteligence, int Movement, float DodgeChance, Inventory inventory, InteligenceType IntType, boolean IsAlive, int MagicCritChance, int MagicCritValue, Tile Position){
         super(Id,Name,Race,MaxHp,CurrentHp,Strength,Dexterity,Inteligence,Movement,DodgeChance,inventory,IntType,IsAlive,MagicCritChance,MagicCritValue,Position);
-        //setSubClass("Druid");
     }
 
     /**
@@ -38,8 +37,8 @@ public class Druid extends Mage {
         setSubClass("Druid");
 
     }
-    public Druid(int CritChance, int CritValue, GamePanel gamePanel){
-        super(CritChance,CritValue,gamePanel);
+    public Druid(int MagicCritChance, int MagicCritValue,GamePanel gamePanel){
+        super(MagicCritChance, MagicCritValue, gamePanel);
         setRace("Human");
         setMaxHp(150);
         setCurrentHp(150);
@@ -52,6 +51,9 @@ public class Druid extends Mage {
         setMagicCritValue(30);
         setSubClass("Druid");
     }
+
+
+
     public Druid(){}
 
 }

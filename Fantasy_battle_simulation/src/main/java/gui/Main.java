@@ -4,7 +4,15 @@ import gui.GamePanel;
 
 import javax.swing.JFrame;
 
+/**
+ * Creates Simulation Window
+ */
+
 public class Main{
+    /**
+     * Creates Simulation Window
+     * @param args
+     */
     public static void main(String[] args) {
 
         JFrame window = new JFrame();
