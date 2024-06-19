@@ -1,0 +1,17 @@
+map_1.txt;special values;specialvalues;subclass;name;race;MaxHp;currentHp;Strength;Dex;Int;Movement;Dodge;x;y;IntType
+Warrior;50;20;Knight;Buknan;Human;300;300;30;15;5;3;5;4;0;Aggressive
+Weapons;Sword;WeaponsEnd;Items;HealPotion;Shield;ItemsEnd;Armours;MediumArmour;LightArmour;ArmoursEnd;;;;;
+Shooter;20;30;Ranger;Mark;Human;150;150;20;20;10;4;10;5;0;Aggressive
+Weapons;Bow;Dagger;WeaponsEnd;Items;HealPotion;Shield;ItemsEnd;Armours;NoArmour;LightArmour;ArmoursEnd;;;;
+Warrior;10;70;Knight;Colt;Human;250;250;50;5;5;2;0;4;1;Aggressive
+Weapons;Sword;Dagger;WeaponsEnd;Items;HealPotion;Shield;ItemsEnd;Armours;NoArmour;LightArmour;ArmoursEnd;;;;
+Shooter;10;50;Ranger;sir Gregory Clagain;Human;100;100;10;40;10;4;10;0;0;Aggressive
+Weapons;Bow;Dagger;WeaponsEnd;Items;HealPotion;Shield;ItemsEnd;Armours;NoArmour;LightArmour;ArmoursEnd;;;;
+Mage;20;20;Druid;Magnus;Human;300;300;15;15;20;3;10;14;14;Aggressive
+Weapons;Staff;Dagger;WeaponsEnd;Items;HealPotion;Shield;ItemsEnd;Armours;NoArmour;LightArmour;ArmoursEnd;;;;
+Mage;10;40;Wizard;Aleksander the Great;Human;150;150;5;5;40;3;5;13;12;Aggressive
+Weapons;Bow;Staff;WeaponsEnd;Items;HealPotion;Shield;ItemsEnd;Armours;NoArmour;LightArmour;ArmoursEnd;;;;
+Rogue;1;Thief;Rodriges;Human;100;100;10;15;40;4;20;15;14;Aggressive;
+Weapons;Dagger;Staff;WeaponsEnd;Items;HealPotion;Shield;ItemsEnd;Armours;NoArmour;LightArmour;ArmoursEnd;;;;
+Rogue;1;Thief;Hurdur;Human;120;120;15;40;10;5;25;15;15;Aggressive;
+Weapons;Dagger;WeaponsEnd;Items;HealPotion;Shield;ItemsEnd;Armours;NoArmour;LightArmour;ArmoursEnd;;;;;
