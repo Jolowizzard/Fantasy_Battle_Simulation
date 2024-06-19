@@ -2,11 +2,11 @@ package movement;
 
 import characters.Character;
 import gui.GamePanel;
+import inventory.items.*;
 import map.MAPtable;
 import map.Tile;
 import simulation.Simulation;
 import simulationsetup.Scribe;
-
 import java.util.ArrayList;
 
 public class MovesAndPaths {
@@ -15,7 +15,6 @@ public class MovesAndPaths {
         if(movement<=0)
             return;
         Tile location = null;
-        //locations.forEach(tile -> System.out.println(tile.col + " " + tile.row));
         if(locations.size() == 0)
             return;
         if(movement>locations.size()){
@@ -24,7 +23,8 @@ public class MovesAndPaths {
             }catch (Exception e){
                 e.printStackTrace();
             }
-           if((movement-1)-(movement-locations.size())>=0){location = locations.get((movement-1)-(movement-locations.size()));}//Stands next to the target
+           if((movement-1)-(movement-locations.size())>=0){
+               location = locations.get((movement-1)-(movement-locations.size()));}//Stands next to the target
         }
         else {
             try {
@@ -49,25 +49,4 @@ public class MovesAndPaths {
             Thread.sleep(200);
         }
     }
-   /* static ArrayList<Integer> FindPath(int start,int target){
-        int position=start;
-        int tmp=position;
-        double currentDistance;
-        while(position!=target){
-            currentDistance = CalculateDistanse(position,target);
-            if()
-        }
-    }*/
-  /*  static boolean CheckForObstacles(int position){
-        if(map.MAPtable.Map[map.MAPtable.xLocationOf(position)][map.MAPtable.xLocationOf(position)]==1)
-            return true;
-        return false;
-    }*/
-/*    static double CalculateDistanse(int a,int b){
-        int xa = map.MAPtable.xLocationOf(a);
-        int ya = map.MAPtable.yLocationOf(a);
-        int xb = map.MAPtable.xLocationOf(b);
-        int yb = map.MAPtable.yLocationOf(b);
-        return Math.sqrt((xa+xb)*(xa+xb)+(ya+yb)*(ya+yb));
-    }*/
 }

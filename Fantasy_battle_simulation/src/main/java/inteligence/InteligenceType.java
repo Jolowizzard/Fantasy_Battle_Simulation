@@ -13,7 +13,9 @@ import weapons.Weapon;
 
 import java.util.ArrayList;
 
-
+/**
+ * Parent class of all the intelligences. This is a whole brain of a character. Performs turns and take decisions on current state of the character
+ */
 public abstract class InteligenceType{
 
     protected Character target;
@@ -30,15 +32,21 @@ public abstract class InteligenceType{
     public InteligenceType(){
     }
     public characters.Character GetTarget(){return target;}
-    public void setCharacter(characters.Character character){this.character = character;}
-    public void setTarget(characters.Character character){target = character;}
+    public void setCharacter(Character character){this.character = character;}
+    public void setTarget(Character character){target = character;}
     public void setEnemies(Team enemies){
         this.enemies=enemies;
     }
+    public Character getTarget(){return target;}
     public void setAllays(Team allays){this.allays=allays;}
     public void setInCombat(){
         inCombat = true;
     }
+
+    /**
+     * This method checks if enemy is in range. Uses Euclidean distance
+     * @return
+     */
     protected boolean checkIfEnemyIsInRange(){
         double distance;
         //calculating euclidean distance between to characters
@@ -49,6 +57,11 @@ public abstract class InteligenceType{
             return true;
         return false;
     }
+
+    /**
+     * Method uses enemy list and returns one with the shortes path
+     * @return
+     */
     public Character lookForTarget(){
         int bestDistanse=999;
         Character OptimalTarget=null;
@@ -66,6 +79,10 @@ public abstract class InteligenceType{
         }
         return OptimalTarget;
     }
+    /**
+     * Method uses enemy list and returns one with the shortes path
+     * @return
+     */
     public Character lookForTeammate(){
         int bestDistanse=999;
         Character OptimalTarget=null;
@@ -83,16 +100,32 @@ public abstract class InteligenceType{
         }
         return OptimalTarget;
     }
+
+    /**
+     * Method uses searchAlgorythm in order to establish potentialy the shortest path
+     * @param character
+     * @param target
+     * @param gamePanel
+     */
     public void MoveTowardsOpponent(characters.Character character, characters.Character target,GamePanel gamePanel){
         SearchAlgorythm searchAlgorythm = new SearchAlgorythm(character.getPosition(),target.getPosition(), MAPtable.Map, MAPtable.colSize, MAPtable.rowSize);
         ArrayList<Tile> path = new ArrayList<>();
         path = searchAlgorythm.search();
         MovesAndPaths.Move(character,path,gamePanel);
     }
+
+    /**
+     * abstract method overwritten by children
+     */
     public abstract void PerformTurn();
 
     public Character getCharacter(){return character;}
 
+    /**
+     * Method sets characters inventory, weapons, armours and items. Armours are chosen by range and damage they make
+     * Armours are chosen by amount protection they give
+     * Shield is being equipped  if available in items array
+     */
     public void inventorySetup(){
         //setting optimal weapon - looking for the highest range and then the highest damage output
         ArrayList<Weapon> weapons = character.getInventory().getWeapons();
@@ -147,6 +180,10 @@ public abstract class InteligenceType{
         }
 
     }
+
+    /**
+     * Method deals with all status effects that are currently on character
+     */
     public void resolveStatusEffects(){
         int bleed = character.getSpecificStatusEffectValue(0);
         System.out.println("Character " + character.getName() + " Bleed: "+bleed);

@@ -19,23 +19,30 @@ public class Agressive extends InteligenceType {
         super();
         this.readyToFight=readyToFight;
     }
+
+    /**
+     * This method preforms turn of a character
+     * Makes decision and gives orders
+     */
     @Override
     public void PerformTurn(){
         resolveStatusEffects();
         if(!character.checkIfIsAlive())
             return;
+        gamePanel.logEvent(character.getName() + " performs turn");
         System.out.println(character.getName() + " : performe turn. In combat :" + inCombat + " Injured : " + isInjured());
         if(character.getInventory().getCurrentWeapon()==null) {
             character.getInventory().setCurrentWeapon(character.getInventory().getWeapons().get(0));
         }
 
         target = lookForTarget();
-
+        //System.out.println(target);
         if(checkIfYouWon())
             return;
         //Performing healing actions
         if(isInjured())
         {
+
             System.out.println("Checking for using healing potion : " +character.getCurrentHp() + " < " + (int)(((float)character.getMaxHp())*(float)(20.0/100.0)));
             if(character.getCurrentHp()<(int)(((float)character.getMaxHp())*(float)(20.0/100.0))){
                 //Searching for HealPotion in the inventory this is not optimal thou, because he will try to use empty healpotions
@@ -92,7 +99,7 @@ public class Agressive extends InteligenceType {
                 rogue.setSecondMove(true);
             }
         }
-        System.out.println(target.getName());
+        target = lookForTarget();
     }
     private void setTarget(){
     }

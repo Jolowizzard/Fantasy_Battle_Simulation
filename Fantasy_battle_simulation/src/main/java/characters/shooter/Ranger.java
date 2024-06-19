@@ -23,8 +23,8 @@ public class Ranger extends Shooter {
         setIntelignece(11);
         setMovement(4);
         setDodgeChance(20);
-        setCritChance(5);
-        setCritValue(30);
+        setCritChance(35);
+        setCritValue(10);
         setSubClass("Ranger");
 
     }
@@ -46,8 +46,8 @@ public class Ranger extends Shooter {
         setIntelignece(11);
         setMovement(4);
         setDodgeChance(20);
-        setCritChance(5);
-        setCritValue(30);
+        setCritChance(35);
+        setCritValue(10);
         setSubClass("Ranger");
     }
     public Ranger(int CritChance, int CritValue){

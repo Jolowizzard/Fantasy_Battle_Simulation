@@ -8,13 +8,19 @@ import armours.*;
 import simulationsetup.Scribe;
 
 import java.util.ArrayList;
+
+/**
+ * This class will be used to performe various combat action
+ */
 public class Combat {
-    //This class will be used to performe various combat action
-/*    public boolean CheckIfHitConnects(characters.Character char1,characters.Character char2){
-        if(CurrentLocation(char1))
-    }*/
     private Character attacker;
     private Character defender;
+
+    /**
+     *
+     * @param attacker
+     * @param defender
+     */
     public Combat (Character attacker, Character defender){
         this.attacker=attacker;
         this.defender=defender;
@@ -26,7 +32,7 @@ public class Combat {
         }
 
         Scribe.addLog(attacker.getName() + " attacked " + defender.getName() + " with " + attacker.getInventory().getCurrentWeapon().getName());
-
+        attacker.getIntType().getGamePanel().logEvent(attacker.getName() + " attacked " + defender.getName() + " with " + attacker.getInventory().getCurrentWeapon().getName());
         try {
             Thread.sleep(20);
         }catch (Exception e){
@@ -34,16 +40,23 @@ public class Combat {
         }
 
     }
+
+    /**
+     * Method used to execute combat hier are checked dodge, block and damage delt methods are used
+     *
+     */
     public void BeginCombat(){
         //checking dodge
+        attacker.getIntType().getGamePanel().logEvent("******* Combat Begins ******");
         if(CheckDodge(defender)) {
             Scribe.addLog(defender.getName() + " dodged");
+            defender.getIntType().getGamePanel().logEvent(defender.getName() + " dodged");
             try {
                 Thread.sleep(20);
             }catch (Exception e){
                 e.printStackTrace();
             }
-
+            attacker.getIntType().getGamePanel().logEvent("******* Combat Ends ******\n");
             return;
         }
         if(defender.getInventory().getCurrentItem()!=null){
@@ -55,12 +68,13 @@ public class Combat {
 
             if(defender.getInventory().getCurrentItem().use(defender)) {//if shield worked end combat
                 Scribe.addLog(defender.getName() + " used Shield");
+                defender.getIntType().getGamePanel().logEvent(defender.getName() + " used Shield");
                 try {
                     Thread.sleep(20);
                 }catch (Exception e){
                     e.printStackTrace();
                 }
-
+                attacker.getIntType().getGamePanel().logEvent("******* Combat Ends ******\n");
                 return;
 
             }
@@ -70,6 +84,7 @@ public class Combat {
         int currentDamage;
         int damageSum;
         //Dealing damage here also we have wiggle room for printing amounts of specific types of damage
+        attacker.getIntType().getGamePanel().logEvent(attacker.getName() + " used " + attacker.getInventory().getCurrentWeapon().getName());
         Scribe.addLog(attacker.getName() + " used " + attacker.getInventory().getCurrentWeapon().getName());
         int additionalDamage=0;
         for(int i=0 ;i <damageTypes.size();i+=2){
@@ -107,28 +122,42 @@ public class Combat {
         }
 
         DealDamageToDefender(damageTypes);
+        defender.getIntType().getGamePanel().logEvent(defender.getName() + " New Hp value : " + defender.getCurrentHp());
         //cleaning after combat
         defender.setTemporalArmour(0);
+        attacker.getIntType().getGamePanel().logEvent("******* Combat Ends ******\n");
     }
+
+    /**
+     * Method where various types of damages are dealt to defender
+     * @param damageTypes
+     */
     public void DealDamageToDefender(ArrayList<Integer> damageTypes){
         for(int i = 1 ; i<damageTypes.size();i+=2) {
             if (damageTypes.get(i) > 0) {
                 defender.getIntType().setInjured(true);
                 if (damageTypes.get(i) >= defender.getCurrentHp()) {
+                    defender.getIntType().getGamePanel().logEvent(defender.getName() + " received" + damageTypes.get(i)+"and died");
                     defender.takeDamage(defender.getCurrentHp());
                     defender.kill();
                 } else {
+                    defender.getIntType().getGamePanel().logEvent(defender.getName() + " received" + damageTypes.get(i));
                     defender.takeDamage(damageTypes.get(i));
                 }
             }
         }
     }
+
+    /**
+     * Method where various type
+     * @return
+     */
     private ArrayList<Integer> resolveArmour(){
         ArrayList<Integer> armorTypes = new ArrayList<>(defender.getInventory().getCurrentArmour().blockDamage());
         //setting temporal armour on every character that is warrior type and takes damage in this combat
         if(defender.getMainClass().equals("Warrior")){
             Warrior warrior = (Warrior) defender;
-            armorTypes.set(0,armorTypes.get(0)+ warrior.passiveBlock());
+            armorTypes.set(1,armorTypes.get(1)+ warrior.passiveBlock());
         }
         return armorTypes;
     }
@@ -144,12 +173,6 @@ public class Combat {
         return 0;
     }
 
-    //public void PerformAttack()
-    /*public float CalculateDamage(characters.Character char1){
-        inventory.Inventory inventory = new inventory.Inventory();
-        inventory = char1.getInventory();
-        inventory.getCurrentWeapon();
-    }*/
     public boolean CheckDodge(Character char1)
     {
         boolean DodgeResult = false;

@@ -5,30 +5,41 @@ import utils.RandomNumber;
 
 import java.util.Random;
 
+/**
+ * Shield class - one of side items
+ */
 public class Shield extends Item {
     private int blockChance;
-    private int movementReduction;
+
+    /**
+     * Specific constructor
+     * @param name
+     * @param BlockChance
+     * @param MovementReduction
+     */
     public Shield(String name, int BlockChance,int MovementReduction) {
-        super(name);
+        super(name,MovementReduction);
         this.blockChance = BlockChance;
-        this.movementReduction = MovementReduction;
     }
+
+    /**
+     * Constructor with preset values
+     */
     public Shield() {
         setName("Shield");
         blockChance = 30;
-        movementReduction = 1;
+        setMsReduction(1);
     }
     public int getBlockChance() {
         return blockChance;
     }
     public void setBlockChance(int BlockChance) {this.blockChance = BlockChance;}
-    public int getMovementReduction() {
-        return movementReduction;}
 
-    public void setMovementReduction(int movementReduction) {
-        this.movementReduction = movementReduction;
-    }
-
+    /**
+     * Use shield and performs d100 roll, if value is lower, that blockChance, block succeeds.
+     * @param character
+     * @return
+     */
     @Override
     public boolean use(Character character) {
         RandomNumber d100 = new RandomNumber();

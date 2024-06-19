@@ -59,6 +59,7 @@ public abstract class Shooter extends characters.Character {
         RandomNumber rand = new RandomNumber();
         if(rand.generateRandomNumber()<=CritChance) {
             Scribe.addLog("Passive Crit succeeded");
+            getIntType().getGamePanel().logEvent("Passive Crit succeeded");
             return CritValue;
         }
         return 0;

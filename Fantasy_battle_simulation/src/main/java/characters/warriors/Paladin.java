@@ -22,8 +22,8 @@ public class Paladin extends Warrior {
         setIntelignece(10);
         setMovement(3);
         setDodgeChance(5);
-        setBlockChance(30);
-        setBlockValue(15);
+        setBlockChance(25);
+        setBlockValue(20);
         setSubClass("Paladin");
 
     }
@@ -45,8 +45,8 @@ public class Paladin extends Warrior {
         setIntelignece(10);
         setMovement(3);
         setDodgeChance(5);
-        setBlockChance(30);
-        setBlockValue(15);
+        setBlockChance(25);
+        setBlockValue(20);
         setSubClass("Paladin");
     }
     public Paladin(int BlockChance, int BlockValue){

@@ -11,15 +11,29 @@ public class CSVReader {
     private String filePath;
     private String delimiter;
 
+    /**
+     *
+     * @param filePath
+     */
     public CSVReader(String filePath) {
         this(filePath, ";");
     }
 
+    /**
+     *
+     * @param filePath
+     * @param delimiter
+     */
     public CSVReader(String filePath, String delimiter) {
         this.filePath = filePath;
         this.delimiter = delimiter;
     }
-    //Method returns a hole file as list of table of strings
+
+    /**
+     * Method returns a hole file as list of table of strings
+     * @return
+     * @throws IOException
+     */
     public List<String[]> readAll() throws IOException {
         List<String[]> records = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
@@ -31,7 +45,12 @@ public class CSVReader {
         }
         return records;
     }
-    //method returns one line as a table of Strings
+
+    /**
+     *method returns one line as a table of Strings
+     * @return
+     * @throws IOException
+     */
     public String [] readLineByLine() throws IOException {
             String[] values=null;
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))){

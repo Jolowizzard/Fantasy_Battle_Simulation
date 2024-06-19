@@ -56,6 +56,7 @@ public abstract class Warrior extends characters.Character {
     public int passiveBlock(){
         RandomNumber rand = new RandomNumber();
         if(rand.generateRandomNumber()<=BlockChance) {
+            getIntType().getGamePanel().logEvent("Passive Block succeeded");
             Scribe.addLog("Passive Block succeeded");
             return BlockValue;
         }

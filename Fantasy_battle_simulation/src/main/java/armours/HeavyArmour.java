@@ -17,7 +17,7 @@ public class HeavyArmour extends Armour{
      * default constructor of heavy armour
      */
     public HeavyArmour(){
-        setMSReduction(3);
+        setMSReduction(2);
         setPhysicalProtection(9);
         setMagicalProtection(6);
     }

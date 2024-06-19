@@ -65,6 +65,7 @@ public abstract class Mage extends characters.Character {
     RandomNumber rand = new RandomNumber();
         if(rand.generateRandomNumber()<=MagicCritChance) {
             Scribe.addLog("Passive Magic Crit Succeeded");
+            getIntType().getGamePanel().logEvent("Passive Magic Crit Succeeded");
             return MagicCritValue;
         }
         return 0;
